@@ -1,0 +1,5 @@
+../Core/Inc/modbus_rtu.h:179:14:void ModBus::RTU::setInterFrameDelay(uint32_t)	16	static
+../Core/Src/freertos.cpp:74:6:void MX_FREERTOS_Init()	8	static
+../Core/Src/freertos.cpp:125:14:StartDefaultTask(void*)::<lambda(const char*)>	16	static
+../Core/Src/freertos.cpp:116:6:void StartDefaultTask(void*)	776	static
+/opt/st/stm32cubeide_2.0.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.100.202509120712/tools/arm-none-eabi/include/c++/13.3.1/array:200:7:std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::operator[](size_type) [with _Tp = short unsigned int; unsigned int _Nm = 125]	16	static
