@@ -1,0 +1,2 @@
+../Core/Src/modbus_crc.cpp:73:10:uint16_t crc16(uint8_t*, uint16_t)	24	static
+/opt/st/stm32cubeide_2.0.0/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.linux64_1.0.100.202509120712/tools/arm-none-eabi/include/c++/13.3.1/array:208:7:constexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::operator[](size_type) const [with _Tp = unsigned char; unsigned int _Nm = 256]	16	static

@@ -1,0 +1,26 @@
+idf_component_register(
+    SRCS 
+        "main.cpp"        
+        "src/NVSManager.cpp"
+        "src/WifiManager.cpp"
+        "src/WebServer.cpp"
+        "src/MqttManager.cpp"
+        "src/SupabaseClient.cpp"
+        "src/UartBridge.cpp"
+        "src/TelemetryManager.cpp"
+    INCLUDE_DIRS 
+        "."
+        "inc"
+    REQUIRES 
+        nvs_flash
+        esp_wifi
+        esp_event
+        esp_netif
+        esp_http_server
+        esp_http_client
+        mqtt
+        driver
+        freertos
+        mbedtls
+        lwip
+)
