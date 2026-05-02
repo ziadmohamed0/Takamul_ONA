@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 .history/
 .vscode/
+=======
+*.db
+browse.vc.db
+.history/
+>>>>>>> 19b9261
 *.db
