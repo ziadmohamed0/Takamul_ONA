@@ -1,0 +1,7 @@
+[0/1] Re-running CMake...
+-- ccache will be used for faster recompilation
+-- Building ESP-IDF components for target esp32
+-- Configuring incomplete, errors occurred!
+See also "/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/test_db/build/CMakeFiles/CMakeOutput.log".
+FAILED: build.ninja 
+/usr/bin/cmake --regenerate-during-build -S/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/test_db -B/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/test_db/build

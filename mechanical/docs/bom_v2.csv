@@ -1,0 +1,19 @@
+item,count,material,category,notes
+housing_base,1,ABS-like shell,enclosure,2.5mm nominal wall based on drawing sheet
+front_lid,1,ABS-like shell,enclosure,front cover with engraved logo and I/O labels
+top_vent_lid,1,ABS-like shell,enclosure,140mm visible top vented cover
+antenna_whip,1,plastic/rubber,external,left-side antenna assembly with pivot base
+din_clip,1,spring steel simplified,mechanical,rear DIN rail mount clip
+main_pcb,1,FR4 simplified,electronics,placeholder board with major component envelopes
+wifi_module,1,FR4 simplified,electronics,antenna-side daughter module placeholder
+top_terminal_block_group,1,PA66/metal simplified,electronics,power + USB-C + sensor/VFD connector zone
+bottom_terminal_block_group,1,PA66/metal simplified,electronics,lower DI/relay/RS485 connector zone
+pcb_mounting_bosses,6,integrated plastic,integrated feature,internal PCB supports
+connector_bosses,11,integrated plastic,integrated feature,front connector support features
+screw_posts,4,integrated plastic,integrated feature,enclosure fastening towers
+brass_standoffs,4,brass simplified,hardware,M3 compatible standoffs
+m3x8_screws,4,steel simplified,hardware,visual/assembly fasteners
+led_lightpipes,5,clear PC simplified,optical,status indicator light guides
+usb_c_support_shelf,1,integrated plastic,integrated feature,front programming port support
+antenna_bracket,1,integrated plastic,integrated feature,internal RF bracket region
+internal_ribs_and_shelves,1,set,integrated feature,added for enclosure stiffness and placement guidance

@@ -1,0 +1,542 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time May  2 2026 01:56:45[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=320b8h (204984) map[0m
+[0;32mI (160) esp_image: segment 1: paddr=000420e0 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (161) esp_image: segment 2: paddr=00042104 vaddr=3ffb0000 size=03f90h ( 16272) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=0004609c vaddr=40080000 size=09f7ch ( 40828) load[0m
+[0;32mI (188) esp_image: segment 4: paddr=00050020 vaddr=400d0020 size=a944ch (693324) map[0m
+[0;32mI (425) esp_image: segment 5: paddr=000f9474 vaddr=40089f7c size=0e6e8h ( 59112) load[0m
+[0;32mI (460) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (460) boot: Disabling RNG early entropy source...[0m
+[0;32mI (470) cpu_start: Multicore app[0m
+[0;32mI (479) cpu_start: Pro cpu start user code[0m
+[0;32mI (479) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (479) app_init: Application information:[0m
+[0;32mI (479) app_init: Project name:     ONA_Software[0m
+[0;32mI (483) app_init: App version:      b70fffd-dirty[0m
+[0;32mI (487) app_init: Compile time:     May  2 2026 01:56:33[0m
+[0;32mI (493) app_init: ELF file SHA256:  79f71d3e2...[0m
+[0;32mI (497) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (501) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (505) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (509) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (513) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (519) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (524) heap_init: At 3FFB8A48 len 000275B8 (157 KiB): DRAM[0m
+[0;32mI (529) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (535) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (540) heap_init: At 40098664 len 0000799C (30 KiB): IRAM[0m
+[0;32mI (547) spi_flash: detected chip: generic[0m
+[0;32mI (549) spi_flash: flash io: dio[0m
+[0;33mW (552) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (566) main_task: Started on CPU0[0m
+[0;32mI (576) main_task: Calling app_main()[0m
+[0;32mI (576) main: ========================================[0m
+[0;32mI (576) main:   Takamul SCADA — ESP32 Firmware v1.0  [0m
+[0;32mI (576) main: ========================================[0m
+[0;32mI (596) NVSManager: NVS Flash Initialized[0m
+[0;32mI (616) wifi:wifi driver task: 3ffc04f8, prio:23, stack:6656, core=0[0m
+[0;32mI (616) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (616) wifi:wifi certification version: v7.0[0m
+[0;32mI (616) wifi:config NVS flash: enabled[0m
+[0;32mI (616) wifi:config nano formatting: disabled[0m
+[0;32mI (626) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (626) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (636) wifi:Init management short buffer num: 32[0m
+[0;32mI (636) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (636) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (646) wifi:Init static rx buffer num: 10[0m
+[0;32mI (646) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (656) wifi_init: rx ba win: 6[0m
+[0;32mI (656) wifi_init: accept mbox: 6[0m
+[0;32mI (656) wifi_init: tcpip mbox: 32[0m
+[0;32mI (656) wifi_init: udp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp tx win: 5760[0m
+[0;32mI (666) wifi_init: tcp rx win: 5760[0m
+[0;32mI (676) wifi_init: tcp mss: 1440[0m
+[0;32mI (676) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (676) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (686) NVSManager: Error (ESP_ERR_NVS_NOT_FOUND) opening NVS Handle (wifi_config)[0m
+[0;32mI (686) main: No WiFi credentials found → provisioning mode[0m
+[0;32mI (956) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;33mW (956) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (1036) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (1056) wifi:mode : softAP (44:1d:64:fb:48:75)[0m
+[0;32mI (1056) wifi:Total power save buffer number: 16[0m
+[0;32mI (1056) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1056) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1066) WifiManager: AP Started. SSID: Takamul_Prov[0m
+[0;32mI (1066) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (1076) WebServer: Starting socket web server on port 80[0m
+[0;32mI (1086) WebServer: Starting DNS server on port 53[0m
+[0;32mI (1086) main: Waiting for user to provision WiFi...[0m
+[0;32mI (127666) wifi:new:<1,1>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (127666) wifi:station: 94:65:9c:3c:e9:fc join, AID=1, bgn, 40U[0m
+[0;32mI (127706) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (127786) wifi:<ba-add>idx:2 (ifx:1, 94:65:9c:3c:e9:fc), tid:0, ssn:14, winSize:64[0m
+[0;32mI (154036) WebServer: Received credentials SSID='Mohamed Fathy' password_len=12[0m
+[0;32mI (154036) WebServer: Credentials saved to NVS[0m
+[0;32mI (154046) wifi:station: 94:65:9c:3c:e9:fc leave, AID = 1, reason = 2, bss_flags is 756835, bss:0x3ffcbbd0[0m
+[0;32mI (154046) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (154056) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (154056) wifi:mode : sta (44:1d:64:fb:48:74)[0m
+[0;32mI (154066) wifi:enable tsf[0m
+[0;33mW (154066) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (154106) WifiManager: Connecting to SSID: Mohamed Fathy[0m
+[0;32mI (154396) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (154406) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (154426) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (154436) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (154446) wifi:<ba-add>idx:0 (ifx:0, dc:99:14:53:c3:04), tid:0, ssn:0, winSize:64[0m
+[0;32mI (154466) wifi:connected with Mohamed Fathy, aid = 5, channel 1, BW20, bssid = dc:99:14:53:c3:04[0m
+[0;32mI (154466) wifi:security: WPA2-PSK, phy: bgn, rssi: -59[0m
+[0;32mI (154486) wifi:pm start, type: 1[0m
+
+[0;32mI (154486) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (154546) wifi:AP's beacon interval = 100352 us, DTIM period = 1[0m
+[0;32mI (157556) WifiManager: Got IP: 192.168.100.133[0m
+[0;32mI (157556) esp_netif_handlers: sta ip: 192.168.100.133, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (157556) WebServer: Web server stop requested[0m
+[0;32mI (157556) main: Provisioning complete — AP and WebServer stopped[0m
+[0;32mI (157566) main: WiFi connected — IP obtained ✓[0m
+[0;32mI (157566) main: Device ID (MAC): 44:1D:64:FB:48:74[0m
+[0;32mI (157576) SupabaseClient: Initialized. Project: https://xfcicrtmyvpgirwvnqfh.supabase.co[0m
+[0;32mI (157586) UartBridge: UART2 init OK — baud=115200 RX=16 TX=17[0m
+[0;32mI (157586) TelemetryManager: Initialized. Device: 44:1D:64:FB:48:74[0m
+[0;32mI (157596) UartBridge: RX task running on UART2[0m
+[0;32mI (157596) UartBridge: RX task started[0m
+[0;32mI (157976) WebServer: DNS server stopped[0m
+[0;32mI (158946) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (160186) SupabaseClient: UPSERT devices -> HTTP 400  body=[0m
+[0;33mW (160186) TelemetryManager: Device register failed HTTP 400 (table may not exist yet)[0m
+[0;32mI (160196) TelemetryManager: Upload task running — interval 5000 ms[0m
+[0;32mI (160196) TelemetryManager: Poll task running — interval 2000 ms[0m
+[0;32mI (160216) TelemetryManager: Tasks started[0m
+[0;32mI (160216) main: All subsystems started — entering idle loop[0m
+[0;32mI (161546) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (165196) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (165976) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (167736) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (169126) TelemetryManager:   ✓ TDS            = 239.6400 ppm[0m
+[0;32mI (170416) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (172166) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (173526) TelemetryManager:   ✓ TEMPERATURE    = 19.7000 C[0m
+[0;32mI (175056) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (176776) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (178136) TelemetryManager:   ✓ FLOW           = 55.7700 L/min[0m
+[0;32mI (179546) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (181266) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (182456) TelemetryManager:   ✓ PRESSURE       = 3.3300 bar[0m
+[0;32mI (183966) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (185716) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (186966) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.4400 bar[0m
+[0;32mI (188426) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (190216) main: ♥ Heartbeat — system running[0m
+[0;32mI (192166) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (192886) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (194646) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (195896) TelemetryManager:   ✓ TDS            = 230.5000 ppm[0m
+[0;32mI (197416) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (199146) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (200316) TelemetryManager:   ✓ TEMPERATURE    = 19.6300 C[0m
+[0;32mI (201946) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (203536) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (204846) TelemetryManager:   ✓ FLOW           = 49.5200 L/min[0m
+[0;32mI (206446) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (208066) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (209436) TelemetryManager:   ✓ PRESSURE       = 3.3900 bar[0m
+[0;32mI (210866) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (212596) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (213766) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.4500 bar[0m
+[0;32mI (215356) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (218966) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (219856) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (220216) main: ♥ Heartbeat — system running[0m
+[0;32mI (221626) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (222816) TelemetryManager:   ✓ TDS            = 222.0800 ppm[0m
+[0;32mI (224326) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (225986) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (227216) TelemetryManager:   ✓ TEMPERATURE    = 20.1500 C[0m
+[0;32mI (228826) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (230426) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (231626) TelemetryManager:   ✓ FLOW           = 52.2400 L/min[0m
+[0;32mI (233356) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (234936) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (236136) TelemetryManager:   ✓ PRESSURE       = 3.9300 bar[0m
+[0;32mI (237956) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (239346) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (240866) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.4600 bar[0m
+[0;32mI (242506) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (246066) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (247186) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (248936) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (250186) TelemetryManager:   ✓ TDS            = 217.4200 ppm[0m
+[0;32mI (250216) main: ♥ Heartbeat — system running[0m
+[0;32mI (251726) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (253416) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (254606) TelemetryManager:   ✓ TEMPERATURE    = 20.3000 C[0m
+[0;32mI (256246) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (257836) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (259226) TelemetryManager:   ✓ FLOW           = 52.8100 L/min[0m
+[0;32mI (260746) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (262446) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (263736) TelemetryManager:   ✓ PRESSURE       = 3.7600 bar[0m
+[0;32mI (265276) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (266976) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (268156) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.4400 bar[0m
+[0;32mI (269716) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (273356) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (274366) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (276116) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (277476) TelemetryManager:   ✓ TDS            = 227.0700 ppm[0m
+[0;32mI (278916) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (280216) main: ♥ Heartbeat — system running[0m
+[0;32mI (280616) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (281806) TelemetryManager:   ✓ TEMPERATURE    = 20.2000 C[0m
+[0;32mI (283436) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (285076) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (286516) TelemetryManager:   ✓ FLOW           = 52.1000 L/min[0m
+[0;32mI (287936) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (289656) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (291036) TelemetryManager:   ✓ PRESSURE       = 3.8000 bar[0m
+[0;32mI (292446) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (294186) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (295446) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.4700 bar[0m
+[0;32mI (296806) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (300646) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (301396) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (303156) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (304586) TelemetryManager:   ✓ TDS            = 212.5100 ppm[0m
+[0;32mI (305996) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (307756) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (308996) TelemetryManager:   ✓ TEMPERATURE    = 20.1600 C[0m
+[0;32mI (310216) main: ♥ Heartbeat — system running[0m
+[0;32mI (310526) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (312206) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (313406) TelemetryManager:   ✓ FLOW           = 53.2500 L/min[0m
+[0;32mI (315036) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (316686) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (317936) TelemetryManager:   ✓ PRESSURE       = 3.5300 bar[0m
+[0;32mI (319566) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (321166) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (322456) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.4600 bar[0m
+[0;32mI (324396) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (327656) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (328976) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (330716) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (332076) TelemetryManager:   ✓ TDS            = 210.1900 ppm[0m
+[0;32mI (333486) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (335206) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (336596) TelemetryManager:   ✓ TEMPERATURE    = 19.7500 C[0m
+[0;32mI (338096) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (339826) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (340216) main: ♥ Heartbeat — system running[0m
+[0;32mI (341116) TelemetryManager:   ✓ FLOW           = 55.3000 L/min[0m
+[0;32mI (342526) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (344246) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (345526) TelemetryManager:   ✓ PRESSURE       = 3.3900 bar[0m
+[0;32mI (347066) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (348746) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (350046) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.4400 bar[0m
+[0;32mI (351586) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (355246) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (356256) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (357976) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (359626) TelemetryManager:   ✓ TDS            = 212.4800 ppm[0m
+[0;32mI (362186) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (363886) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (364586) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:1(originator)[0m
+[0;32mI (364586) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (365086) wifi:<ba-add>idx:0 (ifx:0, dc:99:14:53:c3:04), tid:0, ssn:910, winSize:64[0m
+[0;32mI (365396) TelemetryManager:   ✓ TEMPERATURE    = 19.5600 C[0m
+[0;32mI (367536) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:1(originator)[0m
+[0;32mI (367536) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (369046) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (370006) wifi:<ba-add>idx:0 (ifx:0, dc:99:14:53:c3:04), tid:0, ssn:925, winSize:64[0m
+[0;32mI (370216) main: ♥ Heartbeat — system running[0m
+[0;32mI (370526) TelemetryManager:   ✓ FLOW           = 52.8700 L/min[0m
+[0;32mI (372536) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (373736) TelemetryManager:   ✓ PRESSURE       = 3.2900 bar[0m
+[0;32mI (375556) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (383466) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.4000 bar[0m
+[0;32mI (388666) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;33mW (389716) esp-tls: Failed to open new connection in specified timeout[0m
+[1;31mE (389716) transport_base: Failed to open a new connection[0m
+[1;31mE (389716) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (389716) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (389726) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (389996) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (392796) TelemetryManager:   ✓ TDS            = 193.2100 ppm[0m
+[0;32mI (393676) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (395456) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (400216) main: ♥ Heartbeat — system running[0m
+[0;32mI (402726) TelemetryManager:   ✓ TEMPERATURE    = 19.7600 C[0m
+[1;31mE (407536) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7280[0m
+[0;32mI (407536) esp-tls-mbedtls: Certificate verified.[0m
+[1;31mE (407536) esp-tls: Failed to open new connection[0m
+[1;31mE (407536) transport_base: Failed to open a new connection[0m
+[1;31mE (407546) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (407546) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (407556) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (409056) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:1(originator)[0m
+[0;32mI (409056) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (413376) wifi:<ba-add>idx:0 (ifx:0, dc:99:14:53:c3:04), tid:0, ssn:995, winSize:64[0m
+[0;32mI (415476) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (416266) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (418046) TelemetryManager:   ✓ FLOW           = 60.4400 L/min[0m
+[0;32mI (420176) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:1(originator)[0m
+[0;32mI (420176) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (420386) wifi:<ba-add>idx:0 (ifx:0, dc:99:14:53:c3:04), tid:0, ssn:1018, winSize:64[0m
+[0;32mI (424166) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (425896) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (427106) TelemetryManager:   ✓ PRESSURE       = 3.7900 bar[0m
+[0;32mI (428566) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (430026) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (430226) main: ♥ Heartbeat — system running[0m
+[0;32mI (431626) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.4800 bar[0m
+[0;32mI (434356) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (436826) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (438766) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (439886) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (441056) TelemetryManager:   ✓ TDS            = 182.6000 ppm[0m
+[0;32mI (443376) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (444286) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (445476) TelemetryManager:   ✓ TEMPERATURE    = 18.9900 C[0m
+[0;32mI (447816) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (448736) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (450096) TelemetryManager:   ✓ FLOW           = 61.5600 L/min[0m
+[0;32mI (452426) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (453346) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (454606) TelemetryManager:   ✓ PRESSURE       = 3.3200 bar[0m
+[0;32mI (456916) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (457846) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (459126) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.5200 bar[0m
+[0;32mI (460226) main: ♥ Heartbeat — system running[0m
+[0;32mI (461286) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (464326) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (465786) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (467396) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (468656) TelemetryManager:   ✓ TDS            = 186.6700 ppm[0m
+[0;32mI (470296) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (471906) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (473076) TelemetryManager:   ✓ TEMPERATURE    = 18.9800 C[0m
+[0;32mI (474786) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (476296) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (482206) TelemetryManager:   ✓ FLOW           = 60.2400 L/min[0m
+[0;32mI (483706) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (485426) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (486726) TelemetryManager:   ✓ PRESSURE       = 3.0200 bar[0m
+[0;32mI (488276) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (489966) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (490226) main: ♥ Heartbeat — system running[0m
+[0;32mI (491176) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.5100 bar[0m
+[0;32mI (494296) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (496376) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (497806) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (498866) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (500666) TelemetryManager:   ✓ TDS            = 187.9400 ppm[0m
+[0;32mI (502496) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (503286) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (505086) TelemetryManager:   ✓ TEMPERATURE    = 18.6400 C[0m
+[0;32mI (506556) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (507816) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (509496) TelemetryManager:   ✓ FLOW           = 54.9800 L/min[0m
+[0;32mI (510956) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (512406) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (513916) TelemetryManager:   ✓ PRESSURE       = 2.3100 bar[0m
+[0;32mI (515386) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (516996) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (518276) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.6600 bar[0m
+[0;32mI (520226) main: ♥ Heartbeat — system running[0m
+[0;32mI (521476) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (523476) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (525116) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (526086) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (527986) TelemetryManager:   ✓ TDS            = 208.3200 ppm[0m
+[0;32mI (529716) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (530696) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (532486) TelemetryManager:   ✓ TEMPERATURE    = 19.0200 C[0m
+[0;32mI (534216) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (535216) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (536996) TelemetryManager:   ✓ FLOW           = 52.4100 L/min[0m
+[0;32mI (538456) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (539806) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (541406) TelemetryManager:   ✓ PRESSURE       = 2.6600 bar[0m
+[0;32mI (542866) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (544246) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (545936) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.7200 bar[0m
+[0;32mI (548776) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (550226) main: ♥ Heartbeat — system running[0m
+[0;32mI (551136) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (553256) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (554156) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (555466) TelemetryManager:   ✓ TDS            = 207.1800 ppm[0m
+[0;32mI (557686) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (558716) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (559976) TelemetryManager:   ✓ TEMPERATURE    = 19.6800 C[0m
+[0;32mI (562196) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (563186) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (564396) TelemetryManager:   ✓ FLOW           = 47.1500 L/min[0m
+[0;32mI (566726) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (567646) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (568906) TelemetryManager:   ✓ PRESSURE       = 2.4700 bar[0m
+[0;32mI (571296) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (572106) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (573316) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.6900 bar[0m
+[0;32mI (575686) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (578516) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (580226) main: ♥ Heartbeat — system running[0m
+[0;32mI (580226) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (581656) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (582956) TelemetryManager:   ✓ TDS            = 194.1200 ppm[0m
+[0;32mI (584776) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (586156) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (587366) TelemetryManager:   ✓ TEMPERATURE    = 19.5500 C[0m
+[0;32mI (589276) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (590616) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (591786) TelemetryManager:   ✓ FLOW           = 43.5200 L/min[0m
+[0;32mI (593776) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (595026) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (596206) TelemetryManager:   ✓ PRESSURE       = 2.3800 bar[0m
+[0;32mI (598226) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (599396) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (600616) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.7200 bar[0m
+[0;32mI (602726) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (605816) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (607156) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (608856) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (610156) TelemetryManager:   ✓ TDS            = 194.2500 ppm[0m
+[0;32mI (610226) main: ♥ Heartbeat — system running[0m
+[0;32mI (611686) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (613436) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (614776) TelemetryManager:   ✓ TEMPERATURE    = 19.4200 C[0m
+[0;32mI (616176) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (617896) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (619186) TelemetryManager:   ✓ FLOW           = 40.6400 L/min[0m
+[0;32mI (620606) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (622326) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (623496) TelemetryManager:   ✓ PRESSURE       = 2.7000 bar[0m
+[0;32mI (625106) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (626736) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (630656) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.8000 bar[0m
+[0;32mI (634476) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (635856) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (637126) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (638646) TelemetryManager:   ✓ TDS            = 203.7900 ppm[0m
+[0;32mI (639036) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (640226) main: ♥ Heartbeat — system running[0m
+[0;32mI (640876) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (642066) TelemetryManager:   ✓ TEMPERATURE    = 18.7100 C[0m
+[0;32mI (643486) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (645176) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (646376) TelemetryManager:   ✓ FLOW           = 41.5000 L/min[0m
+[0;32mI (647946) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (649686) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (651006) TelemetryManager:   ✓ PRESSURE       = 2.5100 bar[0m
+[0;32mI (652436) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (654196) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (655706) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.8700 bar[0m
+[0;32mI (660916) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (661166) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (663056) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (670226) main: ♥ Heartbeat — system running[0m
+[0;32mI (670386) TelemetryManager:   ✓ TDS            = 223.6700 ppm[0m
+[0;32mI (671866) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (673286) TelemetryManager:   ✓ TEMPERATURE    = 19.4500 C[0m
+[0;32mI (675776) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (675816) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (677786) TelemetryManager:   ✓ FLOW           = 44.1000 L/min[0m
+[0;32mI (681986) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (686256) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (689136) TelemetryManager:   ✓ PRESSURE       = 2.3500 bar[0m
+[0;32mI (691066) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (692666) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (693846) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.8000 bar[0m
+[0;32mI (695526) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (699046) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (699966) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (700226) main: ♥ Heartbeat — system running[0m
+[0;32mI (701736) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (703176) TelemetryManager:   ✓ TDS            = 227.1500 ppm[0m
+[0;32mI (704486) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (706216) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (707516) TelemetryManager:   ✓ TEMPERATURE    = 19.8800 C[0m
+[0;32mI (709556) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (711356) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (712816) TelemetryManager:   ✓ FLOW           = 43.7000 L/min[0m
+[0;32mI (714496) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (715726) TelemetryManager:   ✓ PRESSURE       = 2.0400 bar[0m
+[0;32mI (716536) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (718346) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (719656) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.7800 bar[0m
+[0;32mI (721246) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (724856) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (725696) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (727476) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (728676) TelemetryManager:   ✓ TDS            = 235.7000 ppm[0m
+[0;32mI (730206) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (730226) main: ♥ Heartbeat — system running[0m
+[0;32mI (731916) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (737096) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (742116) TelemetryManager:   ✓ TEMPERATURE    = 19.6900 C[0m
+[0;32mI (743596) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (744826) TelemetryManager:   ✓ FLOW           = 43.7900 L/min[0m
+[0;32mI (746436) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (747646) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (749446) TelemetryManager:   ✓ PRESSURE       = 2.0800 bar[0m
+[0;32mI (750916) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (752186) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (753866) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.6600 bar[0m
+[0;32mI (756776) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (759066) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (760226) main: ♥ Heartbeat — system running[0m
+[0;32mI (760406) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (763646) TelemetryManager:   ✓ TDS            = 243.2600 ppm[0m
+[0;32mI (765316) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (766936) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (768206) TelemetryManager:   ✓ TEMPERATURE    = 20.2300 C[0m
+[0;32mI (770016) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (771496) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (772926) TelemetryManager:   ✓ FLOW           = 45.1500 L/min[0m
+[0;32mI (774456) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (776146) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (777336) TelemetryManager:   ✓ PRESSURE       = 1.7800 bar[0m
+[0;32mI (778956) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (780526) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (781756) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.6200 bar[0m
+[0;32mI (783336) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (786956) TelemetryManager: Uploading batch | device: 44:1D:64:FB:48:74[0m
+[0;32mI (787766) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (789536) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (790226) main: ♥ Heartbeat — system running[0m
+[0;32mI (790786) TelemetryManager:   ✓ TDS            = 233.7300 ppm[0m
+[0;32mI (792206) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (793926) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (795196) TelemetryManager:   ✓ TEMPERATURE    = 20.2300 C[0m
+[0;32mI (796726) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (798446) esp-x509-crt-bundle: Certificate validated[0m

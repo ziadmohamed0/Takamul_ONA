@@ -1,0 +1,4436 @@
+����xx app_init�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6276
+load:0x40078000,len:15748
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3860
+entry 0x4008063c
+[0;32mI (31) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Apr 22 2026 01:46:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v3.1[0m
+[0;32mI (36) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (40) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (51) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0b834h ( 47156) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001b85c vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (107) esp_image: segment 2: paddr=0001b880 vaddr=3ffb0000 size=02324h (  8996) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=0001dbac vaddr=40080000 size=0246ch (  9324) load[0m
+[0;32mI (122) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=186d8h (100056) map[0m
+[0;32mI (160) esp_image: segment 5: paddr=00038700 vaddr=4008246c size=0b8b4h ( 47284) load[0m
+[0;32mI (185) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (185) boot: Disabling RNG early entropy source...[0m
+[0;32mI (195) cpu_start: Multicore app[0m
+[0;32mI (204) cpu_start: Pro cpu start user code[0m
+[0;32mI (204) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (204) app_init: Application information:[0m
+[0;32mI (204) app_init: Project name:     test_modbus[0m
+[0;32mI (208) app_init: App version:      b70fffd-dirty[0m
+[0;32mI (212) app_init: Compile time:     Apr 22 2026 01:46:05[0m
+[0;32mI (218) app_init: ELF file SHA256:  cdeebc409...[0m
+[0;32mI (222) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (226) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (230) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (234) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (238) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (244) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (249) heap_init: At 3FFB2D28 len 0002D2D8 (180 KiB): DRAM[0m
+[0;32mI (254) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (260) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (265) heap_init: At 4008DD20 len 000122E0 (72 KiB): IRAM[0m
+[0;32mI (272) spi_flash: detected chip: generic[0m
+[0;32mI (274) spi_flash: flash io: dio[0m
+[0;33mW (277) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (290) main_task: Started on CPU0[0m
+[0;32mI (300) main_task: Calling app_main()[0m
+[0;32mI (300) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (300) MB_SIM: DE pin GPIO4 configured as output[0m
+[0;32mI (300) MB_SIM: UART2 ready — Slave ID=1  Baud=19200[0m
+[0;32mI (310) main_task: Returned from app_main()[0m
+[0;32mI (310) MB_SIM: Modbus task running — slave ID=1  baud=19200[0m
+
+[SIM] Temp= 25.2 C  Press= 1013.5 hPa  Flow= 20.32 L/min  Status=0x8000  Uptime=0s
+
+[SIM] Temp= 25.5 C  Press= 1013.8 hPa  Flow= 20.65 L/min  Status=0x8000  Uptime=0s
+
+[SIM] Temp= 25.7 C  Press= 1014.0 hPa  Flow= 20.97 L/min  Status=0x8000  Uptime=0s
+
+[SIM] Temp= 26.0 C  Press= 1014.3 hPa  Flow= 21.29 L/min  Status=0x8000  Uptime=0s
+
+[SIM] Temp= 26.2 C  Press= 1014.6 hPa  Flow= 21.60 L/min  Status=0x8000  Uptime=1s
+
+[SIM] Temp= 26.5 C  Press= 1014.9 hPa  Flow= 21.90 L/min  Status=0x8000  Uptime=1s
+
+[SIM] Temp= 26.7 C  Press= 1015.1 hPa  Flow= 22.20 L/min  Status=0x8000  Uptime=1s
+
+[SIM] Temp= 26.9 C  Press= 1015.4 hPa  Flow= 22.48 L/min  Status=0x8000  Uptime=1s
+
+[SIM] Temp= 27.2 C  Press= 1015.7 hPa  Flow= 22.76 L/min  Status=0x8000  Uptime=1s
+
+[SIM] Temp= 27.4 C  Press= 1015.9 hPa  Flow= 23.03 L/min  Status=0x8000  Uptime=2s
+
+[SIM] Temp= 27.6 C  Press= 1016.2 hPa  Flow= 23.28 L/min  Status=0x8000  Uptime=2s
+
+[SIM] Temp= 27.8 C  Press= 1016.5 hPa  Flow= 23.52 L/min  Status=0x8000  Uptime=2s
+
+[SIM] Temp= 28.0 C  Press= 1016.7 hPa  Flow= 23.74 L/min  Status=0x8000  Uptime=2s
+
+[SIM] Temp= 28.2 C  Press= 1017.0 hPa  Flow= 23.95 L/min  Status=0x8000  Uptime=2s
+
+[SIM] Temp= 28.4 C  Press= 1017.2 hPa  Flow= 24.14 L/min  Status=0x8000  Uptime=3s
+
+[SIM] Temp= 28.6 C  Press= 1017.4 hPa  Flow= 24.31 L/min  Status=0x8000  Uptime=3s
+
+[SIM] Temp= 28.8 C  Press= 1017.7 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=3s
+
+[SIM] Temp= 28.9 C  Press= 1017.9 hPa  Flow= 24.60 L/min  Status=0x8000  Uptime=3s
+
+[SIM] Temp= 29.1 C  Press= 1018.1 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=3s
+
+[SIM] Temp= 29.2 C  Press= 1018.4 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=4s
+
+[SIM] Temp= 29.3 C  Press= 1018.6 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=4s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=4s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=4s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=4s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=5s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=5s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=5s
+
+[SIM] Temp= 29.9 C  Press= 1019.8 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=5s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=5s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.64 L/min  Status=0x8000  Uptime=6s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.51 L/min  Status=0x8000  Uptime=6s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=6s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=6s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.01 L/min  Status=0x8000  Uptime=6s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.81 L/min  Status=0x8000  Uptime=7s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.59 L/min  Status=0x8000  Uptime=7s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.36 L/min  Status=0x8000  Uptime=7s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.11 L/min  Status=0x8000  Uptime=7s
+
+[SIM] Temp= 29.6 C  Press= 1021.0 hPa  Flow= 22.85 L/min  Status=0x8000  Uptime=7s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.58 L/min  Status=0x8000  Uptime=8s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.29 L/min  Status=0x8000  Uptime=8s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 22.00 L/min  Status=0x8000  Uptime=8s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.70 L/min  Status=0x8000  Uptime=8s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.39 L/min  Status=0x8000  Uptime=8s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.07 L/min  Status=0x8000  Uptime=9s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.76 L/min  Status=0x8000  Uptime=9s
+
+[SIM] Temp= 28.6 C  Press= 1021.2 hPa  Flow= 20.43 L/min  Status=0x8000  Uptime=9s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.11 L/min  Status=0x8000  Uptime=9s
+
+[SIM] Temp= 28.2 C  Press= 1021.1 hPa  Flow= 19.78 L/min  Status=0x8000  Uptime=9s
+
+[SIM] Temp= 28.0 C  Press= 1021.1 hPa  Flow= 19.46 L/min  Status=0x8000  Uptime=10s
+
+[SIM] Temp= 27.8 C  Press= 1021.0 hPa  Flow= 19.14 L/min  Status=0x8000  Uptime=10s
+
+[SIM] Temp= 27.6 C  Press= 1021.0 hPa  Flow= 18.82 L/min  Status=0x8000  Uptime=10s
+
+[SIM] Temp= 27.4 C  Press= 1020.9 hPa  Flow= 18.51 L/min  Status=0x8000  Uptime=10s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.20 L/min  Status=0x8000  Uptime=10s
+
+[SIM] Temp= 26.9 C  Press= 1020.7 hPa  Flow= 17.90 L/min  Status=0x8000  Uptime=11s
+
+[SIM] Temp= 26.7 C  Press= 1020.6 hPa  Flow= 17.61 L/min  Status=0x8000  Uptime=11s
+
+[SIM] Temp= 26.4 C  Press= 1020.5 hPa  Flow= 17.33 L/min  Status=0x8000  Uptime=11s
+
+[SIM] Temp= 26.2 C  Press= 1020.4 hPa  Flow= 17.06 L/min  Status=0x8000  Uptime=11s
+
+[SIM] Temp= 26.0 C  Press= 1020.2 hPa  Flow= 16.80 L/min  Status=0x8000  Uptime=11s
+
+[SIM] Temp= 25.7 C  Press= 1020.1 hPa  Flow= 16.56 L/min  Status=0x8000  Uptime=12s
+
+[SIM] Temp= 25.5 C  Press= 1020.0 hPa  Flow= 16.33 L/min  Status=0x8000  Uptime=12s
+
+[SIM] Temp= 25.2 C  Press= 1019.8 hPa  Flow= 16.12 L/min  Status=0x8000  Uptime=12s
+
+[SIM] Temp= 25.0 C  Press= 1019.6 hPa  Flow= 15.92 L/min  Status=0x8000  Uptime=12s
+
+[SIM] Temp= 24.7 C  Press= 1019.5 hPa  Flow= 15.74 L/min  Status=0x8000  Uptime=12s
+
+[SIM] Temp= 24.5 C  Press= 1019.3 hPa  Flow= 15.58 L/min  Status=0x8000  Uptime=13s
+
+[SIM] Temp= 24.2 C  Press= 1019.1 hPa  Flow= 15.44 L/min  Status=0x8000  Uptime=13s
+
+[SIM] Temp= 24.0 C  Press= 1018.9 hPa  Flow= 15.32 L/min  Status=0x8000  Uptime=13s
+
+[SIM] Temp= 23.7 C  Press= 1018.7 hPa  Flow= 15.21 L/min  Status=0x8000  Uptime=13s
+
+[SIM] Temp= 23.5 C  Press= 1018.5 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=13s
+
+[SIM] Temp= 23.2 C  Press= 1018.3 hPa  Flow= 15.07 L/min  Status=0x8000  Uptime=14s
+
+[SIM] Temp= 23.0 C  Press= 1018.1 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=14s
+
+[SIM] Temp= 22.8 C  Press= 1017.9 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=14s
+
+[SIM] Temp= 22.6 C  Press= 1017.6 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=14s
+
+[SIM] Temp= 22.4 C  Press= 1017.4 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=14s
+
+[SIM] Temp= 22.1 C  Press= 1017.2 hPa  Flow= 15.07 L/min  Status=0x8000  Uptime=15s
+
+[SIM] Temp= 21.9 C  Press= 1016.9 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=15s
+
+[SIM] Temp= 21.7 C  Press= 1016.7 hPa  Flow= 15.21 L/min  Status=0x8000  Uptime=15s
+
+[SIM] Temp= 21.6 C  Press= 1016.4 hPa  Flow= 15.32 L/min  Status=0x8000  Uptime=15s
+
+[SIM] Temp= 21.4 C  Press= 1016.1 hPa  Flow= 15.44 L/min  Status=0x8000  Uptime=15s
+
+[SIM] Temp= 21.2 C  Press= 1015.9 hPa  Flow= 15.58 L/min  Status=0x8000  Uptime=16s
+
+[SIM] Temp= 21.1 C  Press= 1015.6 hPa  Flow= 15.74 L/min  Status=0x8000  Uptime=16s
+
+[SIM] Temp= 20.9 C  Press= 1015.3 hPa  Flow= 15.92 L/min  Status=0x8000  Uptime=16s
+
+[SIM] Temp= 20.8 C  Press= 1015.1 hPa  Flow= 16.12 L/min  Status=0x8000  Uptime=16s
+
+[SIM] Temp= 20.6 C  Press= 1014.8 hPa  Flow= 16.33 L/min  Status=0x8000  Uptime=16s
+
+[SIM] Temp= 20.5 C  Press= 1014.5 hPa  Flow= 16.56 L/min  Status=0x8000  Uptime=17s
+
+[SIM] Temp= 20.4 C  Press= 1014.2 hPa  Flow= 16.81 L/min  Status=0x8000  Uptime=17s
+
+[SIM] Temp= 20.3 C  Press= 1014.0 hPa  Flow= 17.06 L/min  Status=0x8000  Uptime=17s
+
+[SIM] Temp= 20.2 C  Press= 1013.7 hPa  Flow= 17.33 L/min  Status=0x8000  Uptime=17s
+
+[SIM] Temp= 20.2 C  Press= 1013.4 hPa  Flow= 17.61 L/min  Status=0x8000  Uptime=17s
+
+[SIM] Temp= 20.1 C  Press= 1013.1 hPa  Flow= 17.90 L/min  Status=0x8000  Uptime=18s
+
+[SIM] Temp= 20.1 C  Press= 1012.9 hPa  Flow= 18.20 L/min  Status=0x8000  Uptime=18s
+
+[SIM] Temp= 20.0 C  Press= 1012.6 hPa  Flow= 18.51 L/min  Status=0x8000  Uptime=18s
+
+[SIM] Temp= 20.0 C  Press= 1012.3 hPa  Flow= 18.82 L/min  Status=0x8000  Uptime=18s
+
+[SIM] Temp= 20.0 C  Press= 1012.0 hPa  Flow= 19.14 L/min  Status=0x8000  Uptime=18s
+
+[SIM] Temp= 20.0 C  Press= 1011.7 hPa  Flow= 19.46 L/min  Status=0x8000  Uptime=19s
+
+[SIM] Temp= 20.0 C  Press= 1011.5 hPa  Flow= 19.78 L/min  Status=0x8000  Uptime=19s
+
+[SIM] Temp= 20.0 C  Press= 1011.2 hPa  Flow= 20.11 L/min  Status=0x8000  Uptime=19s
+
+[SIM] Temp= 20.1 C  Press= 1010.9 hPa  Flow= 20.43 L/min  Status=0x8000  Uptime=19s
+
+[SIM] Temp= 20.1 C  Press= 1010.7 hPa  Flow= 20.76 L/min  Status=0x8000  Uptime=19s
+
+[SIM] Temp= 20.2 C  Press= 1010.4 hPa  Flow= 21.08 L/min  Status=0x8000  Uptime=20s
+
+[SIM] Temp= 20.3 C  Press= 1010.1 hPa  Flow= 21.39 L/min  Status=0x8000  Uptime=20s
+
+[SIM] Temp= 20.4 C  Press= 1009.9 hPa  Flow= 21.70 L/min  Status=0x8000  Uptime=20s
+
+[SIM] Temp= 20.5 C  Press= 1009.6 hPa  Flow= 22.00 L/min  Status=0x8000  Uptime=20s
+
+[SIM] Temp= 20.6 C  Press= 1009.4 hPa  Flow= 22.29 L/min  Status=0x8000  Uptime=20s
+
+[SIM] Temp= 20.7 C  Press= 1009.1 hPa  Flow= 22.58 L/min  Status=0x8000  Uptime=21s
+
+[SIM] Temp= 20.8 C  Press= 1008.9 hPa  Flow= 22.85 L/min  Status=0x8000  Uptime=21s
+
+[SIM] Temp= 21.0 C  Press= 1008.7 hPa  Flow= 23.11 L/min  Status=0x8000  Uptime=21s
+
+[SIM] Temp= 21.1 C  Press= 1008.4 hPa  Flow= 23.36 L/min  Status=0x8000  Uptime=21s
+
+[SIM] Temp= 21.3 C  Press= 1008.2 hPa  Flow= 23.59 L/min  Status=0x8000  Uptime=21s
+
+[SIM] Temp= 21.5 C  Press= 1008.0 hPa  Flow= 23.81 L/min  Status=0x8000  Uptime=22s
+
+[SIM] Temp= 21.7 C  Press= 1007.8 hPa  Flow= 24.01 L/min  Status=0x8000  Uptime=22s
+
+[SIM] Temp= 21.8 C  Press= 1007.6 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=22s
+
+[SIM] Temp= 22.0 C  Press= 1007.4 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=22s
+
+[SIM] Temp= 22.2 C  Press= 1007.2 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=22s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=23s
+
+[SIM] Temp= 22.7 C  Press= 1006.8 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=23s
+
+[SIM] Temp= 22.9 C  Press= 1006.7 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=23s
+
+[SIM] Temp= 23.1 C  Press= 1006.5 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=23s
+
+[SIM] Temp= 23.4 C  Press= 1006.4 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=23s
+
+[SIM] Temp= 23.6 C  Press= 1006.2 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=24s
+
+[SIM] Temp= 23.8 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=24s
+
+[SIM] Temp= 24.1 C  Press= 1006.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=24s
+
+[SIM] Temp= 24.3 C  Press= 1005.9 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=24s
+
+[SIM] Temp= 24.6 C  Press= 1005.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=24s
+
+[SIM] Temp= 24.8 C  Press= 1005.7 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=25s
+
+[SIM] Temp= 25.1 C  Press= 1013.3 hPa  Flow= 20.11 L/min  Status=0x8000  Uptime=25s
+
+[SIM] Temp= 25.3 C  Press= 1013.6 hPa  Flow= 20.43 L/min  Status=0x8000  Uptime=25s
+
+[SIM] Temp= 25.6 C  Press= 1013.9 hPa  Flow= 20.76 L/min  Status=0x8000  Uptime=25s
+
+[SIM] Temp= 25.8 C  Press= 1014.1 hPa  Flow= 21.08 L/min  Status=0x8000  Uptime=25s
+
+[SIM] Temp= 26.1 C  Press= 1014.4 hPa  Flow= 21.39 L/min  Status=0x8000  Uptime=26s
+
+[SIM] Temp= 26.3 C  Press= 1014.7 hPa  Flow= 21.70 L/min  Status=0x8000  Uptime=26s
+
+[SIM] Temp= 26.6 C  Press= 1015.0 hPa  Flow= 22.00 L/min  Status=0x8000  Uptime=26s
+
+[SIM] Temp= 26.8 C  Press= 1015.2 hPa  Flow= 22.29 L/min  Status=0x8000  Uptime=26s
+
+[SIM] Temp= 27.0 C  Press= 1015.5 hPa  Flow= 22.58 L/min  Status=0x8000  Uptime=26s
+
+[SIM] Temp= 27.3 C  Press= 1015.8 hPa  Flow= 22.85 L/min  Status=0x8000  Uptime=27s
+
+[SIM] Temp= 27.5 C  Press= 1016.0 hPa  Flow= 23.11 L/min  Status=0x8000  Uptime=27s
+
+[SIM] Temp= 27.7 C  Press= 1016.3 hPa  Flow= 23.36 L/min  Status=0x8000  Uptime=27s
+
+[SIM] Temp= 27.9 C  Press= 1016.5 hPa  Flow= 23.59 L/min  Status=0x8000  Uptime=27s
+
+[SIM] Temp= 28.1 C  Press= 1016.8 hPa  Flow= 23.81 L/min  Status=0x8000  Uptime=27s
+
+[SIM] Temp= 28.3 C  Press= 1017.0 hPa  Flow= 24.01 L/min  Status=0x8000  Uptime=28s
+
+[SIM] Temp= 28.5 C  Press= 1017.3 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=28s
+
+[SIM] Temp= 28.6 C  Press= 1017.5 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=28s
+
+[SIM] Temp= 28.8 C  Press= 1017.8 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=28s
+
+[SIM] Temp= 29.0 C  Press= 1018.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=28s
+
+[SIM] Temp= 29.1 C  Press= 1018.2 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=29s
+
+[SIM] Temp= 29.3 C  Press= 1018.4 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=29s
+
+[SIM] Temp= 29.4 C  Press= 1018.6 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=29s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=29s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=29s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=30s
+
+[SIM] Temp= 29.8 C  Press= 1019.4 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=30s
+
+[SIM] Temp= 29.8 C  Press= 1019.6 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=30s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=30s
+
+[SIM] Temp= 29.9 C  Press= 1019.9 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=30s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=31s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.60 L/min  Status=0x8000  Uptime=31s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=31s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.31 L/min  Status=0x8000  Uptime=31s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.14 L/min  Status=0x8000  Uptime=31s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.95 L/min  Status=0x8000  Uptime=32s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.74 L/min  Status=0x8000  Uptime=32s
+
+[SIM] Temp= 29.8 C  Press= 1020.8 hPa  Flow= 23.52 L/min  Status=0x8000  Uptime=32s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.28 L/min  Status=0x8000  Uptime=32s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.02 L/min  Status=0x8000  Uptime=32s
+
+[SIM] Temp= 29.6 C  Press= 1021.0 hPa  Flow= 22.76 L/min  Status=0x8000  Uptime=33s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.48 L/min  Status=0x8000  Uptime=33s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.20 L/min  Status=0x8000  Uptime=33s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 21.90 L/min  Status=0x8000  Uptime=33s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.60 L/min  Status=0x8000  Uptime=33s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.28 L/min  Status=0x8000  Uptime=34s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.97 L/min  Status=0x8000  Uptime=34s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.65 L/min  Status=0x8000  Uptime=34s
+
+[SIM] Temp= 28.5 C  Press= 1021.2 hPa  Flow= 20.32 L/min  Status=0x8000  Uptime=34s
+
+[SIM] Temp= 28.3 C  Press= 1021.1 hPa  Flow= 20.00 L/min  Status=0x8000  Uptime=34s
+
+[SIM] Temp= 28.1 C  Press= 1021.1 hPa  Flow= 19.67 L/min  Status=0x8000  Uptime=35s
+
+[SIM] Temp= 27.9 C  Press= 1021.1 hPa  Flow= 19.35 L/min  Status=0x8000  Uptime=35s
+
+[SIM] Temp= 27.7 C  Press= 1021.0 hPa  Flow= 19.03 L/min  Status=0x8000  Uptime=35s
+
+[SIM] Temp= 27.5 C  Press= 1020.9 hPa  Flow= 18.71 L/min  Status=0x8000  Uptime=35s
+
+[SIM] Temp= 27.3 C  Press= 1020.9 hPa  Flow= 18.40 L/min  Status=0x8000  Uptime=35s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.10 L/min  Status=0x8000  Uptime=36s
+
+[SIM] Temp= 26.8 C  Press= 1020.7 hPa  Flow= 17.80 L/min  Status=0x8000  Uptime=36s
+
+[SIM] Temp= 26.6 C  Press= 1020.6 hPa  Flow= 17.51 L/min  Status=0x8000  Uptime=36s
+
+[SIM] Temp= 26.4 C  Press= 1020.5 hPa  Flow= 17.24 L/min  Status=0x8000  Uptime=36s
+
+[SIM] Temp= 26.1 C  Press= 1020.3 hPa  Flow= 16.97 L/min  Status=0x8000  Uptime=36s
+
+[SIM] Temp= 25.9 C  Press= 1020.2 hPa  Flow= 16.72 L/min  Status=0x8000  Uptime=37s
+
+[SIM] Temp= 25.6 C  Press= 1020.1 hPa  Flow= 16.48 L/min  Status=0x8000  Uptime=37s
+
+[SIM] Temp= 25.4 C  Press= 1019.9 hPa  Flow= 16.26 L/min  Status=0x8000  Uptime=37s
+
+[SIM] Temp= 25.1 C  Press= 1019.8 hPa  Flow= 16.05 L/min  Status=0x8000  Uptime=37s
+
+[SIM] Temp= 24.9 C  Press= 1019.6 hPa  Flow= 15.86 L/min  Status=0x8000  Uptime=37s
+
+[SIM] Temp= 24.6 C  Press= 1019.4 hPa  Flow= 15.69 L/min  Status=0x8000  Uptime=38s
+
+[SIM] Temp= 24.4 C  Press= 1019.2 hPa  Flow= 15.53 L/min  Status=0x8000  Uptime=38s
+
+[SIM] Temp= 24.1 C  Press= 1019.0 hPa  Flow= 15.40 L/min  Status=0x8000  Uptime=38s
+
+[SIM] Temp= 23.9 C  Press= 1018.9 hPa  Flow= 15.28 L/min  Status=0x8000  Uptime=38s
+
+[SIM] Temp= 23.6 C  Press= 1018.7 hPa  Flow= 15.18 L/min  Status=0x8000  Uptime=38s
+
+[SIM] Temp= 23.4 C  Press= 1018.4 hPa  Flow= 15.11 L/min  Status=0x8000  Uptime=39s
+
+[SIM] Temp= 23.2 C  Press= 1018.2 hPa  Flow= 15.05 L/min  Status=0x8000  Uptime=39s
+
+[SIM] Temp= 22.9 C  Press= 1018.0 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=39s
+
+[SIM] Temp= 22.7 C  Press= 1017.8 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=39s
+
+[SIM] Temp= 22.5 C  Press= 1017.5 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=39s
+
+[SIM] Temp= 22.3 C  Press= 1017.3 hPa  Flow= 15.04 L/min  Status=0x8000  Uptime=40s
+
+[SIM] Temp= 22.1 C  Press= 1017.1 hPa  Flow= 15.08 L/min  Status=0x8000  Uptime=40s
+
+[SIM] Temp= 21.9 C  Press= 1016.8 hPa  Flow= 15.15 L/min  Status=0x8000  Uptime=40s
+
+[SIM] Temp= 21.7 C  Press= 1016.6 hPa  Flow= 15.25 L/min  Status=0x8000  Uptime=40s
+
+[SIM] Temp= 21.5 C  Press= 1016.3 hPa  Flow= 15.36 L/min  Status=0x8000  Uptime=40s
+
+[SIM] Temp= 21.3 C  Press= 1016.1 hPa  Flow= 15.49 L/min  Status=0x8000  Uptime=41s
+
+[SIM] Temp= 21.2 C  Press= 1015.8 hPa  Flow= 15.63 L/min  Status=0x8000  Uptime=41s
+
+[SIM] Temp= 21.0 C  Press= 1015.5 hPa  Flow= 15.80 L/min  Status=0x8000  Uptime=41s
+
+[SIM] Temp= 20.9 C  Press= 1015.3 hPa  Flow= 15.99 L/min  Status=0x8000  Uptime=41s
+
+[SIM] Temp= 20.7 C  Press= 1015.0 hPa  Flow= 16.19 L/min  Status=0x8000  Uptime=41s
+
+[SIM] Temp= 20.6 C  Press= 1014.7 hPa  Flow= 16.41 L/min  Status=0x8000  Uptime=42s
+
+[SIM] Temp= 20.5 C  Press= 1014.4 hPa  Flow= 16.64 L/min  Status=0x8000  Uptime=42s
+
+[SIM] Temp= 20.4 C  Press= 1014.2 hPa  Flow= 16.89 L/min  Status=0x8000  Uptime=42s
+
+[SIM] Temp= 20.3 C  Press= 1013.9 hPa  Flow= 17.15 L/min  Status=0x8000  Uptime=42s
+
+[SIM] Temp= 20.2 C  Press= 1013.6 hPa  Flow= 17.42 L/min  Status=0x8000  Uptime=42s
+
+[SIM] Temp= 20.2 C  Press= 1013.3 hPa  Flow= 17.71 L/min  Status=0x8000  Uptime=43s
+
+[SIM] Temp= 20.1 C  Press= 1013.0 hPa  Flow= 18.00 L/min  Status=0x8000  Uptime=43s
+
+[SIM] Temp= 20.1 C  Press= 1012.8 hPa  Flow= 18.30 L/min  Status=0x8000  Uptime=43s
+
+[SIM] Temp= 20.0 C  Press= 1012.5 hPa  Flow= 18.61 L/min  Status=0x8000  Uptime=43s
+
+[SIM] Temp= 20.0 C  Press= 1012.2 hPa  Flow= 18.93 L/min  Status=0x8000  Uptime=43s
+
+[SIM] Temp= 20.0 C  Press= 1011.9 hPa  Flow= 19.25 L/min  Status=0x8000  Uptime=44s
+
+[SIM] Temp= 20.0 C  Press= 1011.6 hPa  Flow= 19.57 L/min  Status=0x8000  Uptime=44s
+
+[SIM] Temp= 20.0 C  Press= 1011.4 hPa  Flow= 19.89 L/min  Status=0x8000  Uptime=44s
+
+[SIM] Temp= 20.1 C  Press= 1011.1 hPa  Flow= 20.22 L/min  Status=0x8000  Uptime=44s
+
+[SIM] Temp= 20.1 C  Press= 1010.8 hPa  Flow= 20.54 L/min  Status=0x8000  Uptime=44s
+
+[SIM] Temp= 20.2 C  Press= 1010.6 hPa  Flow= 20.86 L/min  Status=0x8000  Uptime=45s
+
+[SIM] Temp= 20.2 C  Press= 1010.3 hPa  Flow= 21.18 L/min  Status=0x8000  Uptime=45s
+
+[SIM] Temp= 20.3 C  Press= 1010.0 hPa  Flow= 21.50 L/min  Status=0x8000  Uptime=45s
+
+[SIM] Temp= 20.4 C  Press= 1009.8 hPa  Flow= 21.80 L/min  Status=0x8000  Uptime=45s
+
+[SIM] Temp= 20.5 C  Press= 1009.5 hPa  Flow= 22.10 L/min  Status=0x8000  Uptime=45s
+
+[SIM] Temp= 20.6 C  Press= 1009.3 hPa  Flow= 22.39 L/min  Status=0x8000  Uptime=46s
+
+[SIM] Temp= 20.7 C  Press= 1009.1 hPa  Flow= 22.67 L/min  Status=0x8000  Uptime=46s
+
+[SIM] Temp= 20.9 C  Press= 1008.8 hPa  Flow= 22.94 L/min  Status=0x8000  Uptime=46s
+
+[SIM] Temp= 21.0 C  Press= 1008.6 hPa  Flow= 23.20 L/min  Status=0x8000  Uptime=46s
+
+[SIM] Temp= 21.2 C  Press= 1008.4 hPa  Flow= 23.44 L/min  Status=0x8000  Uptime=46s
+
+[SIM] Temp= 21.4 C  Press= 1008.1 hPa  Flow= 23.67 L/min  Status=0x8000  Uptime=47s
+
+[SIM] Temp= 21.5 C  Press= 1007.9 hPa  Flow= 23.88 L/min  Status=0x8000  Uptime=47s
+
+[SIM] Temp= 21.7 C  Press= 1007.7 hPa  Flow= 24.08 L/min  Status=0x8000  Uptime=47s
+
+[SIM] Temp= 21.9 C  Press= 1007.5 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=47s
+
+[SIM] Temp= 22.1 C  Press= 1007.3 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=47s
+
+[SIM] Temp= 22.3 C  Press= 1007.1 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=48s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.68 L/min  Status=0x8000  Uptime=48s
+
+[SIM] Temp= 22.8 C  Press= 1006.8 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=48s
+
+[SIM] Temp= 23.0 C  Press= 1006.6 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=48s
+
+[SIM] Temp= 23.2 C  Press= 1006.5 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=48s
+
+[SIM] Temp= 23.4 C  Press= 1006.3 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=49s
+
+[SIM] Temp= 23.7 C  Press= 1006.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=49s
+
+[SIM] Temp= 23.9 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=49s
+
+[SIM] Temp= 24.2 C  Press= 1005.9 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=49s
+
+[SIM] Temp= 24.4 C  Press= 1005.8 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=49s
+
+[SIM] Temp= 24.7 C  Press= 1005.7 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=50s
+
+[SIM] Temp= 24.9 C  Press= 1005.6 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=50s
+
+[SIM] Temp= 25.2 C  Press= 1013.4 hPa  Flow= 20.22 L/min  Status=0x8000  Uptime=50s
+
+[SIM] Temp= 25.4 C  Press= 1013.7 hPa  Flow= 20.54 L/min  Status=0x8000  Uptime=50s
+
+[SIM] Temp= 25.7 C  Press= 1013.9 hPa  Flow= 20.86 L/min  Status=0x8000  Uptime=50s
+
+[SIM] Temp= 25.9 C  Press= 1014.2 hPa  Flow= 21.18 L/min  Status=0x8000  Uptime=51s
+
+[SIM] Temp= 26.2 C  Press= 1014.5 hPa  Flow= 21.50 L/min  Status=0x8000  Uptime=51s
+
+[SIM] Temp= 26.4 C  Press= 1014.8 hPa  Flow= 21.80 L/min  Status=0x8000  Uptime=51s
+
+[SIM] Temp= 26.6 C  Press= 1015.1 hPa  Flow= 22.10 L/min  Status=0x8000  Uptime=51s
+
+[SIM] Temp= 26.9 C  Press= 1015.3 hPa  Flow= 22.39 L/min  Status=0x8000  Uptime=51s
+
+[SIM] Temp= 27.1 C  Press= 1015.6 hPa  Flow= 22.67 L/min  Status=0x8000  Uptime=52s
+
+[SIM] Temp= 27.3 C  Press= 1015.9 hPa  Flow= 22.94 L/min  Status=0x8000  Uptime=52s
+
+[SIM] Temp= 27.5 C  Press= 1016.1 hPa  Flow= 23.20 L/min  Status=0x8000  Uptime=52s
+
+[SIM] Temp= 27.8 C  Press= 1016.4 hPa  Flow= 23.44 L/min  Status=0x8000  Uptime=52s
+
+[SIM] Temp= 28.0 C  Press= 1016.6 hPa  Flow= 23.67 L/min  Status=0x8000  Uptime=52s
+
+[SIM] Temp= 28.2 C  Press= 1016.9 hPa  Flow= 23.88 L/min  Status=0x8000  Uptime=53s
+
+[SIM] Temp= 28.3 C  Press= 1017.1 hPa  Flow= 24.08 L/min  Status=0x8000  Uptime=53s
+
+[SIM] Temp= 28.5 C  Press= 1017.4 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=53s
+
+[SIM] Temp= 28.7 C  Press= 1017.6 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=53s
+
+[SIM] Temp= 28.9 C  Press= 1017.8 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=53s
+
+[SIM] Temp= 29.0 C  Press= 1018.1 hPa  Flow= 24.68 L/min  Status=0x8000  Uptime=54s
+
+[SIM] Temp= 29.2 C  Press= 1018.3 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=54s
+
+[SIM] Temp= 29.3 C  Press= 1018.5 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=54s
+
+[SIM] Temp= 29.4 C  Press= 1018.7 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=54s
+
+[SIM] Temp= 29.5 C  Press= 1018.9 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=54s
+
+[SIM] Temp= 29.6 C  Press= 1019.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=55s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=55s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=55s
+
+[SIM] Temp= 29.9 C  Press= 1019.6 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=55s
+
+[SIM] Temp= 29.9 C  Press= 1019.8 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=55s
+
+[SIM] Temp= 30.0 C  Press= 1019.9 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=56s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.68 L/min  Status=0x8000  Uptime=56s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=56s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=56s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=56s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.08 L/min  Status=0x8000  Uptime=57s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.88 L/min  Status=0x8000  Uptime=57s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.67 L/min  Status=0x8000  Uptime=57s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.44 L/min  Status=0x8000  Uptime=57s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.19 L/min  Status=0x8000  Uptime=57s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 22.94 L/min  Status=0x8000  Uptime=58s
+
+[SIM] Temp= 29.6 C  Press= 1021.1 hPa  Flow= 22.67 L/min  Status=0x8000  Uptime=58s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.39 L/min  Status=0x8000  Uptime=58s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.10 L/min  Status=0x8000  Uptime=58s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.80 L/min  Status=0x8000  Uptime=58s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.49 L/min  Status=0x8000  Uptime=59s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.18 L/min  Status=0x8000  Uptime=59s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.86 L/min  Status=0x8000  Uptime=59s
+
+[SIM] Temp= 28.6 C  Press= 1021.2 hPa  Flow= 20.54 L/min  Status=0x8000  Uptime=59s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.21 L/min  Status=0x8000  Uptime=59s
+
+[SIM] Temp= 28.3 C  Press= 1021.1 hPa  Flow= 19.89 L/min  Status=0x8000  Uptime=60s
+
+[SIM] Temp= 28.1 C  Press= 1021.1 hPa  Flow= 19.57 L/min  Status=0x8000  Uptime=60s
+
+[SIM] Temp= 27.9 C  Press= 1021.0 hPa  Flow= 19.24 L/min  Status=0x8000  Uptime=60s
+
+[SIM] Temp= 27.6 C  Press= 1021.0 hPa  Flow= 18.92 L/min  Status=0x8000  Uptime=60s
+
+[SIM] Temp= 27.4 C  Press= 1020.9 hPa  Flow= 18.61 L/min  Status=0x8000  Uptime=60s
+
+[SIM] Temp= 27.2 C  Press= 1020.8 hPa  Flow= 18.30 L/min  Status=0x8000  Uptime=61s
+
+[SIM] Temp= 27.0 C  Press= 1020.7 hPa  Flow= 18.00 L/min  Status=0x8000  Uptime=61s
+
+[SIM] Temp= 26.8 C  Press= 1020.6 hPa  Flow= 17.70 L/min  Status=0x8000  Uptime=61s
+
+[SIM] Temp= 26.5 C  Press= 1020.5 hPa  Flow= 17.42 L/min  Status=0x8000  Uptime=61s
+
+[SIM] Temp= 26.3 C  Press= 1020.4 hPa  Flow= 17.15 L/min  Status=0x8000  Uptime=61s
+
+[SIM] Temp= 26.0 C  Press= 1020.3 hPa  Flow= 16.89 L/min  Status=0x8000  Uptime=62s
+
+[SIM] Temp= 25.8 C  Press= 1020.2 hPa  Flow= 16.64 L/min  Status=0x8000  Uptime=62s
+
+[SIM] Temp= 25.5 C  Press= 1020.0 hPa  Flow= 16.41 L/min  Status=0x8000  Uptime=62s
+
+[SIM] Temp= 25.3 C  Press= 1019.9 hPa  Flow= 16.19 L/min  Status=0x8000  Uptime=62s
+
+[SIM] Temp= 25.0 C  Press= 1019.7 hPa  Flow= 15.99 L/min  Status=0x8000  Uptime=62s
+
+[SIM] Temp= 24.8 C  Press= 1019.5 hPa  Flow= 15.80 L/min  Status=0x8000  Uptime=63s
+
+[SIM] Temp= 24.5 C  Press= 1019.4 hPa  Flow= 15.63 L/min  Status=0x8000  Uptime=63s
+
+[SIM] Temp= 24.3 C  Press= 1019.2 hPa  Flow= 15.48 L/min  Status=0x8000  Uptime=63s
+
+[SIM] Temp= 24.0 C  Press= 1019.0 hPa  Flow= 15.35 L/min  Status=0x8000  Uptime=63s
+
+[SIM] Temp= 23.8 C  Press= 1018.8 hPa  Flow= 15.24 L/min  Status=0x8000  Uptime=63s
+
+[SIM] Temp= 23.6 C  Press= 1018.6 hPa  Flow= 15.15 L/min  Status=0x8000  Uptime=64s
+
+[SIM] Temp= 23.3 C  Press= 1018.4 hPa  Flow= 15.08 L/min  Status=0x8000  Uptime=64s
+
+[SIM] Temp= 23.1 C  Press= 1018.2 hPa  Flow= 15.04 L/min  Status=0x8000  Uptime=64s
+
+[SIM] Temp= 22.9 C  Press= 1017.9 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=64s
+
+[SIM] Temp= 22.6 C  Press= 1017.7 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=64s
+
+[SIM] Temp= 22.4 C  Press= 1017.5 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=65s
+
+[SIM] Temp= 22.2 C  Press= 1017.2 hPa  Flow= 15.05 L/min  Status=0x8000  Uptime=65s
+
+[SIM] Temp= 22.0 C  Press= 1017.0 hPa  Flow= 15.11 L/min  Status=0x8000  Uptime=65s
+
+[SIM] Temp= 21.8 C  Press= 1016.7 hPa  Flow= 15.18 L/min  Status=0x8000  Uptime=65s
+
+[SIM] Temp= 21.6 C  Press= 1016.5 hPa  Flow= 15.28 L/min  Status=0x8000  Uptime=65s
+
+[SIM] Temp= 21.4 C  Press= 1016.2 hPa  Flow= 15.40 L/min  Status=0x8000  Uptime=66s
+
+[SIM] Temp= 21.3 C  Press= 1016.0 hPa  Flow= 15.53 L/min  Status=0x8000  Uptime=66s
+
+[SIM] Temp= 21.1 C  Press= 1015.7 hPa  Flow= 15.69 L/min  Status=0x8000  Uptime=66s
+
+[SIM] Temp= 21.0 C  Press= 1015.4 hPa  Flow= 15.86 L/min  Status=0x8000  Uptime=66s
+
+[SIM] Temp= 20.8 C  Press= 1015.2 hPa  Flow= 16.05 L/min  Status=0x8000  Uptime=66s
+
+[SIM] Temp= 20.7 C  Press= 1014.9 hPa  Flow= 16.26 L/min  Status=0x8000  Uptime=67s
+
+[SIM] Temp= 20.6 C  Press= 1014.6 hPa  Flow= 16.49 L/min  Status=0x8000  Uptime=67s
+
+[SIM] Temp= 20.5 C  Press= 1014.3 hPa  Flow= 16.72 L/min  Status=0x8000  Uptime=67s
+
+[SIM] Temp= 20.4 C  Press= 1014.1 hPa  Flow= 16.98 L/min  Status=0x8000  Uptime=67s
+
+[SIM] Temp= 20.3 C  Press= 1013.8 hPa  Flow= 17.24 L/min  Status=0x8000  Uptime=67s
+
+[SIM] Temp= 20.2 C  Press= 1013.5 hPa  Flow= 17.52 L/min  Status=0x8000  Uptime=68s
+
+[SIM] Temp= 20.1 C  Press= 1013.2 hPa  Flow= 17.80 L/min  Status=0x8000  Uptime=68s
+
+[SIM] Temp= 20.1 C  Press= 1012.9 hPa  Flow= 18.10 L/min  Status=0x8000  Uptime=68s
+
+[SIM] Temp= 20.0 C  Press= 1012.7 hPa  Flow= 18.41 L/min  Status=0x8000  Uptime=68s
+
+[SIM] Temp= 20.0 C  Press= 1012.4 hPa  Flow= 18.72 L/min  Status=0x8000  Uptime=68s
+
+[SIM] Temp= 20.0 C  Press= 1012.1 hPa  Flow= 19.03 L/min  Status=0x8000  Uptime=69s
+
+[SIM] Temp= 20.0 C  Press= 1011.8 hPa  Flow= 19.35 L/min  Status=0x8000  Uptime=69s
+
+[SIM] Temp= 20.0 C  Press= 1011.6 hPa  Flow= 19.68 L/min  Status=0x8000  Uptime=69s
+
+[SIM] Temp= 20.0 C  Press= 1011.3 hPa  Flow= 20.00 L/min  Status=0x8000  Uptime=69s
+
+[SIM] Temp= 20.1 C  Press= 1011.0 hPa  Flow= 20.33 L/min  Status=0x8000  Uptime=69s
+
+[SIM] Temp= 20.1 C  Press= 1010.7 hPa  Flow= 20.65 L/min  Status=0x8000  Uptime=70s
+
+[SIM] Temp= 20.2 C  Press= 1010.5 hPa  Flow= 20.97 L/min  Status=0x8000  Uptime=70s
+
+[SIM] Temp= 20.3 C  Press= 1010.2 hPa  Flow= 21.29 L/min  Status=0x8000  Uptime=70s
+
+[SIM] Temp= 20.3 C  Press= 1010.0 hPa  Flow= 21.60 L/min  Status=0x8000  Uptime=70s
+
+[SIM] Temp= 20.4 C  Press= 1009.7 hPa  Flow= 21.90 L/min  Status=0x8000  Uptime=70s
+
+[SIM] Temp= 20.5 C  Press= 1009.5 hPa  Flow= 22.20 L/min  Status=0x8000  Uptime=71s
+
+[SIM] Temp= 20.7 C  Press= 1009.2 hPa  Flow= 22.49 L/min  Status=0x8000  Uptime=71s
+
+[SIM] Temp= 20.8 C  Press= 1009.0 hPa  Flow= 22.76 L/min  Status=0x8000  Uptime=71s
+
+[SIM] Temp= 20.9 C  Press= 1008.7 hPa  Flow= 23.03 L/min  Status=0x8000  Uptime=71s
+
+[SIM] Temp= 21.1 C  Press= 1008.5 hPa  Flow= 23.28 L/min  Status=0x8000  Uptime=71s
+
+[SIM] Temp= 21.2 C  Press= 1008.3 hPa  Flow= 23.52 L/min  Status=0x8000  Uptime=72s
+
+[SIM] Temp= 21.4 C  Press= 1008.1 hPa  Flow= 23.74 L/min  Status=0x8000  Uptime=72s
+
+[SIM] Temp= 21.6 C  Press= 1007.9 hPa  Flow= 23.95 L/min  Status=0x8000  Uptime=72s
+
+[SIM] Temp= 21.8 C  Press= 1007.6 hPa  Flow= 24.14 L/min  Status=0x8000  Uptime=72s
+
+[SIM] Temp= 22.0 C  Press= 1007.5 hPa  Flow= 24.31 L/min  Status=0x8000  Uptime=72s
+
+[SIM] Temp= 22.2 C  Press= 1007.3 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=73s
+
+[SIM] Temp= 22.4 C  Press= 1007.1 hPa  Flow= 24.60 L/min  Status=0x8000  Uptime=73s
+
+[SIM] Temp= 22.6 C  Press= 1006.9 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=73s
+
+[SIM] Temp= 22.8 C  Press= 1006.7 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=73s
+
+[SIM] Temp= 23.1 C  Press= 1006.6 hPa  Flow= 24.90 L/min  Status=0x8000  Uptime=73s
+
+[SIM] Temp= 23.3 C  Press= 1006.4 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=74s
+
+[SIM] Temp= 23.5 C  Press= 1006.3 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=74s
+
+[SIM] Temp= 23.8 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=74s
+
+[SIM] Temp= 24.0 C  Press= 1006.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=74s
+
+[SIM] Temp= 24.3 C  Press= 1005.9 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=74s
+
+[SIM] Temp= 24.5 C  Press= 1005.8 hPa  Flow= 24.91 L/min  Status=0x8000  Uptime=75s
+
+[SIM] Temp= 24.8 C  Press= 1005.7 hPa  Flow= 24.84 L/min  Status=0x8000  Uptime=75s
+
+[SIM] Temp= 25.0 C  Press= 1013.2 hPa  Flow= 20.00 L/min  Status=0x8000  Uptime=75s
+
+[SIM] Temp= 25.3 C  Press= 1013.5 hPa  Flow= 20.33 L/min  Status=0x8000  Uptime=75s
+
+[SIM] Temp= 25.5 C  Press= 1013.8 hPa  Flow= 20.65 L/min  Status=0x8000  Uptime=75s
+
+[SIM] Temp= 25.7 C  Press= 1014.0 hPa  Flow= 20.97 L/min  Status=0x8000  Uptime=76s
+
+[SIM] Temp= 26.0 C  Press= 1014.3 hPa  Flow= 21.29 L/min  Status=0x8000  Uptime=76s
+
+[SIM] Temp= 26.2 C  Press= 1014.6 hPa  Flow= 21.60 L/min  Status=0x8000  Uptime=76s
+
+[SIM] Temp= 26.5 C  Press= 1014.9 hPa  Flow= 21.90 L/min  Status=0x8000  Uptime=76s
+
+[SIM] Temp= 26.7 C  Press= 1015.1 hPa  Flow= 22.20 L/min  Status=0x8000  Uptime=76s
+
+[SIM] Temp= 26.9 C  Press= 1015.4 hPa  Flow= 22.49 L/min  Status=0x8000  Uptime=77s
+
+[SIM] Temp= 27.2 C  Press= 1015.7 hPa  Flow= 22.76 L/min  Status=0x8000  Uptime=77s
+
+[SIM] Temp= 27.4 C  Press= 1015.9 hPa  Flow= 23.03 L/min  Status=0x8000  Uptime=77s
+
+[SIM] Temp= 27.6 C  Press= 1016.2 hPa  Flow= 23.28 L/min  Status=0x8000  Uptime=77s
+
+[SIM] Temp= 27.8 C  Press= 1016.5 hPa  Flow= 23.52 L/min  Status=0x8000  Uptime=77s
+
+[SIM] Temp= 28.0 C  Press= 1016.7 hPa  Flow= 23.74 L/min  Status=0x8000  Uptime=78s
+
+[SIM] Temp= 28.2 C  Press= 1017.0 hPa  Flow= 23.95 L/min  Status=0x8000  Uptime=78s
+
+[SIM] Temp= 28.4 C  Press= 1017.2 hPa  Flow= 24.14 L/min  Status=0x8000  Uptime=78s
+
+[SIM] Temp= 28.6 C  Press= 1017.5 hPa  Flow= 24.31 L/min  Status=0x8000  Uptime=78s
+
+[SIM] Temp= 28.8 C  Press= 1017.7 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=78s
+
+[SIM] Temp= 28.9 C  Press= 1017.9 hPa  Flow= 24.60 L/min  Status=0x8000  Uptime=79s
+
+[SIM] Temp= 29.1 C  Press= 1018.1 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=79s
+
+[SIM] Temp= 29.2 C  Press= 1018.4 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=79s
+
+[SIM] Temp= 29.3 C  Press= 1018.6 hPa  Flow= 24.90 L/min  Status=0x8000  Uptime=79s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=79s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=80s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=80s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=80s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=80s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.91 L/min  Status=0x8000  Uptime=80s
+
+[SIM] Temp= 29.9 C  Press= 1019.8 hPa  Flow= 24.84 L/min  Status=0x8000  Uptime=81s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.75 L/min  Status=0x8000  Uptime=81s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.64 L/min  Status=0x8000  Uptime=81s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.51 L/min  Status=0x8000  Uptime=81s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.36 L/min  Status=0x8000  Uptime=81s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=82s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.01 L/min  Status=0x8000  Uptime=82s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.81 L/min  Status=0x8000  Uptime=82s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.59 L/min  Status=0x8000  Uptime=82s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.36 L/min  Status=0x8000  Uptime=82s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.11 L/min  Status=0x8000  Uptime=83s
+
+[SIM] Temp= 29.6 C  Press= 1021.0 hPa  Flow= 22.85 L/min  Status=0x8000  Uptime=83s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.58 L/min  Status=0x8000  Uptime=83s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.29 L/min  Status=0x8000  Uptime=83s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 22.00 L/min  Status=0x8000  Uptime=83s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.70 L/min  Status=0x8000  Uptime=84s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.39 L/min  Status=0x8000  Uptime=84s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.07 L/min  Status=0x8000  Uptime=84s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.75 L/min  Status=0x8000  Uptime=84s
+
+[SIM] Temp= 28.6 C  Press= 1021.2 hPa  Flow= 20.43 L/min  Status=0x8000  Uptime=84s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.11 L/min  Status=0x8000  Uptime=85s
+
+[SIM] Temp= 28.2 C  Press= 1021.1 hPa  Flow= 19.78 L/min  Status=0x8000  Uptime=85s
+
+[SIM] Temp= 28.0 C  Press= 1021.1 hPa  Flow= 19.46 L/min  Status=0x8000  Uptime=85s
+
+[SIM] Temp= 27.8 C  Press= 1021.0 hPa  Flow= 19.13 L/min  Status=0x8000  Uptime=85s
+
+[SIM] Temp= 27.6 C  Press= 1021.0 hPa  Flow= 18.82 L/min  Status=0x8000  Uptime=85s
+
+[SIM] Temp= 27.4 C  Press= 1020.9 hPa  Flow= 18.50 L/min  Status=0x8000  Uptime=86s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.20 L/min  Status=0x8000  Uptime=86s
+
+[SIM] Temp= 26.9 C  Press= 1020.7 hPa  Flow= 17.90 L/min  Status=0x8000  Uptime=86s
+
+[SIM] Temp= 26.7 C  Press= 1020.6 hPa  Flow= 17.61 L/min  Status=0x8000  Uptime=86s
+
+[SIM] Temp= 26.4 C  Press= 1020.5 hPa  Flow= 17.33 L/min  Status=0x8000  Uptime=86s
+
+[SIM] Temp= 26.2 C  Press= 1020.4 hPa  Flow= 17.06 L/min  Status=0x8000  Uptime=87s
+
+[SIM] Temp= 26.0 C  Press= 1020.2 hPa  Flow= 16.80 L/min  Status=0x8000  Uptime=87s
+
+[SIM] Temp= 25.7 C  Press= 1020.1 hPa  Flow= 16.56 L/min  Status=0x8000  Uptime=87s
+
+[SIM] Temp= 25.5 C  Press= 1020.0 hPa  Flow= 16.33 L/min  Status=0x8000  Uptime=87s
+
+[SIM] Temp= 25.2 C  Press= 1019.8 hPa  Flow= 16.12 L/min  Status=0x8000  Uptime=87s
+
+[SIM] Temp= 25.0 C  Press= 1019.6 hPa  Flow= 15.92 L/min  Status=0x8000  Uptime=88s
+
+[SIM] Temp= 24.7 C  Press= 1019.5 hPa  Flow= 15.74 L/min  Status=0x8000  Uptime=88s
+
+[SIM] Temp= 24.5 C  Press= 1019.3 hPa  Flow= 15.58 L/min  Status=0x8000  Uptime=88s
+
+[SIM] Temp= 24.2 C  Press= 1019.1 hPa  Flow= 15.44 L/min  Status=0x8000  Uptime=88s
+
+[SIM] Temp= 24.0 C  Press= 1018.9 hPa  Flow= 15.31 L/min  Status=0x8000  Uptime=88s
+
+[SIM] Temp= 23.7 C  Press= 1018.7 hPa  Flow= 15.21 L/min  Status=0x8000  Uptime=89s
+
+[SIM] Temp= 23.5 C  Press= 1018.5 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=89s
+
+[SIM] Temp= 23.2 C  Press= 1018.3 hPa  Flow= 15.07 L/min  Status=0x8000  Uptime=89s
+
+[SIM] Temp= 23.0 C  Press= 1018.1 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=89s
+
+[SIM] Temp= 22.8 C  Press= 1017.9 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=89s
+
+[SIM] Temp= 22.6 C  Press= 1017.6 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=90s
+
+[SIM] Temp= 22.3 C  Press= 1017.4 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=90s
+
+[SIM] Temp= 22.1 C  Press= 1017.1 hPa  Flow= 15.07 L/min  Status=0x8000  Uptime=90s
+
+[SIM] Temp= 21.9 C  Press= 1016.9 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=90s
+
+[SIM] Temp= 21.7 C  Press= 1016.7 hPa  Flow= 15.21 L/min  Status=0x8000  Uptime=90s
+
+[SIM] Temp= 21.6 C  Press= 1016.4 hPa  Flow= 15.32 L/min  Status=0x8000  Uptime=91s
+
+[SIM] Temp= 21.4 C  Press= 1016.1 hPa  Flow= 15.44 L/min  Status=0x8000  Uptime=91s
+
+[SIM] Temp= 21.2 C  Press= 1015.9 hPa  Flow= 15.58 L/min  Status=0x8000  Uptime=91s
+
+[SIM] Temp= 21.1 C  Press= 1015.6 hPa  Flow= 15.75 L/min  Status=0x8000  Uptime=91s
+
+[SIM] Temp= 20.9 C  Press= 1015.3 hPa  Flow= 15.93 L/min  Status=0x8000  Uptime=91s
+
+[SIM] Temp= 20.8 C  Press= 1015.1 hPa  Flow= 16.12 L/min  Status=0x8000  Uptime=92s
+
+[SIM] Temp= 20.6 C  Press= 1014.8 hPa  Flow= 16.34 L/min  Status=0x8000  Uptime=92s
+
+[SIM] Temp= 20.5 C  Press= 1014.5 hPa  Flow= 16.56 L/min  Status=0x8000  Uptime=92s
+
+[SIM] Temp= 20.4 C  Press= 1014.2 hPa  Flow= 16.81 L/min  Status=0x8000  Uptime=92s
+
+[SIM] Temp= 20.3 C  Press= 1014.0 hPa  Flow= 17.06 L/min  Status=0x8000  Uptime=92s
+
+[SIM] Temp= 20.2 C  Press= 1013.7 hPa  Flow= 17.33 L/min  Status=0x8000  Uptime=93s
+
+[SIM] Temp= 20.2 C  Press= 1013.4 hPa  Flow= 17.61 L/min  Status=0x8000  Uptime=93s
+
+[SIM] Temp= 20.1 C  Press= 1013.1 hPa  Flow= 17.90 L/min  Status=0x8000  Uptime=93s
+
+[SIM] Temp= 20.1 C  Press= 1012.9 hPa  Flow= 18.20 L/min  Status=0x8000  Uptime=93s
+
+[SIM] Temp= 20.0 C  Press= 1012.6 hPa  Flow= 18.51 L/min  Status=0x8000  Uptime=93s
+
+[SIM] Temp= 20.0 C  Press= 1012.3 hPa  Flow= 18.82 L/min  Status=0x8000  Uptime=94s
+
+[SIM] Temp= 20.0 C  Press= 1012.0 hPa  Flow= 19.14 L/min  Status=0x8000  Uptime=94s
+
+[SIM] Temp= 20.0 C  Press= 1011.7 hPa  Flow= 19.46 L/min  Status=0x8000  Uptime=94s
+
+[SIM] Temp= 20.0 C  Press= 1011.5 hPa  Flow= 19.79 L/min  Status=0x8000  Uptime=94s
+
+[SIM] Temp= 20.0 C  Press= 1011.2 hPa  Flow= 20.11 L/min  Status=0x8000  Uptime=94s
+
+[SIM] Temp= 20.1 C  Press= 1010.9 hPa  Flow= 20.44 L/min  Status=0x8000  Uptime=95s
+
+[SIM] Temp= 20.1 C  Press= 1010.7 hPa  Flow= 20.76 L/min  Status=0x8000  Uptime=95s
+
+[SIM] Temp= 20.2 C  Press= 1010.4 hPa  Flow= 21.08 L/min  Status=0x8000  Uptime=95s
+
+[SIM] Temp= 20.3 C  Press= 1010.1 hPa  Flow= 21.39 L/min  Status=0x8000  Uptime=95s
+
+[SIM] Temp= 20.4 C  Press= 1009.9 hPa  Flow= 21.70 L/min  Status=0x8000  Uptime=95s
+
+[SIM] Temp= 20.5 C  Press= 1009.6 hPa  Flow= 22.00 L/min  Status=0x8000  Uptime=96s
+
+[SIM] Temp= 20.6 C  Press= 1009.4 hPa  Flow= 22.30 L/min  Status=0x8000  Uptime=96s
+
+[SIM] Temp= 20.7 C  Press= 1009.1 hPa  Flow= 22.58 L/min  Status=0x8000  Uptime=96s
+
+[SIM] Temp= 20.8 C  Press= 1008.9 hPa  Flow= 22.85 L/min  Status=0x8000  Uptime=96s
+
+[SIM] Temp= 21.0 C  Press= 1008.7 hPa  Flow= 23.11 L/min  Status=0x8000  Uptime=96s
+
+[SIM] Temp= 21.1 C  Press= 1008.4 hPa  Flow= 23.36 L/min  Status=0x8000  Uptime=97s
+
+[SIM] Temp= 21.3 C  Press= 1008.2 hPa  Flow= 23.60 L/min  Status=0x8000  Uptime=97s
+
+[SIM] Temp= 21.5 C  Press= 1008.0 hPa  Flow= 23.81 L/min  Status=0x8000  Uptime=97s
+
+[SIM] Temp= 21.7 C  Press= 1007.8 hPa  Flow= 24.02 L/min  Status=0x8000  Uptime=97s
+
+[SIM] Temp= 21.8 C  Press= 1007.6 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=97s
+
+[SIM] Temp= 22.0 C  Press= 1007.4 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=98s
+
+[SIM] Temp= 22.2 C  Press= 1007.2 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=98s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=98s
+
+[SIM] Temp= 22.7 C  Press= 1006.8 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=98s
+
+[SIM] Temp= 22.9 C  Press= 1006.7 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=98s
+
+[SIM] Temp= 23.1 C  Press= 1006.5 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=99s
+
+[SIM] Temp= 23.4 C  Press= 1006.4 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=99s
+
+[SIM] Temp= 23.6 C  Press= 1006.2 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=99s
+
+[SIM] Temp= 23.8 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=99s
+
+[SIM] Temp= 24.1 C  Press= 1006.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=99s
+
+[SIM] Temp= 24.3 C  Press= 1005.9 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=100s
+
+[SIM] Temp= 24.6 C  Press= 1005.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=100s
+
+[SIM] Temp= 24.8 C  Press= 1005.7 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=100s
+
+[SIM] Temp= 25.1 C  Press= 1013.3 hPa  Flow= 20.11 L/min  Status=0x8000  Uptime=100s
+
+[SIM] Temp= 25.3 C  Press= 1013.6 hPa  Flow= 20.44 L/min  Status=0x8000  Uptime=100s
+
+[SIM] Temp= 25.6 C  Press= 1013.9 hPa  Flow= 20.76 L/min  Status=0x8000  Uptime=101s
+
+[SIM] Temp= 25.8 C  Press= 1014.1 hPa  Flow= 21.08 L/min  Status=0x8000  Uptime=101s
+
+[SIM] Temp= 26.1 C  Press= 1014.4 hPa  Flow= 21.39 L/min  Status=0x8000  Uptime=101s
+
+[SIM] Temp= 26.3 C  Press= 1014.7 hPa  Flow= 21.70 L/min  Status=0x8000  Uptime=101s
+
+[SIM] Temp= 26.6 C  Press= 1015.0 hPa  Flow= 22.00 L/min  Status=0x8000  Uptime=101s
+
+[SIM] Temp= 26.8 C  Press= 1015.2 hPa  Flow= 22.30 L/min  Status=0x8000  Uptime=102s
+
+[SIM] Temp= 27.0 C  Press= 1015.5 hPa  Flow= 22.58 L/min  Status=0x8000  Uptime=102s
+
+[SIM] Temp= 27.3 C  Press= 1015.8 hPa  Flow= 22.85 L/min  Status=0x8000  Uptime=102s
+
+[SIM] Temp= 27.5 C  Press= 1016.0 hPa  Flow= 23.11 L/min  Status=0x8000  Uptime=102s
+
+[SIM] Temp= 27.7 C  Press= 1016.3 hPa  Flow= 23.36 L/min  Status=0x8000  Uptime=102s
+
+[SIM] Temp= 27.9 C  Press= 1016.5 hPa  Flow= 23.60 L/min  Status=0x8000  Uptime=103s
+
+[SIM] Temp= 28.1 C  Press= 1016.8 hPa  Flow= 23.81 L/min  Status=0x8000  Uptime=103s
+
+[SIM] Temp= 28.3 C  Press= 1017.0 hPa  Flow= 24.02 L/min  Status=0x8000  Uptime=103s
+
+[SIM] Temp= 28.5 C  Press= 1017.3 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=103s
+
+[SIM] Temp= 28.6 C  Press= 1017.5 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=103s
+
+[SIM] Temp= 28.8 C  Press= 1017.8 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=104s
+
+[SIM] Temp= 29.0 C  Press= 1018.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=104s
+
+[SIM] Temp= 29.1 C  Press= 1018.2 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=104s
+
+[SIM] Temp= 29.3 C  Press= 1018.4 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=104s
+
+[SIM] Temp= 29.4 C  Press= 1018.6 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=104s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=105s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=105s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=105s
+
+[SIM] Temp= 29.8 C  Press= 1019.4 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=105s
+
+[SIM] Temp= 29.8 C  Press= 1019.6 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=105s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=106s
+
+[SIM] Temp= 29.9 C  Press= 1019.9 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=106s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=106s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.60 L/min  Status=0x8000  Uptime=106s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=106s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.31 L/min  Status=0x8000  Uptime=107s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.14 L/min  Status=0x8000  Uptime=107s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.95 L/min  Status=0x8000  Uptime=107s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.74 L/min  Status=0x8000  Uptime=107s
+
+[SIM] Temp= 29.8 C  Press= 1020.8 hPa  Flow= 23.51 L/min  Status=0x8000  Uptime=107s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.28 L/min  Status=0x8000  Uptime=108s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.02 L/min  Status=0x8000  Uptime=108s
+
+[SIM] Temp= 29.6 C  Press= 1021.1 hPa  Flow= 22.76 L/min  Status=0x8000  Uptime=108s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.48 L/min  Status=0x8000  Uptime=108s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.19 L/min  Status=0x8000  Uptime=108s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 21.90 L/min  Status=0x8000  Uptime=109s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.59 L/min  Status=0x8000  Uptime=109s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.28 L/min  Status=0x8000  Uptime=109s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.96 L/min  Status=0x8000  Uptime=109s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.64 L/min  Status=0x8000  Uptime=109s
+
+[SIM] Temp= 28.5 C  Press= 1021.2 hPa  Flow= 20.32 L/min  Status=0x8000  Uptime=110s
+
+[SIM] Temp= 28.3 C  Press= 1021.1 hPa  Flow= 20.00 L/min  Status=0x8000  Uptime=110s
+
+[SIM] Temp= 28.1 C  Press= 1021.1 hPa  Flow= 19.67 L/min  Status=0x8000  Uptime=110s
+
+[SIM] Temp= 27.9 C  Press= 1021.1 hPa  Flow= 19.35 L/min  Status=0x8000  Uptime=110s
+
+[SIM] Temp= 27.7 C  Press= 1021.0 hPa  Flow= 19.03 L/min  Status=0x8000  Uptime=110s
+
+[SIM] Temp= 27.5 C  Press= 1020.9 hPa  Flow= 18.71 L/min  Status=0x8000  Uptime=111s
+
+[SIM] Temp= 27.3 C  Press= 1020.9 hPa  Flow= 18.40 L/min  Status=0x8000  Uptime=111s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.10 L/min  Status=0x8000  Uptime=111s
+
+[SIM] Temp= 26.8 C  Press= 1020.7 hPa  Flow= 17.80 L/min  Status=0x8000  Uptime=111s
+
+[SIM] Temp= 26.6 C  Press= 1020.6 hPa  Flow= 17.51 L/min  Status=0x8000  Uptime=111s
+
+[SIM] Temp= 26.4 C  Press= 1020.5 hPa  Flow= 17.24 L/min  Status=0x8000  Uptime=112s
+
+[SIM] Temp= 26.1 C  Press= 1020.3 hPa  Flow= 16.97 L/min  Status=0x8000  Uptime=112s
+
+[SIM] Temp= 25.9 C  Press= 1020.2 hPa  Flow= 16.72 L/min  Status=0x8000  Uptime=112s
+
+[SIM] Temp= 25.6 C  Press= 1020.1 hPa  Flow= 16.48 L/min  Status=0x8000  Uptime=112s
+
+[SIM] Temp= 25.4 C  Press= 1019.9 hPa  Flow= 16.26 L/min  Status=0x8000  Uptime=112s
+
+[SIM] Temp= 25.1 C  Press= 1019.8 hPa  Flow= 16.05 L/min  Status=0x8000  Uptime=113s
+
+[SIM] Temp= 24.9 C  Press= 1019.6 hPa  Flow= 15.86 L/min  Status=0x8000  Uptime=113s
+
+[SIM] Temp= 24.6 C  Press= 1019.4 hPa  Flow= 15.69 L/min  Status=0x8000  Uptime=113s
+
+[SIM] Temp= 24.4 C  Press= 1019.2 hPa  Flow= 15.53 L/min  Status=0x8000  Uptime=113s
+
+[SIM] Temp= 24.1 C  Press= 1019.0 hPa  Flow= 15.39 L/min  Status=0x8000  Uptime=113s
+
+[SIM] Temp= 23.9 C  Press= 1018.9 hPa  Flow= 15.28 L/min  Status=0x8000  Uptime=114s
+
+[SIM] Temp= 23.6 C  Press= 1018.7 hPa  Flow= 15.18 L/min  Status=0x8000  Uptime=114s
+
+[SIM] Temp= 23.4 C  Press= 1018.4 hPa  Flow= 15.10 L/min  Status=0x8000  Uptime=114s
+
+[SIM] Temp= 23.2 C  Press= 1018.2 hPa  Flow= 15.05 L/min  Status=0x8000  Uptime=114s
+
+[SIM] Temp= 22.9 C  Press= 1018.0 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=114s
+
+[SIM] Temp= 22.7 C  Press= 1017.8 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=115s
+
+[SIM] Temp= 22.5 C  Press= 1017.5 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=115s
+
+[SIM] Temp= 22.3 C  Press= 1017.3 hPa  Flow= 15.04 L/min  Status=0x8000  Uptime=115s
+
+[SIM] Temp= 22.1 C  Press= 1017.1 hPa  Flow= 15.09 L/min  Status=0x8000  Uptime=115s
+
+[SIM] Temp= 21.9 C  Press= 1016.8 hPa  Flow= 15.16 L/min  Status=0x8000  Uptime=115s
+
+[SIM] Temp= 21.7 C  Press= 1016.6 hPa  Flow= 15.25 L/min  Status=0x8000  Uptime=116s
+
+[SIM] Temp= 21.5 C  Press= 1016.3 hPa  Flow= 15.36 L/min  Status=0x8000  Uptime=116s
+
+[SIM] Temp= 21.3 C  Press= 1016.1 hPa  Flow= 15.49 L/min  Status=0x8000  Uptime=116s
+
+[SIM] Temp= 21.2 C  Press= 1015.8 hPa  Flow= 15.64 L/min  Status=0x8000  Uptime=116s
+
+[SIM] Temp= 21.0 C  Press= 1015.5 hPa  Flow= 15.80 L/min  Status=0x8000  Uptime=116s
+
+[SIM] Temp= 20.9 C  Press= 1015.3 hPa  Flow= 15.99 L/min  Status=0x8000  Uptime=117s
+
+[SIM] Temp= 20.7 C  Press= 1015.0 hPa  Flow= 16.19 L/min  Status=0x8000  Uptime=117s
+
+[SIM] Temp= 20.6 C  Press= 1014.7 hPa  Flow= 16.41 L/min  Status=0x8000  Uptime=117s
+
+[SIM] Temp= 20.5 C  Press= 1014.4 hPa  Flow= 16.64 L/min  Status=0x8000  Uptime=117s
+
+[SIM] Temp= 20.4 C  Press= 1014.2 hPa  Flow= 16.89 L/min  Status=0x8000  Uptime=117s
+
+[SIM] Temp= 20.3 C  Press= 1013.9 hPa  Flow= 17.15 L/min  Status=0x8000  Uptime=118s
+
+[SIM] Temp= 20.2 C  Press= 1013.6 hPa  Flow= 17.43 L/min  Status=0x8000  Uptime=118s
+
+[SIM] Temp= 20.1 C  Press= 1013.3 hPa  Flow= 17.71 L/min  Status=0x8000  Uptime=118s
+
+[SIM] Temp= 20.1 C  Press= 1013.0 hPa  Flow= 18.00 L/min  Status=0x8000  Uptime=118s
+
+[SIM] Temp= 20.1 C  Press= 1012.8 hPa  Flow= 18.31 L/min  Status=0x8000  Uptime=118s
+
+[SIM] Temp= 20.0 C  Press= 1012.5 hPa  Flow= 18.61 L/min  Status=0x8000  Uptime=119s
+
+[SIM] Temp= 20.0 C  Press= 1012.2 hPa  Flow= 18.93 L/min  Status=0x8000  Uptime=119s
+
+[SIM] Temp= 20.0 C  Press= 1011.9 hPa  Flow= 19.25 L/min  Status=0x8000  Uptime=119s
+
+[SIM] Temp= 20.0 C  Press= 1011.6 hPa  Flow= 19.57 L/min  Status=0x8000  Uptime=119s
+
+[SIM] Temp= 20.0 C  Press= 1011.4 hPa  Flow= 19.90 L/min  Status=0x8000  Uptime=119s
+
+[SIM] Temp= 20.1 C  Press= 1011.1 hPa  Flow= 20.22 L/min  Status=0x8000  Uptime=120s
+
+[SIM] Temp= 20.1 C  Press= 1010.8 hPa  Flow= 20.54 L/min  Status=0x8000  Uptime=120s
+
+[SIM] Temp= 20.2 C  Press= 1010.6 hPa  Flow= 20.87 L/min  Status=0x8000  Uptime=120s
+
+[SIM] Temp= 20.2 C  Press= 1010.3 hPa  Flow= 21.18 L/min  Status=0x8000  Uptime=120s
+
+[SIM] Temp= 20.3 C  Press= 1010.0 hPa  Flow= 21.50 L/min  Status=0x8000  Uptime=120s
+
+[SIM] Temp= 20.4 C  Press= 1009.8 hPa  Flow= 21.80 L/min  Status=0x8000  Uptime=121s
+
+[SIM] Temp= 20.5 C  Press= 1009.5 hPa  Flow= 22.10 L/min  Status=0x8000  Uptime=121s
+
+[SIM] Temp= 20.6 C  Press= 1009.3 hPa  Flow= 22.39 L/min  Status=0x8000  Uptime=121s
+
+[SIM] Temp= 20.8 C  Press= 1009.0 hPa  Flow= 22.67 L/min  Status=0x8000  Uptime=121s
+
+[SIM] Temp= 20.9 C  Press= 1008.8 hPa  Flow= 22.94 L/min  Status=0x8000  Uptime=121s
+
+[SIM] Temp= 21.0 C  Press= 1008.6 hPa  Flow= 23.20 L/min  Status=0x8000  Uptime=122s
+
+[SIM] Temp= 21.2 C  Press= 1008.4 hPa  Flow= 23.44 L/min  Status=0x8000  Uptime=122s
+
+[SIM] Temp= 21.4 C  Press= 1008.1 hPa  Flow= 23.67 L/min  Status=0x8000  Uptime=122s
+
+[SIM] Temp= 21.5 C  Press= 1007.9 hPa  Flow= 23.88 L/min  Status=0x8000  Uptime=122s
+
+[SIM] Temp= 21.7 C  Press= 1007.7 hPa  Flow= 24.08 L/min  Status=0x8000  Uptime=122s
+
+[SIM] Temp= 21.9 C  Press= 1007.5 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=123s
+
+[SIM] Temp= 22.1 C  Press= 1007.3 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=123s
+
+[SIM] Temp= 22.3 C  Press= 1007.1 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=123s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.69 L/min  Status=0x8000  Uptime=123s
+
+[SIM] Temp= 22.8 C  Press= 1006.8 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=123s
+
+[SIM] Temp= 23.0 C  Press= 1006.6 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=124s
+
+[SIM] Temp= 23.2 C  Press= 1006.5 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=124s
+
+[SIM] Temp= 23.4 C  Press= 1006.3 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=124s
+
+[SIM] Temp= 23.7 C  Press= 1006.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=124s
+
+[SIM] Temp= 23.9 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=124s
+
+[SIM] Temp= 24.2 C  Press= 1005.9 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=125s
+
+[SIM] Temp= 24.4 C  Press= 1005.8 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=125s
+
+[SIM] Temp= 24.7 C  Press= 1005.7 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=125s
+
+[SIM] Temp= 24.9 C  Press= 1005.6 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=125s
+
+[SIM] Temp= 25.2 C  Press= 1013.4 hPa  Flow= 20.22 L/min  Status=0x8000  Uptime=125s
+
+[SIM] Temp= 25.4 C  Press= 1013.7 hPa  Flow= 20.55 L/min  Status=0x8000  Uptime=126s
+
+[SIM] Temp= 25.7 C  Press= 1013.9 hPa  Flow= 20.87 L/min  Status=0x8000  Uptime=126s
+
+[SIM] Temp= 25.9 C  Press= 1014.2 hPa  Flow= 21.18 L/min  Status=0x8000  Uptime=126s
+
+[SIM] Temp= 26.2 C  Press= 1014.5 hPa  Flow= 21.50 L/min  Status=0x8000  Uptime=126s
+
+[SIM] Temp= 26.4 C  Press= 1014.8 hPa  Flow= 21.80 L/min  Status=0x8000  Uptime=126s
+
+[SIM] Temp= 26.6 C  Press= 1015.1 hPa  Flow= 22.10 L/min  Status=0x8000  Uptime=127s
+
+[SIM] Temp= 26.9 C  Press= 1015.3 hPa  Flow= 22.39 L/min  Status=0x8000  Uptime=127s
+
+[SIM] Temp= 27.1 C  Press= 1015.6 hPa  Flow= 22.67 L/min  Status=0x8000  Uptime=127s
+
+[SIM] Temp= 27.3 C  Press= 1015.9 hPa  Flow= 22.94 L/min  Status=0x8000  Uptime=127s
+
+[SIM] Temp= 27.5 C  Press= 1016.1 hPa  Flow= 23.20 L/min  Status=0x8000  Uptime=127s
+
+[SIM] Temp= 27.8 C  Press= 1016.4 hPa  Flow= 23.44 L/min  Status=0x8000  Uptime=128s
+
+[SIM] Temp= 28.0 C  Press= 1016.6 hPa  Flow= 23.67 L/min  Status=0x8000  Uptime=128s
+
+[SIM] Temp= 28.2 C  Press= 1016.9 hPa  Flow= 23.88 L/min  Status=0x8000  Uptime=128s
+
+[SIM] Temp= 28.3 C  Press= 1017.1 hPa  Flow= 24.08 L/min  Status=0x8000  Uptime=128s
+
+[SIM] Temp= 28.5 C  Press= 1017.4 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=128s
+
+[SIM] Temp= 28.7 C  Press= 1017.6 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=129s
+
+[SIM] Temp= 28.9 C  Press= 1017.8 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=129s
+
+[SIM] Temp= 29.0 C  Press= 1018.1 hPa  Flow= 24.69 L/min  Status=0x8000  Uptime=129s
+
+[SIM] Temp= 29.2 C  Press= 1018.3 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=129s
+
+[SIM] Temp= 29.3 C  Press= 1018.5 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=129s
+
+[SIM] Temp= 29.4 C  Press= 1018.7 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=130s
+
+[SIM] Temp= 29.5 C  Press= 1018.9 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=130s
+
+[SIM] Temp= 29.6 C  Press= 1019.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=130s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=130s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=130s
+
+[SIM] Temp= 29.9 C  Press= 1019.6 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=131s
+
+[SIM] Temp= 29.9 C  Press= 1019.8 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=131s
+
+[SIM] Temp= 30.0 C  Press= 1019.9 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=131s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.68 L/min  Status=0x8000  Uptime=131s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=131s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=132s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.25 L/min  Status=0x8000  Uptime=132s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.07 L/min  Status=0x8000  Uptime=132s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.88 L/min  Status=0x8000  Uptime=132s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.66 L/min  Status=0x8000  Uptime=132s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.43 L/min  Status=0x8000  Uptime=133s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.19 L/min  Status=0x8000  Uptime=133s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 22.94 L/min  Status=0x8000  Uptime=133s
+
+[SIM] Temp= 29.6 C  Press= 1021.1 hPa  Flow= 22.67 L/min  Status=0x8000  Uptime=133s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.39 L/min  Status=0x8000  Uptime=133s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.10 L/min  Status=0x8000  Uptime=134s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.80 L/min  Status=0x8000  Uptime=134s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.49 L/min  Status=0x8000  Uptime=134s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.18 L/min  Status=0x8000  Uptime=134s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.86 L/min  Status=0x8000  Uptime=134s
+
+[SIM] Temp= 28.6 C  Press= 1021.2 hPa  Flow= 20.54 L/min  Status=0x8000  Uptime=135s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.21 L/min  Status=0x8000  Uptime=135s
+
+[SIM] Temp= 28.2 C  Press= 1021.1 hPa  Flow= 19.89 L/min  Status=0x8000  Uptime=135s
+
+[SIM] Temp= 28.1 C  Press= 1021.1 hPa  Flow= 19.56 L/min  Status=0x8000  Uptime=135s
+
+[SIM] Temp= 27.9 C  Press= 1021.0 hPa  Flow= 19.24 L/min  Status=0x8000  Uptime=135s
+
+[SIM] Temp= 27.6 C  Press= 1021.0 hPa  Flow= 18.92 L/min  Status=0x8000  Uptime=136s
+
+[SIM] Temp= 27.4 C  Press= 1020.9 hPa  Flow= 18.61 L/min  Status=0x8000  Uptime=136s
+
+[SIM] Temp= 27.2 C  Press= 1020.8 hPa  Flow= 18.30 L/min  Status=0x8000  Uptime=136s
+
+[SIM] Temp= 27.0 C  Press= 1020.7 hPa  Flow= 17.99 L/min  Status=0x8000  Uptime=136s
+
+[SIM] Temp= 26.7 C  Press= 1020.6 hPa  Flow= 17.70 L/min  Status=0x8000  Uptime=136s
+
+[SIM] Temp= 26.5 C  Press= 1020.5 hPa  Flow= 17.42 L/min  Status=0x8000  Uptime=137s
+
+[SIM] Temp= 26.3 C  Press= 1020.4 hPa  Flow= 17.15 L/min  Status=0x8000  Uptime=137s
+
+[SIM] Temp= 26.0 C  Press= 1020.3 hPa  Flow= 16.88 L/min  Status=0x8000  Uptime=137s
+
+[SIM] Temp= 25.8 C  Press= 1020.2 hPa  Flow= 16.64 L/min  Status=0x8000  Uptime=137s
+
+[SIM] Temp= 25.5 C  Press= 1020.0 hPa  Flow= 16.40 L/min  Status=0x8000  Uptime=137s
+
+[SIM] Temp= 25.3 C  Press= 1019.9 hPa  Flow= 16.19 L/min  Status=0x8000  Uptime=138s
+
+[SIM] Temp= 25.0 C  Press= 1019.7 hPa  Flow= 15.98 L/min  Status=0x8000  Uptime=138s
+
+[SIM] Temp= 24.8 C  Press= 1019.5 hPa  Flow= 15.80 L/min  Status=0x8000  Uptime=138s
+
+[SIM] Temp= 24.5 C  Press= 1019.4 hPa  Flow= 15.63 L/min  Status=0x8000  Uptime=138s
+
+[SIM] Temp= 24.3 C  Press= 1019.2 hPa  Flow= 15.48 L/min  Status=0x8000  Uptime=138s
+
+[SIM] Temp= 24.0 C  Press= 1019.0 hPa  Flow= 15.35 L/min  Status=0x8000  Uptime=139s
+
+[SIM] Temp= 23.8 C  Press= 1018.8 hPa  Flow= 15.24 L/min  Status=0x8000  Uptime=139s
+
+[SIM] Temp= 23.6 C  Press= 1018.6 hPa  Flow= 15.15 L/min  Status=0x8000  Uptime=139s
+
+[SIM] Temp= 23.3 C  Press= 1018.4 hPa  Flow= 15.08 L/min  Status=0x8000  Uptime=139s
+
+[SIM] Temp= 23.1 C  Press= 1018.2 hPa  Flow= 15.03 L/min  Status=0x8000  Uptime=139s
+
+[SIM] Temp= 22.9 C  Press= 1017.9 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=140s
+
+[SIM] Temp= 22.6 C  Press= 1017.7 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=140s
+
+[SIM] Temp= 22.4 C  Press= 1017.5 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=140s
+
+[SIM] Temp= 22.2 C  Press= 1017.2 hPa  Flow= 15.05 L/min  Status=0x8000  Uptime=140s
+
+[SIM] Temp= 22.0 C  Press= 1017.0 hPa  Flow= 15.11 L/min  Status=0x8000  Uptime=140s
+
+[SIM] Temp= 21.8 C  Press= 1016.7 hPa  Flow= 15.18 L/min  Status=0x8000  Uptime=141s
+
+[SIM] Temp= 21.6 C  Press= 1016.5 hPa  Flow= 15.28 L/min  Status=0x8000  Uptime=141s
+
+[SIM] Temp= 21.4 C  Press= 1016.2 hPa  Flow= 15.40 L/min  Status=0x8000  Uptime=141s
+
+[SIM] Temp= 21.3 C  Press= 1016.0 hPa  Flow= 15.54 L/min  Status=0x8000  Uptime=141s
+
+[SIM] Temp= 21.1 C  Press= 1015.7 hPa  Flow= 15.69 L/min  Status=0x8000  Uptime=141s
+
+[SIM] Temp= 21.0 C  Press= 1015.4 hPa  Flow= 15.86 L/min  Status=0x8000  Uptime=142s
+
+[SIM] Temp= 20.8 C  Press= 1015.2 hPa  Flow= 16.06 L/min  Status=0x8000  Uptime=142s
+
+[SIM] Temp= 20.7 C  Press= 1014.9 hPa  Flow= 16.26 L/min  Status=0x8000  Uptime=142s
+
+[SIM] Temp= 20.6 C  Press= 1014.6 hPa  Flow= 16.49 L/min  Status=0x8000  Uptime=142s
+
+[SIM] Temp= 20.5 C  Press= 1014.3 hPa  Flow= 16.73 L/min  Status=0x8000  Uptime=142s
+
+[SIM] Temp= 20.4 C  Press= 1014.1 hPa  Flow= 16.98 L/min  Status=0x8000  Uptime=143s
+
+[SIM] Temp= 20.3 C  Press= 1013.8 hPa  Flow= 17.24 L/min  Status=0x8000  Uptime=143s
+
+[SIM] Temp= 20.2 C  Press= 1013.5 hPa  Flow= 17.52 L/min  Status=0x8000  Uptime=143s
+
+[SIM] Temp= 20.1 C  Press= 1013.2 hPa  Flow= 17.81 L/min  Status=0x8000  Uptime=143s
+
+[SIM] Temp= 20.1 C  Press= 1012.9 hPa  Flow= 18.10 L/min  Status=0x8000  Uptime=143s
+
+[SIM] Temp= 20.0 C  Press= 1012.7 hPa  Flow= 18.41 L/min  Status=0x8000  Uptime=144s
+
+[SIM] Temp= 20.0 C  Press= 1012.4 hPa  Flow= 18.72 L/min  Status=0x8000  Uptime=144s
+
+[SIM] Temp= 20.0 C  Press= 1012.1 hPa  Flow= 19.04 L/min  Status=0x8000  Uptime=144s
+
+[SIM] Temp= 20.0 C  Press= 1011.8 hPa  Flow= 19.36 L/min  Status=0x8000  Uptime=144s
+
+[SIM] Temp= 20.0 C  Press= 1011.6 hPa  Flow= 19.68 L/min  Status=0x8000  Uptime=144s
+
+[SIM] Temp= 20.0 C  Press= 1011.3 hPa  Flow= 20.01 L/min  Status=0x8000  Uptime=145s
+
+[SIM] Temp= 20.1 C  Press= 1011.0 hPa  Flow= 20.33 L/min  Status=0x8000  Uptime=145s
+
+[SIM] Temp= 20.1 C  Press= 1010.7 hPa  Flow= 20.65 L/min  Status=0x8000  Uptime=145s
+
+[SIM] Temp= 20.2 C  Press= 1010.5 hPa  Flow= 20.97 L/min  Status=0x8000  Uptime=145s
+
+[SIM] Temp= 20.3 C  Press= 1010.2 hPa  Flow= 21.29 L/min  Status=0x8000  Uptime=145s
+
+[SIM] Temp= 20.3 C  Press= 1010.0 hPa  Flow= 21.60 L/min  Status=0x8000  Uptime=146s
+
+[SIM] Temp= 20.4 C  Press= 1009.7 hPa  Flow= 21.91 L/min  Status=0x8000  Uptime=146s
+
+[SIM] Temp= 20.5 C  Press= 1009.5 hPa  Flow= 22.20 L/min  Status=0x8000  Uptime=146s
+
+[SIM] Temp= 20.7 C  Press= 1009.2 hPa  Flow= 22.49 L/min  Status=0x8000  Uptime=146s
+
+[SIM] Temp= 20.8 C  Press= 1009.0 hPa  Flow= 22.77 L/min  Status=0x8000  Uptime=146s
+
+[SIM] Temp= 20.9 C  Press= 1008.7 hPa  Flow= 23.03 L/min  Status=0x8000  Uptime=147s
+
+[SIM] Temp= 21.1 C  Press= 1008.5 hPa  Flow= 23.28 L/min  Status=0x8000  Uptime=147s
+
+[SIM] Temp= 21.2 C  Press= 1008.3 hPa  Flow= 23.52 L/min  Status=0x8000  Uptime=147s
+
+[SIM] Temp= 21.4 C  Press= 1008.1 hPa  Flow= 23.74 L/min  Status=0x8000  Uptime=147s
+
+[SIM] Temp= 21.6 C  Press= 1007.9 hPa  Flow= 23.95 L/min  Status=0x8000  Uptime=147s
+
+[SIM] Temp= 21.8 C  Press= 1007.6 hPa  Flow= 24.14 L/min  Status=0x8000  Uptime=148s
+
+[SIM] Temp= 22.0 C  Press= 1007.4 hPa  Flow= 24.31 L/min  Status=0x8000  Uptime=148s
+
+[SIM] Temp= 22.2 C  Press= 1007.3 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=148s
+
+[SIM] Temp= 22.4 C  Press= 1007.1 hPa  Flow= 24.61 L/min  Status=0x8000  Uptime=148s
+
+[SIM] Temp= 22.6 C  Press= 1006.9 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=148s
+
+[SIM] Temp= 22.8 C  Press= 1006.7 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=149s
+
+[SIM] Temp= 23.1 C  Press= 1006.6 hPa  Flow= 24.90 L/min  Status=0x8000  Uptime=149s
+
+[SIM] Temp= 23.3 C  Press= 1006.4 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=149s
+
+[SIM] Temp= 23.5 C  Press= 1006.3 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=149s
+
+[SIM] Temp= 23.8 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=149s
+
+[SIM] Temp= 24.0 C  Press= 1006.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=150s
+
+[SIM] Temp= 24.3 C  Press= 1005.9 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=150s
+
+[SIM] Temp= 24.5 C  Press= 1005.8 hPa  Flow= 24.91 L/min  Status=0x8000  Uptime=150s
+
+[SIM] Temp= 24.8 C  Press= 1005.7 hPa  Flow= 24.84 L/min  Status=0x8000  Uptime=150s
+
+[SIM] Temp= 25.0 C  Press= 1013.2 hPa  Flow= 20.01 L/min  Status=0x8000  Uptime=150s
+
+[SIM] Temp= 25.3 C  Press= 1013.5 hPa  Flow= 20.33 L/min  Status=0x8000  Uptime=151s
+
+[SIM] Temp= 25.5 C  Press= 1013.8 hPa  Flow= 20.65 L/min  Status=0x8000  Uptime=151s
+
+[SIM] Temp= 25.8 C  Press= 1014.0 hPa  Flow= 20.97 L/min  Status=0x8000  Uptime=151s
+
+[SIM] Temp= 26.0 C  Press= 1014.3 hPa  Flow= 21.29 L/min  Status=0x8000  Uptime=151s
+
+[SIM] Temp= 26.2 C  Press= 1014.6 hPa  Flow= 21.60 L/min  Status=0x8000  Uptime=151s
+
+[SIM] Temp= 26.5 C  Press= 1014.9 hPa  Flow= 21.91 L/min  Status=0x8000  Uptime=152s
+
+[SIM] Temp= 26.7 C  Press= 1015.1 hPa  Flow= 22.20 L/min  Status=0x8000  Uptime=152s
+
+[SIM] Temp= 27.0 C  Press= 1015.4 hPa  Flow= 22.49 L/min  Status=0x8000  Uptime=152s
+
+[SIM] Temp= 27.2 C  Press= 1015.7 hPa  Flow= 22.77 L/min  Status=0x8000  Uptime=152s
+
+[SIM] Temp= 27.4 C  Press= 1015.9 hPa  Flow= 23.03 L/min  Status=0x8000  Uptime=152s
+
+[SIM] Temp= 27.6 C  Press= 1016.2 hPa  Flow= 23.28 L/min  Status=0x8000  Uptime=153s
+
+[SIM] Temp= 27.8 C  Press= 1016.5 hPa  Flow= 23.52 L/min  Status=0x8000  Uptime=153s
+
+[SIM] Temp= 28.0 C  Press= 1016.7 hPa  Flow= 23.74 L/min  Status=0x8000  Uptime=153s
+
+[SIM] Temp= 28.2 C  Press= 1017.0 hPa  Flow= 23.95 L/min  Status=0x8000  Uptime=153s
+
+[SIM] Temp= 28.4 C  Press= 1017.2 hPa  Flow= 24.14 L/min  Status=0x8000  Uptime=153s
+
+[SIM] Temp= 28.6 C  Press= 1017.5 hPa  Flow= 24.31 L/min  Status=0x8000  Uptime=154s
+
+[SIM] Temp= 28.8 C  Press= 1017.7 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=154s
+
+[SIM] Temp= 28.9 C  Press= 1017.9 hPa  Flow= 24.61 L/min  Status=0x8000  Uptime=154s
+
+[SIM] Temp= 29.1 C  Press= 1018.1 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=154s
+
+[SIM] Temp= 29.2 C  Press= 1018.4 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=154s
+
+[SIM] Temp= 29.3 C  Press= 1018.6 hPa  Flow= 24.90 L/min  Status=0x8000  Uptime=155s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=155s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=155s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=155s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=155s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=156s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.91 L/min  Status=0x8000  Uptime=156s
+
+[SIM] Temp= 29.9 C  Press= 1019.8 hPa  Flow= 24.84 L/min  Status=0x8000  Uptime=156s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.75 L/min  Status=0x8000  Uptime=156s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.64 L/min  Status=0x8000  Uptime=156s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.51 L/min  Status=0x8000  Uptime=157s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.36 L/min  Status=0x8000  Uptime=157s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=157s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.01 L/min  Status=0x8000  Uptime=157s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.81 L/min  Status=0x8000  Uptime=157s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.59 L/min  Status=0x8000  Uptime=158s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.35 L/min  Status=0x8000  Uptime=158s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.11 L/min  Status=0x8000  Uptime=158s
+
+[SIM] Temp= 29.6 C  Press= 1021.0 hPa  Flow= 22.85 L/min  Status=0x8000  Uptime=158s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.57 L/min  Status=0x8000  Uptime=158s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.29 L/min  Status=0x8000  Uptime=159s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 22.00 L/min  Status=0x8000  Uptime=159s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.69 L/min  Status=0x8000  Uptime=159s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.38 L/min  Status=0x8000  Uptime=159s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.07 L/min  Status=0x8000  Uptime=159s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.75 L/min  Status=0x8000  Uptime=160s
+
+[SIM] Temp= 28.6 C  Press= 1021.2 hPa  Flow= 20.43 L/min  Status=0x8000  Uptime=160s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.10 L/min  Status=0x8000  Uptime=160s
+
+[SIM] Temp= 28.2 C  Press= 1021.1 hPa  Flow= 19.78 L/min  Status=0x8000  Uptime=160s
+
+[SIM] Temp= 28.0 C  Press= 1021.1 hPa  Flow= 19.45 L/min  Status=0x8000  Uptime=160s
+
+[SIM] Temp= 27.8 C  Press= 1021.0 hPa  Flow= 19.13 L/min  Status=0x8000  Uptime=161s
+
+[SIM] Temp= 27.6 C  Press= 1021.0 hPa  Flow= 18.81 L/min  Status=0x8000  Uptime=161s
+
+[SIM] Temp= 27.4 C  Press= 1020.9 hPa  Flow= 18.50 L/min  Status=0x8000  Uptime=161s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.19 L/min  Status=0x8000  Uptime=161s
+
+[SIM] Temp= 26.9 C  Press= 1020.7 hPa  Flow= 17.90 L/min  Status=0x8000  Uptime=161s
+
+[SIM] Temp= 26.7 C  Press= 1020.6 hPa  Flow= 17.61 L/min  Status=0x8000  Uptime=162s
+
+[SIM] Temp= 26.4 C  Press= 1020.5 hPa  Flow= 17.33 L/min  Status=0x8000  Uptime=162s
+
+[SIM] Temp= 26.2 C  Press= 1020.4 hPa  Flow= 17.06 L/min  Status=0x8000  Uptime=162s
+
+[SIM] Temp= 25.9 C  Press= 1020.2 hPa  Flow= 16.80 L/min  Status=0x8000  Uptime=162s
+
+[SIM] Temp= 25.7 C  Press= 1020.1 hPa  Flow= 16.56 L/min  Status=0x8000  Uptime=162s
+
+[SIM] Temp= 25.5 C  Press= 1020.0 hPa  Flow= 16.33 L/min  Status=0x8000  Uptime=163s
+
+[SIM] Temp= 25.2 C  Press= 1019.8 hPa  Flow= 16.12 L/min  Status=0x8000  Uptime=163s
+
+[SIM] Temp= 25.0 C  Press= 1019.6 hPa  Flow= 15.92 L/min  Status=0x8000  Uptime=163s
+
+[SIM] Temp= 24.7 C  Press= 1019.5 hPa  Flow= 15.74 L/min  Status=0x8000  Uptime=163s
+
+[SIM] Temp= 24.5 C  Press= 1019.3 hPa  Flow= 15.58 L/min  Status=0x8000  Uptime=163s
+
+[SIM] Temp= 24.2 C  Press= 1019.1 hPa  Flow= 15.44 L/min  Status=0x8000  Uptime=164s
+
+[SIM] Temp= 24.0 C  Press= 1018.9 hPa  Flow= 15.31 L/min  Status=0x8000  Uptime=164s
+
+[SIM] Temp= 23.7 C  Press= 1018.7 hPa  Flow= 15.21 L/min  Status=0x8000  Uptime=164s
+
+[SIM] Temp= 23.5 C  Press= 1018.5 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=164s
+
+[SIM] Temp= 23.2 C  Press= 1018.3 hPa  Flow= 15.06 L/min  Status=0x8000  Uptime=164s
+
+[SIM] Temp= 23.0 C  Press= 1018.1 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=165s
+
+[SIM] Temp= 22.8 C  Press= 1017.9 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=165s
+
+[SIM] Temp= 22.6 C  Press= 1017.6 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=165s
+
+[SIM] Temp= 22.3 C  Press= 1017.4 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=165s
+
+[SIM] Temp= 22.1 C  Press= 1017.1 hPa  Flow= 15.07 L/min  Status=0x8000  Uptime=165s
+
+[SIM] Temp= 21.9 C  Press= 1016.9 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=166s
+
+[SIM] Temp= 21.7 C  Press= 1016.7 hPa  Flow= 15.21 L/min  Status=0x8000  Uptime=166s
+
+[SIM] Temp= 21.6 C  Press= 1016.4 hPa  Flow= 15.32 L/min  Status=0x8000  Uptime=166s
+
+[SIM] Temp= 21.4 C  Press= 1016.1 hPa  Flow= 15.44 L/min  Status=0x8000  Uptime=166s
+
+[SIM] Temp= 21.2 C  Press= 1015.9 hPa  Flow= 15.59 L/min  Status=0x8000  Uptime=166s
+
+[SIM] Temp= 21.1 C  Press= 1015.6 hPa  Flow= 15.75 L/min  Status=0x8000  Uptime=167s
+
+[SIM] Temp= 20.9 C  Press= 1015.3 hPa  Flow= 15.93 L/min  Status=0x8000  Uptime=167s
+
+[SIM] Temp= 20.8 C  Press= 1015.1 hPa  Flow= 16.12 L/min  Status=0x8000  Uptime=167s
+
+[SIM] Temp= 20.6 C  Press= 1014.8 hPa  Flow= 16.34 L/min  Status=0x8000  Uptime=167s
+
+[SIM] Temp= 20.5 C  Press= 1014.5 hPa  Flow= 16.57 L/min  Status=0x8000  Uptime=167s
+
+[SIM] Temp= 20.4 C  Press= 1014.2 hPa  Flow= 16.81 L/min  Status=0x8000  Uptime=168s
+
+[SIM] Temp= 20.3 C  Press= 1014.0 hPa  Flow= 17.07 L/min  Status=0x8000  Uptime=168s
+
+[SIM] Temp= 20.2 C  Press= 1013.7 hPa  Flow= 17.34 L/min  Status=0x8000  Uptime=168s
+
+[SIM] Temp= 20.2 C  Press= 1013.4 hPa  Flow= 17.62 L/min  Status=0x8000  Uptime=168s
+
+[SIM] Temp= 20.1 C  Press= 1013.1 hPa  Flow= 17.91 L/min  Status=0x8000  Uptime=168s
+
+[SIM] Temp= 20.1 C  Press= 1012.8 hPa  Flow= 18.21 L/min  Status=0x8000  Uptime=169s
+
+[SIM] Temp= 20.0 C  Press= 1012.6 hPa  Flow= 18.51 L/min  Status=0x8000  Uptime=169s
+
+[SIM] Temp= 20.0 C  Press= 1012.3 hPa  Flow= 18.83 L/min  Status=0x8000  Uptime=169s
+
+[SIM] Temp= 20.0 C  Press= 1012.0 hPa  Flow= 19.14 L/min  Status=0x8000  Uptime=169s
+
+[SIM] Temp= 20.0 C  Press= 1011.7 hPa  Flow= 19.47 L/min  Status=0x8000  Uptime=169s
+
+[SIM] Temp= 20.0 C  Press= 1011.5 hPa  Flow= 19.79 L/min  Status=0x8000  Uptime=170s
+
+[SIM] Temp= 20.0 C  Press= 1011.2 hPa  Flow= 20.11 L/min  Status=0x8000  Uptime=170s
+
+[SIM] Temp= 20.1 C  Press= 1010.9 hPa  Flow= 20.44 L/min  Status=0x8000  Uptime=170s
+
+[SIM] Temp= 20.1 C  Press= 1010.7 hPa  Flow= 20.76 L/min  Status=0x8000  Uptime=170s
+
+[SIM] Temp= 20.2 C  Press= 1010.4 hPa  Flow= 21.08 L/min  Status=0x8000  Uptime=170s
+
+[SIM] Temp= 20.3 C  Press= 1010.1 hPa  Flow= 21.40 L/min  Status=0x8000  Uptime=171s
+
+[SIM] Temp= 20.4 C  Press= 1009.9 hPa  Flow= 21.70 L/min  Status=0x8000  Uptime=171s
+
+[SIM] Temp= 20.5 C  Press= 1009.6 hPa  Flow= 22.01 L/min  Status=0x8000  Uptime=171s
+
+[SIM] Temp= 20.6 C  Press= 1009.4 hPa  Flow= 22.30 L/min  Status=0x8000  Uptime=171s
+
+[SIM] Temp= 20.7 C  Press= 1009.1 hPa  Flow= 22.58 L/min  Status=0x8000  Uptime=171s
+
+[SIM] Temp= 20.8 C  Press= 1008.9 hPa  Flow= 22.86 L/min  Status=0x8000  Uptime=172s
+
+[SIM] Temp= 21.0 C  Press= 1008.7 hPa  Flow= 23.12 L/min  Status=0x8000  Uptime=172s
+
+[SIM] Temp= 21.1 C  Press= 1008.4 hPa  Flow= 23.36 L/min  Status=0x8000  Uptime=172s
+
+[SIM] Temp= 21.3 C  Press= 1008.2 hPa  Flow= 23.60 L/min  Status=0x8000  Uptime=172s
+
+[SIM] Temp= 21.5 C  Press= 1008.0 hPa  Flow= 23.81 L/min  Status=0x8000  Uptime=172s
+
+[SIM] Temp= 21.7 C  Press= 1007.8 hPa  Flow= 24.02 L/min  Status=0x8000  Uptime=173s
+
+[SIM] Temp= 21.8 C  Press= 1007.6 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=173s
+
+[SIM] Temp= 22.0 C  Press= 1007.4 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=173s
+
+[SIM] Temp= 22.3 C  Press= 1007.2 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=173s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=173s
+
+[SIM] Temp= 22.7 C  Press= 1006.8 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=174s
+
+[SIM] Temp= 22.9 C  Press= 1006.7 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=174s
+
+[SIM] Temp= 23.1 C  Press= 1006.5 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=174s
+
+[SIM] Temp= 23.4 C  Press= 1006.4 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=174s
+
+[SIM] Temp= 23.6 C  Press= 1006.2 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=174s
+
+[SIM] Temp= 23.8 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=175s
+
+[SIM] Temp= 24.1 C  Press= 1006.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=175s
+
+[SIM] Temp= 24.3 C  Press= 1005.9 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=175s
+
+[SIM] Temp= 24.6 C  Press= 1005.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=175s
+
+[SIM] Temp= 24.8 C  Press= 1005.6 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=175s
+
+[SIM] Temp= 25.1 C  Press= 1013.3 hPa  Flow= 20.11 L/min  Status=0x8000  Uptime=176s
+
+[SIM] Temp= 25.3 C  Press= 1013.6 hPa  Flow= 20.44 L/min  Status=0x8000  Uptime=176s
+
+[SIM] Temp= 25.6 C  Press= 1013.9 hPa  Flow= 20.76 L/min  Status=0x8000  Uptime=176s
+
+[SIM] Temp= 25.8 C  Press= 1014.1 hPa  Flow= 21.08 L/min  Status=0x8000  Uptime=176s
+
+[SIM] Temp= 26.1 C  Press= 1014.4 hPa  Flow= 21.40 L/min  Status=0x8000  Uptime=176s
+
+[SIM] Temp= 26.3 C  Press= 1014.7 hPa  Flow= 21.70 L/min  Status=0x8000  Uptime=177s
+
+[SIM] Temp= 26.6 C  Press= 1015.0 hPa  Flow= 22.01 L/min  Status=0x8000  Uptime=177s
+
+[SIM] Temp= 26.8 C  Press= 1015.2 hPa  Flow= 22.30 L/min  Status=0x8000  Uptime=177s
+
+[SIM] Temp= 27.0 C  Press= 1015.5 hPa  Flow= 22.58 L/min  Status=0x8000  Uptime=177s
+
+[SIM] Temp= 27.3 C  Press= 1015.8 hPa  Flow= 22.86 L/min  Status=0x8000  Uptime=177s
+
+[SIM] Temp= 27.5 C  Press= 1016.0 hPa  Flow= 23.12 L/min  Status=0x8000  Uptime=178s
+
+[SIM] Temp= 27.7 C  Press= 1016.3 hPa  Flow= 23.36 L/min  Status=0x8000  Uptime=178s
+
+[SIM] Temp= 27.9 C  Press= 1016.6 hPa  Flow= 23.60 L/min  Status=0x8000  Uptime=178s
+
+[SIM] Temp= 28.1 C  Press= 1016.8 hPa  Flow= 23.81 L/min  Status=0x8000  Uptime=178s
+
+[SIM] Temp= 28.3 C  Press= 1017.1 hPa  Flow= 24.02 L/min  Status=0x8000  Uptime=178s
+
+[SIM] Temp= 28.5 C  Press= 1017.3 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=179s
+
+[SIM] Temp= 28.6 C  Press= 1017.5 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=179s
+
+[SIM] Temp= 28.8 C  Press= 1017.8 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=179s
+
+[SIM] Temp= 29.0 C  Press= 1018.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=179s
+
+[SIM] Temp= 29.1 C  Press= 1018.2 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=179s
+
+[SIM] Temp= 29.3 C  Press= 1018.4 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=180s
+
+[SIM] Temp= 29.4 C  Press= 1018.6 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=180s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=180s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=180s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=180s
+
+[SIM] Temp= 29.8 C  Press= 1019.4 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=181s
+
+[SIM] Temp= 29.8 C  Press= 1019.6 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=181s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=181s
+
+[SIM] Temp= 29.9 C  Press= 1019.9 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=181s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=181s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.60 L/min  Status=0x8000  Uptime=182s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.46 L/min  Status=0x8000  Uptime=182s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.31 L/min  Status=0x8000  Uptime=182s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.13 L/min  Status=0x8000  Uptime=182s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.94 L/min  Status=0x8000  Uptime=182s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.74 L/min  Status=0x8000  Uptime=183s
+
+[SIM] Temp= 29.8 C  Press= 1020.8 hPa  Flow= 23.51 L/min  Status=0x8000  Uptime=183s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.27 L/min  Status=0x8000  Uptime=183s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.02 L/min  Status=0x8000  Uptime=183s
+
+[SIM] Temp= 29.6 C  Press= 1021.1 hPa  Flow= 22.76 L/min  Status=0x8000  Uptime=183s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.48 L/min  Status=0x8000  Uptime=184s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.19 L/min  Status=0x8000  Uptime=184s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 21.89 L/min  Status=0x8000  Uptime=184s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.59 L/min  Status=0x8000  Uptime=184s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.28 L/min  Status=0x8000  Uptime=184s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.96 L/min  Status=0x8000  Uptime=185s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.64 L/min  Status=0x8000  Uptime=185s
+
+[SIM] Temp= 28.5 C  Press= 1021.2 hPa  Flow= 20.32 L/min  Status=0x8000  Uptime=185s
+
+[SIM] Temp= 28.3 C  Press= 1021.1 hPa  Flow= 19.99 L/min  Status=0x8000  Uptime=185s
+
+[SIM] Temp= 28.1 C  Press= 1021.1 hPa  Flow= 19.67 L/min  Status=0x8000  Uptime=185s
+
+[SIM] Temp= 27.9 C  Press= 1021.1 hPa  Flow= 19.35 L/min  Status=0x8000  Uptime=186s
+
+[SIM] Temp= 27.7 C  Press= 1021.0 hPa  Flow= 19.02 L/min  Status=0x8000  Uptime=186s
+
+[SIM] Temp= 27.5 C  Press= 1020.9 hPa  Flow= 18.71 L/min  Status=0x8000  Uptime=186s
+
+[SIM] Temp= 27.3 C  Press= 1020.9 hPa  Flow= 18.40 L/min  Status=0x8000  Uptime=186s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.09 L/min  Status=0x8000  Uptime=186s
+
+[SIM] Temp= 26.8 C  Press= 1020.7 hPa  Flow= 17.80 L/min  Status=0x8000  Uptime=187s
+
+[SIM] Temp= 26.6 C  Press= 1020.6 hPa  Flow= 17.51 L/min  Status=0x8000  Uptime=187s
+
+[SIM] Temp= 26.4 C  Press= 1020.4 hPa  Flow= 17.23 L/min  Status=0x8000  Uptime=187s
+
+[SIM] Temp= 26.1 C  Press= 1020.3 hPa  Flow= 16.97 L/min  Status=0x8000  Uptime=187s
+
+[SIM] Temp= 25.9 C  Press= 1020.2 hPa  Flow= 16.72 L/min  Status=0x8000  Uptime=187s
+
+[SIM] Temp= 25.6 C  Press= 1020.1 hPa  Flow= 16.48 L/min  Status=0x8000  Uptime=188s
+
+[SIM] Temp= 25.4 C  Press= 1019.9 hPa  Flow= 16.26 L/min  Status=0x8000  Uptime=188s
+
+[SIM] Temp= 25.1 C  Press= 1019.8 hPa  Flow= 16.05 L/min  Status=0x8000  Uptime=188s
+
+[SIM] Temp= 24.9 C  Press= 1019.6 hPa  Flow= 15.86 L/min  Status=0x8000  Uptime=188s
+
+[SIM] Temp= 24.6 C  Press= 1019.4 hPa  Flow= 15.68 L/min  Status=0x8000  Uptime=188s
+
+[SIM] Temp= 24.4 C  Press= 1019.2 hPa  Flow= 15.53 L/min  Status=0x8000  Uptime=189s
+
+[SIM] Temp= 24.1 C  Press= 1019.0 hPa  Flow= 15.39 L/min  Status=0x8000  Uptime=189s
+
+[SIM] Temp= 23.9 C  Press= 1018.9 hPa  Flow= 15.28 L/min  Status=0x8000  Uptime=189s
+
+[SIM] Temp= 23.6 C  Press= 1018.6 hPa  Flow= 15.18 L/min  Status=0x8000  Uptime=189s
+
+[SIM] Temp= 23.4 C  Press= 1018.4 hPa  Flow= 15.10 L/min  Status=0x8000  Uptime=189s
+
+[SIM] Temp= 23.2 C  Press= 1018.2 hPa  Flow= 15.05 L/min  Status=0x8000  Uptime=190s
+
+[SIM] Temp= 22.9 C  Press= 1018.0 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=190s
+
+[SIM] Temp= 22.7 C  Press= 1017.8 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=190s
+
+[SIM] Temp= 22.5 C  Press= 1017.5 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=190s
+
+[SIM] Temp= 22.3 C  Press= 1017.3 hPa  Flow= 15.04 L/min  Status=0x8000  Uptime=190s
+
+[SIM] Temp= 22.1 C  Press= 1017.1 hPa  Flow= 15.09 L/min  Status=0x8000  Uptime=191s
+
+[SIM] Temp= 21.9 C  Press= 1016.8 hPa  Flow= 15.16 L/min  Status=0x8000  Uptime=191s
+
+[SIM] Temp= 21.7 C  Press= 1016.6 hPa  Flow= 15.25 L/min  Status=0x8000  Uptime=191s
+
+[SIM] Temp= 21.5 C  Press= 1016.3 hPa  Flow= 15.36 L/min  Status=0x8000  Uptime=191s
+
+[SIM] Temp= 21.3 C  Press= 1016.0 hPa  Flow= 15.49 L/min  Status=0x8000  Uptime=191s
+
+[SIM] Temp= 21.2 C  Press= 1015.8 hPa  Flow= 15.64 L/min  Status=0x8000  Uptime=192s
+
+[SIM] Temp= 21.0 C  Press= 1015.5 hPa  Flow= 15.81 L/min  Status=0x8000  Uptime=192s
+
+[SIM] Temp= 20.9 C  Press= 1015.3 hPa  Flow= 15.99 L/min  Status=0x8000  Uptime=192s
+
+[SIM] Temp= 20.7 C  Press= 1015.0 hPa  Flow= 16.19 L/min  Status=0x8000  Uptime=192s
+
+[SIM] Temp= 20.6 C  Press= 1014.7 hPa  Flow= 16.41 L/min  Status=0x8000  Uptime=192s
+
+[SIM] Temp= 20.5 C  Press= 1014.4 hPa  Flow= 16.65 L/min  Status=0x8000  Uptime=193s
+
+[SIM] Temp= 20.4 C  Press= 1014.2 hPa  Flow= 16.89 L/min  Status=0x8000  Uptime=193s
+
+[SIM] Temp= 20.3 C  Press= 1013.9 hPa  Flow= 17.16 L/min  Status=0x8000  Uptime=193s
+
+[SIM] Temp= 20.2 C  Press= 1013.6 hPa  Flow= 17.43 L/min  Status=0x8000  Uptime=193s
+
+[SIM] Temp= 20.1 C  Press= 1013.3 hPa  Flow= 17.71 L/min  Status=0x8000  Uptime=193s
+
+[SIM] Temp= 20.1 C  Press= 1013.0 hPa  Flow= 18.01 L/min  Status=0x8000  Uptime=194s
+
+[SIM] Temp= 20.1 C  Press= 1012.8 hPa  Flow= 18.31 L/min  Status=0x8000  Uptime=194s
+
+[SIM] Temp= 20.0 C  Press= 1012.5 hPa  Flow= 18.62 L/min  Status=0x8000  Uptime=194s
+
+[SIM] Temp= 20.0 C  Press= 1012.2 hPa  Flow= 18.93 L/min  Status=0x8000  Uptime=194s
+
+[SIM] Temp= 20.0 C  Press= 1011.9 hPa  Flow= 19.25 L/min  Status=0x8000  Uptime=194s
+
+[SIM] Temp= 20.0 C  Press= 1011.6 hPa  Flow= 19.57 L/min  Status=0x8000  Uptime=195s
+
+[SIM] Temp= 20.0 C  Press= 1011.4 hPa  Flow= 19.90 L/min  Status=0x8000  Uptime=195s
+
+[SIM] Temp= 20.1 C  Press= 1011.1 hPa  Flow= 20.22 L/min  Status=0x8000  Uptime=195s
+
+[SIM] Temp= 20.1 C  Press= 1010.8 hPa  Flow= 20.55 L/min  Status=0x8000  Uptime=195s
+
+[SIM] Temp= 20.2 C  Press= 1010.6 hPa  Flow= 20.87 L/min  Status=0x8000  Uptime=195s
+
+[SIM] Temp= 20.2 C  Press= 1010.3 hPa  Flow= 21.19 L/min  Status=0x8000  Uptime=196s
+
+[SIM] Temp= 20.3 C  Press= 1010.0 hPa  Flow= 21.50 L/min  Status=0x8000  Uptime=196s
+
+[SIM] Temp= 20.4 C  Press= 1009.8 hPa  Flow= 21.81 L/min  Status=0x8000  Uptime=196s
+
+[SIM] Temp= 20.5 C  Press= 1009.5 hPa  Flow= 22.11 L/min  Status=0x8000  Uptime=196s
+
+[SIM] Temp= 20.6 C  Press= 1009.3 hPa  Flow= 22.40 L/min  Status=0x8000  Uptime=196s
+
+[SIM] Temp= 20.8 C  Press= 1009.0 hPa  Flow= 22.68 L/min  Status=0x8000  Uptime=197s
+
+[SIM] Temp= 20.9 C  Press= 1008.8 hPa  Flow= 22.94 L/min  Status=0x8000  Uptime=197s
+
+[SIM] Temp= 21.0 C  Press= 1008.6 hPa  Flow= 23.20 L/min  Status=0x8000  Uptime=197s
+
+[SIM] Temp= 21.2 C  Press= 1008.4 hPa  Flow= 23.44 L/min  Status=0x8000  Uptime=197s
+
+[SIM] Temp= 21.4 C  Press= 1008.1 hPa  Flow= 23.67 L/min  Status=0x8000  Uptime=197s
+
+[SIM] Temp= 21.5 C  Press= 1007.9 hPa  Flow= 23.88 L/min  Status=0x8000  Uptime=198s
+
+[SIM] Temp= 21.7 C  Press= 1007.7 hPa  Flow= 24.08 L/min  Status=0x8000  Uptime=198s
+
+[SIM] Temp= 21.9 C  Press= 1007.5 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=198s
+
+[SIM] Temp= 22.1 C  Press= 1007.3 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=198s
+
+[SIM] Temp= 22.3 C  Press= 1007.1 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=198s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.69 L/min  Status=0x8000  Uptime=199s
+
+[SIM] Temp= 22.8 C  Press= 1006.8 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=199s
+
+[SIM] Temp= 23.0 C  Press= 1006.6 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=199s
+
+[SIM] Temp= 23.2 C  Press= 1006.5 hPa  Flow= 24.94 L/min  Status=0x8000  Uptime=199s
+
+[SIM] Temp= 23.4 C  Press= 1006.3 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=199s
+
+[SIM] Temp= 23.7 C  Press= 1006.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=200s
+
+[SIM] Temp= 23.9 C  Press= 1006.0 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=200s
+
+[SIM] Temp= 24.2 C  Press= 1005.9 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=200s
+
+[SIM] Temp= 24.4 C  Press= 1005.8 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=200s
+
+[SIM] Temp= 24.7 C  Press= 1005.7 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=200s
+
+[SIM] Temp= 24.9 C  Press= 1005.6 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=201s
+
+[SIM] Temp= 25.2 C  Press= 1013.4 hPa  Flow= 20.22 L/min  Status=0x8000  Uptime=201s
+
+[SIM] Temp= 25.4 C  Press= 1013.7 hPa  Flow= 20.55 L/min  Status=0x8000  Uptime=201s
+
+[SIM] Temp= 25.7 C  Press= 1014.0 hPa  Flow= 20.87 L/min  Status=0x8000  Uptime=201s
+
+[SIM] Temp= 25.9 C  Press= 1014.2 hPa  Flow= 21.19 L/min  Status=0x8000  Uptime=201s
+
+[SIM] Temp= 26.2 C  Press= 1014.5 hPa  Flow= 21.50 L/min  Status=0x8000  Uptime=202s
+
+[SIM] Temp= 26.4 C  Press= 1014.8 hPa  Flow= 21.81 L/min  Status=0x8000  Uptime=202s
+
+[SIM] Temp= 26.6 C  Press= 1015.1 hPa  Flow= 22.11 L/min  Status=0x8000  Uptime=202s
+
+[SIM] Temp= 26.9 C  Press= 1015.3 hPa  Flow= 22.40 L/min  Status=0x8000  Uptime=202s
+
+[SIM] Temp= 27.1 C  Press= 1015.6 hPa  Flow= 22.68 L/min  Status=0x8000  Uptime=202s
+
+[SIM] Temp= 27.3 C  Press= 1015.9 hPa  Flow= 22.94 L/min  Status=0x8000  Uptime=203s
+
+[SIM] Temp= 27.5 C  Press= 1016.1 hPa  Flow= 23.20 L/min  Status=0x8000  Uptime=203s
+
+[SIM] Temp= 27.8 C  Press= 1016.4 hPa  Flow= 23.44 L/min  Status=0x8000  Uptime=203s
+
+[SIM] Temp= 28.0 C  Press= 1016.6 hPa  Flow= 23.67 L/min  Status=0x8000  Uptime=203s
+
+[SIM] Temp= 28.2 C  Press= 1016.9 hPa  Flow= 23.88 L/min  Status=0x8000  Uptime=203s
+
+[SIM] Temp= 28.4 C  Press= 1017.1 hPa  Flow= 24.08 L/min  Status=0x8000  Uptime=204s
+
+[SIM] Temp= 28.5 C  Press= 1017.4 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=204s
+
+[SIM] Temp= 28.7 C  Press= 1017.6 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=204s
+
+[SIM] Temp= 28.9 C  Press= 1017.8 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=204s
+
+[SIM] Temp= 29.0 C  Press= 1018.1 hPa  Flow= 24.69 L/min  Status=0x8000  Uptime=204s
+
+[SIM] Temp= 29.2 C  Press= 1018.3 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=205s
+
+[SIM] Temp= 29.3 C  Press= 1018.5 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=205s
+
+[SIM] Temp= 29.4 C  Press= 1018.7 hPa  Flow= 24.94 L/min  Status=0x8000  Uptime=205s
+
+[SIM] Temp= 29.5 C  Press= 1018.9 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=205s
+
+[SIM] Temp= 29.6 C  Press= 1019.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=205s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=206s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=206s
+
+[SIM] Temp= 29.9 C  Press= 1019.6 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=206s
+
+[SIM] Temp= 29.9 C  Press= 1019.8 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=206s
+
+[SIM] Temp= 30.0 C  Press= 1019.9 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=206s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.68 L/min  Status=0x8000  Uptime=207s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=207s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.41 L/min  Status=0x8000  Uptime=207s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.25 L/min  Status=0x8000  Uptime=207s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.07 L/min  Status=0x8000  Uptime=207s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.88 L/min  Status=0x8000  Uptime=208s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.66 L/min  Status=0x8000  Uptime=208s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.43 L/min  Status=0x8000  Uptime=208s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.19 L/min  Status=0x8000  Uptime=208s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 22.93 L/min  Status=0x8000  Uptime=208s
+
+[SIM] Temp= 29.6 C  Press= 1021.1 hPa  Flow= 22.66 L/min  Status=0x8000  Uptime=209s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.38 L/min  Status=0x8000  Uptime=209s
+
+[SIM] Temp= 29.4 C  Press= 1021.2 hPa  Flow= 22.09 L/min  Status=0x8000  Uptime=209s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.79 L/min  Status=0x8000  Uptime=209s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.49 L/min  Status=0x8000  Uptime=209s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.17 L/min  Status=0x8000  Uptime=210s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.85 L/min  Status=0x8000  Uptime=210s
+
+[SIM] Temp= 28.6 C  Press= 1021.2 hPa  Flow= 20.53 L/min  Status=0x8000  Uptime=210s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.21 L/min  Status=0x8000  Uptime=210s
+
+[SIM] Temp= 28.2 C  Press= 1021.1 hPa  Flow= 19.88 L/min  Status=0x8000  Uptime=210s
+
+[SIM] Temp= 28.1 C  Press= 1021.1 hPa  Flow= 19.56 L/min  Status=0x8000  Uptime=211s
+
+[SIM] Temp= 27.9 C  Press= 1021.0 hPa  Flow= 19.24 L/min  Status=0x8000  Uptime=211s
+
+[SIM] Temp= 27.6 C  Press= 1021.0 hPa  Flow= 18.92 L/min  Status=0x8000  Uptime=211s
+
+[SIM] Temp= 27.4 C  Press= 1020.9 hPa  Flow= 18.60 L/min  Status=0x8000  Uptime=211s
+
+[SIM] Temp= 27.2 C  Press= 1020.8 hPa  Flow= 18.29 L/min  Status=0x8000  Uptime=211s
+
+[SIM] Temp= 27.0 C  Press= 1020.7 hPa  Flow= 17.99 L/min  Status=0x8000  Uptime=212s
+
+[SIM] Temp= 26.7 C  Press= 1020.6 hPa  Flow= 17.70 L/min  Status=0x8000  Uptime=212s
+
+[SIM] Temp= 26.5 C  Press= 1020.5 hPa  Flow= 17.42 L/min  Status=0x8000  Uptime=212s
+
+[SIM] Temp= 26.3 C  Press= 1020.4 hPa  Flow= 17.14 L/min  Status=0x8000  Uptime=212s
+
+[SIM] Temp= 26.0 C  Press= 1020.3 hPa  Flow= 16.88 L/min  Status=0x8000  Uptime=212s
+
+[SIM] Temp= 25.8 C  Press= 1020.1 hPa  Flow= 16.64 L/min  Status=0x8000  Uptime=213s
+
+[SIM] Temp= 25.5 C  Press= 1020.0 hPa  Flow= 16.40 L/min  Status=0x8000  Uptime=213s
+
+[SIM] Temp= 25.3 C  Press= 1019.9 hPa  Flow= 16.18 L/min  Status=0x8000  Uptime=213s
+
+[SIM] Temp= 25.0 C  Press= 1019.7 hPa  Flow= 15.98 L/min  Status=0x8000  Uptime=213s
+
+[SIM] Temp= 24.8 C  Press= 1019.5 hPa  Flow= 15.80 L/min  Status=0x8000  Uptime=213s
+
+[SIM] Temp= 24.5 C  Press= 1019.4 hPa  Flow= 15.63 L/min  Status=0x8000  Uptime=214s
+
+[SIM] Temp= 24.3 C  Press= 1019.2 hPa  Flow= 15.48 L/min  Status=0x8000  Uptime=214s
+
+[SIM] Temp= 24.0 C  Press= 1019.0 hPa  Flow= 15.35 L/min  Status=0x8000  Uptime=214s
+
+[SIM] Temp= 23.8 C  Press= 1018.8 hPa  Flow= 15.24 L/min  Status=0x8000  Uptime=214s
+
+[SIM] Temp= 23.6 C  Press= 1018.6 hPa  Flow= 15.15 L/min  Status=0x8000  Uptime=214s
+
+[SIM] Temp= 23.3 C  Press= 1018.4 hPa  Flow= 15.08 L/min  Status=0x8000  Uptime=215s
+
+[SIM] Temp= 23.1 C  Press= 1018.2 hPa  Flow= 15.03 L/min  Status=0x8000  Uptime=215s
+
+[SIM] Temp= 22.9 C  Press= 1017.9 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=215s
+
+[SIM] Temp= 22.6 C  Press= 1017.7 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=215s
+
+[SIM] Temp= 22.4 C  Press= 1017.5 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=215s
+
+[SIM] Temp= 22.2 C  Press= 1017.2 hPa  Flow= 15.05 L/min  Status=0x8000  Uptime=216s
+
+[SIM] Temp= 22.0 C  Press= 1017.0 hPa  Flow= 15.11 L/min  Status=0x8000  Uptime=216s
+
+[SIM] Temp= 21.8 C  Press= 1016.7 hPa  Flow= 15.18 L/min  Status=0x8000  Uptime=216s
+
+[SIM] Temp= 21.6 C  Press= 1016.5 hPa  Flow= 15.28 L/min  Status=0x8000  Uptime=216s
+
+[SIM] Temp= 21.4 C  Press= 1016.2 hPa  Flow= 15.40 L/min  Status=0x8000  Uptime=216s
+
+[SIM] Temp= 21.3 C  Press= 1016.0 hPa  Flow= 15.54 L/min  Status=0x8000  Uptime=217s
+
+[SIM] Temp= 21.1 C  Press= 1015.7 hPa  Flow= 15.69 L/min  Status=0x8000  Uptime=217s
+
+[SIM] Temp= 21.0 C  Press= 1015.4 hPa  Flow= 15.87 L/min  Status=0x8000  Uptime=217s
+
+[SIM] Temp= 20.8 C  Press= 1015.2 hPa  Flow= 16.06 L/min  Status=0x8000  Uptime=217s
+
+[SIM] Temp= 20.7 C  Press= 1014.9 hPa  Flow= 16.27 L/min  Status=0x8000  Uptime=217s
+
+[SIM] Temp= 20.6 C  Press= 1014.6 hPa  Flow= 16.49 L/min  Status=0x8000  Uptime=218s
+
+[SIM] Temp= 20.5 C  Press= 1014.3 hPa  Flow= 16.73 L/min  Status=0x8000  Uptime=218s
+
+[SIM] Temp= 20.4 C  Press= 1014.1 hPa  Flow= 16.98 L/min  Status=0x8000  Uptime=218s
+
+[SIM] Temp= 20.3 C  Press= 1013.8 hPa  Flow= 17.25 L/min  Status=0x8000  Uptime=218s
+
+[SIM] Temp= 20.2 C  Press= 1013.5 hPa  Flow= 17.52 L/min  Status=0x8000  Uptime=218s
+
+[SIM] Temp= 20.1 C  Press= 1013.2 hPa  Flow= 17.81 L/min  Status=0x8000  Uptime=219s
+
+[SIM] Temp= 20.1 C  Press= 1012.9 hPa  Flow= 18.11 L/min  Status=0x8000  Uptime=219s
+
+[SIM] Temp= 20.0 C  Press= 1012.7 hPa  Flow= 18.41 L/min  Status=0x8000  Uptime=219s
+
+[SIM] Temp= 20.0 C  Press= 1012.4 hPa  Flow= 18.72 L/min  Status=0x8000  Uptime=219s
+
+[SIM] Temp= 20.0 C  Press= 1012.1 hPa  Flow= 19.04 L/min  Status=0x8000  Uptime=219s
+
+[SIM] Temp= 20.0 C  Press= 1011.8 hPa  Flow= 19.36 L/min  Status=0x8000  Uptime=220s
+
+[SIM] Temp= 20.0 C  Press= 1011.6 hPa  Flow= 19.68 L/min  Status=0x8000  Uptime=220s
+
+[SIM] Temp= 20.0 C  Press= 1011.3 hPa  Flow= 20.01 L/min  Status=0x8000  Uptime=220s
+
+[SIM] Temp= 20.1 C  Press= 1011.0 hPa  Flow= 20.33 L/min  Status=0x8000  Uptime=220s
+
+[SIM] Temp= 20.1 C  Press= 1010.7 hPa  Flow= 20.66 L/min  Status=0x8000  Uptime=220s
+
+[SIM] Temp= 20.2 C  Press= 1010.5 hPa  Flow= 20.98 L/min  Status=0x8000  Uptime=221s
+
+[SIM] Temp= 20.3 C  Press= 1010.2 hPa  Flow= 21.29 L/min  Status=0x8000  Uptime=221s
+
+[SIM] Temp= 20.3 C  Press= 1010.0 hPa  Flow= 21.60 L/min  Status=0x8000  Uptime=221s
+
+[SIM] Temp= 20.4 C  Press= 1009.7 hPa  Flow= 21.91 L/min  Status=0x8000  Uptime=221s
+
+[SIM] Temp= 20.5 C  Press= 1009.5 hPa  Flow= 22.20 L/min  Status=0x8000  Uptime=221s
+
+[SIM] Temp= 20.7 C  Press= 1009.2 hPa  Flow= 22.49 L/min  Status=0x8000  Uptime=222s
+
+[SIM] Temp= 20.8 C  Press= 1009.0 hPa  Flow= 22.77 L/min  Status=0x8000  Uptime=222s
+
+[SIM] Temp= 20.9 C  Press= 1008.7 hPa  Flow= 23.03 L/min  Status=0x8000  Uptime=222s
+
+[SIM] Temp= 21.1 C  Press= 1008.5 hPa  Flow= 23.28 L/min  Status=0x8000  Uptime=222s
+
+[SIM] Temp= 21.2 C  Press= 1008.3 hPa  Flow= 23.52 L/min  Status=0x8000  Uptime=222s
+
+[SIM] Temp= 21.4 C  Press= 1008.1 hPa  Flow= 23.75 L/min  Status=0x8000  Uptime=223s
+
+[SIM] Temp= 21.6 C  Press= 1007.9 hPa  Flow= 23.95 L/min  Status=0x8000  Uptime=223s
+
+[SIM] Temp= 21.8 C  Press= 1007.6 hPa  Flow= 24.14 L/min  Status=0x8000  Uptime=223s
+
+[SIM] Temp= 22.0 C  Press= 1007.4 hPa  Flow= 24.32 L/min  Status=0x8000  Uptime=223s
+
+[SIM] Temp= 22.2 C  Press= 1007.3 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=223s
+
+[SIM] Temp= 22.4 C  Press= 1007.1 hPa  Flow= 24.61 L/min  Status=0x8000  Uptime=224s
+
+[SIM] Temp= 22.6 C  Press= 1006.9 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=224s
+
+[SIM] Temp= 22.8 C  Press= 1006.7 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=224s
+
+[SIM] Temp= 23.1 C  Press= 1006.6 hPa  Flow= 24.90 L/min  Status=0x8000  Uptime=224s
+
+[SIM] Temp= 23.3 C  Press= 1006.4 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=224s
+
+[SIM] Temp= 23.5 C  Press= 1006.3 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=225s
+
+[SIM] Temp= 23.8 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=225s
+
+[SIM] Temp= 24.0 C  Press= 1006.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=225s
+
+[SIM] Temp= 24.3 C  Press= 1005.9 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=225s
+
+[SIM] Temp= 24.5 C  Press= 1005.8 hPa  Flow= 24.91 L/min  Status=0x8000  Uptime=225s
+
+[SIM] Temp= 24.8 C  Press= 1005.7 hPa  Flow= 24.84 L/min  Status=0x8000  Uptime=226s
+
+[SIM] Temp= 25.0 C  Press= 1013.2 hPa  Flow= 20.01 L/min  Status=0x8000  Uptime=226s
+
+[SIM] Temp= 25.3 C  Press= 1013.5 hPa  Flow= 20.33 L/min  Status=0x8000  Uptime=226s
+
+[SIM] Temp= 25.5 C  Press= 1013.8 hPa  Flow= 20.66 L/min  Status=0x8000  Uptime=226s
+
+[SIM] Temp= 25.8 C  Press= 1014.0 hPa  Flow= 20.98 L/min  Status=0x8000  Uptime=226s
+
+[SIM] Temp= 26.0 C  Press= 1014.3 hPa  Flow= 21.29 L/min  Status=0x8000  Uptime=227s
+
+[SIM] Temp= 26.2 C  Press= 1014.6 hPa  Flow= 21.60 L/min  Status=0x8000  Uptime=227s
+
+[SIM] Temp= 26.5 C  Press= 1014.9 hPa  Flow= 21.91 L/min  Status=0x8000  Uptime=227s
+
+[SIM] Temp= 26.7 C  Press= 1015.1 hPa  Flow= 22.20 L/min  Status=0x8000  Uptime=227s
+
+[SIM] Temp= 27.0 C  Press= 1015.4 hPa  Flow= 22.49 L/min  Status=0x8000  Uptime=227s
+
+[SIM] Temp= 27.2 C  Press= 1015.7 hPa  Flow= 22.77 L/min  Status=0x8000  Uptime=228s
+
+[SIM] Temp= 27.4 C  Press= 1015.9 hPa  Flow= 23.03 L/min  Status=0x8000  Uptime=228s
+
+[SIM] Temp= 27.6 C  Press= 1016.2 hPa  Flow= 23.28 L/min  Status=0x8000  Uptime=228s
+
+[SIM] Temp= 27.8 C  Press= 1016.5 hPa  Flow= 23.52 L/min  Status=0x8000  Uptime=228s
+
+[SIM] Temp= 28.0 C  Press= 1016.7 hPa  Flow= 23.75 L/min  Status=0x8000  Uptime=228s
+
+[SIM] Temp= 28.2 C  Press= 1017.0 hPa  Flow= 23.95 L/min  Status=0x8000  Uptime=229s
+
+[SIM] Temp= 28.4 C  Press= 1017.2 hPa  Flow= 24.14 L/min  Status=0x8000  Uptime=229s
+
+[SIM] Temp= 28.6 C  Press= 1017.5 hPa  Flow= 24.32 L/min  Status=0x8000  Uptime=229s
+
+[SIM] Temp= 28.8 C  Press= 1017.7 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=229s
+
+[SIM] Temp= 28.9 C  Press= 1017.9 hPa  Flow= 24.61 L/min  Status=0x8000  Uptime=229s
+
+[SIM] Temp= 29.1 C  Press= 1018.1 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=230s
+
+[SIM] Temp= 29.2 C  Press= 1018.4 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=230s
+
+[SIM] Temp= 29.3 C  Press= 1018.6 hPa  Flow= 24.90 L/min  Status=0x8000  Uptime=230s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=230s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=230s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=231s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=231s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=231s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.91 L/min  Status=0x8000  Uptime=231s
+
+[SIM] Temp= 29.9 C  Press= 1019.8 hPa  Flow= 24.84 L/min  Status=0x8000  Uptime=231s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.75 L/min  Status=0x8000  Uptime=232s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.64 L/min  Status=0x8000  Uptime=232s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.51 L/min  Status=0x8000  Uptime=232s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.36 L/min  Status=0x8000  Uptime=232s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.19 L/min  Status=0x8000  Uptime=232s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.01 L/min  Status=0x8000  Uptime=233s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.81 L/min  Status=0x8000  Uptime=233s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.59 L/min  Status=0x8000  Uptime=233s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.35 L/min  Status=0x8000  Uptime=233s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.10 L/min  Status=0x8000  Uptime=233s
+
+[SIM] Temp= 29.6 C  Press= 1021.0 hPa  Flow= 22.84 L/min  Status=0x8000  Uptime=234s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.57 L/min  Status=0x8000  Uptime=234s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.29 L/min  Status=0x8000  Uptime=234s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 21.99 L/min  Status=0x8000  Uptime=234s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.69 L/min  Status=0x8000  Uptime=234s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.38 L/min  Status=0x8000  Uptime=235s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.07 L/min  Status=0x8000  Uptime=235s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.75 L/min  Status=0x8000  Uptime=235s
+
+[SIM] Temp= 28.6 C  Press= 1021.2 hPa  Flow= 20.42 L/min  Status=0x8000  Uptime=235s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.10 L/min  Status=0x8000  Uptime=235s
+
+[SIM] Temp= 28.2 C  Press= 1021.1 hPa  Flow= 19.77 L/min  Status=0x8000  Uptime=236s
+
+[SIM] Temp= 28.0 C  Press= 1021.1 hPa  Flow= 19.45 L/min  Status=0x8000  Uptime=236s
+
+[SIM] Temp= 27.8 C  Press= 1021.0 hPa  Flow= 19.13 L/min  Status=0x8000  Uptime=236s
+
+[SIM] Temp= 27.6 C  Press= 1021.0 hPa  Flow= 18.81 L/min  Status=0x8000  Uptime=236s
+
+[SIM] Temp= 27.4 C  Press= 1020.9 hPa  Flow= 18.50 L/min  Status=0x8000  Uptime=236s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.19 L/min  Status=0x8000  Uptime=237s
+
+[SIM] Temp= 26.9 C  Press= 1020.7 hPa  Flow= 17.89 L/min  Status=0x8000  Uptime=237s
+
+[SIM] Temp= 26.7 C  Press= 1020.6 hPa  Flow= 17.60 L/min  Status=0x8000  Uptime=237s
+
+[SIM] Temp= 26.4 C  Press= 1020.5 hPa  Flow= 17.32 L/min  Status=0x8000  Uptime=237s
+
+[SIM] Temp= 26.2 C  Press= 1020.4 hPa  Flow= 17.05 L/min  Status=0x8000  Uptime=237s
+
+[SIM] Temp= 25.9 C  Press= 1020.2 hPa  Flow= 16.80 L/min  Status=0x8000  Uptime=238s
+
+[SIM] Temp= 25.7 C  Press= 1020.1 hPa  Flow= 16.56 L/min  Status=0x8000  Uptime=238s
+
+[SIM] Temp= 25.5 C  Press= 1020.0 hPa  Flow= 16.33 L/min  Status=0x8000  Uptime=238s
+
+[SIM] Temp= 25.2 C  Press= 1019.8 hPa  Flow= 16.11 L/min  Status=0x8000  Uptime=238s
+
+[SIM] Temp= 25.0 C  Press= 1019.6 hPa  Flow= 15.92 L/min  Status=0x8000  Uptime=238s
+
+[SIM] Temp= 24.7 C  Press= 1019.5 hPa  Flow= 15.74 L/min  Status=0x8000  Uptime=239s
+
+[SIM] Temp= 24.5 C  Press= 1019.3 hPa  Flow= 15.58 L/min  Status=0x8000  Uptime=239s
+
+[SIM] Temp= 24.2 C  Press= 1019.1 hPa  Flow= 15.44 L/min  Status=0x8000  Uptime=239s
+
+[SIM] Temp= 24.0 C  Press= 1018.9 hPa  Flow= 15.31 L/min  Status=0x8000  Uptime=239s
+
+[SIM] Temp= 23.7 C  Press= 1018.7 hPa  Flow= 15.21 L/min  Status=0x8000  Uptime=239s
+
+[SIM] Temp= 23.5 C  Press= 1018.5 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=240s
+
+[SIM] Temp= 23.2 C  Press= 1018.3 hPa  Flow= 15.06 L/min  Status=0x8000  Uptime=240s
+
+[SIM] Temp= 23.0 C  Press= 1018.1 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=240s
+
+[SIM] Temp= 22.8 C  Press= 1017.9 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=240s
+
+[SIM] Temp= 22.6 C  Press= 1017.6 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=240s
+
+[SIM] Temp= 22.3 C  Press= 1017.4 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=241s
+
+[SIM] Temp= 22.1 C  Press= 1017.1 hPa  Flow= 15.07 L/min  Status=0x8000  Uptime=241s
+
+[SIM] Temp= 21.9 C  Press= 1016.9 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=241s
+
+[SIM] Temp= 21.7 C  Press= 1016.6 hPa  Flow= 15.21 L/min  Status=0x8000  Uptime=241s
+
+[SIM] Temp= 21.6 C  Press= 1016.4 hPa  Flow= 15.32 L/min  Status=0x8000  Uptime=241s
+
+[SIM] Temp= 21.4 C  Press= 1016.1 hPa  Flow= 15.44 L/min  Status=0x8000  Uptime=242s
+
+[SIM] Temp= 21.2 C  Press= 1015.9 hPa  Flow= 15.59 L/min  Status=0x8000  Uptime=242s
+
+[SIM] Temp= 21.1 C  Press= 1015.6 hPa  Flow= 15.75 L/min  Status=0x8000  Uptime=242s
+
+[SIM] Temp= 20.9 C  Press= 1015.3 hPa  Flow= 15.93 L/min  Status=0x8000  Uptime=242s
+
+[SIM] Temp= 20.8 C  Press= 1015.1 hPa  Flow= 16.13 L/min  Status=0x8000  Uptime=242s
+
+[SIM] Temp= 20.6 C  Press= 1014.8 hPa  Flow= 16.34 L/min  Status=0x8000  Uptime=243s
+
+[SIM] Temp= 20.5 C  Press= 1014.5 hPa  Flow= 16.57 L/min  Status=0x8000  Uptime=243s
+
+[SIM] Temp= 20.4 C  Press= 1014.2 hPa  Flow= 16.81 L/min  Status=0x8000  Uptime=243s
+
+[SIM] Temp= 20.3 C  Press= 1014.0 hPa  Flow= 17.07 L/min  Status=0x8000  Uptime=243s
+
+[SIM] Temp= 20.2 C  Press= 1013.7 hPa  Flow= 17.34 L/min  Status=0x8000  Uptime=243s
+
+[SIM] Temp= 20.2 C  Press= 1013.4 hPa  Flow= 17.62 L/min  Status=0x8000  Uptime=244s
+
+[SIM] Temp= 20.1 C  Press= 1013.1 hPa  Flow= 17.91 L/min  Status=0x8000  Uptime=244s
+
+[SIM] Temp= 20.1 C  Press= 1012.8 hPa  Flow= 18.21 L/min  Status=0x8000  Uptime=244s
+
+[SIM] Temp= 20.0 C  Press= 1012.6 hPa  Flow= 18.51 L/min  Status=0x8000  Uptime=244s
+
+[SIM] Temp= 20.0 C  Press= 1012.3 hPa  Flow= 18.83 L/min  Status=0x8000  Uptime=244s
+
+[SIM] Temp= 20.0 C  Press= 1012.0 hPa  Flow= 19.15 L/min  Status=0x8000  Uptime=245s
+
+[SIM] Temp= 20.0 C  Press= 1011.7 hPa  Flow= 19.47 L/min  Status=0x8000  Uptime=245s
+
+[SIM] Temp= 20.0 C  Press= 1011.5 hPa  Flow= 19.79 L/min  Status=0x8000  Uptime=245s
+
+[SIM] Temp= 20.0 C  Press= 1011.2 hPa  Flow= 20.12 L/min  Status=0x8000  Uptime=245s
+
+[SIM] Temp= 20.1 C  Press= 1010.9 hPa  Flow= 20.44 L/min  Status=0x8000  Uptime=245s
+
+[SIM] Temp= 20.1 C  Press= 1010.7 hPa  Flow= 20.76 L/min  Status=0x8000  Uptime=246s
+
+[SIM] Temp= 20.2 C  Press= 1010.4 hPa  Flow= 21.08 L/min  Status=0x8000  Uptime=246s
+
+[SIM] Temp= 20.3 C  Press= 1010.1 hPa  Flow= 21.40 L/min  Status=0x8000  Uptime=246s
+
+[SIM] Temp= 20.4 C  Press= 1009.9 hPa  Flow= 21.71 L/min  Status=0x8000  Uptime=246s
+
+[SIM] Temp= 20.5 C  Press= 1009.6 hPa  Flow= 22.01 L/min  Status=0x8000  Uptime=246s
+
+[SIM] Temp= 20.6 C  Press= 1009.4 hPa  Flow= 22.30 L/min  Status=0x8000  Uptime=247s
+
+[SIM] Temp= 20.7 C  Press= 1009.1 hPa  Flow= 22.59 L/min  Status=0x8000  Uptime=247s
+
+[SIM] Temp= 20.8 C  Press= 1008.9 hPa  Flow= 22.86 L/min  Status=0x8000  Uptime=247s
+
+[SIM] Temp= 21.0 C  Press= 1008.7 hPa  Flow= 23.12 L/min  Status=0x8000  Uptime=247s
+
+[SIM] Temp= 21.1 C  Press= 1008.4 hPa  Flow= 23.37 L/min  Status=0x8000  Uptime=247s
+
+[SIM] Temp= 21.3 C  Press= 1008.2 hPa  Flow= 23.60 L/min  Status=0x8000  Uptime=248s
+
+[SIM] Temp= 21.5 C  Press= 1008.0 hPa  Flow= 23.82 L/min  Status=0x8000  Uptime=248s
+
+[SIM] Temp= 21.7 C  Press= 1007.8 hPa  Flow= 24.02 L/min  Status=0x8000  Uptime=248s
+
+[SIM] Temp= 21.8 C  Press= 1007.6 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=248s
+
+[SIM] Temp= 22.0 C  Press= 1007.4 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=248s
+
+[SIM] Temp= 22.3 C  Press= 1007.2 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=249s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=249s
+
+[SIM] Temp= 22.7 C  Press= 1006.8 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=249s
+
+[SIM] Temp= 22.9 C  Press= 1006.7 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=249s
+
+[SIM] Temp= 23.1 C  Press= 1006.5 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=249s
+
+[SIM] Temp= 23.4 C  Press= 1006.4 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=250s
+
+[SIM] Temp= 23.6 C  Press= 1006.2 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=250s
+
+[SIM] Temp= 23.9 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=250s
+
+[SIM] Temp= 24.1 C  Press= 1006.0 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=250s
+
+[SIM] Temp= 24.3 C  Press= 1005.9 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=250s
+
+[SIM] Temp= 24.6 C  Press= 1005.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=251s
+
+[SIM] Temp= 24.8 C  Press= 1005.6 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=251s
+
+[SIM] Temp= 25.1 C  Press= 1013.3 hPa  Flow= 20.12 L/min  Status=0x8000  Uptime=251s
+
+[SIM] Temp= 25.3 C  Press= 1013.6 hPa  Flow= 20.44 L/min  Status=0x8000  Uptime=251s
+
+[SIM] Temp= 25.6 C  Press= 1013.9 hPa  Flow= 20.76 L/min  Status=0x8000  Uptime=251s
+
+[SIM] Temp= 25.8 C  Press= 1014.1 hPa  Flow= 21.08 L/min  Status=0x8000  Uptime=252s
+
+[SIM] Temp= 26.1 C  Press= 1014.4 hPa  Flow= 21.40 L/min  Status=0x8000  Uptime=252s
+
+[SIM] Temp= 26.3 C  Press= 1014.7 hPa  Flow= 21.71 L/min  Status=0x8000  Uptime=252s
+
+[SIM] Temp= 26.6 C  Press= 1015.0 hPa  Flow= 22.01 L/min  Status=0x8000  Uptime=252s
+
+[SIM] Temp= 26.8 C  Press= 1015.2 hPa  Flow= 22.30 L/min  Status=0x8000  Uptime=252s
+
+[SIM] Temp= 27.0 C  Press= 1015.5 hPa  Flow= 22.59 L/min  Status=0x8000  Uptime=253s
+
+[SIM] Temp= 27.3 C  Press= 1015.8 hPa  Flow= 22.86 L/min  Status=0x8000  Uptime=253s
+
+[SIM] Temp= 27.5 C  Press= 1016.0 hPa  Flow= 23.12 L/min  Status=0x8000  Uptime=253s
+
+[SIM] Temp= 27.7 C  Press= 1016.3 hPa  Flow= 23.37 L/min  Status=0x8000  Uptime=253s
+
+[SIM] Temp= 27.9 C  Press= 1016.6 hPa  Flow= 23.60 L/min  Status=0x8000  Uptime=253s
+
+[SIM] Temp= 28.1 C  Press= 1016.8 hPa  Flow= 23.82 L/min  Status=0x8000  Uptime=254s
+
+[SIM] Temp= 28.3 C  Press= 1017.1 hPa  Flow= 24.02 L/min  Status=0x8000  Uptime=254s
+
+[SIM] Temp= 28.5 C  Press= 1017.3 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=254s
+
+[SIM] Temp= 28.6 C  Press= 1017.5 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=254s
+
+[SIM] Temp= 28.8 C  Press= 1017.8 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=254s
+
+[SIM] Temp= 29.0 C  Press= 1018.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=255s
+
+[SIM] Temp= 29.1 C  Press= 1018.2 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=255s
+
+[SIM] Temp= 29.3 C  Press= 1018.4 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=255s
+
+[SIM] Temp= 29.4 C  Press= 1018.6 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=255s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=255s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=256s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=256s
+
+[SIM] Temp= 29.8 C  Press= 1019.4 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=256s
+
+[SIM] Temp= 29.8 C  Press= 1019.6 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=256s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=256s
+
+[SIM] Temp= 29.9 C  Press= 1019.9 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=257s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=257s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.60 L/min  Status=0x8000  Uptime=257s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.46 L/min  Status=0x8000  Uptime=257s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.31 L/min  Status=0x8000  Uptime=257s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.13 L/min  Status=0x8000  Uptime=258s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.94 L/min  Status=0x8000  Uptime=258s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.73 L/min  Status=0x8000  Uptime=258s
+
+[SIM] Temp= 29.8 C  Press= 1020.8 hPa  Flow= 23.51 L/min  Status=0x8000  Uptime=258s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.27 L/min  Status=0x8000  Uptime=258s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.02 L/min  Status=0x8000  Uptime=259s
+
+[SIM] Temp= 29.6 C  Press= 1021.1 hPa  Flow= 22.75 L/min  Status=0x8000  Uptime=259s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.48 L/min  Status=0x8000  Uptime=259s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.19 L/min  Status=0x8000  Uptime=259s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 21.89 L/min  Status=0x8000  Uptime=259s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.59 L/min  Status=0x8000  Uptime=260s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.28 L/min  Status=0x8000  Uptime=260s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.96 L/min  Status=0x8000  Uptime=260s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.64 L/min  Status=0x8000  Uptime=260s
+
+[SIM] Temp= 28.5 C  Press= 1021.2 hPa  Flow= 20.32 L/min  Status=0x8000  Uptime=260s
+
+[SIM] Temp= 28.3 C  Press= 1021.1 hPa  Flow= 19.99 L/min  Status=0x8000  Uptime=261s
+
+[SIM] Temp= 28.1 C  Press= 1021.1 hPa  Flow= 19.67 L/min  Status=0x8000  Uptime=261s
+
+[SIM] Temp= 27.9 C  Press= 1021.1 hPa  Flow= 19.34 L/min  Status=0x8000  Uptime=261s
+
+[SIM] Temp= 27.7 C  Press= 1021.0 hPa  Flow= 19.02 L/min  Status=0x8000  Uptime=261s
+
+[SIM] Temp= 27.5 C  Press= 1020.9 hPa  Flow= 18.71 L/min  Status=0x8000  Uptime=261s
+
+[SIM] Temp= 27.3 C  Press= 1020.9 hPa  Flow= 18.39 L/min  Status=0x8000  Uptime=262s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.09 L/min  Status=0x8000  Uptime=262s
+
+[SIM] Temp= 26.8 C  Press= 1020.7 hPa  Flow= 17.79 L/min  Status=0x8000  Uptime=262s
+
+[SIM] Temp= 26.6 C  Press= 1020.6 hPa  Flow= 17.51 L/min  Status=0x8000  Uptime=262s
+
+[SIM] Temp= 26.4 C  Press= 1020.4 hPa  Flow= 17.23 L/min  Status=0x8000  Uptime=262s
+
+[SIM] Temp= 26.1 C  Press= 1020.3 hPa  Flow= 16.97 L/min  Status=0x8000  Uptime=263s
+
+[SIM] Temp= 25.9 C  Press= 1020.2 hPa  Flow= 16.71 L/min  Status=0x8000  Uptime=263s
+
+[SIM] Temp= 25.6 C  Press= 1020.1 hPa  Flow= 16.48 L/min  Status=0x8000  Uptime=263s
+
+[SIM] Temp= 25.4 C  Press= 1019.9 hPa  Flow= 16.25 L/min  Status=0x8000  Uptime=263s
+
+[SIM] Temp= 25.1 C  Press= 1019.7 hPa  Flow= 16.05 L/min  Status=0x8000  Uptime=263s
+
+[SIM] Temp= 24.9 C  Press= 1019.6 hPa  Flow= 15.86 L/min  Status=0x8000  Uptime=264s
+
+[SIM] Temp= 24.6 C  Press= 1019.4 hPa  Flow= 15.68 L/min  Status=0x8000  Uptime=264s
+
+[SIM] Temp= 24.4 C  Press= 1019.2 hPa  Flow= 15.53 L/min  Status=0x8000  Uptime=264s
+
+[SIM] Temp= 24.1 C  Press= 1019.0 hPa  Flow= 15.39 L/min  Status=0x8000  Uptime=264s
+
+[SIM] Temp= 23.9 C  Press= 1018.8 hPa  Flow= 15.28 L/min  Status=0x8000  Uptime=264s
+
+[SIM] Temp= 23.6 C  Press= 1018.6 hPa  Flow= 15.18 L/min  Status=0x8000  Uptime=265s
+
+[SIM] Temp= 23.4 C  Press= 1018.4 hPa  Flow= 15.10 L/min  Status=0x8000  Uptime=265s
+
+[SIM] Temp= 23.2 C  Press= 1018.2 hPa  Flow= 15.05 L/min  Status=0x8000  Uptime=265s
+
+[SIM] Temp= 22.9 C  Press= 1018.0 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=265s
+
+[SIM] Temp= 22.7 C  Press= 1017.8 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=265s
+
+[SIM] Temp= 22.5 C  Press= 1017.5 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=266s
+
+[SIM] Temp= 22.3 C  Press= 1017.3 hPa  Flow= 15.04 L/min  Status=0x8000  Uptime=266s
+
+[SIM] Temp= 22.1 C  Press= 1017.1 hPa  Flow= 15.09 L/min  Status=0x8000  Uptime=266s
+
+[SIM] Temp= 21.9 C  Press= 1016.8 hPa  Flow= 15.16 L/min  Status=0x8000  Uptime=266s
+
+[SIM] Temp= 21.7 C  Press= 1016.6 hPa  Flow= 15.25 L/min  Status=0x8000  Uptime=266s
+
+[SIM] Temp= 21.5 C  Press= 1016.3 hPa  Flow= 15.36 L/min  Status=0x8000  Uptime=267s
+
+[SIM] Temp= 21.3 C  Press= 1016.0 hPa  Flow= 15.49 L/min  Status=0x8000  Uptime=267s
+
+[SIM] Temp= 21.2 C  Press= 1015.8 hPa  Flow= 15.64 L/min  Status=0x8000  Uptime=267s
+
+[SIM] Temp= 21.0 C  Press= 1015.5 hPa  Flow= 15.81 L/min  Status=0x8000  Uptime=267s
+
+[SIM] Temp= 20.9 C  Press= 1015.2 hPa  Flow= 15.99 L/min  Status=0x8000  Uptime=267s
+
+[SIM] Temp= 20.7 C  Press= 1015.0 hPa  Flow= 16.20 L/min  Status=0x8000  Uptime=268s
+
+[SIM] Temp= 20.6 C  Press= 1014.7 hPa  Flow= 16.41 L/min  Status=0x8000  Uptime=268s
+
+[SIM] Temp= 20.5 C  Press= 1014.4 hPa  Flow= 16.65 L/min  Status=0x8000  Uptime=268s
+
+[SIM] Temp= 20.4 C  Press= 1014.1 hPa  Flow= 16.90 L/min  Status=0x8000  Uptime=268s
+
+[SIM] Temp= 20.3 C  Press= 1013.9 hPa  Flow= 17.16 L/min  Status=0x8000  Uptime=268s
+
+[SIM] Temp= 20.2 C  Press= 1013.6 hPa  Flow= 17.43 L/min  Status=0x8000  Uptime=269s
+
+[SIM] Temp= 20.1 C  Press= 1013.3 hPa  Flow= 17.71 L/min  Status=0x8000  Uptime=269s
+
+[SIM] Temp= 20.1 C  Press= 1013.0 hPa  Flow= 18.01 L/min  Status=0x8000  Uptime=269s
+
+[SIM] Temp= 20.1 C  Press= 1012.8 hPa  Flow= 18.31 L/min  Status=0x8000  Uptime=269s
+
+[SIM] Temp= 20.0 C  Press= 1012.5 hPa  Flow= 18.62 L/min  Status=0x8000  Uptime=269s
+
+[SIM] Temp= 20.0 C  Press= 1012.2 hPa  Flow= 18.93 L/min  Status=0x8000  Uptime=270s
+
+[SIM] Temp= 20.0 C  Press= 1011.9 hPa  Flow= 19.25 L/min  Status=0x8000  Uptime=270s
+
+[SIM] Temp= 20.0 C  Press= 1011.6 hPa  Flow= 19.58 L/min  Status=0x8000  Uptime=270s
+
+[SIM] Temp= 20.0 C  Press= 1011.4 hPa  Flow= 19.90 L/min  Status=0x8000  Uptime=270s
+
+[SIM] Temp= 20.1 C  Press= 1011.1 hPa  Flow= 20.23 L/min  Status=0x8000  Uptime=270s
+
+[SIM] Temp= 20.1 C  Press= 1010.8 hPa  Flow= 20.55 L/min  Status=0x8000  Uptime=271s
+
+[SIM] Temp= 20.2 C  Press= 1010.6 hPa  Flow= 20.87 L/min  Status=0x8000  Uptime=271s
+
+[SIM] Temp= 20.2 C  Press= 1010.3 hPa  Flow= 21.19 L/min  Status=0x8000  Uptime=271s
+
+[SIM] Temp= 20.3 C  Press= 1010.0 hPa  Flow= 21.50 L/min  Status=0x8000  Uptime=271s
+
+[SIM] Temp= 20.4 C  Press= 1009.8 hPa  Flow= 21.81 L/min  Status=0x8000  Uptime=271s
+
+[SIM] Temp= 20.5 C  Press= 1009.5 hPa  Flow= 22.11 L/min  Status=0x8000  Uptime=272s
+
+[SIM] Temp= 20.6 C  Press= 1009.3 hPa  Flow= 22.40 L/min  Status=0x8000  Uptime=272s
+
+[SIM] Temp= 20.8 C  Press= 1009.0 hPa  Flow= 22.68 L/min  Status=0x8000  Uptime=272s
+
+[SIM] Temp= 20.9 C  Press= 1008.8 hPa  Flow= 22.95 L/min  Status=0x8000  Uptime=272s
+
+[SIM] Temp= 21.0 C  Press= 1008.6 hPa  Flow= 23.20 L/min  Status=0x8000  Uptime=272s
+
+[SIM] Temp= 21.2 C  Press= 1008.4 hPa  Flow= 23.45 L/min  Status=0x8000  Uptime=273s
+
+[SIM] Temp= 21.4 C  Press= 1008.1 hPa  Flow= 23.67 L/min  Status=0x8000  Uptime=273s
+
+[SIM] Temp= 21.5 C  Press= 1007.9 hPa  Flow= 23.89 L/min  Status=0x8000  Uptime=273s
+
+[SIM] Temp= 21.7 C  Press= 1007.7 hPa  Flow= 24.08 L/min  Status=0x8000  Uptime=273s
+
+[SIM] Temp= 21.9 C  Press= 1007.5 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=273s
+
+[SIM] Temp= 22.1 C  Press= 1007.3 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=274s
+
+[SIM] Temp= 22.3 C  Press= 1007.1 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=274s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.69 L/min  Status=0x8000  Uptime=274s
+
+[SIM] Temp= 22.8 C  Press= 1006.8 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=274s
+
+[SIM] Temp= 23.0 C  Press= 1006.6 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=274s
+
+[SIM] Temp= 23.2 C  Press= 1006.5 hPa  Flow= 24.94 L/min  Status=0x8000  Uptime=275s
+
+[SIM] Temp= 23.5 C  Press= 1006.3 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=275s
+
+[SIM] Temp= 23.7 C  Press= 1006.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=275s
+
+[SIM] Temp= 23.9 C  Press= 1006.0 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=275s
+
+[SIM] Temp= 24.2 C  Press= 1005.9 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=275s
+
+[SIM] Temp= 24.4 C  Press= 1005.8 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=276s
+
+[SIM] Temp= 24.7 C  Press= 1005.7 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=276s
+
+[SIM] Temp= 24.9 C  Press= 1005.6 hPa  Flow= 24.78 L/min  Status=0x8000  Uptime=276s
+
+[SIM] Temp= 25.2 C  Press= 1013.4 hPa  Flow= 20.23 L/min  Status=0x8000  Uptime=276s
+
+[SIM] Temp= 25.4 C  Press= 1013.7 hPa  Flow= 20.55 L/min  Status=0x8000  Uptime=276s
+
+[SIM] Temp= 25.7 C  Press= 1014.0 hPa  Flow= 20.87 L/min  Status=0x8000  Uptime=277s
+
+[SIM] Temp= 25.9 C  Press= 1014.2 hPa  Flow= 21.19 L/min  Status=0x8000  Uptime=277s
+
+[SIM] Temp= 26.2 C  Press= 1014.5 hPa  Flow= 21.50 L/min  Status=0x8000  Uptime=277s
+
+[SIM] Temp= 26.4 C  Press= 1014.8 hPa  Flow= 21.81 L/min  Status=0x8000  Uptime=277s
+
+[SIM] Temp= 26.6 C  Press= 1015.1 hPa  Flow= 22.11 L/min  Status=0x8000  Uptime=277s
+
+[SIM] Temp= 26.9 C  Press= 1015.3 hPa  Flow= 22.40 L/min  Status=0x8000  Uptime=278s
+
+[SIM] Temp= 27.1 C  Press= 1015.6 hPa  Flow= 22.68 L/min  Status=0x8000  Uptime=278s
+
+[SIM] Temp= 27.3 C  Press= 1015.9 hPa  Flow= 22.95 L/min  Status=0x8000  Uptime=278s
+
+[SIM] Temp= 27.5 C  Press= 1016.1 hPa  Flow= 23.20 L/min  Status=0x8000  Uptime=278s
+
+[SIM] Temp= 27.8 C  Press= 1016.4 hPa  Flow= 23.45 L/min  Status=0x8000  Uptime=278s
+
+[SIM] Temp= 28.0 C  Press= 1016.6 hPa  Flow= 23.67 L/min  Status=0x8000  Uptime=279s
+
+[SIM] Temp= 28.2 C  Press= 1016.9 hPa  Flow= 23.89 L/min  Status=0x8000  Uptime=279s
+
+[SIM] Temp= 28.4 C  Press= 1017.1 hPa  Flow= 24.08 L/min  Status=0x8000  Uptime=279s
+
+[SIM] Temp= 28.5 C  Press= 1017.4 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=279s
+
+[SIM] Temp= 28.7 C  Press= 1017.6 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=279s
+
+[SIM] Temp= 28.9 C  Press= 1017.8 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=280s
+
+[SIM] Temp= 29.0 C  Press= 1018.1 hPa  Flow= 24.69 L/min  Status=0x8000  Uptime=280s
+
+[SIM] Temp= 29.2 C  Press= 1018.3 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=280s
+
+[SIM] Temp= 29.3 C  Press= 1018.5 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=280s
+
+[SIM] Temp= 29.4 C  Press= 1018.7 hPa  Flow= 24.94 L/min  Status=0x8000  Uptime=280s
+
+[SIM] Temp= 29.5 C  Press= 1018.9 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=281s
+
+[SIM] Temp= 29.6 C  Press= 1019.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=281s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=281s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=281s
+
+[SIM] Temp= 29.9 C  Press= 1019.6 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=281s
+
+[SIM] Temp= 29.9 C  Press= 1019.8 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=282s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.78 L/min  Status=0x8000  Uptime=282s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.68 L/min  Status=0x8000  Uptime=282s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=282s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.41 L/min  Status=0x8000  Uptime=282s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.25 L/min  Status=0x8000  Uptime=283s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.07 L/min  Status=0x8000  Uptime=283s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.87 L/min  Status=0x8000  Uptime=283s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.66 L/min  Status=0x8000  Uptime=283s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.43 L/min  Status=0x8000  Uptime=283s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.19 L/min  Status=0x8000  Uptime=284s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 22.93 L/min  Status=0x8000  Uptime=284s
+
+[SIM] Temp= 29.6 C  Press= 1021.1 hPa  Flow= 22.66 L/min  Status=0x8000  Uptime=284s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.38 L/min  Status=0x8000  Uptime=284s
+
+[SIM] Temp= 29.4 C  Press= 1021.2 hPa  Flow= 22.09 L/min  Status=0x8000  Uptime=284s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.79 L/min  Status=0x8000  Uptime=285s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.48 L/min  Status=0x8000  Uptime=285s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.17 L/min  Status=0x8000  Uptime=285s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.85 L/min  Status=0x8000  Uptime=285s
+
+[SIM] Temp= 28.6 C  Press= 1021.2 hPa  Flow= 20.53 L/min  Status=0x8000  Uptime=285s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.21 L/min  Status=0x8000  Uptime=286s
+
+[SIM] Temp= 28.2 C  Press= 1021.1 hPa  Flow= 19.88 L/min  Status=0x8000  Uptime=286s
+
+[SIM] Temp= 28.1 C  Press= 1021.1 hPa  Flow= 19.56 L/min  Status=0x8000  Uptime=286s
+
+[SIM] Temp= 27.9 C  Press= 1021.0 hPa  Flow= 19.23 L/min  Status=0x8000  Uptime=286s
+
+[SIM] Temp= 27.6 C  Press= 1021.0 hPa  Flow= 18.92 L/min  Status=0x8000  Uptime=286s
+
+[SIM] Temp= 27.4 C  Press= 1020.9 hPa  Flow= 18.60 L/min  Status=0x8000  Uptime=287s
+
+[SIM] Temp= 27.2 C  Press= 1020.8 hPa  Flow= 18.29 L/min  Status=0x8000  Uptime=287s
+
+[SIM] Temp= 27.0 C  Press= 1020.7 hPa  Flow= 17.99 L/min  Status=0x8000  Uptime=287s
+
+[SIM] Temp= 26.7 C  Press= 1020.6 hPa  Flow= 17.70 L/min  Status=0x8000  Uptime=287s
+
+[SIM] Temp= 26.5 C  Press= 1020.5 hPa  Flow= 17.41 L/min  Status=0x8000  Uptime=287s
+
+[SIM] Temp= 26.3 C  Press= 1020.4 hPa  Flow= 17.14 L/min  Status=0x8000  Uptime=288s
+
+[SIM] Temp= 26.0 C  Press= 1020.3 hPa  Flow= 16.88 L/min  Status=0x8000  Uptime=288s
+
+[SIM] Temp= 25.8 C  Press= 1020.1 hPa  Flow= 16.63 L/min  Status=0x8000  Uptime=288s
+
+[SIM] Temp= 25.5 C  Press= 1020.0 hPa  Flow= 16.40 L/min  Status=0x8000  Uptime=288s
+
+[SIM] Temp= 25.3 C  Press= 1019.9 hPa  Flow= 16.18 L/min  Status=0x8000  Uptime=288s
+
+[SIM] Temp= 25.0 C  Press= 1019.7 hPa  Flow= 15.98 L/min  Status=0x8000  Uptime=289s
+
+[SIM] Temp= 24.8 C  Press= 1019.5 hPa  Flow= 15.80 L/min  Status=0x8000  Uptime=289s
+
+[SIM] Temp= 24.5 C  Press= 1019.4 hPa  Flow= 15.63 L/min  Status=0x8000  Uptime=289s
+
+[SIM] Temp= 24.3 C  Press= 1019.2 hPa  Flow= 15.48 L/min  Status=0x8000  Uptime=289s
+
+[SIM] Temp= 24.0 C  Press= 1019.0 hPa  Flow= 15.35 L/min  Status=0x8000  Uptime=289s
+
+[SIM] Temp= 23.8 C  Press= 1018.8 hPa  Flow= 15.24 L/min  Status=0x8000  Uptime=290s
+
+[SIM] Temp= 23.6 C  Press= 1018.6 hPa  Flow= 15.15 L/min  Status=0x8000  Uptime=290s
+
+[SIM] Temp= 23.3 C  Press= 1018.4 hPa  Flow= 15.08 L/min  Status=0x8000  Uptime=290s
+
+[SIM] Temp= 23.1 C  Press= 1018.2 hPa  Flow= 15.03 L/min  Status=0x8000  Uptime=290s
+
+[SIM] Temp= 22.9 C  Press= 1017.9 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=290s
+
+[SIM] Temp= 22.6 C  Press= 1017.7 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=291s
+
+[SIM] Temp= 22.4 C  Press= 1017.5 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=291s
+
+[SIM] Temp= 22.2 C  Press= 1017.2 hPa  Flow= 15.05 L/min  Status=0x8000  Uptime=291s
+
+[SIM] Temp= 22.0 C  Press= 1017.0 hPa  Flow= 15.11 L/min  Status=0x8000  Uptime=291s
+
+[SIM] Temp= 21.8 C  Press= 1016.7 hPa  Flow= 15.19 L/min  Status=0x8000  Uptime=291s
+
+[SIM] Temp= 21.6 C  Press= 1016.5 hPa  Flow= 15.28 L/min  Status=0x8000  Uptime=292s
+
+[SIM] Temp= 21.4 C  Press= 1016.2 hPa  Flow= 15.40 L/min  Status=0x8000  Uptime=292s
+
+[SIM] Temp= 21.3 C  Press= 1016.0 hPa  Flow= 15.54 L/min  Status=0x8000  Uptime=292s
+
+[SIM] Temp= 21.1 C  Press= 1015.7 hPa  Flow= 15.69 L/min  Status=0x8000  Uptime=292s
+
+[SIM] Temp= 21.0 C  Press= 1015.4 hPa  Flow= 15.87 L/min  Status=0x8000  Uptime=292s
+
+[SIM] Temp= 20.8 C  Press= 1015.2 hPa  Flow= 16.06 L/min  Status=0x8000  Uptime=293s
+
+[SIM] Temp= 20.7 C  Press= 1014.9 hPa  Flow= 16.27 L/min  Status=0x8000  Uptime=293s
+
+[SIM] Temp= 20.6 C  Press= 1014.6 hPa  Flow= 16.49 L/min  Status=0x8000  Uptime=293s
+
+[SIM] Temp= 20.5 C  Press= 1014.3 hPa  Flow= 16.73 L/min  Status=0x8000  Uptime=293s
+
+[SIM] Temp= 20.4 C  Press= 1014.1 hPa  Flow= 16.98 L/min  Status=0x8000  Uptime=293s
+
+[SIM] Temp= 20.3 C  Press= 1013.8 hPa  Flow= 17.25 L/min  Status=0x8000  Uptime=294s
+
+[SIM] Temp= 20.2 C  Press= 1013.5 hPa  Flow= 17.52 L/min  Status=0x8000  Uptime=294s
+
+[SIM] Temp= 20.1 C  Press= 1013.2 hPa  Flow= 17.81 L/min  Status=0x8000  Uptime=294s
+
+[SIM] Temp= 20.1 C  Press= 1012.9 hPa  Flow= 18.11 L/min  Status=0x8000  Uptime=294s
+
+[SIM] Temp= 20.0 C  Press= 1012.7 hPa  Flow= 18.41 L/min  Status=0x8000  Uptime=294s
+
+[SIM] Temp= 20.0 C  Press= 1012.4 hPa  Flow= 18.72 L/min  Status=0x8000  Uptime=295s
+
+[SIM] Temp= 20.0 C  Press= 1012.1 hPa  Flow= 19.04 L/min  Status=0x8000  Uptime=295s
+
+[SIM] Temp= 20.0 C  Press= 1011.8 hPa  Flow= 19.36 L/min  Status=0x8000  Uptime=295s
+
+[SIM] Temp= 20.0 C  Press= 1011.5 hPa  Flow= 19.69 L/min  Status=0x8000  Uptime=295s
+
+[SIM] Temp= 20.0 C  Press= 1011.3 hPa  Flow= 20.01 L/min  Status=0x8000  Uptime=295s
+
+[SIM] Temp= 20.1 C  Press= 1011.0 hPa  Flow= 20.34 L/min  Status=0x8000  Uptime=296s
+
+[SIM] Temp= 20.1 C  Press= 1010.7 hPa  Flow= 20.66 L/min  Status=0x8000  Uptime=296s
+
+[SIM] Temp= 20.2 C  Press= 1010.5 hPa  Flow= 20.98 L/min  Status=0x8000  Uptime=296s
+
+[SIM] Temp= 20.3 C  Press= 1010.2 hPa  Flow= 21.30 L/min  Status=0x8000  Uptime=296s
+
+[SIM] Temp= 20.3 C  Press= 1010.0 hPa  Flow= 21.61 L/min  Status=0x8000  Uptime=296s
+
+[SIM] Temp= 20.4 C  Press= 1009.7 hPa  Flow= 21.91 L/min  Status=0x8000  Uptime=297s
+
+[SIM] Temp= 20.5 C  Press= 1009.5 hPa  Flow= 22.21 L/min  Status=0x8000  Uptime=297s
+
+[SIM] Temp= 20.7 C  Press= 1009.2 hPa  Flow= 22.49 L/min  Status=0x8000  Uptime=297s
+
+[SIM] Temp= 20.8 C  Press= 1009.0 hPa  Flow= 22.77 L/min  Status=0x8000  Uptime=297s
+
+[SIM] Temp= 20.9 C  Press= 1008.7 hPa  Flow= 23.03 L/min  Status=0x8000  Uptime=297s
+
+[SIM] Temp= 21.1 C  Press= 1008.5 hPa  Flow= 23.29 L/min  Status=0x8000  Uptime=298s
+
+[SIM] Temp= 21.2 C  Press= 1008.3 hPa  Flow= 23.52 L/min  Status=0x8000  Uptime=298s
+
+[SIM] Temp= 21.4 C  Press= 1008.1 hPa  Flow= 23.75 L/min  Status=0x8000  Uptime=298s
+
+[SIM] Temp= 21.6 C  Press= 1007.8 hPa  Flow= 23.95 L/min  Status=0x8000  Uptime=298s
+
+[SIM] Temp= 21.8 C  Press= 1007.6 hPa  Flow= 24.14 L/min  Status=0x8000  Uptime=298s
+
+[SIM] Temp= 22.0 C  Press= 1007.4 hPa  Flow= 24.32 L/min  Status=0x8000  Uptime=299s
+
+[SIM] Temp= 22.2 C  Press= 1007.3 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=299s
+
+[SIM] Temp= 22.4 C  Press= 1007.1 hPa  Flow= 24.61 L/min  Status=0x8000  Uptime=299s
+
+[SIM] Temp= 22.6 C  Press= 1006.9 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=299s
+
+[SIM] Temp= 22.8 C  Press= 1006.7 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=299s
+
+[SIM] Temp= 23.1 C  Press= 1006.6 hPa  Flow= 24.90 L/min  Status=0x8000  Uptime=300s
+
+[SIM] Temp= 23.3 C  Press= 1006.4 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=300s
+
+[SIM] Temp= 23.5 C  Press= 1006.3 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=300s
+
+[SIM] Temp= 23.8 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=300s
+
+[SIM] Temp= 24.0 C  Press= 1006.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=300s
+
+[SIM] Temp= 24.3 C  Press= 1005.9 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=301s
+
+[SIM] Temp= 24.5 C  Press= 1005.8 hPa  Flow= 24.91 L/min  Status=0x8000  Uptime=301s
+
+[SIM] Temp= 24.8 C  Press= 1005.7 hPa  Flow= 24.84 L/min  Status=0x8000  Uptime=301s
+
+[SIM] Temp= 25.0 C  Press= 1013.2 hPa  Flow= 20.01 L/min  Status=0x8000  Uptime=301s
+
+[SIM] Temp= 25.3 C  Press= 1013.5 hPa  Flow= 20.34 L/min  Status=0x8000  Uptime=301s
+
+[SIM] Temp= 25.5 C  Press= 1013.8 hPa  Flow= 20.66 L/min  Status=0x8000  Uptime=302s
+
+[SIM] Temp= 25.8 C  Press= 1014.0 hPa  Flow= 20.98 L/min  Status=0x8000  Uptime=302s
+
+[SIM] Temp= 26.0 C  Press= 1014.3 hPa  Flow= 21.30 L/min  Status=0x8000  Uptime=302s
+
+[SIM] Temp= 26.2 C  Press= 1014.6 hPa  Flow= 21.61 L/min  Status=0x8000  Uptime=302s
+
+[SIM] Temp= 26.5 C  Press= 1014.9 hPa  Flow= 21.91 L/min  Status=0x8000  Uptime=302s
+
+[SIM] Temp= 26.7 C  Press= 1015.1 hPa  Flow= 22.21 L/min  Status=0x8000  Uptime=303s
+
+[SIM] Temp= 27.0 C  Press= 1015.4 hPa  Flow= 22.49 L/min  Status=0x8000  Uptime=303s
+
+[SIM] Temp= 27.2 C  Press= 1015.7 hPa  Flow= 22.77 L/min  Status=0x8000  Uptime=303s
+
+[SIM] Temp= 27.4 C  Press= 1016.0 hPa  Flow= 23.03 L/min  Status=0x8000  Uptime=303s
+
+[SIM] Temp= 27.6 C  Press= 1016.2 hPa  Flow= 23.29 L/min  Status=0x8000  Uptime=303s
+
+[SIM] Temp= 27.8 C  Press= 1016.5 hPa  Flow= 23.52 L/min  Status=0x8000  Uptime=304s
+
+[SIM] Temp= 28.0 C  Press= 1016.7 hPa  Flow= 23.75 L/min  Status=0x8000  Uptime=304s
+
+[SIM] Temp= 28.2 C  Press= 1017.0 hPa  Flow= 23.95 L/min  Status=0x8000  Uptime=304s
+
+[SIM] Temp= 28.4 C  Press= 1017.2 hPa  Flow= 24.14 L/min  Status=0x8000  Uptime=304s
+
+[SIM] Temp= 28.6 C  Press= 1017.5 hPa  Flow= 24.32 L/min  Status=0x8000  Uptime=304s
+
+[SIM] Temp= 28.8 C  Press= 1017.7 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=305s
+
+[SIM] Temp= 28.9 C  Press= 1017.9 hPa  Flow= 24.61 L/min  Status=0x8000  Uptime=305s
+
+[SIM] Temp= 29.1 C  Press= 1018.1 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=305s
+
+[SIM] Temp= 29.2 C  Press= 1018.4 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=305s
+
+[SIM] Temp= 29.3 C  Press= 1018.6 hPa  Flow= 24.90 L/min  Status=0x8000  Uptime=305s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=306s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=306s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=306s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=306s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=306s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.91 L/min  Status=0x8000  Uptime=307s
+
+[SIM] Temp= 29.9 C  Press= 1019.8 hPa  Flow= 24.84 L/min  Status=0x8000  Uptime=307s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.75 L/min  Status=0x8000  Uptime=307s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.64 L/min  Status=0x8000  Uptime=307s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.51 L/min  Status=0x8000  Uptime=307s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.36 L/min  Status=0x8000  Uptime=308s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.19 L/min  Status=0x8000  Uptime=308s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.01 L/min  Status=0x8000  Uptime=308s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.80 L/min  Status=0x8000  Uptime=308s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.58 L/min  Status=0x8000  Uptime=308s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.35 L/min  Status=0x8000  Uptime=309s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.10 L/min  Status=0x8000  Uptime=309s
+
+[SIM] Temp= 29.6 C  Press= 1021.0 hPa  Flow= 22.84 L/min  Status=0x8000  Uptime=309s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.57 L/min  Status=0x8000  Uptime=309s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.28 L/min  Status=0x8000  Uptime=309s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 21.99 L/min  Status=0x8000  Uptime=310s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.69 L/min  Status=0x8000  Uptime=310s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.38 L/min  Status=0x8000  Uptime=310s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.06 L/min  Status=0x8000  Uptime=310s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.74 L/min  Status=0x8000  Uptime=310s
+
+[SIM] Temp= 28.6 C  Press= 1021.2 hPa  Flow= 20.42 L/min  Status=0x8000  Uptime=311s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.10 L/min  Status=0x8000  Uptime=311s
+
+[SIM] Temp= 28.2 C  Press= 1021.1 hPa  Flow= 19.77 L/min  Status=0x8000  Uptime=311s
+
+[SIM] Temp= 28.0 C  Press= 1021.1 hPa  Flow= 19.45 L/min  Status=0x8000  Uptime=311s
+
+[SIM] Temp= 27.8 C  Press= 1021.0 hPa  Flow= 19.13 L/min  Status=0x8000  Uptime=311s
+
+[SIM] Temp= 27.6 C  Press= 1021.0 hPa  Flow= 18.81 L/min  Status=0x8000  Uptime=312s
+
+[SIM] Temp= 27.4 C  Press= 1020.9 hPa  Flow= 18.50 L/min  Status=0x8000  Uptime=312s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.19 L/min  Status=0x8000  Uptime=312s
+
+[SIM] Temp= 26.9 C  Press= 1020.7 hPa  Flow= 17.89 L/min  Status=0x8000  Uptime=312s
+
+[SIM] Temp= 26.7 C  Press= 1020.6 hPa  Flow= 17.60 L/min  Status=0x8000  Uptime=312s
+
+[SIM] Temp= 26.4 C  Press= 1020.5 hPa  Flow= 17.32 L/min  Status=0x8000  Uptime=313s
+
+[SIM] Temp= 26.2 C  Press= 1020.4 hPa  Flow= 17.05 L/min  Status=0x8000  Uptime=313s
+
+[SIM] Temp= 25.9 C  Press= 1020.2 hPa  Flow= 16.80 L/min  Status=0x8000  Uptime=313s
+
+[SIM] Temp= 25.7 C  Press= 1020.1 hPa  Flow= 16.55 L/min  Status=0x8000  Uptime=313s
+
+[SIM] Temp= 25.4 C  Press= 1020.0 hPa  Flow= 16.33 L/min  Status=0x8000  Uptime=313s
+
+[SIM] Temp= 25.2 C  Press= 1019.8 hPa  Flow= 16.11 L/min  Status=0x8000  Uptime=314s
+
+[SIM] Temp= 24.9 C  Press= 1019.6 hPa  Flow= 15.92 L/min  Status=0x8000  Uptime=314s
+
+[SIM] Temp= 24.7 C  Press= 1019.5 hPa  Flow= 15.74 L/min  Status=0x8000  Uptime=314s
+
+[SIM] Temp= 24.5 C  Press= 1019.3 hPa  Flow= 15.58 L/min  Status=0x8000  Uptime=314s
+
+[SIM] Temp= 24.2 C  Press= 1019.1 hPa  Flow= 15.43 L/min  Status=0x8000  Uptime=314s
+
+[SIM] Temp= 24.0 C  Press= 1018.9 hPa  Flow= 15.31 L/min  Status=0x8000  Uptime=315s
+
+[SIM] Temp= 23.7 C  Press= 1018.7 hPa  Flow= 15.21 L/min  Status=0x8000  Uptime=315s
+
+[SIM] Temp= 23.5 C  Press= 1018.5 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=315s
+
+[SIM] Temp= 23.2 C  Press= 1018.3 hPa  Flow= 15.06 L/min  Status=0x8000  Uptime=315s
+
+[SIM] Temp= 23.0 C  Press= 1018.1 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=315s
+
+[SIM] Temp= 22.8 C  Press= 1017.9 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=316s
+
+[SIM] Temp= 22.6 C  Press= 1017.6 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=316s
+
+[SIM] Temp= 22.3 C  Press= 1017.4 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=316s
+
+[SIM] Temp= 22.1 C  Press= 1017.1 hPa  Flow= 15.07 L/min  Status=0x8000  Uptime=316s
+
+[SIM] Temp= 21.9 C  Press= 1016.9 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=316s
+
+[SIM] Temp= 21.7 C  Press= 1016.6 hPa  Flow= 15.22 L/min  Status=0x8000  Uptime=317s
+
+[SIM] Temp= 21.6 C  Press= 1016.4 hPa  Flow= 15.32 L/min  Status=0x8000  Uptime=317s
+
+[SIM] Temp= 21.4 C  Press= 1016.1 hPa  Flow= 15.44 L/min  Status=0x8000  Uptime=317s
+
+[SIM] Temp= 21.2 C  Press= 1015.9 hPa  Flow= 15.59 L/min  Status=0x8000  Uptime=317s
+
+[SIM] Temp= 21.1 C  Press= 1015.6 hPa  Flow= 15.75 L/min  Status=0x8000  Uptime=317s
+
+[SIM] Temp= 20.9 C  Press= 1015.3 hPa  Flow= 15.93 L/min  Status=0x8000  Uptime=318s
+
+[SIM] Temp= 20.8 C  Press= 1015.1 hPa  Flow= 16.13 L/min  Status=0x8000  Uptime=318s
+
+[SIM] Temp= 20.6 C  Press= 1014.8 hPa  Flow= 16.34 L/min  Status=0x8000  Uptime=318s
+
+[SIM] Temp= 20.5 C  Press= 1014.5 hPa  Flow= 16.57 L/min  Status=0x8000  Uptime=318s
+
+[SIM] Temp= 20.4 C  Press= 1014.2 hPa  Flow= 16.81 L/min  Status=0x8000  Uptime=318s
+
+[SIM] Temp= 20.3 C  Press= 1014.0 hPa  Flow= 17.07 L/min  Status=0x8000  Uptime=319s
+
+[SIM] Temp= 20.2 C  Press= 1013.7 hPa  Flow= 17.34 L/min  Status=0x8000  Uptime=319s
+
+[SIM] Temp= 20.2 C  Press= 1013.4 hPa  Flow= 17.62 L/min  Status=0x8000  Uptime=319s
+
+[SIM] Temp= 20.1 C  Press= 1013.1 hPa  Flow= 17.91 L/min  Status=0x8000  Uptime=319s
+
+[SIM] Temp= 20.1 C  Press= 1012.8 hPa  Flow= 18.21 L/min  Status=0x8000  Uptime=319s
+
+[SIM] Temp= 20.0 C  Press= 1012.6 hPa  Flow= 18.52 L/min  Status=0x8000  Uptime=320s
+
+[SIM] Temp= 20.0 C  Press= 1012.3 hPa  Flow= 18.83 L/min  Status=0x8000  Uptime=320s
+
+[SIM] Temp= 20.0 C  Press= 1012.0 hPa  Flow= 19.15 L/min  Status=0x8000  Uptime=320s
+
+[SIM] Temp= 20.0 C  Press= 1011.7 hPa  Flow= 19.47 L/min  Status=0x8000  Uptime=320s
+
+[SIM] Temp= 20.0 C  Press= 1011.5 hPa  Flow= 19.80 L/min  Status=0x8000  Uptime=320s
+
+[SIM] Temp= 20.0 C  Press= 1011.2 hPa  Flow= 20.12 L/min  Status=0x8000  Uptime=321s
+
+[SIM] Temp= 20.1 C  Press= 1010.9 hPa  Flow= 20.44 L/min  Status=0x8000  Uptime=321s
+
+[SIM] Temp= 20.1 C  Press= 1010.6 hPa  Flow= 20.77 L/min  Status=0x8000  Uptime=321s
+
+[SIM] Temp= 20.2 C  Press= 1010.4 hPa  Flow= 21.09 L/min  Status=0x8000  Uptime=321s
+
+[SIM] Temp= 20.3 C  Press= 1010.1 hPa  Flow= 21.40 L/min  Status=0x8000  Uptime=321s
+
+[SIM] Temp= 20.4 C  Press= 1009.9 hPa  Flow= 21.71 L/min  Status=0x8000  Uptime=322s
+
+[SIM] Temp= 20.5 C  Press= 1009.6 hPa  Flow= 22.01 L/min  Status=0x8000  Uptime=322s
+
+[SIM] Temp= 20.6 C  Press= 1009.4 hPa  Flow= 22.30 L/min  Status=0x8000  Uptime=322s
+
+[SIM] Temp= 20.7 C  Press= 1009.1 hPa  Flow= 22.59 L/min  Status=0x8000  Uptime=322s
+
+[SIM] Temp= 20.8 C  Press= 1008.9 hPa  Flow= 22.86 L/min  Status=0x8000  Uptime=322s
+
+[SIM] Temp= 21.0 C  Press= 1008.7 hPa  Flow= 23.12 L/min  Status=0x8000  Uptime=323s
+
+[SIM] Temp= 21.1 C  Press= 1008.4 hPa  Flow= 23.37 L/min  Status=0x8000  Uptime=323s
+
+[SIM] Temp= 21.3 C  Press= 1008.2 hPa  Flow= 23.60 L/min  Status=0x8000  Uptime=323s
+
+[SIM] Temp= 21.5 C  Press= 1008.0 hPa  Flow= 23.82 L/min  Status=0x8000  Uptime=323s
+
+[SIM] Temp= 21.7 C  Press= 1007.8 hPa  Flow= 24.02 L/min  Status=0x8000  Uptime=323s
+
+[SIM] Temp= 21.9 C  Press= 1007.6 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=324s
+
+[SIM] Temp= 22.0 C  Press= 1007.4 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=324s
+
+[SIM] Temp= 22.3 C  Press= 1007.2 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=324s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=324s
+
+[SIM] Temp= 22.7 C  Press= 1006.8 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=324s
+
+[SIM] Temp= 22.9 C  Press= 1006.7 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=325s
+
+[SIM] Temp= 23.1 C  Press= 1006.5 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=325s
+
+[SIM] Temp= 23.4 C  Press= 1006.4 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=325s
+
+[SIM] Temp= 23.6 C  Press= 1006.2 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=325s
+
+[SIM] Temp= 23.9 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=325s
+
+[SIM] Temp= 24.1 C  Press= 1006.0 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=326s
+
+[SIM] Temp= 24.3 C  Press= 1005.9 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=326s
+
+[SIM] Temp= 24.6 C  Press= 1005.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=326s
+
+[SIM] Temp= 24.8 C  Press= 1005.6 hPa  Flow= 24.81 L/min  Status=0x8000  Uptime=326s
+
+[SIM] Temp= 25.1 C  Press= 1013.3 hPa  Flow= 20.12 L/min  Status=0x8000  Uptime=326s
+
+[SIM] Temp= 25.3 C  Press= 1013.6 hPa  Flow= 20.44 L/min  Status=0x8000  Uptime=327s
+
+[SIM] Temp= 25.6 C  Press= 1013.9 hPa  Flow= 20.77 L/min  Status=0x8000  Uptime=327s
+
+[SIM] Temp= 25.8 C  Press= 1014.1 hPa  Flow= 21.09 L/min  Status=0x8000  Uptime=327s
+
+[SIM] Temp= 26.1 C  Press= 1014.4 hPa  Flow= 21.40 L/min  Status=0x8000  Uptime=327s
+
+[SIM] Temp= 26.3 C  Press= 1014.7 hPa  Flow= 21.71 L/min  Status=0x8000  Uptime=327s
+
+[SIM] Temp= 26.6 C  Press= 1015.0 hPa  Flow= 22.01 L/min  Status=0x8000  Uptime=328s
+
+[SIM] Temp= 26.8 C  Press= 1015.2 hPa  Flow= 22.30 L/min  Status=0x8000  Uptime=328s
+
+[SIM] Temp= 27.0 C  Press= 1015.5 hPa  Flow= 22.59 L/min  Status=0x8000  Uptime=328s
+
+[SIM] Temp= 27.3 C  Press= 1015.8 hPa  Flow= 22.86 L/min  Status=0x8000  Uptime=328s
+
+[SIM] Temp= 27.5 C  Press= 1016.0 hPa  Flow= 23.12 L/min  Status=0x8000  Uptime=328s
+
+[SIM] Temp= 27.7 C  Press= 1016.3 hPa  Flow= 23.37 L/min  Status=0x8000  Uptime=329s
+
+[SIM] Temp= 27.9 C  Press= 1016.6 hPa  Flow= 23.60 L/min  Status=0x8000  Uptime=329s
+
+[SIM] Temp= 28.1 C  Press= 1016.8 hPa  Flow= 23.82 L/min  Status=0x8000  Uptime=329s
+
+[SIM] Temp= 28.3 C  Press= 1017.1 hPa  Flow= 24.02 L/min  Status=0x8000  Uptime=329s
+
+[SIM] Temp= 28.5 C  Press= 1017.3 hPa  Flow= 24.20 L/min  Status=0x8000  Uptime=329s
+
+[SIM] Temp= 28.7 C  Press= 1017.5 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=330s
+
+[SIM] Temp= 28.8 C  Press= 1017.8 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=330s
+
+[SIM] Temp= 29.0 C  Press= 1018.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=330s
+
+[SIM] Temp= 29.1 C  Press= 1018.2 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=330s
+
+[SIM] Temp= 29.3 C  Press= 1018.4 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=330s
+
+[SIM] Temp= 29.4 C  Press= 1018.6 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=331s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=331s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=331s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=331s
+
+[SIM] Temp= 29.8 C  Press= 1019.4 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=331s
+
+[SIM] Temp= 29.8 C  Press= 1019.6 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=332s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=332s
+
+[SIM] Temp= 29.9 C  Press= 1019.9 hPa  Flow= 24.81 L/min  Status=0x8000  Uptime=332s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=332s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.60 L/min  Status=0x8000  Uptime=332s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.46 L/min  Status=0x8000  Uptime=333s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.31 L/min  Status=0x8000  Uptime=333s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.13 L/min  Status=0x8000  Uptime=333s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.94 L/min  Status=0x8000  Uptime=333s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.73 L/min  Status=0x8000  Uptime=333s
+
+[SIM] Temp= 29.8 C  Press= 1020.8 hPa  Flow= 23.51 L/min  Status=0x8000  Uptime=334s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.27 L/min  Status=0x8000  Uptime=334s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.02 L/min  Status=0x8000  Uptime=334s
+
+[SIM] Temp= 29.6 C  Press= 1021.1 hPa  Flow= 22.75 L/min  Status=0x8000  Uptime=334s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.47 L/min  Status=0x8000  Uptime=334s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.19 L/min  Status=0x8000  Uptime=335s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 21.89 L/min  Status=0x8000  Uptime=335s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.58 L/min  Status=0x8000  Uptime=335s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.27 L/min  Status=0x8000  Uptime=335s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.96 L/min  Status=0x8000  Uptime=335s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.64 L/min  Status=0x8000  Uptime=336s
+
+[SIM] Temp= 28.5 C  Press= 1021.2 hPa  Flow= 20.31 L/min  Status=0x8000  Uptime=336s
+
+[SIM] Temp= 28.3 C  Press= 1021.1 hPa  Flow= 19.99 L/min  Status=0x8000  Uptime=336s
+
+[SIM] Temp= 28.1 C  Press= 1021.1 hPa  Flow= 19.66 L/min  Status=0x8000  Uptime=336s
+
+[SIM] Temp= 27.9 C  Press= 1021.1 hPa  Flow= 19.34 L/min  Status=0x8000  Uptime=336s
+
+[SIM] Temp= 27.7 C  Press= 1021.0 hPa  Flow= 19.02 L/min  Status=0x8000  Uptime=337s
+
+[SIM] Temp= 27.5 C  Press= 1020.9 hPa  Flow= 18.70 L/min  Status=0x8000  Uptime=337s
+
+[SIM] Temp= 27.3 C  Press= 1020.8 hPa  Flow= 18.39 L/min  Status=0x8000  Uptime=337s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.09 L/min  Status=0x8000  Uptime=337s
+
+[SIM] Temp= 26.8 C  Press= 1020.7 hPa  Flow= 17.79 L/min  Status=0x8000  Uptime=337s
+
+[SIM] Temp= 26.6 C  Press= 1020.6 hPa  Flow= 17.51 L/min  Status=0x8000  Uptime=338s
+
+[SIM] Temp= 26.3 C  Press= 1020.4 hPa  Flow= 17.23 L/min  Status=0x8000  Uptime=338s
+
+[SIM] Temp= 26.1 C  Press= 1020.3 hPa  Flow= 16.96 L/min  Status=0x8000  Uptime=338s
+
+[SIM] Temp= 25.9 C  Press= 1020.2 hPa  Flow= 16.71 L/min  Status=0x8000  Uptime=338s
+
+[SIM] Temp= 25.6 C  Press= 1020.1 hPa  Flow= 16.47 L/min  Status=0x8000  Uptime=338s
+
+[SIM] Temp= 25.4 C  Press= 1019.9 hPa  Flow= 16.25 L/min  Status=0x8000  Uptime=339s
+
+[SIM] Temp= 25.1 C  Press= 1019.7 hPa  Flow= 16.05 L/min  Status=0x8000  Uptime=339s
+
+[SIM] Temp= 24.9 C  Press= 1019.6 hPa  Flow= 15.85 L/min  Status=0x8000  Uptime=339s
+
+[SIM] Temp= 24.6 C  Press= 1019.4 hPa  Flow= 15.68 L/min  Status=0x8000  Uptime=339s
+
+[SIM] Temp= 24.4 C  Press= 1019.2 hPa  Flow= 15.53 L/min  Status=0x8000  Uptime=339s
+
+[SIM] Temp= 24.1 C  Press= 1019.0 hPa  Flow= 15.39 L/min  Status=0x8000  Uptime=340s
+
+[SIM] Temp= 23.9 C  Press= 1018.8 hPa  Flow= 15.28 L/min  Status=0x8000  Uptime=340s
+
+[SIM] Temp= 23.6 C  Press= 1018.6 hPa  Flow= 15.18 L/min  Status=0x8000  Uptime=340s
+
+[SIM] Temp= 23.4 C  Press= 1018.4 hPa  Flow= 15.10 L/min  Status=0x8000  Uptime=340s
+
+[SIM] Temp= 23.2 C  Press= 1018.2 hPa  Flow= 15.05 L/min  Status=0x8000  Uptime=340s
+
+[SIM] Temp= 22.9 C  Press= 1018.0 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=341s
+
+[SIM] Temp= 22.7 C  Press= 1017.8 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=341s
+
+[SIM] Temp= 22.5 C  Press= 1017.5 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=341s
+
+[SIM] Temp= 22.3 C  Press= 1017.3 hPa  Flow= 15.04 L/min  Status=0x8000  Uptime=341s
+
+[SIM] Temp= 22.1 C  Press= 1017.1 hPa  Flow= 15.09 L/min  Status=0x8000  Uptime=341s
+
+[SIM] Temp= 21.9 C  Press= 1016.8 hPa  Flow= 15.16 L/min  Status=0x8000  Uptime=342s
+
+[SIM] Temp= 21.7 C  Press= 1016.6 hPa  Flow= 15.25 L/min  Status=0x8000  Uptime=342s
+
+[SIM] Temp= 21.5 C  Press= 1016.3 hPa  Flow= 15.36 L/min  Status=0x8000  Uptime=342s
+
+[SIM] Temp= 21.3 C  Press= 1016.0 hPa  Flow= 15.49 L/min  Status=0x8000  Uptime=342s
+
+[SIM] Temp= 21.2 C  Press= 1015.8 hPa  Flow= 15.64 L/min  Status=0x8000  Uptime=342s
+
+[SIM] Temp= 21.0 C  Press= 1015.5 hPa  Flow= 15.81 L/min  Status=0x8000  Uptime=343s
+
+[SIM] Temp= 20.9 C  Press= 1015.2 hPa  Flow= 15.99 L/min  Status=0x8000  Uptime=343s
+
+[SIM] Temp= 20.7 C  Press= 1015.0 hPa  Flow= 16.20 L/min  Status=0x8000  Uptime=343s
+
+[SIM] Temp= 20.6 C  Press= 1014.7 hPa  Flow= 16.42 L/min  Status=0x8000  Uptime=343s
+
+[SIM] Temp= 20.5 C  Press= 1014.4 hPa  Flow= 16.65 L/min  Status=0x8000  Uptime=343s
+
+[SIM] Temp= 20.4 C  Press= 1014.1 hPa  Flow= 16.90 L/min  Status=0x8000  Uptime=344s
+
+[SIM] Temp= 20.3 C  Press= 1013.9 hPa  Flow= 17.16 L/min  Status=0x8000  Uptime=344s
+
+[SIM] Temp= 20.2 C  Press= 1013.6 hPa  Flow= 17.43 L/min  Status=0x8000  Uptime=344s
+
+[SIM] Temp= 20.1 C  Press= 1013.3 hPa  Flow= 17.72 L/min  Status=0x8000  Uptime=344s
+
+[SIM] Temp= 20.1 C  Press= 1013.0 hPa  Flow= 18.01 L/min  Status=0x8000  Uptime=344s
+
+[SIM] Temp= 20.1 C  Press= 1012.7 hPa  Flow= 18.31 L/min  Status=0x8000  Uptime=345s
+
+[SIM] Temp= 20.0 C  Press= 1012.5 hPa  Flow= 18.62 L/min  Status=0x8000  Uptime=345s
+
+[SIM] Temp= 20.0 C  Press= 1012.2 hPa  Flow= 18.94 L/min  Status=0x8000  Uptime=345s
+
+[SIM] Temp= 20.0 C  Press= 1011.9 hPa  Flow= 19.26 L/min  Status=0x8000  Uptime=345s
+
+[SIM] Temp= 20.0 C  Press= 1011.6 hPa  Flow= 19.58 L/min  Status=0x8000  Uptime=345s
+
+[SIM] Temp= 20.0 C  Press= 1011.4 hPa  Flow= 19.90 L/min  Status=0x8000  Uptime=346s
+
+[SIM] Temp= 20.1 C  Press= 1011.1 hPa  Flow= 20.23 L/min  Status=0x8000  Uptime=346s
+
+[SIM] Temp= 20.1 C  Press= 1010.8 hPa  Flow= 20.55 L/min  Status=0x8000  Uptime=346s
+
+[SIM] Temp= 20.2 C  Press= 1010.6 hPa  Flow= 20.87 L/min  Status=0x8000  Uptime=346s
+
+[SIM] Temp= 20.2 C  Press= 1010.3 hPa  Flow= 21.19 L/min  Status=0x8000  Uptime=346s
+
+[SIM] Temp= 20.3 C  Press= 1010.0 hPa  Flow= 21.51 L/min  Status=0x8000  Uptime=347s
+
+[SIM] Temp= 20.4 C  Press= 1009.8 hPa  Flow= 21.81 L/min  Status=0x8000  Uptime=347s
+
+[SIM] Temp= 20.5 C  Press= 1009.5 hPa  Flow= 22.11 L/min  Status=0x8000  Uptime=347s
+
+[SIM] Temp= 20.6 C  Press= 1009.3 hPa  Flow= 22.40 L/min  Status=0x8000  Uptime=347s
+
+[SIM] Temp= 20.8 C  Press= 1009.0 hPa  Flow= 22.68 L/min  Status=0x8000  Uptime=347s
+
+[SIM] Temp= 20.9 C  Press= 1008.8 hPa  Flow= 22.95 L/min  Status=0x8000  Uptime=348s
+
+[SIM] Temp= 21.0 C  Press= 1008.6 hPa  Flow= 23.21 L/min  Status=0x8000  Uptime=348s
+
+[SIM] Temp= 21.2 C  Press= 1008.3 hPa  Flow= 23.45 L/min  Status=0x8000  Uptime=348s
+
+[SIM] Temp= 21.4 C  Press= 1008.1 hPa  Flow= 23.68 L/min  Status=0x8000  Uptime=348s
+
+[SIM] Temp= 21.5 C  Press= 1007.9 hPa  Flow= 23.89 L/min  Status=0x8000  Uptime=348s
+
+[SIM] Temp= 21.7 C  Press= 1007.7 hPa  Flow= 24.08 L/min  Status=0x8000  Uptime=349s
+
+[SIM] Temp= 21.9 C  Press= 1007.5 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=349s
+
+[SIM] Temp= 22.1 C  Press= 1007.3 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=349s
+
+[SIM] Temp= 22.3 C  Press= 1007.1 hPa  Flow= 24.57 L/min  Status=0x8000  Uptime=349s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.69 L/min  Status=0x8000  Uptime=349s
+
+[SIM] Temp= 22.8 C  Press= 1006.8 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=350s
+
+[SIM] Temp= 23.0 C  Press= 1006.6 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=350s
+
+[SIM] Temp= 23.2 C  Press= 1006.5 hPa  Flow= 24.94 L/min  Status=0x8000  Uptime=350s
+
+[SIM] Temp= 23.5 C  Press= 1006.3 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=350s
+
+[SIM] Temp= 23.7 C  Press= 1006.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=350s
+
+[SIM] Temp= 23.9 C  Press= 1006.0 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=351s
+
+[SIM] Temp= 24.2 C  Press= 1005.9 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=351s
+
+[SIM] Temp= 24.4 C  Press= 1005.8 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=351s
+
+[SIM] Temp= 24.7 C  Press= 1005.7 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=351s
+
+[SIM] Temp= 24.9 C  Press= 1005.6 hPa  Flow= 24.78 L/min  Status=0x8000  Uptime=351s
+
+[SIM] Temp= 25.2 C  Press= 1013.4 hPa  Flow= 20.23 L/min  Status=0x8000  Uptime=352s
+
+[SIM] Temp= 25.4 C  Press= 1013.7 hPa  Flow= 20.55 L/min  Status=0x8000  Uptime=352s
+
+[SIM] Temp= 25.7 C  Press= 1014.0 hPa  Flow= 20.87 L/min  Status=0x8000  Uptime=352s
+
+[SIM] Temp= 25.9 C  Press= 1014.2 hPa  Flow= 21.19 L/min  Status=0x8000  Uptime=352s
+
+[SIM] Temp= 26.2 C  Press= 1014.5 hPa  Flow= 21.51 L/min  Status=0x8000  Uptime=352s
+
+[SIM] Temp= 26.4 C  Press= 1014.8 hPa  Flow= 21.81 L/min  Status=0x8000  Uptime=353s
+
+[SIM] Temp= 26.6 C  Press= 1015.1 hPa  Flow= 22.11 L/min  Status=0x8000  Uptime=353s
+
+[SIM] Temp= 26.9 C  Press= 1015.3 hPa  Flow= 22.40 L/min  Status=0x8000  Uptime=353s
+
+[SIM] Temp= 27.1 C  Press= 1015.6 hPa  Flow= 22.68 L/min  Status=0x8000  Uptime=353s
+
+[SIM] Temp= 27.3 C  Press= 1015.9 hPa  Flow= 22.95 L/min  Status=0x8000  Uptime=353s
+
+[SIM] Temp= 27.6 C  Press= 1016.1 hPa  Flow= 23.21 L/min  Status=0x8000  Uptime=354s
+
+[SIM] Temp= 27.8 C  Press= 1016.4 hPa  Flow= 23.45 L/min  Status=0x8000  Uptime=354s
+
+[SIM] Temp= 28.0 C  Press= 1016.6 hPa  Flow= 23.68 L/min  Status=0x8000  Uptime=354s
+
+[SIM] Temp= 28.2 C  Press= 1016.9 hPa  Flow= 23.89 L/min  Status=0x8000  Uptime=354s
+
+[SIM] Temp= 28.4 C  Press= 1017.1 hPa  Flow= 24.08 L/min  Status=0x8000  Uptime=354s
+
+[SIM] Temp= 28.5 C  Press= 1017.4 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=355s
+
+[SIM] Temp= 28.7 C  Press= 1017.6 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=355s
+
+[SIM] Temp= 28.9 C  Press= 1017.8 hPa  Flow= 24.57 L/min  Status=0x8000  Uptime=355s
+
+[SIM] Temp= 29.0 C  Press= 1018.1 hPa  Flow= 24.69 L/min  Status=0x8000  Uptime=355s
+
+[SIM] Temp= 29.2 C  Press= 1018.3 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=355s
+
+[SIM] Temp= 29.3 C  Press= 1018.5 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=356s
+
+[SIM] Temp= 29.4 C  Press= 1018.7 hPa  Flow= 24.94 L/min  Status=0x8000  Uptime=356s
+
+[SIM] Temp= 29.5 C  Press= 1018.9 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=356s
+
+[SIM] Temp= 29.6 C  Press= 1019.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=356s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=356s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=357s
+
+[SIM] Temp= 29.9 C  Press= 1019.6 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=357s
+
+[SIM] Temp= 29.9 C  Press= 1019.8 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=357s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.78 L/min  Status=0x8000  Uptime=357s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.68 L/min  Status=0x8000  Uptime=357s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.56 L/min  Status=0x8000  Uptime=358s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.41 L/min  Status=0x8000  Uptime=358s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.25 L/min  Status=0x8000  Uptime=358s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.07 L/min  Status=0x8000  Uptime=358s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.87 L/min  Status=0x8000  Uptime=358s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.66 L/min  Status=0x8000  Uptime=359s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.43 L/min  Status=0x8000  Uptime=359s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.19 L/min  Status=0x8000  Uptime=359s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 22.93 L/min  Status=0x8000  Uptime=359s
+
+[SIM] Temp= 29.6 C  Press= 1021.1 hPa  Flow= 22.66 L/min  Status=0x8000  Uptime=359s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.38 L/min  Status=0x8000  Uptime=360s
+
+[SIM] Temp= 29.4 C  Press= 1021.2 hPa  Flow= 22.09 L/min  Status=0x8000  Uptime=360s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.79 L/min  Status=0x8000  Uptime=360s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.48 L/min  Status=0x8000  Uptime=360s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.17 L/min  Status=0x8000  Uptime=360s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.85 L/min  Status=0x8000  Uptime=361s
+
+[SIM] Temp= 28.6 C  Press= 1021.2 hPa  Flow= 20.53 L/min  Status=0x8000  Uptime=361s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.20 L/min  Status=0x8000  Uptime=361s
+
+[SIM] Temp= 28.2 C  Press= 1021.1 hPa  Flow= 19.88 L/min  Status=0x8000  Uptime=361s
+
+[SIM] Temp= 28.1 C  Press= 1021.1 hPa  Flow= 19.55 L/min  Status=0x8000  Uptime=361s
+
+[SIM] Temp= 27.8 C  Press= 1021.0 hPa  Flow= 19.23 L/min  Status=0x8000  Uptime=362s
+
+[SIM] Temp= 27.6 C  Press= 1021.0 hPa  Flow= 18.91 L/min  Status=0x8000  Uptime=362s
+
+[SIM] Temp= 27.4 C  Press= 1020.9 hPa  Flow= 18.60 L/min  Status=0x8000  Uptime=362s
+
+[SIM] Temp= 27.2 C  Press= 1020.8 hPa  Flow= 18.29 L/min  Status=0x8000  Uptime=362s
+
+[SIM] Temp= 27.0 C  Press= 1020.7 hPa  Flow= 17.99 L/min  Status=0x8000  Uptime=362s
+
+[SIM] Temp= 26.7 C  Press= 1020.6 hPa  Flow= 17.69 L/min  Status=0x8000  Uptime=363s
+
+[SIM] Temp= 26.5 C  Press= 1020.5 hPa  Flow= 17.41 L/min  Status=0x8000  Uptime=363s
+
+[SIM] Temp= 26.3 C  Press= 1020.4 hPa  Flow= 17.14 L/min  Status=0x8000  Uptime=363s
+
+[SIM] Temp= 26.0 C  Press= 1020.3 hPa  Flow= 16.88 L/min  Status=0x8000  Uptime=363s
+
+[SIM] Temp= 25.8 C  Press= 1020.1 hPa  Flow= 16.63 L/min  Status=0x8000  Uptime=363s
+
+[SIM] Temp= 25.5 C  Press= 1020.0 hPa  Flow= 16.40 L/min  Status=0x8000  Uptime=364s
+
+[SIM] Temp= 25.3 C  Press= 1019.9 hPa  Flow= 16.18 L/min  Status=0x8000  Uptime=364s
+
+[SIM] Temp= 25.0 C  Press= 1019.7 hPa  Flow= 15.98 L/min  Status=0x8000  Uptime=364s
+
+[SIM] Temp= 24.8 C  Press= 1019.5 hPa  Flow= 15.79 L/min  Status=0x8000  Uptime=364s
+
+[SIM] Temp= 24.5 C  Press= 1019.4 hPa  Flow= 15.63 L/min  Status=0x8000  Uptime=364s
+
+[SIM] Temp= 24.3 C  Press= 1019.2 hPa  Flow= 15.48 L/min  Status=0x8000  Uptime=365s
+
+[SIM] Temp= 24.0 C  Press= 1019.0 hPa  Flow= 15.35 L/min  Status=0x8000  Uptime=365s
+
+[SIM] Temp= 23.8 C  Press= 1018.8 hPa  Flow= 15.24 L/min  Status=0x8000  Uptime=365s
+
+[SIM] Temp= 23.6 C  Press= 1018.6 hPa  Flow= 15.15 L/min  Status=0x8000  Uptime=365s
+
+[SIM] Temp= 23.3 C  Press= 1018.4 hPa  Flow= 15.08 L/min  Status=0x8000  Uptime=365s
+
+[SIM] Temp= 23.1 C  Press= 1018.1 hPa  Flow= 15.03 L/min  Status=0x8000  Uptime=366s
+
+[SIM] Temp= 22.9 C  Press= 1017.9 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=366s
+
+[SIM] Temp= 22.6 C  Press= 1017.7 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=366s
+
+[SIM] Temp= 22.4 C  Press= 1017.5 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=366s
+
+[SIM] Temp= 22.2 C  Press= 1017.2 hPa  Flow= 15.05 L/min  Status=0x8000  Uptime=366s
+
+[SIM] Temp= 22.0 C  Press= 1017.0 hPa  Flow= 15.11 L/min  Status=0x8000  Uptime=367s
+
+[SIM] Temp= 21.8 C  Press= 1016.7 hPa  Flow= 15.19 L/min  Status=0x8000  Uptime=367s
+
+[SIM] Temp= 21.6 C  Press= 1016.5 hPa  Flow= 15.28 L/min  Status=0x8000  Uptime=367s
+
+[SIM] Temp= 21.4 C  Press= 1016.2 hPa  Flow= 15.40 L/min  Status=0x8000  Uptime=367s
+
+[SIM] Temp= 21.3 C  Press= 1016.0 hPa  Flow= 15.54 L/min  Status=0x8000  Uptime=367s
+
+[SIM] Temp= 21.1 C  Press= 1015.7 hPa  Flow= 15.69 L/min  Status=0x8000  Uptime=368s
+
+[SIM] Temp= 21.0 C  Press= 1015.4 hPa  Flow= 15.87 L/min  Status=0x8000  Uptime=368s
+
+[SIM] Temp= 20.8 C  Press= 1015.2 hPa  Flow= 16.06 L/min  Status=0x8000  Uptime=368s
+
+[SIM] Temp= 20.7 C  Press= 1014.9 hPa  Flow= 16.27 L/min  Status=0x8000  Uptime=368s
+
+[SIM] Temp= 20.6 C  Press= 1014.6 hPa  Flow= 16.49 L/min  Status=0x8000  Uptime=368s
+
+[SIM] Temp= 20.4 C  Press= 1014.3 hPa  Flow= 16.73 L/min  Status=0x8000  Uptime=369s
+
+[SIM] Temp= 20.4 C  Press= 1014.1 hPa  Flow= 16.98 L/min  Status=0x8000  Uptime=369s
+
+[SIM] Temp= 20.3 C  Press= 1013.8 hPa  Flow= 17.25 L/min  Status=0x8000  Uptime=369s
+
+[SIM] Temp= 20.2 C  Press= 1013.5 hPa  Flow= 17.53 L/min  Status=0x8000  Uptime=369s
+
+[SIM] Temp= 20.1 C  Press= 1013.2 hPa  Flow= 17.81 L/min  Status=0x8000  Uptime=369s
+
+[SIM] Temp= 20.1 C  Press= 1012.9 hPa  Flow= 18.11 L/min  Status=0x8000  Uptime=370s
+
+[SIM] Temp= 20.0 C  Press= 1012.7 hPa  Flow= 18.42 L/min  Status=0x8000  Uptime=370s
+
+[SIM] Temp= 20.0 C  Press= 1012.4 hPa  Flow= 18.73 L/min  Status=0x8000  Uptime=370s
+
+[SIM] Temp= 20.0 C  Press= 1012.1 hPa  Flow= 19.04 L/min  Status=0x8000  Uptime=370s
+
+[SIM] Temp= 20.0 C  Press= 1011.8 hPa  Flow= 19.37 L/min  Status=0x8000  Uptime=370s
+
+[SIM] Temp= 20.0 C  Press= 1011.5 hPa  Flow= 19.69 L/min  Status=0x8000  Uptime=371s
+
+[SIM] Temp= 20.0 C  Press= 1011.3 hPa  Flow= 20.01 L/min  Status=0x8000  Uptime=371s
+
+[SIM] Temp= 20.1 C  Press= 1011.0 hPa  Flow= 20.34 L/min  Status=0x8000  Uptime=371s
+
+[SIM] Temp= 20.1 C  Press= 1010.7 hPa  Flow= 20.66 L/min  Status=0x8000  Uptime=371s
+
+[SIM] Temp= 20.2 C  Press= 1010.5 hPa  Flow= 20.98 L/min  Status=0x8000  Uptime=371s
+
+[SIM] Temp= 20.3 C  Press= 1010.2 hPa  Flow= 21.30 L/min  Status=0x8000  Uptime=372s
+
+[SIM] Temp= 20.3 C  Press= 1010.0 hPa  Flow= 21.61 L/min  Status=0x8000  Uptime=372s
+
+[SIM] Temp= 20.4 C  Press= 1009.7 hPa  Flow= 21.91 L/min  Status=0x8000  Uptime=372s
+
+[SIM] Temp= 20.5 C  Press= 1009.4 hPa  Flow= 22.21 L/min  Status=0x8000  Uptime=372s
+
+[SIM] Temp= 20.7 C  Press= 1009.2 hPa  Flow= 22.50 L/min  Status=0x8000  Uptime=372s
+
+[SIM] Temp= 20.8 C  Press= 1009.0 hPa  Flow= 22.77 L/min  Status=0x8000  Uptime=373s
+
+[SIM] Temp= 20.9 C  Press= 1008.7 hPa  Flow= 23.04 L/min  Status=0x8000  Uptime=373s
+
+[SIM] Temp= 21.1 C  Press= 1008.5 hPa  Flow= 23.29 L/min  Status=0x8000  Uptime=373s
+
+[SIM] Temp= 21.3 C  Press= 1008.3 hPa  Flow= 23.53 L/min  Status=0x8000  Uptime=373s
+
+[SIM] Temp= 21.4 C  Press= 1008.1 hPa  Flow= 23.75 L/min  Status=0x8000  Uptime=373s
+
+[SIM] Temp= 21.6 C  Press= 1007.8 hPa  Flow= 23.96 L/min  Status=0x8000  Uptime=374s
+
+[SIM] Temp= 21.8 C  Press= 1007.6 hPa  Flow= 24.15 L/min  Status=0x8000  Uptime=374s
+
+[SIM] Temp= 22.0 C  Press= 1007.4 hPa  Flow= 24.32 L/min  Status=0x8000  Uptime=374s
+
+[SIM] Temp= 22.2 C  Press= 1007.3 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=374s
+
+[SIM] Temp= 22.4 C  Press= 1007.1 hPa  Flow= 24.61 L/min  Status=0x8000  Uptime=374s
+
+[SIM] Temp= 22.6 C  Press= 1006.9 hPa  Flow= 24.73 L/min  Status=0x8000  Uptime=375s
+
+[SIM] Temp= 22.8 C  Press= 1006.7 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=375s
+
+[SIM] Temp= 23.1 C  Press= 1006.6 hPa  Flow= 24.90 L/min  Status=0x8000  Uptime=375s
+
+[SIM] Temp= 23.3 C  Press= 1006.4 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=375s
+
+[SIM] Temp= 23.5 C  Press= 1006.3 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=375s
+
+[SIM] Temp= 23.8 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=376s
+
+[SIM] Temp= 24.0 C  Press= 1006.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=376s
+
+[SIM] Temp= 24.3 C  Press= 1005.9 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=376s
+
+[SIM] Temp= 24.5 C  Press= 1005.8 hPa  Flow= 24.91 L/min  Status=0x8000  Uptime=376s
+
+[SIM] Temp= 24.8 C  Press= 1005.7 hPa  Flow= 24.84 L/min  Status=0x8000  Uptime=376s
+
+[SIM] Temp= 25.0 C  Press= 1013.2 hPa  Flow= 20.01 L/min  Status=0x8000  Uptime=377s
+
+[SIM] Temp= 25.3 C  Press= 1013.5 hPa  Flow= 20.34 L/min  Status=0x8000  Uptime=377s
+
+[SIM] Temp= 25.5 C  Press= 1013.8 hPa  Flow= 20.66 L/min  Status=0x8000  Uptime=377s
+
+[SIM] Temp= 25.8 C  Press= 1014.1 hPa  Flow= 20.98 L/min  Status=0x8000  Uptime=377s
+
+[SIM] Temp= 26.0 C  Press= 1014.3 hPa  Flow= 21.30 L/min  Status=0x8000  Uptime=377s
+
+[SIM] Temp= 26.2 C  Press= 1014.6 hPa  Flow= 21.61 L/min  Status=0x8000  Uptime=378s
+
+[SIM] Temp= 26.5 C  Press= 1014.9 hPa  Flow= 21.91 L/min  Status=0x8000  Uptime=378s
+
+[SIM] Temp= 26.7 C  Press= 1015.2 hPa  Flow= 22.21 L/min  Status=0x8000  Uptime=378s
+
+[SIM] Temp= 27.0 C  Press= 1015.4 hPa  Flow= 22.50 L/min  Status=0x8000  Uptime=378s
+
+[SIM] Temp= 27.2 C  Press= 1015.7 hPa  Flow= 22.77 L/min  Status=0x8000  Uptime=378s
+
+[SIM] Temp= 27.4 C  Press= 1016.0 hPa  Flow= 23.04 L/min  Status=0x8000  Uptime=379s
+
+[SIM] Temp= 27.6 C  Press= 1016.2 hPa  Flow= 23.29 L/min  Status=0x8000  Uptime=379s
+
+[SIM] Temp= 27.8 C  Press= 1016.5 hPa  Flow= 23.53 L/min  Status=0x8000  Uptime=379s
+
+[SIM] Temp= 28.0 C  Press= 1016.7 hPa  Flow= 23.75 L/min  Status=0x8000  Uptime=379s
+
+[SIM] Temp= 28.2 C  Press= 1017.0 hPa  Flow= 23.96 L/min  Status=0x8000  Uptime=379s
+
+[SIM] Temp= 28.4 C  Press= 1017.2 hPa  Flow= 24.15 L/min  Status=0x8000  Uptime=380s
+
+[SIM] Temp= 28.6 C  Press= 1017.5 hPa  Flow= 24.32 L/min  Status=0x8000  Uptime=380s
+
+[SIM] Temp= 28.8 C  Press= 1017.7 hPa  Flow= 24.47 L/min  Status=0x8000  Uptime=380s
+
+[SIM] Temp= 28.9 C  Press= 1017.9 hPa  Flow= 24.61 L/min  Status=0x8000  Uptime=380s
+
+[SIM] Temp= 29.1 C  Press= 1018.1 hPa  Flow= 24.73 L/min  Status=0x8000  Uptime=380s
+
+[SIM] Temp= 29.2 C  Press= 1018.4 hPa  Flow= 24.82 L/min  Status=0x8000  Uptime=381s
+
+[SIM] Temp= 29.3 C  Press= 1018.6 hPa  Flow= 24.90 L/min  Status=0x8000  Uptime=381s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=381s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=381s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=381s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=382s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.96 L/min  Status=0x8000  Uptime=382s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.91 L/min  Status=0x8000  Uptime=382s
+
+[SIM] Temp= 29.9 C  Press= 1019.9 hPa  Flow= 24.84 L/min  Status=0x8000  Uptime=382s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.75 L/min  Status=0x8000  Uptime=382s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.64 L/min  Status=0x8000  Uptime=383s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.51 L/min  Status=0x8000  Uptime=383s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.36 L/min  Status=0x8000  Uptime=383s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.19 L/min  Status=0x8000  Uptime=383s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.00 L/min  Status=0x8000  Uptime=383s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.80 L/min  Status=0x8000  Uptime=384s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.58 L/min  Status=0x8000  Uptime=384s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.35 L/min  Status=0x8000  Uptime=384s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.10 L/min  Status=0x8000  Uptime=384s
+
+[SIM] Temp= 29.6 C  Press= 1021.0 hPa  Flow= 22.84 L/min  Status=0x8000  Uptime=384s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.57 L/min  Status=0x8000  Uptime=385s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.28 L/min  Status=0x8000  Uptime=385s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 21.99 L/min  Status=0x8000  Uptime=385s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.69 L/min  Status=0x8000  Uptime=385s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.38 L/min  Status=0x8000  Uptime=385s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.06 L/min  Status=0x8000  Uptime=386s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.74 L/min  Status=0x8000  Uptime=386s
+
+[SIM] Temp= 28.5 C  Press= 1021.2 hPa  Flow= 20.42 L/min  Status=0x8000  Uptime=386s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.09 L/min  Status=0x8000  Uptime=386s
+
+[SIM] Temp= 28.2 C  Press= 1021.1 hPa  Flow= 19.77 L/min  Status=0x8000  Uptime=386s
+
+[SIM] Temp= 28.0 C  Press= 1021.1 hPa  Flow= 19.45 L/min  Status=0x8000  Uptime=387s
+
+[SIM] Temp= 27.8 C  Press= 1021.0 hPa  Flow= 19.12 L/min  Status=0x8000  Uptime=387s
+
+[SIM] Temp= 27.6 C  Press= 1021.0 hPa  Flow= 18.81 L/min  Status=0x8000  Uptime=387s
+
+[SIM] Temp= 27.4 C  Press= 1020.9 hPa  Flow= 18.49 L/min  Status=0x8000  Uptime=387s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.19 L/min  Status=0x8000  Uptime=387s
+
+[SIM] Temp= 26.9 C  Press= 1020.7 hPa  Flow= 17.89 L/min  Status=0x8000  Uptime=388s
+
+[SIM] Temp= 26.7 C  Press= 1020.6 hPa  Flow= 17.60 L/min  Status=0x8000  Uptime=388s
+
+[SIM] Temp= 26.4 C  Press= 1020.5 hPa  Flow= 17.32 L/min  Status=0x8000  Uptime=388s
+
+[SIM] Temp= 26.2 C  Press= 1020.4 hPa  Flow= 17.05 L/min  Status=0x8000  Uptime=388s
+
+[SIM] Temp= 25.9 C  Press= 1020.2 hPa  Flow= 16.79 L/min  Status=0x8000  Uptime=388s
+
+[SIM] Temp= 25.7 C  Press= 1020.1 hPa  Flow= 16.55 L/min  Status=0x8000  Uptime=389s
+
+[SIM] Temp= 25.4 C  Press= 1020.0 hPa  Flow= 16.32 L/min  Status=0x8000  Uptime=389s
+
+[SIM] Temp= 25.2 C  Press= 1019.8 hPa  Flow= 16.11 L/min  Status=0x8000  Uptime=389s
+
+[SIM] Temp= 24.9 C  Press= 1019.6 hPa  Flow= 15.92 L/min  Status=0x8000  Uptime=389s
+
+[SIM] Temp= 24.7 C  Press= 1019.5 hPa  Flow= 15.74 L/min  Status=0x8000  Uptime=389s
+
+[SIM] Temp= 24.4 C  Press= 1019.3 hPa  Flow= 15.58 L/min  Status=0x8000  Uptime=390s
+
+[SIM] Temp= 24.2 C  Press= 1019.1 hPa  Flow= 15.43 L/min  Status=0x8000  Uptime=390s
+
+[SIM] Temp= 24.0 C  Press= 1018.9 hPa  Flow= 15.31 L/min  Status=0x8000  Uptime=390s
+
+[SIM] Temp= 23.7 C  Press= 1018.7 hPa  Flow= 15.21 L/min  Status=0x8000  Uptime=390s
+
+[SIM] Temp= 23.5 C  Press= 1018.5 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=390s
+
+[SIM] Temp= 23.2 C  Press= 1018.3 hPa  Flow= 15.06 L/min  Status=0x8000  Uptime=391s
+
+[SIM] Temp= 23.0 C  Press= 1018.1 hPa  Flow= 15.02 L/min  Status=0x8000  Uptime=391s
+
+[SIM] Temp= 22.8 C  Press= 1017.8 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=391s
+
+[SIM] Temp= 22.6 C  Press= 1017.6 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=391s
+
+[SIM] Temp= 22.3 C  Press= 1017.4 hPa  Flow= 15.03 L/min  Status=0x8000  Uptime=391s
+
+[SIM] Temp= 22.1 C  Press= 1017.1 hPa  Flow= 15.07 L/min  Status=0x8000  Uptime=392s
+
+[SIM] Temp= 21.9 C  Press= 1016.9 hPa  Flow= 15.13 L/min  Status=0x8000  Uptime=392s
+
+[SIM] Temp= 21.7 C  Press= 1016.6 hPa  Flow= 15.22 L/min  Status=0x8000  Uptime=392s
+
+[SIM] Temp= 21.6 C  Press= 1016.4 hPa  Flow= 15.32 L/min  Status=0x8000  Uptime=392s
+
+[SIM] Temp= 21.4 C  Press= 1016.1 hPa  Flow= 15.45 L/min  Status=0x8000  Uptime=392s
+
+[SIM] Temp= 21.2 C  Press= 1015.9 hPa  Flow= 15.59 L/min  Status=0x8000  Uptime=393s
+
+[SIM] Temp= 21.1 C  Press= 1015.6 hPa  Flow= 15.75 L/min  Status=0x8000  Uptime=393s
+
+[SIM] Temp= 20.9 C  Press= 1015.3 hPa  Flow= 15.93 L/min  Status=0x8000  Uptime=393s
+
+[SIM] Temp= 20.8 C  Press= 1015.1 hPa  Flow= 16.13 L/min  Status=0x8000  Uptime=393s
+
+[SIM] Temp= 20.6 C  Press= 1014.8 hPa  Flow= 16.34 L/min  Status=0x8000  Uptime=393s
+
+[SIM] Temp= 20.5 C  Press= 1014.5 hPa  Flow= 16.57 L/min  Status=0x8000  Uptime=394s
+
+[SIM] Temp= 20.4 C  Press= 1014.2 hPa  Flow= 16.82 L/min  Status=0x8000  Uptime=394s
+
+[SIM] Temp= 20.3 C  Press= 1014.0 hPa  Flow= 17.07 L/min  Status=0x8000  Uptime=394s
+
+[SIM] Temp= 20.2 C  Press= 1013.7 hPa  Flow= 17.34 L/min  Status=0x8000  Uptime=394s
+
+[SIM] Temp= 20.2 C  Press= 1013.4 hPa  Flow= 17.62 L/min  Status=0x8000  Uptime=394s
+
+[SIM] Temp= 20.1 C  Press= 1013.1 hPa  Flow= 17.91 L/min  Status=0x8000  Uptime=395s
+
+[SIM] Temp= 20.1 C  Press= 1012.8 hPa  Flow= 18.21 L/min  Status=0x8000  Uptime=395s
+
+[SIM] Temp= 20.0 C  Press= 1012.6 hPa  Flow= 18.52 L/min  Status=0x8000  Uptime=395s
+
+[SIM] Temp= 20.0 C  Press= 1012.3 hPa  Flow= 18.83 L/min  Status=0x8000  Uptime=395s
+
+[SIM] Temp= 20.0 C  Press= 1012.0 hPa  Flow= 19.15 L/min  Status=0x8000  Uptime=395s
+
+[SIM] Temp= 20.0 C  Press= 1011.7 hPa  Flow= 19.47 L/min  Status=0x8000  Uptime=396s
+
+[SIM] Temp= 20.0 C  Press= 1011.5 hPa  Flow= 19.80 L/min  Status=0x8000  Uptime=396s
+
+[SIM] Temp= 20.0 C  Press= 1011.2 hPa  Flow= 20.12 L/min  Status=0x8000  Uptime=396s
+
+[SIM] Temp= 20.1 C  Press= 1010.9 hPa  Flow= 20.45 L/min  Status=0x8000  Uptime=396s
+
+[SIM] Temp= 20.1 C  Press= 1010.6 hPa  Flow= 20.77 L/min  Status=0x8000  Uptime=396s
+
+[SIM] Temp= 20.2 C  Press= 1010.4 hPa  Flow= 21.09 L/min  Status=0x8000  Uptime=397s
+
+[SIM] Temp= 20.3 C  Press= 1010.1 hPa  Flow= 21.40 L/min  Status=0x8000  Uptime=397s
+
+[SIM] Temp= 20.4 C  Press= 1009.9 hPa  Flow= 21.71 L/min  Status=0x8000  Uptime=397s
+
+[SIM] Temp= 20.5 C  Press= 1009.6 hPa  Flow= 22.01 L/min  Status=0x8000  Uptime=397s
+
+[SIM] Temp= 20.6 C  Press= 1009.4 hPa  Flow= 22.31 L/min  Status=0x8000  Uptime=397s
+
+[SIM] Temp= 20.7 C  Press= 1009.1 hPa  Flow= 22.59 L/min  Status=0x8000  Uptime=398s
+
+[SIM] Temp= 20.8 C  Press= 1008.9 hPa  Flow= 22.86 L/min  Status=0x8000  Uptime=398s
+
+[SIM] Temp= 21.0 C  Press= 1008.7 hPa  Flow= 23.12 L/min  Status=0x8000  Uptime=398s
+
+[SIM] Temp= 21.1 C  Press= 1008.4 hPa  Flow= 23.37 L/min  Status=0x8000  Uptime=398s
+
+[SIM] Temp= 21.3 C  Press= 1008.2 hPa  Flow= 23.60 L/min  Status=0x8000  Uptime=398s
+
+[SIM] Temp= 21.5 C  Press= 1008.0 hPa  Flow= 23.82 L/min  Status=0x8000  Uptime=399s
+
+[SIM] Temp= 21.7 C  Press= 1007.8 hPa  Flow= 24.02 L/min  Status=0x8000  Uptime=399s
+
+[SIM] Temp= 21.9 C  Press= 1007.6 hPa  Flow= 24.21 L/min  Status=0x8000  Uptime=399s
+
+[SIM] Temp= 22.0 C  Press= 1007.4 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=399s
+
+[SIM] Temp= 22.3 C  Press= 1007.2 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=399s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=400s
+
+[SIM] Temp= 22.7 C  Press= 1006.8 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=400s
+
+[SIM] Temp= 22.9 C  Press= 1006.7 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=400s
+
+[SIM] Temp= 23.1 C  Press= 1006.5 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=400s
+
+[SIM] Temp= 23.4 C  Press= 1006.4 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=400s
+
+[SIM] Temp= 23.6 C  Press= 1006.2 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=401s
+
+[SIM] Temp= 23.9 C  Press= 1006.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=401s
+
+[SIM] Temp= 24.1 C  Press= 1006.0 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=401s
+
+[SIM] Temp= 24.3 C  Press= 1005.9 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=401s
+
+[SIM] Temp= 24.6 C  Press= 1005.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=401s
+
+[SIM] Temp= 24.8 C  Press= 1005.6 hPa  Flow= 24.81 L/min  Status=0x8000  Uptime=402s
+
+[SIM] Temp= 25.1 C  Press= 1013.3 hPa  Flow= 20.12 L/min  Status=0x8000  Uptime=402s
+
+[SIM] Temp= 25.3 C  Press= 1013.6 hPa  Flow= 20.45 L/min  Status=0x8000  Uptime=402s
+
+[SIM] Temp= 25.6 C  Press= 1013.9 hPa  Flow= 20.77 L/min  Status=0x8000  Uptime=402s
+
+[SIM] Temp= 25.8 C  Press= 1014.1 hPa  Flow= 21.09 L/min  Status=0x8000  Uptime=402s
+
+[SIM] Temp= 26.1 C  Press= 1014.4 hPa  Flow= 21.40 L/min  Status=0x8000  Uptime=403s
+
+[SIM] Temp= 26.3 C  Press= 1014.7 hPa  Flow= 21.71 L/min  Status=0x8000  Uptime=403s
+
+[SIM] Temp= 26.6 C  Press= 1015.0 hPa  Flow= 22.01 L/min  Status=0x8000  Uptime=403s
+
+[SIM] Temp= 26.8 C  Press= 1015.2 hPa  Flow= 22.31 L/min  Status=0x8000  Uptime=403s
+
+[SIM] Temp= 27.0 C  Press= 1015.5 hPa  Flow= 22.59 L/min  Status=0x8000  Uptime=403s
+
+[SIM] Temp= 27.3 C  Press= 1015.8 hPa  Flow= 22.86 L/min  Status=0x8000  Uptime=404s
+
+[SIM] Temp= 27.5 C  Press= 1016.0 hPa  Flow= 23.12 L/min  Status=0x8000  Uptime=404s
+
+[SIM] Temp= 27.7 C  Press= 1016.3 hPa  Flow= 23.37 L/min  Status=0x8000  Uptime=404s
+
+[SIM] Temp= 27.9 C  Press= 1016.6 hPa  Flow= 23.60 L/min  Status=0x8000  Uptime=404s
+
+[SIM] Temp= 28.1 C  Press= 1016.8 hPa  Flow= 23.82 L/min  Status=0x8000  Uptime=404s
+
+[SIM] Temp= 28.3 C  Press= 1017.1 hPa  Flow= 24.02 L/min  Status=0x8000  Uptime=405s
+
+[SIM] Temp= 28.5 C  Press= 1017.3 hPa  Flow= 24.21 L/min  Status=0x8000  Uptime=405s
+
+[SIM] Temp= 28.7 C  Press= 1017.5 hPa  Flow= 24.37 L/min  Status=0x8000  Uptime=405s
+
+[SIM] Temp= 28.8 C  Press= 1017.8 hPa  Flow= 24.52 L/min  Status=0x8000  Uptime=405s
+
+[SIM] Temp= 29.0 C  Press= 1018.0 hPa  Flow= 24.65 L/min  Status=0x8000  Uptime=405s
+
+[SIM] Temp= 29.1 C  Press= 1018.2 hPa  Flow= 24.76 L/min  Status=0x8000  Uptime=406s
+
+[SIM] Temp= 29.3 C  Press= 1018.4 hPa  Flow= 24.85 L/min  Status=0x8000  Uptime=406s
+
+[SIM] Temp= 29.4 C  Press= 1018.6 hPa  Flow= 24.92 L/min  Status=0x8000  Uptime=406s
+
+[SIM] Temp= 29.5 C  Press= 1018.8 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=406s
+
+[SIM] Temp= 29.6 C  Press= 1019.0 hPa  Flow= 24.99 L/min  Status=0x8000  Uptime=406s
+
+[SIM] Temp= 29.7 C  Press= 1019.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=407s
+
+[SIM] Temp= 29.8 C  Press= 1019.4 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=407s
+
+[SIM] Temp= 29.8 C  Press= 1019.6 hPa  Flow= 24.95 L/min  Status=0x8000  Uptime=407s
+
+[SIM] Temp= 29.9 C  Press= 1019.7 hPa  Flow= 24.89 L/min  Status=0x8000  Uptime=407s
+
+[SIM] Temp= 29.9 C  Press= 1019.9 hPa  Flow= 24.81 L/min  Status=0x8000  Uptime=407s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.72 L/min  Status=0x8000  Uptime=408s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.60 L/min  Status=0x8000  Uptime=408s
+
+[SIM] Temp= 30.0 C  Press= 1020.3 hPa  Flow= 24.46 L/min  Status=0x8000  Uptime=408s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.30 L/min  Status=0x8000  Uptime=408s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.13 L/min  Status=0x8000  Uptime=408s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.94 L/min  Status=0x8000  Uptime=409s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.73 L/min  Status=0x8000  Uptime=409s
+
+[SIM] Temp= 29.8 C  Press= 1020.8 hPa  Flow= 23.51 L/min  Status=0x8000  Uptime=409s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.27 L/min  Status=0x8000  Uptime=409s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 23.01 L/min  Status=0x8000  Uptime=409s
+
+[SIM] Temp= 29.6 C  Press= 1021.1 hPa  Flow= 22.75 L/min  Status=0x8000  Uptime=410s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.47 L/min  Status=0x8000  Uptime=410s
+
+[SIM] Temp= 29.4 C  Press= 1021.1 hPa  Flow= 22.18 L/min  Status=0x8000  Uptime=410s
+
+[SIM] Temp= 29.3 C  Press= 1021.2 hPa  Flow= 21.89 L/min  Status=0x8000  Uptime=410s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.58 L/min  Status=0x8000  Uptime=410s
+
+[SIM] Temp= 29.0 C  Press= 1021.2 hPa  Flow= 21.27 L/min  Status=0x8000  Uptime=411s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.95 L/min  Status=0x8000  Uptime=411s
+
+[SIM] Temp= 28.7 C  Press= 1021.2 hPa  Flow= 20.63 L/min  Status=0x8000  Uptime=411s
+
+[SIM] Temp= 28.5 C  Press= 1021.2 hPa  Flow= 20.31 L/min  Status=0x8000  Uptime=411s
+
+[SIM] Temp= 28.3 C  Press= 1021.1 hPa  Flow= 19.99 L/min  Status=0x8000  Uptime=411s
+
+[SIM] Temp= 28.1 C  Press= 1021.1 hPa  Flow= 19.66 L/min  Status=0x8000  Uptime=412s
+
+[SIM] Temp= 27.9 C  Press= 1021.1 hPa  Flow= 19.34 L/min  Status=0x8000  Uptime=412s
+
+[SIM] Temp= 27.7 C  Press= 1021.0 hPa  Flow= 19.02 L/min  Status=0x8000  Uptime=412s
+
+[SIM] Temp= 27.5 C  Press= 1020.9 hPa  Flow= 18.70 L/min  Status=0x8000  Uptime=412s
+
+[SIM] Temp= 27.3 C  Press= 1020.8 hPa  Flow= 18.39 L/min  Status=0x8000  Uptime=412s
+
+[SIM] Temp= 27.1 C  Press= 1020.8 hPa  Flow= 18.09 L/min  Status=0x8000  Uptime=413s
+
+[SIM] Temp= 26.8 C  Press= 1020.7 hPa  Flow= 17.79 L/min  Status=0x8000  Uptime=413s
+
+[SIM] Temp= 26.6 C  Press= 1020.6 hPa  Flow= 17.50 L/min  Status=0x8000  Uptime=413s
+
+[SIM] Temp= 26.3 C  Press= 1020.4 hPa  Flow= 17.23 L/min  Status=0x8000  Uptime=413s
+
+[SIM] Temp= 26.1 C  Press= 1020.3 hPa  Flow= 16.96 L/min  Status=0x8000  Uptime=413s
+
+[SIM] Temp= 25.9 C  Press= 1020.2 hPa  Flow= 16.71 L/min  Status=0x8000  Uptime=414s
+
+[SIM] Temp= 25.6 C  Press= 1020.1 hPa  Flow= 16.47 L/min  Status=0x8000  Uptime=414s
+
+[SIM] Temp= 25.4 C  Press= 1019.9 hPa  Flow= 16.25 L/min  Status=0x8000  Uptime=414s
+
+[SIM] Temp= 25.1 C  Press= 1019.7 hPa  Flow= 16.04 L/min  Status=0x8000  Uptime=414s
+
+[SIM] Temp= 24.9 C  Press= 1019.6 hPa  Flow= 15.85 L/min  Status=0x8000  Uptime=414s
+
+[SIM] Temp= 24.6 C  Press= 1019.4 hPa  Flow= 15.68 L/min  Status=0x8000  Uptime=415s
+
+[SIM] Temp= 24.4 C  Press= 1019.2 hPa  Flow= 15.53 L/min  Status=0x8000  Uptime=415s
+
+[SIM] Temp= 24.1 C  Press= 1019.0 hPa  Flow= 15.39 L/min  Status=0x8000  Uptime=415s
+
+[SIM] Temp= 23.9 C  Press= 1018.8 hPa  Flow= 15.27 L/min  Status=0x8000  Uptime=415s
+
+[SIM] Temp= 23.6 C  Press= 1018.6 hPa  Flow= 15.18 L/min  Status=0x8000  Uptime=415s
+
+[SIM] Temp= 23.4 C  Press= 1018.4 hPa  Flow= 15.10 L/min  Status=0x8000  Uptime=416s
+
+[SIM] Temp= 23.2 C  Press= 1018.2 hPa  Flow= 15.05 L/min  Status=0x8000  Uptime=416s
+
+[SIM] Temp= 22.9 C  Press= 1018.0 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=416s
+
+[SIM] Temp= 22.7 C  Press= 1017.8 hPa  Flow= 15.00 L/min  Status=0x8000  Uptime=416s
+
+[SIM] Temp= 22.5 C  Press= 1017.5 hPa  Flow= 15.01 L/min  Status=0x8000  Uptime=416s
+
+[SIM] Temp= 22.3 C  Press= 1017.3 hPa  Flow= 15.04 L/min  Status=0x8000  Uptime=417s
+
+[SIM] Temp= 22.1 C  Press= 1017.1 hPa  Flow= 15.09 L/min  Status=0x8000  Uptime=417s
+
+[SIM] Temp= 21.9 C  Press= 1016.8 hPa  Flow= 15.16 L/min  Status=0x8000  Uptime=417s
+
+[SIM] Temp= 21.7 C  Press= 1016.6 hPa  Flow= 15.25 L/min  Status=0x8000  Uptime=417s
+
+[SIM] Temp= 21.5 C  Press= 1016.3 hPa  Flow= 15.36 L/min  Status=0x8000  Uptime=417s
+
+[SIM] Temp= 21.3 C  Press= 1016.0 hPa  Flow= 15.49 L/min  Status=0x8000  Uptime=418s
+
+[SIM] Temp= 21.2 C  Press= 1015.8 hPa  Flow= 15.64 L/min  Status=0x8000  Uptime=418s
+
+[SIM] Temp= 21.0 C  Press= 1015.5 hPa  Flow= 15.81 L/min  Status=0x8000  Uptime=418s
+
+[SIM] Temp= 20.9 C  Press= 1015.2 hPa  Flow= 16.00 L/min  Status=0x8000  Uptime=418s
+
+[SIM] Temp= 20.7 C  Press= 1015.0 hPa  Flow= 16.20 L/min  Status=0x8000  Uptime=418s
+
+[SIM] Temp= 20.6 C  Press= 1014.7 hPa  Flow= 16.42 L/min  Status=0x8000  Uptime=419s
+
+[SIM] Temp= 20.5 C  Press= 1014.4 hPa  Flow= 16.65 L/min  Status=0x8000  Uptime=419s
+
+[SIM] Temp= 20.4 C  Press= 1014.1 hPa  Flow= 16.90 L/min  Status=0x8000  Uptime=419s
+
+[SIM] Temp= 20.3 C  Press= 1013.9 hPa  Flow= 17.16 L/min  Status=0x8000  Uptime=419s
+
+[SIM] Temp= 20.2 C  Press= 1013.6 hPa  Flow= 17.44 L/min  Status=0x8000  Uptime=419s
+
+[SIM] Temp= 20.1 C  Press= 1013.3 hPa  Flow= 17.72 L/min  Status=0x8000  Uptime=420s
+
+[SIM] Temp= 20.1 C  Press= 1013.0 hPa  Flow= 18.01 L/min  Status=0x8000  Uptime=420s
+
+[SIM] Temp= 20.1 C  Press= 1012.7 hPa  Flow= 18.32 L/min  Status=0x8000  Uptime=420s
+
+[SIM] Temp= 20.0 C  Press= 1012.5 hPa  Flow= 18.62 L/min  Status=0x8000  Uptime=420s
+
+[SIM] Temp= 20.0 C  Press= 1012.2 hPa  Flow= 18.94 L/min  Status=0x8000  Uptime=420s
+
+[SIM] Temp= 20.0 C  Press= 1011.9 hPa  Flow= 19.26 L/min  Status=0x8000  Uptime=421s
+
+[SIM] Temp= 20.0 C  Press= 1011.6 hPa  Flow= 19.58 L/min  Status=0x8000  Uptime=421s
+
+[SIM] Temp= 20.0 C  Press= 1011.4 hPa  Flow= 19.91 L/min  Status=0x8000  Uptime=421s
+
+[SIM] Temp= 20.1 C  Press= 1011.1 hPa  Flow= 20.23 L/min  Status=0x8000  Uptime=421s
+
+[SIM] Temp= 20.1 C  Press= 1010.8 hPa  Flow= 20.56 L/min  Status=0x8000  Uptime=421s
+
+[SIM] Temp= 20.2 C  Press= 1010.6 hPa  Flow= 20.88 L/min  Status=0x8000  Uptime=422s
+
+[SIM] Temp= 20.2 C  Press= 1010.3 hPa  Flow= 21.20 L/min  Status=0x8000  Uptime=422s
+
+[SIM] Temp= 20.3 C  Press= 1010.0 hPa  Flow= 21.51 L/min  Status=0x8000  Uptime=422s
+
+[SIM] Temp= 20.4 C  Press= 1009.8 hPa  Flow= 21.81 L/min  Status=0x8000  Uptime=422s
+
+[SIM] Temp= 20.5 C  Press= 1009.5 hPa  Flow= 22.11 L/min  Status=0x8000  Uptime=422s
+
+[SIM] Temp= 20.6 C  Press= 1009.3 hPa  Flow= 22.40 L/min  Status=0x8000  Uptime=423s
+
+[SIM] Temp= 20.8 C  Press= 1009.0 hPa  Flow= 22.68 L/min  Status=0x8000  Uptime=423s
+
+[SIM] Temp= 20.9 C  Press= 1008.8 hPa  Flow= 22.95 L/min  Status=0x8000  Uptime=423s
+
+[SIM] Temp= 21.0 C  Press= 1008.6 hPa  Flow= 23.21 L/min  Status=0x8000  Uptime=423s
+
+[SIM] Temp= 21.2 C  Press= 1008.3 hPa  Flow= 23.45 L/min  Status=0x8000  Uptime=423s
+
+[SIM] Temp= 21.4 C  Press= 1008.1 hPa  Flow= 23.68 L/min  Status=0x8000  Uptime=424s
+
+[SIM] Temp= 21.5 C  Press= 1007.9 hPa  Flow= 23.89 L/min  Status=0x8000  Uptime=424s
+
+[SIM] Temp= 21.7 C  Press= 1007.7 hPa  Flow= 24.09 L/min  Status=0x8000  Uptime=424s
+
+[SIM] Temp= 21.9 C  Press= 1007.5 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=424s
+
+[SIM] Temp= 22.1 C  Press= 1007.3 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=424s
+
+[SIM] Temp= 22.3 C  Press= 1007.1 hPa  Flow= 24.57 L/min  Status=0x8000  Uptime=425s
+
+[SIM] Temp= 22.5 C  Press= 1007.0 hPa  Flow= 24.69 L/min  Status=0x8000  Uptime=425s
+
+[SIM] Temp= 22.8 C  Press= 1006.8 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=425s
+
+[SIM] Temp= 23.0 C  Press= 1006.6 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=425s
+
+[SIM] Temp= 23.2 C  Press= 1006.5 hPa  Flow= 24.94 L/min  Status=0x8000  Uptime=425s
+
+[SIM] Temp= 23.5 C  Press= 1006.3 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=426s
+
+[SIM] Temp= 23.7 C  Press= 1006.2 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=426s
+
+[SIM] Temp= 23.9 C  Press= 1006.0 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=426s
+
+[SIM] Temp= 24.2 C  Press= 1005.9 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=426s
+
+[SIM] Temp= 24.4 C  Press= 1005.8 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=426s
+
+[SIM] Temp= 24.7 C  Press= 1005.7 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=427s
+
+[SIM] Temp= 24.9 C  Press= 1005.6 hPa  Flow= 24.78 L/min  Status=0x8000  Uptime=427s
+
+[SIM] Temp= 25.2 C  Press= 1013.4 hPa  Flow= 20.23 L/min  Status=0x8000  Uptime=427s
+
+[SIM] Temp= 25.4 C  Press= 1013.7 hPa  Flow= 20.56 L/min  Status=0x8000  Uptime=427s
+
+[SIM] Temp= 25.7 C  Press= 1014.0 hPa  Flow= 20.88 L/min  Status=0x8000  Uptime=427s
+
+[SIM] Temp= 25.9 C  Press= 1014.2 hPa  Flow= 21.20 L/min  Status=0x8000  Uptime=428s
+
+[SIM] Temp= 26.2 C  Press= 1014.5 hPa  Flow= 21.51 L/min  Status=0x8000  Uptime=428s
+
+[SIM] Temp= 26.4 C  Press= 1014.8 hPa  Flow= 21.81 L/min  Status=0x8000  Uptime=428s
+
+[SIM] Temp= 26.6 C  Press= 1015.1 hPa  Flow= 22.11 L/min  Status=0x8000  Uptime=428s
+
+[SIM] Temp= 26.9 C  Press= 1015.3 hPa  Flow= 22.40 L/min  Status=0x8000  Uptime=428s
+
+[SIM] Temp= 27.1 C  Press= 1015.6 hPa  Flow= 22.68 L/min  Status=0x8000  Uptime=429s
+
+[SIM] Temp= 27.3 C  Press= 1015.9 hPa  Flow= 22.95 L/min  Status=0x8000  Uptime=429s
+
+[SIM] Temp= 27.6 C  Press= 1016.1 hPa  Flow= 23.21 L/min  Status=0x8000  Uptime=429s
+
+[SIM] Temp= 27.8 C  Press= 1016.4 hPa  Flow= 23.45 L/min  Status=0x8000  Uptime=429s
+
+[SIM] Temp= 28.0 C  Press= 1016.6 hPa  Flow= 23.68 L/min  Status=0x8000  Uptime=429s
+
+[SIM] Temp= 28.2 C  Press= 1016.9 hPa  Flow= 23.89 L/min  Status=0x8000  Uptime=430s
+
+[SIM] Temp= 28.4 C  Press= 1017.1 hPa  Flow= 24.09 L/min  Status=0x8000  Uptime=430s
+
+[SIM] Temp= 28.5 C  Press= 1017.4 hPa  Flow= 24.26 L/min  Status=0x8000  Uptime=430s
+
+[SIM] Temp= 28.7 C  Press= 1017.6 hPa  Flow= 24.42 L/min  Status=0x8000  Uptime=430s
+
+[SIM] Temp= 28.9 C  Press= 1017.8 hPa  Flow= 24.57 L/min  Status=0x8000  Uptime=430s
+
+[SIM] Temp= 29.0 C  Press= 1018.1 hPa  Flow= 24.69 L/min  Status=0x8000  Uptime=431s
+
+[SIM] Temp= 29.2 C  Press= 1018.3 hPa  Flow= 24.79 L/min  Status=0x8000  Uptime=431s
+
+[SIM] Temp= 29.3 C  Press= 1018.5 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=431s
+
+[SIM] Temp= 29.4 C  Press= 1018.7 hPa  Flow= 24.94 L/min  Status=0x8000  Uptime=431s
+
+[SIM] Temp= 29.5 C  Press= 1018.9 hPa  Flow= 24.98 L/min  Status=0x8000  Uptime=431s
+
+[SIM] Temp= 29.6 C  Press= 1019.1 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=432s
+
+[SIM] Temp= 29.7 C  Press= 1019.3 hPa  Flow= 25.00 L/min  Status=0x8000  Uptime=432s
+
+[SIM] Temp= 29.8 C  Press= 1019.5 hPa  Flow= 24.97 L/min  Status=0x8000  Uptime=432s
+
+[SIM] Temp= 29.9 C  Press= 1019.6 hPa  Flow= 24.93 L/min  Status=0x8000  Uptime=432s
+
+[SIM] Temp= 29.9 C  Press= 1019.8 hPa  Flow= 24.87 L/min  Status=0x8000  Uptime=432s
+
+[SIM] Temp= 30.0 C  Press= 1020.0 hPa  Flow= 24.78 L/min  Status=0x8000  Uptime=433s
+
+[SIM] Temp= 30.0 C  Press= 1020.1 hPa  Flow= 24.68 L/min  Status=0x8000  Uptime=433s
+
+[SIM] Temp= 30.0 C  Press= 1020.2 hPa  Flow= 24.55 L/min  Status=0x8000  Uptime=433s
+
+[SIM] Temp= 30.0 C  Press= 1020.4 hPa  Flow= 24.41 L/min  Status=0x8000  Uptime=433s
+
+[SIM] Temp= 30.0 C  Press= 1020.5 hPa  Flow= 24.25 L/min  Status=0x8000  Uptime=433s
+
+[SIM] Temp= 30.0 C  Press= 1020.6 hPa  Flow= 24.07 L/min  Status=0x8000  Uptime=434s
+
+[SIM] Temp= 29.9 C  Press= 1020.7 hPa  Flow= 23.87 L/min  Status=0x8000  Uptime=434s
+
+[SIM] Temp= 29.9 C  Press= 1020.8 hPa  Flow= 23.66 L/min  Status=0x8000  Uptime=434s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.43 L/min  Status=0x8000  Uptime=434s
+
+[SIM] Temp= 29.8 C  Press= 1020.9 hPa  Flow= 23.18 L/min  Status=0x8000  Uptime=434s
+
+[SIM] Temp= 29.7 C  Press= 1021.0 hPa  Flow= 22.93 L/min  Status=0x8000  Uptime=435s
+
+[SIM] Temp= 29.6 C  Press= 1021.1 hPa  Flow= 22.66 L/min  Status=0x8000  Uptime=435s
+
+[SIM] Temp= 29.5 C  Press= 1021.1 hPa  Flow= 22.38 L/min  Status=0x8000  Uptime=435s
+
+[SIM] Temp= 29.4 C  Press= 1021.2 hPa  Flow= 22.09 L/min  Status=0x8000  Uptime=435s
+
+[SIM] Temp= 29.2 C  Press= 1021.2 hPa  Flow= 21.79 L/min  Status=0x8000  Uptime=435s
+
+[SIM] Temp= 29.1 C  Press= 1021.2 hPa  Flow= 21.48 L/min  Status=0x8000  Uptime=436s
+
+[SIM] Temp= 28.9 C  Press= 1021.2 hPa  Flow= 21.17 L/min  Status=0x8000  Uptime=436s
+
+[SIM] Temp= 28.8 C  Press= 1021.2 hPa  Flow= 20.85 L/min  Status=0x8000  Uptime=436s
+
+[SIM] Temp= 28.6 C  Press= 1021.2 hPa  Flow= 20.52 L/min  Status=0x8000  Uptime=436s
+
+[SIM] Temp= 28.4 C  Press= 1021.2 hPa  Flow= 20.20 L/min  Status=0x8000  Uptime=436s
+
+[SIM] Temp= 28.2 C  Press= 1021.1 hPa  Flow= 19.88 L/min  Status=0x8000  Uptime=437s
+
+[SIM] Temp= 28.0 C  Press= 1021.1 hPa  Flow= 19.55 L/min  Status=0x8000  Uptime=437s
+
+[SIM] Temp= 27.8 C  Press= 1021.0 hPa  Flow= 19.23 L/min  Status=0x8000  Uptime=437s

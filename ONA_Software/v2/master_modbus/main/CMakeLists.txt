@@ -1,0 +1,22 @@
+idf_component_register( 
+        SRCS 
+            "modbus_master.cpp" 
+            "main.cpp"    
+        INCLUDE_DIRS 
+            "."
+        REQUIRES 
+            esp_driver_gpio
+            esp_driver_uart
+            freertos
+            esp_driver_i2c
+            esp_adc
+            esp_wifi
+            mqtt
+            esp_http_client
+            esp_http_server
+            esp_event
+            lwip
+            nvs_flash
+            nvs_sec_provider
+            esp_common
+)

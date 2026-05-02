@@ -1,0 +1,4 @@
+#define WIFI_SSID          "Mohamed Fathy"
+#define WIFI_PASS          "341978341978"
+#define SUPABASE_URL       "https://xfcicrtmyvpgirwvnqfh.supabase.co"
+#define SUPABASE_ANON_KEY  "sb_publishable_Up05BkYyEWowUAlf1ixyOg_6Xuu1lEA"

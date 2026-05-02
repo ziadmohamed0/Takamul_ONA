@@ -1,0 +1,5 @@
+[1/4] cd /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/test_db/build/esp-idf/esptool_py && /home/ziad/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/ziad/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/test_db/build/partition_table/partition-table.bin /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/test_db/build/takamul_esp32.bin
+takamul_esp32.bin binary size 0xe7560 bytes. Smallest app partition is 0x100000 bytes. 0x18aa0 bytes (10%) free.
+[2/4] Performing build step for 'bootloader'
+[1/1] cd /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/test_db/build/bootloader/esp-idf/esptool_py && /home/ziad/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/ziad/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/test_db/build/bootloader/bootloader.bin
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
