@@ -1,2 +1,2 @@
-source /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/v1/build/gdbinit/symbols
-source /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/v1/build/gdbinit/connect
+source /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32/build/gdbinit/symbols
+source /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32/build/gdbinit/connect

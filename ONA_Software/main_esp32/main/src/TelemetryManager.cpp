@@ -1,6 +1,7 @@
 #include "inc/TelemetryManager.h"
 #include "inc/SupabaseClient.h"
 #include "inc/UartBridge.h"
+#include "inc/Otamanager.h"      // ← OTA integration
 #include "esp_log.h"
 #include "freertos/task.h"
 #include <cstdio>
@@ -25,6 +26,28 @@ void jsonAppendStr(std::string& out, const char* key, const char* val) {
     out += "\":\"";
     out += val;
     out += '"';
+}
+
+// ─── Extract a quoted string value from a JSON body ──────────────────────────
+// Looks for "key":"value" and returns the value, or empty string if not found.
+// Handles null values (returns empty string).
+std::string extractJsonString(const char* body, const char* key) {
+    const char* pos = strstr(body, key);
+    if (!pos) return "";
+
+    pos += strlen(key);
+    // skip : and whitespace
+    while (*pos && (*pos == ':' || *pos == ' ')) pos++;
+
+    if (strncmp(pos, "null", 4) == 0) return "";   // SQL NULL → empty
+
+    if (*pos != '"') return "";                     // not a string value
+    pos++;                                          // skip opening quote
+
+    const char* end = strchr(pos, '"');
+    if (!end) return "";
+
+    return std::string(pos, end);
 }
 
 } // anonymous namespace
@@ -158,19 +181,33 @@ void TelemetryManager::uploadTelemetry(const SensorFrame& frame) {
 
 // ─── pollControls ─────────────────────────────────────────────────────────────
 //
-// Expected Supabase response (array with one row):
-//   [{"pump_speed":35.0,"status":true,"target_pressure":3.5,"updated_at":"..."}]
+// Fetches the latest controls row for this device from Supabase.
+//
+// Expected Supabase response shape:
+//   [{
+//     "pump_speed": 35.0,
+//     "status": true,
+//     "target_pressure": 3.5,
+//     "updated_at": "2025-01-01T00:00:00Z",
+//     "ota_esp32_url": "https://github.com/.../firmware.bin",   ← or null
+//     "ota_stm32_url": "https://github.com/.../firmware.bin"    ← or null
+//   }]
+//
+// Control flow:
+//   1. Parse pump/speed/pressure → forward to STM32 via UartBridge if changed.
+//   2. Parse OTA URLs → hand off to OtaManager::checkAndRun().
 //
 
 void TelemetryManager::pollControls() {
     auto& sb = SupabaseClient::getInstance();
 
-    // Filter: device_id=eq.<mac>&order=updated_at.desc&limit=1
+    // Filter: fetch only our device row, latest first
     std::string filter = "device_id=eq." + m_device_id + "&order=updated_at.desc&limit=1";
 
     std::string body;
+    // ← Added ota_esp32_url and ota_stm32_url to the select columns
     int status = sb.select("controls",
-                           "pump_speed,status,target_pressure,updated_at",
+                           "pump_speed,status,target_pressure,updated_at,ota_esp32_url,ota_stm32_url",
                            filter.c_str(),
                            body);
 
@@ -179,13 +216,8 @@ void TelemetryManager::pollControls() {
         return;
     }
 
-    // --- Minimal JSON parser for the known response shape ---
-    // Body looks like: [{"pump_speed":35.0,"status":true,"target_pressure":3.50,...}]
-    // We parse key:value pairs manually to avoid a JSON library dependency.
-
-    bool  pump_on      = false;
-    float speed_hz     = 0.0f;
-    float target_pres  = 3.5f;
+    // ─── Minimal JSON parser ─────────────────────────────────────────────────
+    // Body: [{...}]  — we work directly on the C string to avoid heap churn.
 
     const char* p = body.c_str();
 
@@ -198,6 +230,11 @@ void TelemetryManager::pollControls() {
     };
 
     const char* v;
+
+    // ── Pump / speed / pressure ───────────────────────────────────────────────
+    bool  pump_on     = false;
+    float speed_hz    = 0.0f;
+    float target_pres = 3.5f;
 
     v = findVal("\"status\"");
     if (v) pump_on = (strncmp(v, "true", 4) == 0);
@@ -212,14 +249,14 @@ void TelemetryManager::pollControls() {
              pump_on ? "ON" : "OFF", speed_hz, target_pres);
 
     // Only forward to STM32 if something changed (debounce)
-    bool changed = (pump_on      != m_last_pump_on)
-                || (speed_hz     != m_last_speed)
-                || (target_pres  != m_last_target_pres);
+    bool changed = (pump_on     != m_last_pump_on)
+                || (speed_hz    != m_last_speed)
+                || (target_pres != m_last_target_pres);
 
     if (changed) {
         ControlCmd cmd;
-        cmd.pump_on        = pump_on;
-        cmd.speed_hz       = speed_hz;
+        cmd.pump_on         = pump_on;
+        cmd.speed_hz        = speed_hz;
         cmd.target_pressure = target_pres;
 
         UartBridge::getInstance().sendControl(cmd);
@@ -231,6 +268,21 @@ void TelemetryManager::pollControls() {
         ESP_LOGI(Tag, "→ STM32: pump=%s speed=%.1f Hz pres_sp=%.2f bar",
                  pump_on ? "ON" : "OFF", speed_hz, target_pres);
     }
+
+    // ── OTA URLs ──────────────────────────────────────────────────────────────
+    // extractJsonString handles both "value" and null gracefully (returns "").
+    std::string esp32_ota_url = extractJsonString(p, "\"ota_esp32_url\"");
+    std::string stm32_ota_url = extractJsonString(p, "\"ota_stm32_url\"");
+
+    if (!esp32_ota_url.empty()) {
+        ESP_LOGI(Tag, "OTA ESP32 URL detected: %s", esp32_ota_url.c_str());
+    }
+    if (!stm32_ota_url.empty()) {
+        ESP_LOGI(Tag, "OTA STM32 URL detected: %s", stm32_ota_url.c_str());
+    }
+
+    // Delegate to OtaManager — internally throttled, safe to call every poll.
+    OtaManager::getInstance().checkAndRun(esp32_ota_url, stm32_ota_url, m_device_id);
 }
 
 // ─── registerDevice ───────────────────────────────────────────────────────────
@@ -253,6 +305,14 @@ void TelemetryManager::registerDevice() {
     } else {
         ESP_LOGW(Tag, "Device register failed HTTP %d (table may not exist yet)", status);
     }
+}
+
+void TelemetryManager::uploadOnce() {
+    if (m_has_frame) uploadTelemetry(m_latest_frame);
+}
+
+void TelemetryManager::pollOnce() {
+    pollControls();
 }
 
 } // namespace Takamul

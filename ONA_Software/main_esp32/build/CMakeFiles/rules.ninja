@@ -1803,7 +1803,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_main_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/v1 -B/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/v1/build
+  command = /usr/bin/cmake --regenerate-during-build -S/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32 -B/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32/build
   description = Re-running CMake...
   generator = 1
 

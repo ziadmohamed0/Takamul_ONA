@@ -1,4 +1,4 @@
-# Install script for directory: /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/v1/main
+# Install script for directory: /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

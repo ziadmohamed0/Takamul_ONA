@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/v1/build/esp-idf/mbedtls/mbedtls/cmake_install.cmake")
+  include("/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32/build/esp-idf/mbedtls/mbedtls/cmake_install.cmake")
 endif()
 

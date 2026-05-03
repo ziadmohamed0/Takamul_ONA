@@ -4988,6 +4988,96 @@
     {
         "children": [
             {
+                "children": [],
+                "depends_on": null,
+                "help": "Full URL of your Supabase project, e.g. https://xxxx.supabase.co",
+                "id": "TAKAMUL_SUPABASE_URL",
+                "name": "TAKAMUL_SUPABASE_URL",
+                "range": null,
+                "title": "Supabase Project URL",
+                "type": "string"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Anon/public key from Supabase \u2192 Settings \u2192 API.\nWARNING: This key is embedded in firmware. Use RLS policies on all tables.",
+                "id": "TAKAMUL_SUPABASE_KEY",
+                "name": "TAKAMUL_SUPABASE_KEY",
+                "range": null,
+                "title": "Supabase Anon Key (JWT)",
+                "type": "string"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "TAKAMUL_UART_RX_PIN",
+                "name": "TAKAMUL_UART_RX_PIN",
+                "range": [
+                    0,
+                    39
+                ],
+                "title": "UART2 RX GPIO (ESP32 \u2190 STM32 TX)",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "TAKAMUL_UART_TX_PIN",
+                "name": "TAKAMUL_UART_TX_PIN",
+                "range": [
+                    0,
+                    33
+                ],
+                "title": "UART2 TX GPIO (ESP32 \u2192 STM32 RX)",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Must match STM32 UART configuration.",
+                "id": "TAKAMUL_UART_BAUD",
+                "name": "TAKAMUL_UART_BAUD",
+                "range": null,
+                "title": "UART baud rate",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "TAKAMUL_UPLOAD_INTERVAL_MS",
+                "name": "TAKAMUL_UPLOAD_INTERVAL_MS",
+                "range": [
+                    1000,
+                    60000
+                ],
+                "title": "Telemetry upload interval (ms)",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "TAKAMUL_POLL_INTERVAL_MS",
+                "name": "TAKAMUL_POLL_INTERVAL_MS",
+                "range": [
+                    500,
+                    30000
+                ],
+                "title": "Controls poll interval (ms)",
+                "type": "int"
+            }
+        ],
+        "depends_on": null,
+        "id": "takamul-config",
+        "title": "Takamul Config",
+        "type": "menu"
+    },
+    {
+        "children": [
+            {
                 "children": [
                     {
                         "children": [],

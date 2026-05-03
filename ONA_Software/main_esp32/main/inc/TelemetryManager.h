@@ -51,7 +51,8 @@ namespace Takamul {
          *        Stores the frame atomically; never blocks.
          */
         void onSensorFrame(const SensorFrame& frame);
-
+        void uploadOnce();
+        void pollOnce();
     private:
         TelemetryManager() = default;
         ~TelemetryManager() { stop(); }

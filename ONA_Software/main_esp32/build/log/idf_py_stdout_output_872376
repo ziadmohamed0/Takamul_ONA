@@ -1,0 +1,19 @@
+[1/11] Performing build step for 'bootloader'
+[1/1] cd /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32/build/bootloader/esp-idf/esptool_py && /home/ziad/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/ziad/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32/build/bootloader/bootloader.bin
+Bootloader binary size 0x6580 bytes. 0xa80 bytes (9%) free.
+[2/9] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/src/TelemetryManager.cpp.obj
+[3/9] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+[4/9] Linking C static library esp-idf/main/libmain.a
+[5/9] Generating ld/sections.ld
+warning: config BTDM_CTRL_CONTROLLER_DEBUG_MODE_1 (defined at /home/ziad/esp/esp-idf/components/bt/controller/esp32/Kconfig.in:537) has a "visible if" option, which is not supported for configs
+[6/9] Building C object CMakeFiles/ONA_Software.elf.dir/project_elf_src_esp32.c.obj
+[7/9] Linking CXX executable ONA_Software.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32/build/ONA_Software.bin
+[9/9] cd /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32/build/esp-idf/esptool_py && /home/ziad/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/ziad/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32/build/partition_table/partition-table.bin /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/main_esp32/build/ONA_Software.bin
+ONA_Software.bin binary size 0xff900 bytes. Smallest app partition is 0x100000 bytes. 0x700 bytes (0%) free.
+Warning: The smallest app partition is nearly full (0% free space left)!
