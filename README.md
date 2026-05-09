@@ -1,13 +1,13 @@
 <div align="center">
 
-<img src="docs/images/pkg.jpeg" alt="Takamul iQ16 — Industrial IoT Controller" width="780"/>
+<img src="docs/images/pkg.jpeg" alt="Takamul iQ16 — Industrial IoT Controller" width="800"/>
 
 <br/>
 <br/>
 
 # Takamul iQ16 PLC
 
-### Industrial IoT Controller — تكامل
+### Industrial IoT Controller — تكامل للحلول الذكية
 
 <br/>
 
@@ -20,37 +20,10 @@
 
 <br/>
 
-> **Dual-core STM32 + ESP32-S3 · Supabase Multi-Tenant Cloud · Modbus RTU · DIN-Rail Mount**  
-> Designed for water treatment, flow control, and process automation in harsh industrial environments.
+> **Dual-core STM32F405 + ESP32-S3 · Supabase Multi-Tenant Cloud · Modbus RTU · DIN-Rail Mount**
+> Designed for water treatment, flow control, and process automation in harsh industrial environments — engineered in Egypt 🇪🇬
 
 </div>
-
----
-
-## Gallery
-
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <img src="docs/images/case.jpeg" alt="iQ16 mounted on DIN rail" width="100%"/>
-      <br/><sub><b>iQ16 — DIN-Rail Mounted</b></sub>
-    </td>
-    <td align="center" width="50%">
-      <img src="docs/images/top.jpeg" alt="PCB Top View" width="100%"/>
-      <br/><sub><b>PCB — Top View (3D Render)</b></sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <img src="docs/images/Back.jpeg" alt="PCB Back View" width="100%"/>
-      <br/><sub><b>PCB — Back View (3D Render)</b></sub>
-    </td>
-    <td align="center" width="50%">
-      <img src="docs/images/pcb_Layout.jpeg" alt="PCB Layout" width="100%"/>
-      <br/><sub><b>PCB — KiCad Layout (All Copper Layers)</b></sub>
-    </td>
-  </tr>
-</table>
 
 ---
 
@@ -60,6 +33,9 @@
 - [Key Features](#key-features)
 - [System Architecture](#system-architecture)
 - [Hardware](#hardware)
+  - [PCB](#pcb--ona_hard)
+  - [Mechanical Enclosure — V1](#mechanical-enclosure--v1)
+  - [Mechanical Enclosure — V2](#mechanical-enclosure--v2)
 - [Firmware](#firmware)
 - [Cloud & Connectivity](#cloud--connectivity)
 - [Repository Structure](#repository-structure)
@@ -70,7 +46,7 @@
 
 ## Overview
 
-The **Takamul iQ16** is a compact, DIN-rail mounted industrial PLC built for real-world process automation. It pairs a **STM32F405** real-time controller — handling deterministic Modbus RTU field communication — with an **ESP32-S3** managing Wi-Fi, MQTT, and secure cloud telemetry via **Supabase Row-Level Security**.
+The **Takamul iQ16** is a compact, DIN-rail mounted industrial PLC built for real-world process automation. It pairs a **STM32F405RGT6** real-time controller — handling deterministic Modbus RTU field communication — with an **ESP32-S3** managing Wi-Fi, MQTT, and secure cloud telemetry via **Supabase Row-Level Security**.
 
 Every unit ships ready to deploy: scan the MAC QR code on the box, link it to your account, and the device self-configures with zero manual setup.
 
@@ -145,19 +121,108 @@ The iQ16 PCB is a **4-layer board** designed in KiCad 7. The stackup separates p
 | Design tool | KiCad 7 |
 | Fabrication | Gerber + drill files ready (JLCPCB / PCBWay) |
 
-### Mechanical Enclosure — `mechanical/cad_v2/`
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/images/case.jpeg" alt="iQ16 mounted on DIN rail" width="100%"/>
+      <br/><sub><b>iQ16 — DIN-Rail Mounted</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/images/top.jpeg" alt="PCB Top View" width="100%"/>
+      <br/><sub><b>PCB — Top View (3D Render)</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/images/Back.jpeg" alt="PCB Back View" width="100%"/>
+      <br/><sub><b>PCB — Back View (3D Render)</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/images/pcb_Layout.jpeg" alt="PCB Layout" width="100%"/>
+      <br/><sub><b>PCB — KiCad Layout (All Copper Layers)</b></sub>
+    </td>
+  </tr>
+</table>
 
-Full DIN-rail enclosure designed for 3D printing, split into individual printable parts:
+---
 
-`assembly` · `base` · `front_lid` · `top_lid` · `top_connectors` · `bottom_connectors` · `din_clip` · `wifi_module` · `antenna` · `standoff` · `screw_m3x8`
+### Mechanical Enclosure — V1
 
-All parts available as both `.stl` (print-ready) and `.obj` (CAD import).
+First-generation 3D-printable enclosure. A 4-part snap-fit design tailored for DIN-rail deployment in standard control cabinets.
+
+**Parts:** `Body` · `Face cover` · `Back cover` · `Head cover`
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="mechanical/V1/PNG/3D.PNG" alt="V1 3D View" width="100%"/>
+      <br/><sub><b>V1 — Full Assembly (3D View)</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="mechanical/V1/PNG/S1.PNG" alt="V1 Section 1" width="100%"/>
+      <br/><sub><b>V1 — Front Panel View</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="mechanical/V1/PNG/S2.PNG" alt="V1 Section 2" width="100%"/>
+      <br/><sub><b>V1 — Side Profile</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="mechanical/V1/PNG/S3.PNG" alt="V1 Section 3" width="100%"/>
+      <br/><sub><b>V1 — Internal Layout</b></sub>
+    </td>
+  </tr>
+</table>
+
+All V1 files are in `mechanical/V1/` — CAD source (`.SLDPRT` / `.SLDASM`) and print-ready STLs.
+
+---
+
+### Mechanical Enclosure — V2
+
+Second-generation enclosure with improved cable management, refined connector cutouts, and a modular split body for easier PCB insertion and field service.
+
+**Parts:** `Body` · `Face` · `Back` · `Part1348` (DIN clip assembly)
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="mechanical/V2/PNG/3D.PNG" alt="V2 3D View" width="100%"/>
+      <br/><sub><b>V2 — Full Assembly (3D View)</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="mechanical/V2/PNG/S1.PNG" alt="V2 Section 1" width="100%"/>
+      <br/><sub><b>V2 — Front Panel View</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="mechanical/V2/PNG/S2.PNG" alt="V2 Section 2" width="100%"/>
+      <br/><sub><b>V2 — Side Profile</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="mechanical/V2/PNG/S3.PNG" alt="V2 Section 3" width="100%"/>
+      <br/><sub><b>V2 — Rear Connector Cutouts</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="mechanical/V2/PNG/S4.PNG" alt="V2 Section 4" width="50%"/>
+      <br/><sub><b>V2 — Exploded View / DIN Clip Detail</b></sub>
+    </td>
+  </tr>
+</table>
+
+All V2 files are in `mechanical/V2/` — CAD source and print-ready STLs.
+
+> **Production-ready STL + OBJ** files (the version shipped with the product) are in `mechanical/sample/cad_v2/`. These include every printable part: `assembly`, `base`, `front_lid`, `top_lid`, `top_connectors`, `bottom_connectors`, `din_clip`, `wifi_module`, `antenna`, `standoff`, `screw_m3x8`.
 
 ---
 
 ## Firmware
 
-### ESP32-S3 — `ONA_Software/main_esp32/` (ESP-IDF v5)
+### ESP32-S3 — `ONA_Software/software_v1/` (ESP-IDF v5)
 
 The ESP32 owns all network and cloud operations, acting as a transparent bridge between the STM32 field data and the Supabase backend.
 
@@ -170,7 +235,9 @@ Takamul:: namespace
 ├── TelemetryManager  Periodic sensor data batching & upload
 ├── MqttManager       Real-time bidirectional command channel
 ├── UartBridge        UART2 ↔ STM32 framing & protocol (GPIO 16/17)
-└── WebServer         Local HTTP config portal for Zero-Config pairing
+├── WebServer         Local HTTP config portal for Zero-Config pairing
+├── OtaManager        OTA firmware update over HTTPS
+└── SleepManager      Deep-sleep power management
 ```
 
 **Configuring credentials** (via `idf.py menuconfig → Takamul Config`):
@@ -180,11 +247,11 @@ CONFIG_TAKAMUL_SUPABASE_URL   → your Supabase project URL
 CONFIG_TAKAMUL_SUPABASE_KEY   → your anon/service role key
 ```
 
-### STM32F405 — `ONA_Software/modbus_v2/` (STM32CubeIDE)
+### STM32F405 — `ONA_Software/tests/modbus_v2/` (STM32CubeIDE)
 
 Runs a deterministic FreeRTOS Modbus RTU master stack over RS-485. Polls all field instruments on configurable scan cycles and pushes structured telemetry frames to the ESP32 over UART.
 
-### Modbus Mapping — `ONA_Software/modbus_mapping_controll/`
+### Modbus Mapping — `ONA_Software/tests/modbus_mapping_controll/`
 
 STM32 firmware variant with full register mapping and VFD control logic — maps physical Modbus registers from flow meters, TDS analyzers, and pressure transmitters to structured data objects sent upstream.
 
@@ -201,6 +268,7 @@ STM32 firmware variant with full register mapping and VFD control logic — maps
 | **Commands** | MQTT pub/sub | Low-latency actuator control (VFD setpoints) |
 | **Local config** | HTTP Web Server | Zero-Config Wi-Fi & account pairing |
 | **Pairing** | QR code on box | MAC address → account link, no manual entry |
+| **OTA** | HTTPS OTA | Remote firmware updates for ESP32 |
 
 ---
 
@@ -209,15 +277,18 @@ STM32 firmware variant with full register mapping and VFD control logic — maps
 ```
 Takamul_ONA/
 │
-├── ONA_HARD/                        # Hardware design files
-│   ├── BOM.xlsx                     # Bill of Materials
-│   ├── STM32 & ESP32.pdf            # Dual-core architecture diagram
-│   ├── top.jpeg                     # PCB top 3D render
-│   ├── Back.jpeg                    # PCB back 3D render
-│   └── pcb_Layout.jpeg              # KiCad PCB layout screenshot
+├── ONA_HARD/                          # Hardware design files
+│   ├── STM32 & ESP32.kicad_pro       # KiCad 7 project
+│   ├── STM32 & ESP32.kicad_sch       # Schematic
+│   ├── STM32 & ESP32.kicad_pcb       # PCB layout
+│   ├── BOM.xlsx                       # Bill of Materials
+│   ├── STM32 & ESP32.pdf             # Schematic PDF export
+│   ├── STEP File.step                 # Full assembly STEP
+│   ├── top.jpeg / Back.jpeg          # PCB 3D renders
+│   └── pcb_Layout.jpeg               # KiCad layout screenshot
 │
 ├── ONA_Software/
-│   ├── main_esp32/                  # ESP32-S3 firmware (ESP-IDF v5)
+│   ├── software_v1/esp32s3_project/  # ESP32-S3 firmware (ESP-IDF v5)
 │   │   └── main/
 │   │       ├── main.cpp / main.h
 │   │       ├── src/
@@ -227,27 +298,42 @@ Takamul_ONA/
 │   │       │   ├── UartBridge.cpp
 │   │       │   ├── WebServer.cpp
 │   │       │   ├── MqttManager.cpp
-│   │       │   └── NVSManager.cpp
-│   │       └── inc/                 # Corresponding headers
+│   │       │   ├── NVSManager.cpp
+│   │       │   ├── OtaManager.cpp
+│   │       │   └── SleepManager.cpp
+│   │       └── inc/                  # Corresponding headers
 │   │
-│   ├── stm32_master/                # STM32F103 base firmware (CubeIDE)
-│   ├── modbus_v2/                   # STM32F405 Modbus RTU stack
-│   ├── modbus_mapping_controll/     # Register mapping & VFD control logic
-│   ├── test_db/                     # ESP32 Supabase integration tests
+│   ├── tests/
+│   │   ├── modbus_v2/               # STM32F405 Modbus RTU stack (FreeRTOS)
+│   │   ├── modbus_mapping_controll/ # Register mapping & VFD control logic
+│   │   ├── STM32_Main/              # STM32F401 base firmware tests
+│   │   ├── TestModbus/              # Modbus protocol unit tests
+│   │   ├── stm32_master/            # STM32F103 Modbus master prototype
+│   │   ├── main_esp32/              # ESP32 (original) integration tests
+│   │   └── test_db/                 # ESP32 Supabase integration tests
+│   │
 │   └── data_sheets/                 # Instrument Modbus documentation
-│       ├── Liquiline CM44x Modbus map
-│       └── Proline Promag P300 Modbus map
+│       ├── Promag_P300_modbus_map.pdf
+│       └── CM44x_modbus_map.pdf
 │
 ├── mechanical/
-│   ├── cad_v2/                      # 3D-printable enclosure (STL + OBJ)
-│   │   ├── assembly.stl
-│   │   ├── din_clip.stl
-│   │   └── ...
-│   ├── docs/
-│   │   ├── bom_v2.csv
-│   │   └── takamul_iq16_drawing_pack.pdf
-│   ├── case.jpeg                    # Enclosure render
-│   └── pkg.jpeg                     # Product packaging render
+│   ├── V1/                          # Enclosure V1 (SolidWorks + STL)
+│   │   ├── CAD/                     # .SLDPRT source files
+│   │   ├── STL/                     # Print-ready STL files
+│   │   └── PNG/                     # 3D renders (3D, S1, S2, S3)
+│   │
+│   ├── V2/                          # Enclosure V2 (SolidWorks + STL)
+│   │   ├── CAD/                     # .SLDPRT source files
+│   │   ├── STL/                     # Print-ready STL files
+│   │   └── PNG/                     # 3D renders (3D, S1, S2, S3, S4)
+│   │
+│   └── sample/                      # Production-ready assets
+│       ├── cad_v2/                  # Final STL + OBJ (all parts)
+│       ├── docs/
+│       │   ├── bom_v2.csv
+│       │   └── takamul_iq16_drawing_pack.pdf
+│       ├── case.jpeg                # Mounted enclosure photo
+│       └── pkg.jpeg                 # Product packaging render
 │
 └── docs/
     └── images/                      # README assets
@@ -276,7 +362,7 @@ Takamul_ONA/
 ### Flash ESP32 Firmware
 
 ```bash
-cd ONA_Software/main_esp32
+cd ONA_Software/software_v1/esp32s3_project
 idf.py set-target esp32s3
 idf.py menuconfig        # Takamul Config → set Supabase URL & key
 idf.py build flash monitor
@@ -286,7 +372,7 @@ idf.py build flash monitor
 
 ```bash
 # Open in STM32CubeIDE
-File → Open Projects from File System → ONA_Software/modbus_v2/
+File → Open Projects from File System → ONA_Software/tests/modbus_v2/
 
 # Build & flash via ST-LINK V2
 Project → Build (Ctrl+B)
@@ -297,16 +383,23 @@ Run → Debug (connects via ST-LINK header)
 
 ```bash
 kicad ONA_HARD/
-# Open ONA.kicad_pro → Schematic Editor or PCB Editor
+# Open "STM32 & ESP32.kicad_pro" → Schematic Editor or PCB Editor
 ```
 
-### Print the Enclosure
+### Print the Enclosure (V2 — Production)
 
-All STL files are in `mechanical/cad_v2/`. Print order:
-1. `base.stl` — main body
-2. `din_clip.stl` — rail attachment
-3. `front_lid.stl` + `top_lid.stl` — covers
-4. `top_connectors.stl` + `bottom_connectors.stl` — terminal cutouts
+All production STL files are in `mechanical/sample/cad_v2/`. Recommended print order:
+
+1. `base.stl` — main enclosure body
+2. `din_clip.stl` — DIN-rail clip
+3. `front_lid.stl` — front panel
+4. `top_lid.stl` — top cover
+5. `top_connectors.stl` + `bottom_connectors.stl` — terminal cutout panels
+6. `standoff.stl` × 4 — PCB standoffs
+7. `wifi_module.stl` — ESP32 module retainer
+8. `antenna.stl` — SMA antenna bracket
+
+> **Recommended settings:** PLA or PETG, 0.2mm layer height, 4 perimeters, 30% infill.
 
 ---
 
@@ -314,8 +407,8 @@ All STL files are in `mechanical/cad_v2/`. Print order:
 
 | Instrument | Protocol | Datasheet |
 |---|---|---|
-| Endress+Hauser Promag P300 | Modbus RTU | `data_sheets/Promag_P300_modbus_map.pdf` |
-| Endress+Hauser Liquiline CM44x | Modbus RTU | `data_sheets/CM44x_modbus_map.pdf` |
+| Endress+Hauser Promag P300 | Modbus RTU | `ONA_Software/data_sheets/Promag_P300_modbus_map.pdf` |
+| Endress+Hauser Liquiline CM44x | Modbus RTU | `ONA_Software/data_sheets/CM44x_modbus_map.pdf` |
 | Generic TDS Sensor | Analog / RS-485 | — |
 | Generic Pressure Transmitter | 4–20 mA | — |
 | Generic Temperature Sensor | Analog | — |
