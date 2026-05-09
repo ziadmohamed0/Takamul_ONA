@@ -1,0 +1,6 @@
+../Core/Src/main.cpp:62:6:void sendData(uint8_t*)	1
+../Core/Src/main.cpp:71:6:void receiveData()	1
+../Core/Src/main.cpp:78:6:void buildReadCoils()	1
+../Core/Src/main.cpp:95:5:int main()	1
+../Core/Src/main.cpp:142:6:void SystemClock_Config()	3
+../Core/Src/main.cpp:192:6:void Error_Handler()	1

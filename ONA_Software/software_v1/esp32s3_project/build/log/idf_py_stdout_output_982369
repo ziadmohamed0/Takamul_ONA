@@ -1,0 +1,1134 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0xb (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  6 2026 11:04:44[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=344f8h (214264) map[0m
+[0;32mI (127) esp_image: segment 1: paddr=00044520 vaddr=3fc9ac00 size=04aa4h ( 19108) load[0m
+[0;32mI (131) esp_image: segment 2: paddr=00048fcc vaddr=40374000 size=0704ch ( 28748) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=ad41ch (709660) map[0m
+[0;32mI (263) esp_image: segment 4: paddr=000fd444 vaddr=4037b04c size=0fb48h ( 64328) load[0m
+[0;32mI (277) esp_image: segment 5: paddr=0010cf94 vaddr=50000000 size=0002ch (    44) load[0m
+[0;32mI (278) esp_image: segment 6: paddr=0010cfc8 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (290) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (290) boot: Disabling RNG early entropy source...[0m
+[0;32mI (303) cpu_start: Multicore app[0m
+[0;32mI (312) cpu_start: Pro cpu start user code[0m
+[0;32mI (312) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (312) app_init: Application information:[0m
+[0;32mI (312) app_init: Project name:     ONA_Software[0m
+[0;32mI (316) app_init: App version:      70a8308-dirty[0m
+[0;32mI (321) app_init: Compile time:     May  6 2026 11:35:13[0m
+[0;32mI (326) app_init: ELF file SHA256:  bb2e47303...[0m
+[0;32mI (330) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (334) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (338) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (342) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (346) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (352) heap_init: At 3FCA3B60 len 00045BB0 (278 KiB): RAM[0m
+[0;32mI (358) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (363) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (368) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (374) spi_flash: detected chip: boya[0m
+[0;32mI (377) spi_flash: flash io: dio[0m
+[0;33mW (380) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (392) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (398) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (405) main_task: Started on CPU0[0m
+[0;32mI (425) main_task: Calling app_main()[0m
+[0;32mI (425) SleepManager: SleepManager init[0m
+[0;32mI (425) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (425) SleepManager: Alert GPIO IO21 configured (active HIGH)[0m
+[0;32mI (435) SleepManager: 🔌 First boot — RTC memory initialized[0m
+[0;32mI (445) main: ========================================[0m
+[0;32mI (445) main:   Takamul SCADA — ESP32-S3 Firmware    [0m
+[0;32mI (455) main:   Wakeup: FIRST BOOT[0m
+[0;32mI (455) main: ========================================[0m
+[0;32mI (485) NVSManager: NVS Flash Initialized[0m
+[0;32mI (485) pp: pp rom version: e7ae62f[0m
+[0;32mI (485) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (495) wifi:wifi driver task: 3fcaed08, prio:23, stack:6656, core=0[0m
+[0;32mI (505) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (505) wifi:wifi certification version: v7.0[0m
+[0;32mI (505) wifi:config NVS flash: enabled[0m
+[0;32mI (505) wifi:config nano formatting: disabled[0m
+[0;32mI (505) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (515) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (515) wifi:Init management short buffer num: 32[0m
+[0;32mI (525) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (525) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (535) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (535) wifi:Init static rx buffer num: 10[0m
+[0;32mI (535) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (545) wifi_init: rx ba win: 6[0m
+[0;32mI (545) wifi_init: accept mbox: 6[0m
+[0;32mI (545) wifi_init: tcpip mbox: 32[0m
+[0;32mI (555) wifi_init: udp mbox: 6[0m
+[0;32mI (555) wifi_init: tcp mbox: 6[0m
+[0;32mI (555) wifi_init: tcp tx win: 5760[0m
+[0;32mI (565) wifi_init: tcp rx win: 5760[0m
+[0;32mI (565) wifi_init: tcp mss: 1440[0m
+[0;32mI (565) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (565) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (575) main: Connecting to: Mohamed Fathy[0m
+[0;33mW (575) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (585) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (635) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (655) wifi:mode : sta (30:ed:a0:bb:1a:64)[0m
+[0;32mI (655) wifi:enable tsf[0m
+[0;32mI (655) WifiManager: Connecting to SSID: Mohamed Fathy[0m
+[0;32mI (665) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (665) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (665) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (675) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (685) wifi:<ba-add>idx:0 (ifx:0, dc:99:14:53:c3:04), tid:0, ssn:0, winSize:64[0m
+[0;32mI (715) wifi:connected with Mohamed Fathy, aid = 6, channel 8, BW20, bssid = dc:99:14:53:c3:04[0m
+[0;32mI (715) wifi:security: WPA2-PSK, phy: bgn, rssi: -51[0m
+[0;32mI (715) wifi:pm start, type: 1[0m
+
+[0;32mI (715) wifi:dp: 1, bi: 100352, li: 3, scale listen interval from 307200 us to 301056 us[0m
+[0;32mI (725) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (775) wifi:AP's beacon interval = 100352 us, DTIM period = 1[0m
+[0;32mI (3795) WifiManager: Got IP: 192.168.100.135[0m
+[0;32mI (3795) esp_netif_handlers: sta ip: 192.168.100.135, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (3795) main: WiFi connected ✓[0m
+[0;32mI (3795) main: Device ID: 30:ED:A0:BB:1A:64[0m
+[0;32mI (3795) SupabaseClient: Initialized. Project: https://xfcicrtmyvpgirwvnqfh.supabase.co[0m
+[0;32mI (3805) UartBridge: UART2 init OK — baud=115200 RX=18 TX=17[0m
+[0;32mI (3815) TelemetryManager: Initialized. Device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (3815) UartBridge: RX task running on UART2[0m
+[0;32mI (3825) UartBridge: RX task started[0m
+[0;32mI (4955) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (5335) UartBridge: Failed to parse frame [53 bytes]: [0m
+[0;33mW (5335) UartBridge:   [0] = 0x00 '.'[0m
+[0;33mW (5335) UartBridge:   [1] = 0x54 'T'[0m
+[0;33mW (5335) UartBridge:   [2] = 0x44 'D'[0m
+[0;33mW (5345) UartBridge:   [3] = 0x53 'S'[0m
+[0;33mW (5345) UartBridge:   [4] = 0x3A ':'[0m
+[0;33mW (5345) UartBridge:   [5] = 0x32 '2'[0m
+[0;33mW (5355) UartBridge:   [6] = 0x34 '4'[0m
+[0;33mW (5355) UartBridge:   [7] = 0x37 '7'[0m
+[0;33mW (5355) UartBridge:   [8] = 0x2E '.'[0m
+[0;33mW (5365) UartBridge:   [9] = 0x33 '3'[0m
+[0;33mW (5365) UartBridge:   [10] = 0x37 '7'[0m
+[0;33mW (5365) UartBridge:   [11] = 0x2C ','[0m
+[0;33mW (5375) UartBridge:   [12] = 0x54 'T'[0m
+[0;33mW (5375) UartBridge:   [13] = 0x45 'E'[0m
+[0;33mW (5375) UartBridge:   [14] = 0x4D 'M'[0m
+[0;33mW (5385) UartBridge:   [15] = 0x50 'P'[0m
+[0;33mW (5385) UartBridge:   [16] = 0x3A ':'[0m
+[0;33mW (5385) UartBridge:   [17] = 0x31 '1'[0m
+[0;33mW (5395) UartBridge:   [18] = 0x39 '9'[0m
+[0;33mW (5395) UartBridge:   [19] = 0x2E '.'[0m
+[0;33mW (6105) SupabaseClient: UPSERT devices -> HTTP 400  body={"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'firmware_ver' column of 'devices' in the schema cache"}[0m
+[0;33mW (6115) TelemetryManager: Device register failed HTTP 400 (table may not exist yet)[0m
+[0;32mI (6115) TelemetryManager: Upload task running — interval 5000 ms[0m
+[0;32mI (6125) TelemetryManager: Poll task running — interval 2000 ms[0m
+[0;32mI (6135) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (6145) TelemetryManager: Tasks started[0m
+[0;32mI (6145) main: Sleep disabled — running in continuous mode[0m
+[0;32mI (6145) main: Running in continuous mode — tasks started[0m
+[0;32mI (7095) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (8015) TelemetryManager: Controls: first cycle, sending unconditionally[0m
+[0;32mI (8015) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (8015) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (8015) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (8025) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (8035) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (10055) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (11005) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (11125) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (12225) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (12225) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (12225) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (12235) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (12235) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (12245) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (13325) TelemetryManager:   ✓ TDS            = 251.5800 ppm[0m
+[0;32mI (14265) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (14505) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (15485) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (15835) TelemetryManager:   ✓ TEMPERATURE    = 20.0100 C[0m
+[0;32mI (16355) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (16355) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (16355) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (16355) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (16365) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (17005) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (18035) TelemetryManager:   ✓ FLOW           = 60.8600 L/min[0m
+[0;32mI (18385) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (19465) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (19675) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (20655) TelemetryManager:   ✓ PRESSURE       = 3.1600 bar[0m
+[0;32mI (20725) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (20725) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (20725) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (20725) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (20735) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (21805) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (22755) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (22875) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.7700 bar[0m
+[0;32mI (23725) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (24675) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (24675) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (24675) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (24675) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (24685) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (26705) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (27645) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (28075) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (28585) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (28585) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (28585) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (28595) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (28605) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (29055) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (30075) TelemetryManager:   ✓ TDS            = 250.2700 ppm[0m
+[0;32mI (30625) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (31425) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (31925) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (32685) TelemetryManager:   ✓ TEMPERATURE    = 20.4500 C[0m
+[0;32mI (32905) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (32905) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (32905) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (32905) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (32915) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (33825) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (34795) TelemetryManager:   ✓ FLOW           = 64.3100 L/min[0m
+[0;32mI (34935) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (36155) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (36195) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (36265) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (37215) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (37215) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (37215) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (37225) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (37225) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (37345) TelemetryManager:   ✓ PRESSURE       = 3.2300 bar[0m
+[0;32mI (38485) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (39245) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (39515) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.8300 bar[0m
+[0;32mI (40205) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (41135) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (41135) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (41135) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (41135) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (41145) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (43165) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (44115) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (44715) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (44945) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (44945) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (44945) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (44955) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (44965) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (45675) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (46635) TelemetryManager:   ✓ TDS            = 264.8100 ppm[0m
+[0;32mI (46985) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (48055) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (48275) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (49255) TelemetryManager:   ✓ TEMPERATURE    = 21.0400 C[0m
+[0;32mI (49305) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (49305) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (49305) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (49315) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (49325) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (50395) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (51335) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (51355) TelemetryManager:   ✓ FLOW           = 62.4100 L/min[0m
+[0;32mI (52525) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (52865) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (53675) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (53675) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (53675) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (53685) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (53685) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (54065) TelemetryManager:   ✓ PRESSURE       = 3.1500 bar[0m
+[0;32mI (55205) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (55705) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (56275) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.8700 bar[0m
+[0;32mI (56665) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (57585) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (57585) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (57585) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (57595) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (57605) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (59625) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (60575) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (61475) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (61495) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (61495) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (61495) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (61495) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (61505) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (62415) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (63505) TelemetryManager:   ✓ TDS            = 262.6700 ppm[0m
+[0;32mI (63525) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (64725) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (64985) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (65875) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (65875) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (65875) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (65885) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (65885) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (66025) TelemetryManager:   ✓ TEMPERATURE    = 21.9100 C[0m
+[0;32mI (66195) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (67155) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (67905) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (68065) TelemetryManager:   ✓ FLOW           = 61.5000 L/min[0m
+[0;32mI (69055) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (69555) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (70215) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (70215) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (70215) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (70225) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (70235) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (70625) TelemetryManager:   ✓ PRESSURE       = 2.9700 bar[0m
+[0;32mI (71765) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (72255) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (72735) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.8100 bar[0m
+[0;32mI (73225) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (74145) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (74145) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (74145) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (74155) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (74165) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (76185) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (77135) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (77935) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (78005) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (78005) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (78005) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (78015) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (78025) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (78885) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (79855) TelemetryManager:   ✓ TDS            = 255.1100 ppm[0m
+[0;32mI (80045) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (81355) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (81355) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (82475) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (82475) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (82475) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (82485) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (82495) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (82565) TelemetryManager:   ✓ TEMPERATURE    = 21.8800 C[0m
+[0;32mI (83725) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (84515) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (84775) TelemetryManager:   ✓ FLOW           = 60.0400 L/min[0m
+[0;32mI (85625) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (86265) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (86795) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (86795) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (86795) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (86805) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (86805) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (87395) TelemetryManager:   ✓ PRESSURE       = 3.1400 bar[0m
+[0;32mI (88535) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (88825) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (89695) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.8100 bar[0m
+[0;32mI (89875) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (90805) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (90805) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (90805) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (90815) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (90815) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (92835) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (93775) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (94725) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (94725) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (94725) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (94725) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (94735) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (94895) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (95835) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (96395) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (96755) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (96825) TelemetryManager:   ✓ TDS            = 255.3600 ppm[0m
+[0;32mI (97925) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (98405) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (99035) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (99035) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (99035) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (99045) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (99055) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (99525) TelemetryManager:   ✓ TEMPERATURE    = 21.4300 C[0m
+[0;32mI (100675) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (101065) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (101725) TelemetryManager:   ✓ FLOW           = 58.9300 L/min[0m
+[0;32mI (102085) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (103115) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (103255) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (103255) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (103255) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (103265) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (103265) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (104145) TelemetryManager:   ✓ PRESSURE       = 3.2300 bar[0m
+[0;32mI (105285) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (105305) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (106435) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (106445) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.7400 bar[0m
+[0;32mI (107365) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (107365) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (107365) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (107375) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (107385) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (109405) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (110345) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (111275) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (111275) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (111275) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (111285) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (111295) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (111645) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (112595) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (113315) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (113525) TelemetryManager:   ✓ TDS            = 268.0400 ppm[0m
+[0;32mI (114445) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (115005) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (115595) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (115595) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (115595) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (115605) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (115605) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (116195) TelemetryManager:   ✓ TEMPERATURE    = 20.9300 C[0m
+[0;32mI (117335) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (117625) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (118335) TelemetryManager:   ✓ FLOW           = 58.9200 L/min[0m
+[0;32mI (118675) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (119725) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (119845) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (119845) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (119845) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (119855) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (119855) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (120815) TelemetryManager:   ✓ PRESSURE       = 2.8900 bar[0m
+[0;32mI (121875) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (122065) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (123075) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (123305) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.7200 bar[0m
+[0;32mI (124025) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (124025) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (124025) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (124025) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (124035) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (126055) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (126995) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (126995) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (127935) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (127935) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (127935) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (127945) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (127955) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (128515) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (129465) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (129975) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (130535) TelemetryManager:   ✓ TDS            = 255.0400 ppm[0m
+[0;32mI (130995) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (131955) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (132155) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (132155) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (132155) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (132165) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (132165) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (133045) TelemetryManager:   ✓ TEMPERATURE    = 21.1600 C[0m
+[0;32mI (134185) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (134185) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (135325) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (135455) TelemetryManager:   ✓ FLOW           = 62.5100 L/min[0m
+[0;32mI (136265) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (136265) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (136265) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (136275) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (136285) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (136685) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (137765) TelemetryManager:   ✓ PRESSURE       = 2.5300 bar[0m
+[0;32mI (138305) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (139115) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (139585) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (140345) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.7100 bar[0m
+[0;32mI (140585) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (140585) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (140585) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (140585) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (140595) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (142615) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (143555) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (144895) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (144895) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (144895) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (144905) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (144915) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-06T10:36:33.701+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (145545) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (146485) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (146935) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (147495) TelemetryManager:   ✓ TDS            = 244.3700 ppm[0m
+[0;32mI (147965) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (148915) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (149115) UartBridge: TX -> CMD:PUMP_ON,SPEED:31.5,PRES_SP:3.50[0m
+[0;32mI (149115) TelemetryManager: → STM32: pump=ON speed=31.5 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (149115) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (149125) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (149135) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":31.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:23.277+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (150005) TelemetryManager:   ✓ TEMPERATURE    = 21.5700 C[0m
+[0;32mI (151145) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (151155) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (152285) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (152315) TelemetryManager:   ✓ FLOW           = 57.7100 L/min[0m
+[0;32mI (153325) UartBridge: TX -> CMD:PUMP_ON,SPEED:31.5,PRES_SP:3.50[0m
+[0;32mI (153335) TelemetryManager: → STM32: pump=ON speed=31.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (153335) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (153335) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (153345) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":31.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:23.277+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (153575) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (154725) TelemetryManager:   ✓ PRESSURE       = 2.3900 bar[0m
+[0;32mI (155365) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (156025) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (156645) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (157275) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.8000 bar[0m
+[0;32mI (157275) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (157545) UartBridge: TX -> CMD:PUMP_ON,SPEED:31.5,PRES_SP:3.50[0m
+[0;32mI (157545) TelemetryManager: → STM32: pump=ON speed=31.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (157545) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (157555) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (157555) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":31.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:23.277+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (159575) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (160525) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (161455) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (161455) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (161455) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (161465) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (161475) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (162475) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (163415) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (163495) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (164555) TelemetryManager:   ✓ TDS            = 234.8600 ppm[0m
+[0;32mI (164615) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (165675) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (165675) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (165675) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (165685) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (165695) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (165855) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (166965) TelemetryManager:   ✓ TEMPERATURE    = 21.4900 C[0m
+[0;32mI (167715) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (168225) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (168985) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (169475) TelemetryManager:   ✓ FLOW           = 56.0000 L/min[0m
+[0;32mI (169835) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (169835) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (169845) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (169845) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (169855) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (170625) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (171785) TelemetryManager:   ✓ PRESSURE       = 2.5400 bar[0m
+[0;32mI (171875) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (173115) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (173275) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (174165) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (174165) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (174165) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (174175) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (174185) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (174335) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.7900 bar[0m
+[0;32mI (176205) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (177145) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (178015) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (178015) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (178015) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (178025) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (178025) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (179535) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (180045) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (180595) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (181325) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (181925) TelemetryManager:   ✓ TDS            = 249.0700 ppm[0m
+[0;32mI (182185) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (182185) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (182185) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (182195) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (182205) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (183065) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (184125) TelemetryManager:   ✓ TEMPERATURE    = 20.9400 C[0m
+[0;32mI (184225) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (185455) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (185595) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (186515) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (186515) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (186515) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (186525) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (186535) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (186735) TelemetryManager:   ✓ FLOW           = 59.3600 L/min[0m
+[0;32mI (187275) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (187875) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (188555) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (188845) TelemetryManager:   ✓ PRESSURE       = 2.7300 bar[0m
+[0;32mI (189655) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (190335) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (190865) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (190865) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (190865) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (190875) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (190875) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (191345) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.8000 bar[0m
+[0;32mI (192895) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (193845) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (194775) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (194775) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (194775) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (194785) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (194795) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (196545) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (196805) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (197715) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (198095) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (198925) TelemetryManager:   ✓ TDS            = 253.6300 ppm[0m
+[0;32mI (199035) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (199035) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (199035) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (199045) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (199055) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (200065) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (201075) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (201085) TelemetryManager:   ✓ TEMPERATURE    = 21.4000 C[0m
+[0;32mI (202275) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (202575) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (203405) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (203405) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (203405) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (203415) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (203425) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (203795) TelemetryManager:   ✓ FLOW           = 59.9000 L/min[0m
+[0;32mI (204945) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (205445) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (205905) TelemetryManager:   ✓ PRESSURE       = 2.6300 bar[0m
+[0;32mI (206495) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (207355) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (207625) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (207625) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (207625) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (207635) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (207635) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (208515) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.7500 bar[0m
+[0;32mI (209655) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (210605) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (211535) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (211535) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (211535) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (211545) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (211545) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (213565) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (213715) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (214805) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (215015) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (215905) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (215905) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (215915) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (215915) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (215925) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (216055) TelemetryManager:   ✓ TDS            = 244.5300 ppm[0m
+[0;32mI (217235) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (217795) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (217945) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (218185) TelemetryManager:   ✓ TEMPERATURE    = 21.4500 C[0m
+[0;32mI (219065) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (219665) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (220265) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (220265) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (220265) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (220275) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (220285) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (220755) TelemetryManager:   ✓ FLOW           = 62.3600 L/min[0m
+[0;32mI (221905) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (222305) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (222955) TelemetryManager:   ✓ PRESSURE       = 2.5900 bar[0m
+[0;32mI (223325) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (224345) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (224485) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (224485) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (224485) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (224495) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (224505) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (225475) TelemetryManager:   ✓ DIFF_PRESSURE  = 0.7300 bar[0m
+[0;32mI (226525) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (227465) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (228395) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (228395) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (228395) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (228405) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (228405) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (230425) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (230675) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (231605) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (231975) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (232675) UartBridge: TX -> CMD:PUMP_ON,SPEED:37.0,PRES_SP:3.50[0m
+[0;32mI (232675) TelemetryManager: → STM32: pump=ON speed=37.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (232675) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (232685) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (232685) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":37.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-06T10:39:34.298+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (233205) TelemetryManager:   ✓ TDS            = 246.7100 ppm[0m
+[0;32mI (234345) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (234705) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (235405) TelemetryManager:   ✓ TEMPERATURE    = 21.0200 C[0m
+[0;32mI (235735) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (236795) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (241805) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (244305) wifi:ap_probe_send over, reset wifi status to disassoc[0m
+[0;32mI (244305) wifi:state: run -> init (0xc800)[0m
+[0;32mI (244315) wifi:pm stop, total sleep time: 164511369 us / 243592379 us[0m
+
+[0;32mI (244315) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (244315) wifi:new:<8,0>, old:<8,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (244325) WifiManager: Disconnected from AP, retrying...[0m
+[1;31mE (244325) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x004C[0m
+[1;31mE (244325) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x004C[0m
+[0;32mI (244335) esp-tls-mbedtls: Certificate verified.[0m
+[0;32mI (244335) esp-tls-mbedtls: Certificate verified.[0m
+[1;31mE (244345) esp-tls: Failed to open new connection[0m
+[1;31mE (244345) esp-tls: Failed to open new connection[0m
+[1;31mE (244355) transport_base: Failed to open a new connection[0m
+[1;31mE (244355) transport_base: Failed to open a new connection[0m
+[1;31mE (244365) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (244365) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (244375) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (244375) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (244385) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;33mW (244385) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;32mI (244395) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;33mW (244395) TelemetryManager:   ✗ FLOW            HTTP -1[0m
+[1;31mE (244605) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (244605) esp-tls: Failed to open new connection[0m
+[1;31mE (244605) transport_base: Failed to open a new connection[0m
+[1;31mE (244605) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (244615) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (244615) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (244625) TelemetryManager:   ✗ PRESSURE        HTTP -1[0m
+[1;31mE (244825) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (244825) esp-tls: Failed to open new connection[0m
+[1;31mE (244825) transport_base: Failed to open a new connection[0m
+[1;31mE (244825) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (244835) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (244835) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (244845) TelemetryManager:   ✗ DIFF_PRESSURE   HTTP -1[0m
+[0;32mI (246405) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (246405) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (246405) esp-tls: Failed to open new connection[0m
+[1;31mE (246405) transport_base: Failed to open a new connection[0m
+[1;31mE (246415) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (246415) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (246425) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (246425) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (246735) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (247795) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (248435) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (248435) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (248435) esp-tls: Failed to open new connection[0m
+[1;31mE (248435) transport_base: Failed to open a new connection[0m
+[1;31mE (248445) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (248445) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (248455) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (248455) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (249145) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (250045) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[1;31mE (250045) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (250045) esp-tls: Failed to open new connection[0m
+[1;31mE (250045) transport_base: Failed to open a new connection[0m
+[1;31mE (250055) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (250055) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (250065) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (250065) TelemetryManager:   ✗ TDS             HTTP -1[0m
+[1;31mE (250275) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (250275) esp-tls: Failed to open new connection[0m
+[1;31mE (250275) transport_base: Failed to open a new connection[0m
+[1;31mE (250275) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (250285) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (250285) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (250295) TelemetryManager:   ✗ TEMPERATURE     HTTP -1[0m
+[0;32mI (250465) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (250465) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (250465) esp-tls: Failed to open new connection[0m
+[1;31mE (250465) transport_base: Failed to open a new connection[0m
+[1;31mE (250475) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (250475) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (250485) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (250485) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[1;31mE (250495) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (250505) esp-tls: Failed to open new connection[0m
+[1;31mE (250505) transport_base: Failed to open a new connection[0m
+[1;31mE (250505) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (250515) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (250525) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (250525) TelemetryManager:   ✗ FLOW            HTTP -1[0m
+[1;31mE (250735) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (250735) esp-tls: Failed to open new connection[0m
+[1;31mE (250735) transport_base: Failed to open a new connection[0m
+[1;31mE (250735) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (250745) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (250745) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (250755) TelemetryManager:   ✗ PRESSURE        HTTP -1[0m
+[1;31mE (250955) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (250955) esp-tls: Failed to open new connection[0m
+[1;31mE (250955) transport_base: Failed to open a new connection[0m
+[1;31mE (250955) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (250965) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (250965) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (250975) TelemetryManager:   ✗ DIFF_PRESSURE   HTTP -1[0m
+[0;32mI (251555) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (252495) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (252495) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (252495) esp-tls: Failed to open new connection[0m
+[1;31mE (252495) transport_base: Failed to open a new connection[0m
+[1;31mE (252505) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (252505) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (252515) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (252515) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (253965) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (254525) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (254525) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (254525) esp-tls: Failed to open new connection[0m
+[1;31mE (254525) transport_base: Failed to open a new connection[0m
+[1;31mE (254535) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (254535) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (254545) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (254545) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (256175) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[1;31mE (256175) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (256175) esp-tls: Failed to open new connection[0m
+[1;31mE (256175) transport_base: Failed to open a new connection[0m
+[1;31mE (256185) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (256185) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (256195) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (256195) TelemetryManager:   ✗ TDS             HTTP -1[0m
+[0;32mI (256375) WifiManager: Disconnected from AP, retrying...[0m
+[1;31mE (256405) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (256405) esp-tls: Failed to open new connection[0m
+[1;31mE (256405) transport_base: Failed to open a new connection[0m
+[1;31mE (256405) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (256415) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (256415) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (256425) TelemetryManager:   ✗ TEMPERATURE     HTTP -1[0m
+[0;32mI (256555) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (256555) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (256555) esp-tls: Failed to open new connection[0m
+[1;31mE (256555) transport_base: Failed to open a new connection[0m
+[1;31mE (256565) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (256565) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (256575) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (256575) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[1;31mE (256625) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (256625) esp-tls: Failed to open new connection[0m
+[1;31mE (256625) transport_base: Failed to open a new connection[0m
+[1;31mE (256625) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (256635) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (256635) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (256645) TelemetryManager:   ✗ FLOW            HTTP -1[0m
+[1;31mE (256855) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (256855) esp-tls: Failed to open new connection[0m
+[1;31mE (256855) transport_base: Failed to open a new connection[0m
+[1;31mE (256855) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (256865) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (256865) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (256875) TelemetryManager:   ✗ PRESSURE        HTTP -1[0m
+[1;31mE (257075) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (257075) esp-tls: Failed to open new connection[0m
+[1;31mE (257075) transport_base: Failed to open a new connection[0m
+[1;31mE (257075) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (257085) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (257085) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (257095) TelemetryManager:   ✗ DIFF_PRESSURE   HTTP -1[0m
+[0;32mI (258585) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (258585) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (258585) esp-tls: Failed to open new connection[0m
+[1;31mE (258585) transport_base: Failed to open a new connection[0m
+[1;31mE (258595) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (258595) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (258605) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (258605) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (258795) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (260615) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (260615) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (260615) esp-tls: Failed to open new connection[0m
+[1;31mE (260615) transport_base: Failed to open a new connection[0m
+[1;31mE (260625) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (260625) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (260635) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (260635) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (261205) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (262295) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[1;31mE (262295) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (262295) esp-tls: Failed to open new connection[0m
+[1;31mE (262295) transport_base: Failed to open a new connection[0m
+[1;31mE (262305) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (262305) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (262315) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (262315) TelemetryManager:   ✗ TDS             HTTP -1[0m
+[1;31mE (262525) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (262525) esp-tls: Failed to open new connection[0m
+[1;31mE (262525) transport_base: Failed to open a new connection[0m
+[1;31mE (262525) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (262535) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (262535) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (262545) TelemetryManager:   ✗ TEMPERATURE     HTTP -1[0m
+[0;32mI (262645) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (262645) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (262645) esp-tls: Failed to open new connection[0m
+[1;31mE (262645) transport_base: Failed to open a new connection[0m
+[1;31mE (262655) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (262655) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (262665) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (262665) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[1;31mE (262745) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (262745) esp-tls: Failed to open new connection[0m
+[1;31mE (262745) transport_base: Failed to open a new connection[0m
+[1;31mE (262745) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (262755) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (262755) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (262765) TelemetryManager:   ✗ FLOW            HTTP -1[0m
+[1;31mE (262965) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (262965) esp-tls: Failed to open new connection[0m
+[1;31mE (262965) transport_base: Failed to open a new connection[0m
+[1;31mE (262965) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (262975) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (262975) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (262985) TelemetryManager:   ✗ PRESSURE        HTTP -1[0m
+[1;31mE (263185) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (263185) esp-tls: Failed to open new connection[0m
+[1;31mE (263185) transport_base: Failed to open a new connection[0m
+[1;31mE (263185) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (263195) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (263195) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (263205) TelemetryManager:   ✗ DIFF_PRESSURE   HTTP -1[0m
+[0;32mI (263615) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (264675) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (264675) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (264675) esp-tls: Failed to open new connection[0m
+[1;31mE (264675) transport_base: Failed to open a new connection[0m
+[1;31mE (264685) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (264685) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (264695) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (264695) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (266025) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (266705) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (266705) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (266705) esp-tls: Failed to open new connection[0m
+[1;31mE (266705) transport_base: Failed to open a new connection[0m
+[1;31mE (266715) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (266715) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (266725) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (266725) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (268405) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[1;31mE (268405) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (268405) esp-tls: Failed to open new connection[0m
+[1;31mE (268405) transport_base: Failed to open a new connection[0m
+[1;31mE (268415) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (268415) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (268425) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (268425) TelemetryManager:   ✗ TDS             HTTP -1[0m
+[0;32mI (268435) WifiManager: Disconnected from AP, retrying...[0m
+[1;31mE (268635) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (268635) esp-tls: Failed to open new connection[0m
+[1;31mE (268635) transport_base: Failed to open a new connection[0m
+[1;31mE (268635) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (268645) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (268645) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (268655) TelemetryManager:   ✗ TEMPERATURE     HTTP -1[0m
+[0;32mI (268735) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (268735) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (268735) esp-tls: Failed to open new connection[0m
+[1;31mE (268735) transport_base: Failed to open a new connection[0m
+[1;31mE (268745) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (268745) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (268755) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (268755) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[1;31mE (268855) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (268855) esp-tls: Failed to open new connection[0m
+[1;31mE (268855) transport_base: Failed to open a new connection[0m
+[1;31mE (268855) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (268865) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (268865) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (268875) TelemetryManager:   ✗ FLOW            HTTP -1[0m
+[1;31mE (269075) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (269075) esp-tls: Failed to open new connection[0m
+[1;31mE (269075) transport_base: Failed to open a new connection[0m
+[1;31mE (269075) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (269085) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (269085) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (269095) TelemetryManager:   ✗ PRESSURE        HTTP -1[0m
+[1;31mE (269295) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (269295) esp-tls: Failed to open new connection[0m
+[1;31mE (269295) transport_base: Failed to open a new connection[0m
+[1;31mE (269295) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (269305) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (269305) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (269315) TelemetryManager:   ✗ DIFF_PRESSURE   HTTP -1[0m
+[0;32mI (270765) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (270765) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (270765) esp-tls: Failed to open new connection[0m
+[1;31mE (270765) transport_base: Failed to open a new connection[0m
+[1;31mE (270775) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (270775) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (270785) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (270785) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (270845) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (272795) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (272795) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (272795) esp-tls: Failed to open new connection[0m
+[1;31mE (272795) transport_base: Failed to open a new connection[0m
+[1;31mE (272805) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (272805) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (272815) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (272815) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (273255) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (274515) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[1;31mE (274515) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (274515) esp-tls: Failed to open new connection[0m
+[1;31mE (274515) transport_base: Failed to open a new connection[0m
+[1;31mE (274525) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (274525) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (274535) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (274535) TelemetryManager:   ✗ TDS             HTTP -1[0m
+[1;31mE (274745) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (274745) esp-tls: Failed to open new connection[0m
+[1;31mE (274745) transport_base: Failed to open a new connection[0m
+[1;31mE (274745) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (274755) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (274755) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (274765) TelemetryManager:   ✗ TEMPERATURE     HTTP -1[0m
+[0;32mI (274825) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (274825) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (274825) esp-tls: Failed to open new connection[0m
+[1;31mE (274825) transport_base: Failed to open a new connection[0m
+[1;31mE (274835) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (274835) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (274845) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (274845) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[1;31mE (274965) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (274965) esp-tls: Failed to open new connection[0m
+[1;31mE (274965) transport_base: Failed to open a new connection[0m
+[1;31mE (274965) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (274975) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (274975) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (274985) TelemetryManager:   ✗ FLOW            HTTP -1[0m
+[1;31mE (275185) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (275185) esp-tls: Failed to open new connection[0m
+[1;31mE (275185) transport_base: Failed to open a new connection[0m
+[1;31mE (275185) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (275195) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (275195) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (275205) TelemetryManager:   ✗ PRESSURE        HTTP -1[0m
+[1;31mE (275405) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (275405) esp-tls: Failed to open new connection[0m
+[1;31mE (275405) transport_base: Failed to open a new connection[0m
+[1;31mE (275405) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (275415) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (275415) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (275425) TelemetryManager:   ✗ DIFF_PRESSURE   HTTP -1[0m
+[0;32mI (275675) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (276855) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (276855) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (276855) esp-tls: Failed to open new connection[0m
+[1;31mE (276855) transport_base: Failed to open a new connection[0m
+[1;31mE (276865) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (276865) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (276875) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (276875) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (277795) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (278085) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (278885) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (278885) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (278885) esp-tls: Failed to open new connection[0m
+[1;31mE (278885) transport_base: Failed to open a new connection[0m
+[1;31mE (278895) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (278895) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (278905) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (278905) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (280495) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (280625) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[1;31mE (280625) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (280625) esp-tls: Failed to open new connection[0m
+[1;31mE (280625) transport_base: Failed to open a new connection[0m
+[1;31mE (280635) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (280635) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (280645) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (280645) TelemetryManager:   ✗ TDS             HTTP -1[0m
+[1;31mE (280855) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (280855) esp-tls: Failed to open new connection[0m
+[1;31mE (280855) transport_base: Failed to open a new connection[0m
+[1;31mE (280855) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (280865) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (280865) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (280875) TelemetryManager:   ✗ TEMPERATURE     HTTP -1[0m
+[0;32mI (280915) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (280915) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (280915) esp-tls: Failed to open new connection[0m
+[1;31mE (280915) transport_base: Failed to open a new connection[0m
+[1;31mE (280925) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (280925) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (280935) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (280935) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[1;31mE (281075) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (281075) esp-tls: Failed to open new connection[0m
+[1;31mE (281075) transport_base: Failed to open a new connection[0m
+[1;31mE (281075) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (281085) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (281085) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (281095) TelemetryManager:   ✗ FLOW            HTTP -1[0m
+[1;31mE (281295) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (281295) esp-tls: Failed to open new connection[0m
+[1;31mE (281295) transport_base: Failed to open a new connection[0m
+[1;31mE (281295) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (281305) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (281305) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (281315) TelemetryManager:   ✗ PRESSURE        HTTP -1[0m
+[1;31mE (281515) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (281515) esp-tls: Failed to open new connection[0m
+[1;31mE (281515) transport_base: Failed to open a new connection[0m
+[1;31mE (281515) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (281525) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (281525) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (281535) TelemetryManager:   ✗ DIFF_PRESSURE   HTTP -1[0m
+[0;32mI (282905) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (282945) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (282945) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (282945) esp-tls: Failed to open new connection[0m
+[1;31mE (282945) transport_base: Failed to open a new connection[0m
+[1;31mE (282955) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (282955) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (282965) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (282965) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (284975) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[1;31mE (284975) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (284975) esp-tls: Failed to open new connection[0m
+[1;31mE (284975) transport_base: Failed to open a new connection[0m
+[1;31mE (284985) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (284985) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (284995) SupabaseClient: SELECT controls -> HTTP -1  body=[0m
+[0;32mI (284995) TelemetryManager: Controls poll FAILED: HTTP=-1 body=[][0m
+[0;32mI (285315) WifiManager: Disconnected from AP, retrying...[0m
+[0;32mI (286735) TelemetryManager: Uploading batch | device: 30:ED:A0:BB:1A:64[0m
+[1;31mE (286735) esp-tls: [sock=54] connect() error: Host is unreachable[0m
+[1;31mE (286735) esp-tls: Failed to open new connection[0m
+[1;31mE (286735) transport_base: Failed to open a new connection[0m
+[1;31mE (286745) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (286745) SupabaseClient: HTTP perform error: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (286755) SupabaseClient: INSERT telemetry -> HTTP -1  body=[0m
+[0;33mW (286755) TelemetryManager:   ✗ TDS             HTTP -1[0m

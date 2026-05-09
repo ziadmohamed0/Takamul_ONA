@@ -1,0 +1,42 @@
+menu "Takamul Config"
+
+    config TAKAMUL_SUPABASE_URL
+        string "Supabase Project URL"
+        default "https://xfcicrtmyvpgirwvnqfh.supabase.co"
+        help
+            Full URL of your Supabase project, e.g. https://xxxx.supabase.co
+
+    config TAKAMUL_SUPABASE_KEY
+        string "Supabase Anon Key (JWT)"
+        default ""
+        help
+            Anon/public key from Supabase → Settings → API.
+            WARNING: This key is embedded in firmware. Use RLS policies on all tables.
+
+    config TAKAMUL_UART_RX_PIN
+        int "UART2 RX GPIO (ESP32 ← STM32 TX)"
+        default 16
+        range 0 39
+
+    config TAKAMUL_UART_TX_PIN
+        int "UART2 TX GPIO (ESP32 → STM32 RX)"
+        default 17
+        range 0 33
+
+    config TAKAMUL_UART_BAUD
+        int "UART baud rate"
+        default 115200
+        help
+            Must match STM32 UART configuration.
+
+    config TAKAMUL_UPLOAD_INTERVAL_MS
+        int "Telemetry upload interval (ms)"
+        default 5000
+        range 1000 60000
+
+    config TAKAMUL_POLL_INTERVAL_MS
+        int "Controls poll interval (ms)"
+        default 2000
+        range 500 30000
+
+endmenu

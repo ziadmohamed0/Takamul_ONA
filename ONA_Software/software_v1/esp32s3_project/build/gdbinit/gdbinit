@@ -1,0 +1,2 @@
+source /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/esp32s3_project/build/gdbinit/symbols
+source /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/esp32s3_project/build/gdbinit/connect
