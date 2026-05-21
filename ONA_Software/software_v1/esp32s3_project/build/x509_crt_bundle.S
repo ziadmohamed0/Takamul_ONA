@@ -1,4 +1,4 @@
-/* * Data converted from /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/esp32s3_project/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/software_v1/esp32s3_project/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 #if !defined (__APPLE__) && !defined (__linux__)

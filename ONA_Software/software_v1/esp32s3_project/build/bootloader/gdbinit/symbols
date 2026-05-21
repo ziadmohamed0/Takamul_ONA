@@ -17,4 +17,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/esp32s3_project/build/bootloader/bootloader.elf
+file /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/software_v1/esp32s3_project/build/bootloader/bootloader.elf

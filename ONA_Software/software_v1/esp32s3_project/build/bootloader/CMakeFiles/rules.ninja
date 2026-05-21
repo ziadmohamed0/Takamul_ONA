@@ -318,7 +318,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_main_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/ziad/esp/esp-idf/components/bootloader/subproject -B/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/esp32s3_project/build/bootloader
+  command = /usr/bin/cmake --regenerate-during-build -S/home/ziad/esp/esp-idf/components/bootloader/subproject -B/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/software_v1/esp32s3_project/build/bootloader
   description = Re-running CMake...
   generator = 1
 

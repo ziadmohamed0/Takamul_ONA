@@ -8980,20 +8980,6 @@
 		(uuid "3d8667f6-cc71-4210-8c9a-a03d7cbd79fe")
 	)
 	(circle
-		(center 148.59 35.56)
-		(radius 0.635)
-		(stroke
-			(width 0)
-			(type default)
-			(color 132 0 132 1)
-		)
-		(fill
-			(type color)
-			(color 132 0 132 1)
-		)
-		(uuid "403021a4-c27e-4686-b933-f1c48af4145d")
-	)
-	(circle
 		(center 116.84 187.96)
 		(radius 0.635)
 		(stroke
@@ -9169,20 +9155,6 @@
 			(color 132 0 132 1)
 		)
 		(uuid "69472a15-37f3-43c2-9cad-ab265a3a0bce")
-	)
-	(circle
-		(center 148.59 38.1)
-		(radius 0.635)
-		(stroke
-			(width 0)
-			(type default)
-			(color 132 0 132 1)
-		)
-		(fill
-			(type color)
-			(color 132 0 132 1)
-		)
-		(uuid "6a6719fa-0371-4c77-8f76-f16ccb262a47")
 	)
 	(arc
 		(start 208.28 157.48)
@@ -9364,6 +9336,20 @@
 			(color 132 132 0 1)
 		)
 		(uuid "a4e3e7b3-7fc0-4b49-92de-61514eba2bb5")
+	)
+	(circle
+		(center 148.59 38.1)
+		(radius 0.635)
+		(stroke
+			(width 0)
+			(type default)
+			(color 132 0 132 1)
+		)
+		(fill
+			(type color)
+			(color 132 0 132 1)
+		)
+		(uuid "a620cb22-727f-4cc8-9f11-20c64b441b2c")
 	)
 	(circle
 		(center 203.2 48.26)
@@ -9712,6 +9698,20 @@
 			(color 132 0 132 1)
 		)
 		(uuid "f98b41a0-e424-459e-9c93-9f3584ae54ad")
+	)
+	(circle
+		(center 148.59 35.56)
+		(radius 0.635)
+		(stroke
+			(width 0)
+			(type default)
+			(color 132 0 132 1)
+		)
+		(fill
+			(type color)
+			(color 132 0 132 1)
+		)
+		(uuid "fa6d323a-b2c1-44cf-8b79-06501558c22c")
 	)
 	(circle
 		(center 203.2 43.18)
@@ -12935,6 +12935,16 @@
 		)
 		(uuid "25c53d05-5e80-4d19-b589-292328b98a8e")
 	)
+	(label "MAX_RX"
+		(at 149.86 39.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "25eb29d3-f164-4853-8fc7-9e265c90270b")
+	)
 	(label "CH_TX"
 		(at 100.33 85.09 180)
 		(effects
@@ -13035,16 +13045,6 @@
 		)
 		(uuid "404965cf-5fd5-41a8-b95c-94e11200f5a4")
 	)
-	(label "MAX_TX"
-		(at 149.86 39.37 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "40767235-0eb3-4e5e-bc85-bd1e5415ae48")
-	)
 	(label "MAX_DE_RE"
 		(at 100.33 171.45 180)
 		(effects
@@ -13074,16 +13074,6 @@
 			(justify left bottom)
 		)
 		(uuid "48ea8c99-32b9-4889-a8e5-1221470c1fe3")
-	)
-	(label "MAX_RX"
-		(at 149.86 36.83 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4f28e4af-aec8-4edf-955d-6c9ae640e2b8")
 	)
 	(label "GIO0"
 		(at 152.4 189.23 180)
@@ -13444,6 +13434,16 @@
 			(justify right bottom)
 		)
 		(uuid "db7d4d19-ff84-4ef6-9883-decf26ea7d18")
+	)
+	(label "MAX_TX"
+		(at 149.86 36.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e40c1d3b-e369-4e6c-a54d-91075ac04ce7")
 	)
 	(label "ADC_TDS"
 		(at 219.71 148.59 0)

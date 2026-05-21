@@ -84,8 +84,8 @@ all: main-build
 main-build: test_1.elf secondary-outputs
 
 # Tool invocations
-test_1.elf test_1.map: $(OBJS) $(USER_OBJS) /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/STM32_Main/test_1/STM32F401RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "test_1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/STM32_Main/test_1/STM32F401RCTX_FLASH.ld" -Wl,-Map="test_1.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+test_1.elf test_1.map: $(OBJS) $(USER_OBJS) /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/tests/STM32_Main/test_1/STM32F401RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "test_1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/tests/STM32_Main/test_1/STM32F401RCTX_FLASH.ld" -Wl,-Map="test_1.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
