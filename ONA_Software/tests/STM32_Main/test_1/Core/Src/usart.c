@@ -2,19 +2,17 @@
 /**
   ******************************************************************************
   * @file    usart.c
-  * @brief   This file provides code for the configuration
-  *          of the USART instances.
-  ******************************************************************************
-  * @attention
+  * @brief   USART configuration for Takamul ONA Micro PLC
   *
-  * Copyright (c) 2026 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
+  * ── CHANGE LOG ────────────────────────────────────────────────────────────────
+  * v1.1 - USART1 IRQ REMOVED from HAL_UART_MspInit.
+  *        USART1 is used for Modbus RTU in pure blocking/polling mode.
+  *        HAL_NVIC_EnableIRQ(USART1_IRQn) was causing the ISR to fire
+  *        during HAL_UART_Receive() blocking calls, setting ORE/NE error
+  *        flags and aborting the receive early → readInputRegisters() returned
+  *        false every cycle → all sensor values stayed 0.
+  *        USART2 IRQ remains enabled (used by ESP32 interrupt-driven RX).
+  * ─────────────────────────────────────────────────────────────────────────────
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
@@ -111,10 +109,10 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* USART1 interrupt Init */
-    HAL_NVIC_SetPriority(USART1_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(USART1_IRQn);
-  /* USER CODE BEGIN USART1_MspInit 1 */
 
+  /* USER CODE BEGIN USART1_MspInit 1 */
+//    HAL_NVIC_SetPriority(USART1_IRQn, 5, 0);
+//    HAL_NVIC_EnableIRQ(USART1_IRQn);
   /* USER CODE END USART1_MspInit 1 */
   }
   else if(uartHandle->Instance==USART2)
@@ -138,7 +136,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* USART2 interrupt Init */
-    HAL_NVIC_SetPriority(USART2_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(USART2_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(USART2_IRQn);
   /* USER CODE BEGIN USART2_MspInit 1 */
 

@@ -53,6 +53,7 @@ namespace Takamul {
         void onSensorFrame(const SensorFrame& frame);
         void uploadOnce();
         void pollOnce();
+
     private:
         TelemetryManager() = default;
         ~TelemetryManager() { stop(); }
@@ -78,22 +79,27 @@ namespace Takamul {
         void registerDevice();
 
         // Latest sensor snapshot — written by UART callback, read by upload task
-        SensorFrame     m_latest_frame;
+        SensorFrame       m_latest_frame;
         SemaphoreHandle_t m_frame_mutex = nullptr;
-        bool            m_has_frame     = false;
+        bool              m_has_frame   = false;
 
-        std::string     m_device_id;
-        bool            m_initialized   = false;
+        std::string       m_device_id;
+        bool              m_initialized = false;
         std::atomic<bool> m_running     {false};
 
         // Track last control state sent to STM32 to avoid redundant TX
-        bool  m_last_pump_on      = false;
-        float m_last_speed        = -1.0f;
-        float m_last_target_pres  = -1.0f;
+        bool  m_last_pump_on     = false;
+        float m_last_speed       = -1.0f;
+        float m_last_target_pres = -1.0f;
+
+        // Resend throttle: limit [resend] TX to once per kResendInterval.
+        // Changed commands are always sent immediately.
+        TickType_t m_last_resend_tick = 0;
 
         // Configurable intervals (compile-time constants)
-        static constexpr TickType_t kUploadInterval = pdMS_TO_TICKS(5000);   // 5 s
-        static constexpr TickType_t kPollInterval   = pdMS_TO_TICKS(2000);   // 2 s
+        static constexpr TickType_t kUploadInterval = pdMS_TO_TICKS(2000);   // 2 s
+        static constexpr TickType_t kPollInterval   = pdMS_TO_TICKS(1000);   // 1 s
+        static constexpr TickType_t kResendInterval = pdMS_TO_TICKS(10000);  // 10 s resend throttle
     };
 
 } // namespace Takamul

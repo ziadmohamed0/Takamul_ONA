@@ -1,11 +1,7 @@
-../Core/Src/main.cpp:47:17:uint32_t lcg_next()	1
-../Core/Src/main.cpp:52:14:float frand_range(float, float)	1
-../Core/Src/main.cpp:57:14:float clampf(float, float, float)	3
-../Core/Src/main.cpp:61:13:void update_sensors()	1
-../Core/Src/main.cpp:70:13:void send_frame()	1
-../Core/Src/main.cpp:80:13:void process_rx_line(const char*)	5
-../Core/Src/main.cpp:109:13:void start_rx()	1
-../Core/Src/main.cpp:113:6:void HAL_UART_RxCpltCallback(UART_HandleTypeDef*)	7
-../Core/Src/main.cpp:139:5:int main()	3
-../Core/Src/main.cpp:205:6:void SystemClock_Config()	3
-../Core/Src/main.cpp:231:6:void Error_Handler()	1
+../Core/Inc/modbus_crc.h:47:14:uint8_t* ModbusMaster::getRxData()	1
+../Core/Src/main.cpp:60:6:void printDebug(const char*)	1
+../Core/Src/main.cpp:69:5:int main()	2
+../Core/Src/main.cpp:155:6:void SystemClock_Config()	3
+../Core/Src/main.cpp:198:6:void Error_Handler()	1
+../Core/Src/main.cpp:207:1:void __static_initialization_and_destruction_0()	1
+../Core/Src/main.cpp:207:1:cpp)	1

@@ -18,37 +18,28 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "modbus_crc.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-static float g_tds           = 290.0f;
-static float g_temperature   = 22.5f;
-static float g_flow          = 41.0f;
-static float g_pressure      = 3.8f;
-static float g_diff_pressure = 0.42f;
 
-static uint8_t  g_pump_on     = 0;
-static float    g_speed_hz    = 0.0f;
-static float    g_target_pres = 3.5f;
-
-#define RX_BUF_SIZE 128
-static uint8_t  g_rx_byte;
-static char     g_rx_line[RX_BUF_SIZE];
-static uint16_t g_rx_line_pos = 0;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define SLAVE_ID           5
+#define ESP_RX_BUFFER_SIZE 128
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -59,114 +50,103 @@ static uint16_t g_rx_line_pos = 0;
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+extern osMessageQueueId_t xQueueControlHandle;
+ModbusMaster modbus(&huart1, DE_GPIO_Port, DE_Pin);
 
+uint8_t  esp_rx_byte;
+uint8_t  esp_rx_buffer[ESP_RX_BUFFER_SIZE];
+uint8_t  esp_rx_index = 0;
+
+/* Shared telemetry — protected by xMutexTelemetry */
+float g_tds      = 0.0f;
+float g_temp     = 0.0f;
+float g_flow     = 0.0f;
+float g_pressure = 0.0f;
+float g_diff     = 0.0f;
+
+/* Shared control state — written from ControlTask only */
+volatile bool  g_pump_status = false;
+volatile float g_pump_speed  = 0.0f;
+volatile float g_target_pres = 3.5f;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
-static float frand_range(float lo, float hi);
-static float clampf(float v, float lo, float hi);
-static void  update_sensors(void);
-static void  send_frame(void);
-static void  process_rx_line(const char *line);
-static void  start_rx(void);
+void start_esp_bridge_rx(void);
+void flush_modbus_uart(void);
+void parse_esp_command(const char* line);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-static uint32_t g_seed = 12345;
-static uint32_t lcg_next(void) {
-    g_seed = g_seed * 1664525u + 1013904223u;
-    return g_seed;
+void start_esp_bridge_rx(void) {
+    __HAL_UART_CLEAR_FLAG(&huart2, UART_FLAG_ORE | UART_FLAG_NE | UART_FLAG_FE | UART_FLAG_PE);
+    HAL_UART_Receive_IT(&huart2, &esp_rx_byte, 1);
 }
 
-static float frand_range(float lo, float hi) {
-    float t = (float)(lcg_next() & 0xFFFF) / 65535.0f;
-    return lo + t * (hi - lo);
+void flush_modbus_uart(void) {
+    __HAL_UART_CLEAR_FLAG(&huart1, UART_FLAG_ORE | UART_FLAG_NE | UART_FLAG_FE | UART_FLAG_PE);
+    __HAL_UART_FLUSH_DRREGISTER(&huart1);
+    volatile uint32_t tmpreg = huart1.Instance->SR;
+    tmpreg = huart1.Instance->DR;
+    (void)tmpreg;
 }
 
-static float clampf(float v, float lo, float hi) {
-    return v < lo ? lo : (v > hi ? hi : v);
-}
-
-static void update_sensors(void) {
-    g_tds           = clampf(g_tds           + frand_range(-5.0f,   5.0f),  100.0f, 900.0f);
-    g_temperature   = clampf(g_temperature   + frand_range(-0.3f,   0.3f),    5.0f,  45.0f);
-    g_flow          = clampf(g_flow          + frand_range(-2.0f,   2.0f),    5.0f, 120.0f);
-    g_pressure      = clampf(g_pressure      + frand_range(-0.15f,  0.15f),   0.5f,   8.0f);
-    g_diff_pressure = clampf(g_diff_pressure + frand_range(-0.03f,  0.03f),  0.05f,   1.5f);
-    g_seed ^= HAL_GetTick();
-}
-
-static void send_frame(void) {
-    char buf[128];
-    int len = snprintf(buf, sizeof(buf),
-        "TDS:%.2f,TEMP:%.2f,FLOW:%.2f,PRES:%.2f,DIFF:%.2f\r\n",
-        g_tds, g_temperature, g_flow, g_pressure, g_diff_pressure);
-
-    HAL_UART_Transmit(&huart2, (uint8_t *)buf, (uint16_t)len, 100);
-    HAL_UART_Transmit(&huart1, (uint8_t *)buf, (uint16_t)len, 100);
-}
-
-static void process_rx_line(const char *line) {
-    char dbg[160];
-    int dlen = snprintf(dbg, sizeof(dbg), "[RX] %s\r\n", line);
-    HAL_UART_Transmit(&huart1, (uint8_t *)dbg, (uint16_t)dlen, 50);
-
-    if (strncmp(line, "CMD:PUMP_ON", 11) == 0) {
-        g_pump_on = 1;
-
-        const char *sp = strstr(line, "SPEED:");
-        if (sp) g_speed_hz = strtof(sp + 6, NULL);
-
-        const char *pp = strstr(line, "PRES_SP:");
-        if (pp) g_target_pres = strtof(pp + 8, NULL);
-
-        char info[80];
-        int ilen = snprintf(info, sizeof(info),
-            "[CTRL] PUMP ON  speed=%.1f Hz  pres_sp=%.2f bar\r\n",
-            g_speed_hz, g_target_pres);
-        HAL_UART_Transmit(&huart1, (uint8_t *)info, (uint16_t)ilen, 50);
-
-    } else if (strncmp(line, "CMD:PUMP_OFF", 12) == 0) {
-        g_pump_on  = 0;
-        g_speed_hz = 0.0f;
-
-        const char *msg = "[CTRL] PUMP OFF\r\n";
-        HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), 50);
+void parse_esp_command(const char* line) {
+    if (strstr(line, "CMD:PUMP_ON") != NULL) {
+        g_pump_status = true;
+    } else if (strstr(line, "CMD:PUMP_OFF") != NULL) {
+        g_pump_status = false;
+        g_pump_speed  = 0.0f;
+        return;
+    } else {
+        return;
     }
-}
-
-static void start_rx(void) {
-    HAL_UART_Receive_IT(&huart2, &g_rx_byte, 1);
+    const char* speed_ptr = strstr(line, "SPEED:");
+    if (speed_ptr != NULL) g_pump_speed = strtof(speed_ptr + 6, NULL);
+    const char* pres_ptr = strstr(line, "PRES_SP:");
+    if (pres_ptr != NULL) g_target_pres = strtof(pres_ptr + 8, NULL);
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-    if (huart->Instance != USART2) return;
-
-    uint8_t byte = g_rx_byte;
-
-    if (byte == '\n') {
-        if (g_rx_line_pos > 0) {
-            if (g_rx_line[g_rx_line_pos - 1] == '\r') {
-                g_rx_line_pos--;
+    if (huart->Instance == USART2) {
+        if (esp_rx_index == 0 && esp_rx_byte != 'C') {
+            HAL_UART_Receive_IT(&huart2, &esp_rx_byte, 1);
+            return;
+        }
+        if (esp_rx_byte == '\n' || esp_rx_byte == '\r') {
+            if (esp_rx_index > 0) {
+                esp_rx_buffer[esp_rx_index] = '\0';
+                /* بدل new_control_flag — نبعت على Queue من ISR */
+                uint32_t msg = 1;
+                osMessageQueuePut(xQueueControlHandle, &msg, 0, 0);
             }
-            g_rx_line[g_rx_line_pos] = '\0';
-            process_rx_line(g_rx_line);
-            g_rx_line_pos = 0;
-        }
-    } else if (byte != '\r') {
-        if (g_rx_line_pos < RX_BUF_SIZE - 1) {
-            g_rx_line[g_rx_line_pos++] = (char)byte;
+            esp_rx_index = 0;
         } else {
-            g_rx_line_pos = 0;
+            if (esp_rx_index < (ESP_RX_BUFFER_SIZE - 1))
+                esp_rx_buffer[esp_rx_index++] = esp_rx_byte;
+            else
+                esp_rx_index = 0;
         }
+        __HAL_UART_CLEAR_FLAG(&huart2, UART_FLAG_ORE | UART_FLAG_NE);
+        HAL_UART_Receive_IT(&huart2, &esp_rx_byte, 1);
     }
-
-    HAL_UART_Receive_IT(&huart2, &g_rx_byte, 1);
 }
 
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == USART2) {
+        volatile uint32_t tmpreg = huart->Instance->SR;
+        tmpreg = huart->Instance->DR;
+        (void)tmpreg;
+        __HAL_UART_CLEAR_FLAG(huart, UART_FLAG_ORE | UART_FLAG_NE | UART_FLAG_FE | UART_FLAG_PE);
+        esp_rx_index = 0;
+        HAL_UART_Receive_IT(huart, &esp_rx_byte, 1);
+    }
+    if (huart->Instance == USART1)
+        __HAL_UART_CLEAR_FLAG(huart, UART_FLAG_ORE | UART_FLAG_NE | UART_FLAG_FE | UART_FLAG_PE);
+}
 /* USER CODE END 0 */
 
 /**
@@ -201,42 +181,26 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  char clk_buf[64];
-  snprintf(clk_buf, sizeof(clk_buf),
-      "\r\nSYSCLK=%lu PCLK1=%lu\r\n",
-      HAL_RCC_GetSysClockFreq(),
-      HAL_RCC_GetPCLK1Freq());
-  HAL_UART_Transmit(&huart1, (uint8_t*)clk_buf, strlen(clk_buf), 100);
-
-  const char *banner = "=== Takamul STM32 Fake Sensor Node ===\r\n"
-                       "USART2 -> ESP32 @ 115200\r\n"
-                       "Sending frame every 3 seconds\r\n\r\n";
-  HAL_UART_Transmit(&huart1, (uint8_t *)banner, strlen(banner), 200);
-
-  start_rx();
-
-  uint32_t last_send = 0;
-  uint32_t last_ping = 0;
-
+  flush_modbus_uart();
+  HAL_Delay(500);
+  start_esp_bridge_rx();
+  __HAL_UART_CLEAR_FLAG(&huart2, UART_FLAG_TC);
+  HAL_Delay(100);
   /* USER CODE END 2 */
+
+  /* Init scheduler */
+  osKernelInitialize();  /* Call init function for freertos objects (in cmsis_os2.c) */
+  MX_FREERTOS_Init();
+
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	    uint32_t now = HAL_GetTick();
-
-	    if ((now - last_send) >= 3000) {
-	        last_send = now;
-	        update_sensors();
-	        send_frame();
-	    }
-
-	    if ((now - last_ping) >= 1000) {
-	        last_ping = now;
-	        const char *ping = "PING\r\n";
-	        HAL_UART_Transmit(&huart1, (uint8_t*)ping, 6, 50);
-	    }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -293,6 +257,28 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM1 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM1)
+  {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.

@@ -1,0 +1,1443 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2f00
+entry 0x403c8928
+[0;32mI (27) boot: ESP-IDF v5.4.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 21 2026 00:34:30[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=344f8h (214264) map[0m
+[0;32mI (127) esp_image: segment 1: paddr=00044520 vaddr=3fc9ac00 size=04aa4h ( 19108) load[0m
+[0;32mI (131) esp_image: segment 2: paddr=00048fcc vaddr=40374000 size=0704ch ( 28748) load[0m
+[0;32mI (138) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=ad41ch (709660) map[0m
+[0;32mI (263) esp_image: segment 4: paddr=000fd444 vaddr=4037b04c size=0fb48h ( 64328) load[0m
+[0;32mI (277) esp_image: segment 5: paddr=0010cf94 vaddr=50000000 size=0002ch (    44) load[0m
+[0;32mI (278) esp_image: segment 6: paddr=0010cfc8 vaddr=600fe100 size=0001ch (    28) load[0m
+[0;32mI (290) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (290) boot: Disabling RNG early entropy source...[0m
+[0;32mI (303) cpu_start: Multicore app[0m
+[0;32mI (312) cpu_start: Pro cpu start user code[0m
+[0;32mI (312) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (312) app_init: Application information:[0m
+[0;32mI (312) app_init: Project name:     ONA_Software[0m
+[0;32mI (316) app_init: App version:      08157cb-dirty[0m
+[0;32mI (321) app_init: Compile time:     May 21 2026 16:47:07[0m
+[0;32mI (326) app_init: ELF file SHA256:  09c65b245...[0m
+[0;32mI (330) app_init: ESP-IDF:          v5.4.1-dirty[0m
+[0;32mI (334) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (338) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (342) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (346) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (352) heap_init: At 3FCA3B60 len 00045BB0 (278 KiB): RAM[0m
+[0;32mI (358) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (363) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (368) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (374) spi_flash: detected chip: boya[0m
+[0;32mI (377) spi_flash: flash io: dio[0m
+[0;33mW (380) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (392) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (398) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (405) main_task: Started on CPU0[0m
+[0;32mI (425) main_task: Calling app_main()[0m
+[0;32mI (425) SleepManager: SleepManager init[0m
+[0;32mI (425) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (425) SleepManager: Alert GPIO IO21 configured (active HIGH)[0m
+[0;32mI (435) SleepManager: 🔌 First boot — RTC memory initialized[0m
+[0;32mI (445) main: ========================================[0m
+[0;32mI (445) main:   Takamul SCADA — ESP32-S3 Firmware    [0m
+[0;32mI (455) main:   Wakeup: FIRST BOOT[0m
+[0;32mI (455) main: ========================================[0m
+[0;32mI (485) NVSManager: NVS Flash Initialized[0m
+[0;32mI (485) pp: pp rom version: e7ae62f[0m
+[0;32mI (485) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (495) wifi:wifi driver task: 3fcaed08, prio:23, stack:6656, core=0[0m
+[0;32mI (505) wifi:wifi firmware version: 79fa3f41ba[0m
+[0;32mI (505) wifi:wifi certification version: v7.0[0m
+[0;32mI (505) wifi:config NVS flash: enabled[0m
+[0;32mI (505) wifi:config nano formatting: disabled[0m
+[0;32mI (505) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (515) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (515) wifi:Init management short buffer num: 32[0m
+[0;32mI (525) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (525) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (535) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (535) wifi:Init static rx buffer num: 10[0m
+[0;32mI (535) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (545) wifi_init: rx ba win: 6[0m
+[0;32mI (545) wifi_init: accept mbox: 6[0m
+[0;32mI (545) wifi_init: tcpip mbox: 32[0m
+[0;32mI (555) wifi_init: udp mbox: 6[0m
+[0;32mI (555) wifi_init: tcp mbox: 6[0m
+[0;32mI (555) wifi_init: tcp tx win: 5760[0m
+[0;32mI (565) wifi_init: tcp rx win: 5760[0m
+[0;32mI (565) wifi_init: tcp mss: 1440[0m
+[0;32mI (565) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (565) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (575) main: Connecting to: Mohamed Fathy[0m
+[0;33mW (575) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (585) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (635) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (655) wifi:mode : sta (30:ed:a0:bb:1a:64)[0m
+[0;32mI (655) wifi:enable tsf[0m
+[0;32mI (655) WifiManager: Connecting to SSID: Mohamed Fathy[0m
+[0;32mI (665) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (665) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (665) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (675) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (695) wifi:<ba-add>idx:0 (ifx:0, dc:99:14:53:c3:04), tid:0, ssn:0, winSize:64[0m
+[0;32mI (705) wifi:connected with Mohamed Fathy, aid = 10, channel 7, BW20, bssid = dc:99:14:53:c3:04[0m
+[0;32mI (705) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (715) wifi:pm start, type: 1[0m
+
+[0;32mI (715) wifi:dp: 1, bi: 100352, li: 3, scale listen interval from 307200 us to 301056 us[0m
+[0;32mI (725) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (735) wifi:AP's beacon interval = 100352 us, DTIM period = 1[0m
+[0;32mI (3845) WifiManager: Got IP: 192.168.100.135[0m
+[0;32mI (3845) esp_netif_handlers: sta ip: 192.168.100.135, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (3845) main: WiFi connected ✓[0m
+[0;32mI (3845) main: Device ID: 30:ED:A0:BB:1A:64[0m
+[0;32mI (3845) SupabaseClient: Initialized. Project: https://xfcicrtmyvpgirwvnqfh.supabase.co[0m
+[0;32mI (3855) UartBridge: UART2 init OK — baud=115200 RX=18 TX=17[0m
+[0;32mI (3865) TelemetryManager: Initialized. Device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (3865) UartBridge: RX task running on UART2[0m
+[0;32mI (3875) UartBridge: RX task started[0m
+[0;32mI (4855) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (5965) SupabaseClient: UPSERT devices -> HTTP 400  body={"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'firmware_ver' column of 'devices' in the schema cache"}[0m
+[0;33mW (5975) TelemetryManager: Device register failed HTTP 400 (table may not exist yet)[0m
+[0;32mI (5975) TelemetryManager: Upload task running — interval 5000 ms[0m
+[0;32mI (5985) TelemetryManager: Poll task running — interval 2000 ms[0m
+[0;32mI (5995) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (6005) TelemetryManager: Tasks started[0m
+[0;32mI (6005) main: Sleep disabled — running in continuous mode[0m
+[0;32mI (6005) main: Running in continuous mode — tasks started[0m
+[0;32mI (6975) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (7865) TelemetryManager: Controls: first cycle, sending unconditionally[0m
+[0;32mI (7865) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (7865) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (7875) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (7875) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (7885) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (9905) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (11005) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (12005) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (12005) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (12015) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (12015) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (12025) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (14045) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (15225) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (16195) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (16195) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (16195) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (16205) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (16205) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (18225) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (19345) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (20345) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (20345) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (20345) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (20355) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (20355) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (22375) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (23645) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (24655) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (24655) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (24655) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (24665) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (24675) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (26695) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (28005) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (29045) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (29045) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (29045) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (29055) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (29065) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (31085) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (32295) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (33855) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (33865) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (33865) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (33865) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (33875) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (35895) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (36015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (36995) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (37995) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (37995) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (37995) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (38005) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (38015) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (40035) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (41245) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (42285) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (42285) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (42285) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (42295) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (42295) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (44315) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (45435) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (46395) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (46395) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (46405) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (46405) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (46415) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (48435) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (49635) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (50625) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (50625) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (50625) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (50635) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (50645) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (52655) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (53725) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (54755) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (54755) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (54755) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (54765) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (54765) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (56785) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (57845) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (58765) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (58765) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (58765) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (58775) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (58785) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (60805) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (61865) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (62855) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (62855) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (62865) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (62865) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (62875) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (64895) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (65995) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (66015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (67465) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (67465) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (67475) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (67475) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (67485) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (69505) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (70615) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (71595) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (71595) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (71595) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (71605) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (71615) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (73635) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (75035) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (76085) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (76085) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (76085) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (76095) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (76105) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (78125) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (79265) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (80425) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (80425) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (80425) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (80435) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (80445) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (82465) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (83535) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (84635) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (84635) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (84635) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (84645) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (84645) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (86665) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (87885) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (88845) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (88845) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (88855) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (88855) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (88865) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (90885) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (91985) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (92985) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (92985) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (92985) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (92995) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (93005) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (95025) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (95975) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (96015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (96875) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (96875) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (96875) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (96885) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (96895) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (98915) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (100005) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (100995) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (100995) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (100995) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (101005) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (101005) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (103025) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (103975) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (104905) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (104905) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (104905) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (104915) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (104925) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (106935) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (107895) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (108865) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (108865) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (108875) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (108875) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (108885) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (110905) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (111955) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (112835) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (112835) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (112835) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (112845) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (112855) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (114865) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (115815) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (116745) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (116745) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (116745) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (116755) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (116765) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (118785) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (119765) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (120665) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (120665) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (120665) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (120675) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (120675) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (122695) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (123645) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (124575) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (124575) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (124575) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (124585) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (124595) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (126015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (126615) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (127565) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (128485) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (128485) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (128495) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (128495) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (128505) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (130525) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (131485) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (132405) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (132405) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (132405) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (132415) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (132415) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (134435) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (135435) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (136315) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (136315) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (136315) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (136325) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (136335) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (138355) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (139305) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (140225) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (140225) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (140235) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (140235) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (140245) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (142265) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (143215) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (144145) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (144145) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (144145) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (144155) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (144165) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (146175) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (147305) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (148255) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (148255) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (148265) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (148265) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (148275) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (150295) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (151245) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (152175) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (152175) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (152175) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (152185) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (152185) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T18:56:25.779+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (154205) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (155155) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (156015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (156035) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (156035) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (156035) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (156045) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (156055) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-22T20:47:54.288+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (158075) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (159025) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (159895) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (159895) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (159895) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (159905) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (159915) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-22T20:47:54.288+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (161935) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (162885) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (163815) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (163815) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (163815) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (163825) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (163825) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:03.991+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (165845) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (166795) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (167725) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (167725) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (167725) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (167735) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (167745) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:03.991+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (169765) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (170825) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (171765) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (171765) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (171765) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (171775) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (171775) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:03.991+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (173795) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (174935) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (176065) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (176065) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (176065) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (176075) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (176075) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:03.991+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (178095) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (179255) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (180345) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (180345) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (180345) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (180355) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (180365) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:19.291+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (182375) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (183325) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (184185) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (184185) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (184185) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (184195) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (184205) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (186015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (186225) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (187175) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (188095) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (188095) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (188105) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (188105) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (188115) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (190135) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (191085) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (192015) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (192015) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (192015) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (192025) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (192025) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (194045) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (194995) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (195925) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (195925) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (195925) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (195935) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (195945) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (197965) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (198915) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (199845) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (199845) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (199845) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (199855) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (199855) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (201875) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (202825) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (203755) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (203755) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (203755) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (203765) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (203775) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (205785) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (206735) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (207665) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (207665) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (207675) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (207675) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (207685) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (209705) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (210655) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (211585) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (211585) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (211585) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (211595) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (211595) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (213615) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (214585) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (215495) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (215495) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (215495) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (215505) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (215515) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (216015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (217535) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (218485) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (219405) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (219405) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (219415) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (219415) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (219425) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (221445) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (222395) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (223325) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (223325) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (223325) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (223335) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (223335) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (225355) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (226305) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (227235) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (227235) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (227235) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (227245) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (227255) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (229275) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (230225) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (231155) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (231155) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (231155) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (231165) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (231165) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (233185) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (234135) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (235065) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (235065) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (235065) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (235075) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (235085) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (237105) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (238055) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (238975) UartBridge: TX -> CMD:PUMP_ON,SPEED:30.5,PRES_SP:3.50[0m
+[0;32mI (238975) TelemetryManager: → STM32: pump=ON speed=30.5 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (238985) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (238985) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (238995) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":30.5,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:48:22.63+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (241015) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (242065) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (242995) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (242995) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (242995) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (243005) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (243005) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (245025) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (245975) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (246015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (246905) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (246905) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (246905) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (246915) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (246925) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (248945) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (249895) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (250815) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (250825) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (250825) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (250835) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (250835) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (252855) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (253815) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (254735) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (254735) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (254735) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (254745) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (254755) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (256765) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (257715) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (258645) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (258645) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (258655) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (258655) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (258665) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (260685) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (261745) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (262665) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (262665) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (262665) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (262675) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (262675) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (264695) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (265645) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (266575) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (266575) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (266575) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (266585) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (266595) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (268615) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (269575) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (270485) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (270495) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (270495) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (270495) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (270505) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (272525) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (273475) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (274405) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (274405) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (274405) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (274415) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (274425) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (276015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (276435) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (277385) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (278315) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (278315) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (278315) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (278325) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (278335) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (280355) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (281305) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (282235) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (282235) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (282235) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (282245) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (282245) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (284265) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (285215) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (286145) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (286145) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (286145) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (286155) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (286165) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (288185) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (289135) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (290055) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (290055) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (290065) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (290065) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (290075) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (292095) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (293045) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (293975) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (293975) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (293975) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (293985) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (293985) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (296005) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (296955) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (297885) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (297885) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (297885) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (297895) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (297905) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (299925) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (301035) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (301905) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (301905) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (301905) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (301915) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (301915) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (303935) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (304885) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (305815) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (305815) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (305815) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (305825) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (305835) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (306015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (307855) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (308805) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (309685) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (309685) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (309685) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (309695) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (309705) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (311725) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (312675) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (313545) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (313545) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (313545) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (313555) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (313555) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (315575) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (316525) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (317455) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (317455) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (317455) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (317465) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (317475) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (319495) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (320445) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (321365) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (321365) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (321375) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (321375) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (321385) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (323405) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (324355) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (325285) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (325285) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (325285) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (325295) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (325295) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (327315) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (328275) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (329145) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (329155) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (329155) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (329155) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (329165) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (331185) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (332235) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (333115) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (333115) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (333115) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (333125) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (333125) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (335145) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (336015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (336445) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (337375) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (337375) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (337375) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (337385) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (337395) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (339415) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (340365) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (341245) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (341245) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (341245) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (341255) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (341255) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (343275) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (344225) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (345155) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (345155) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (345155) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (345165) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (345165) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (347185) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (348165) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (349075) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (349075) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (349075) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (349085) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (349085) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (351105) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (352305) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (353185) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (353185) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (353185) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (353195) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (353195) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (355215) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (356165) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (357105) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (357105) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (357105) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (357115) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (357125) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (359145) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (360095) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (361005) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (361005) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (361015) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (361015) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (361025) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (363045) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (363995) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (364925) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (364925) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (364925) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (364935) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (364935) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (366015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (366955) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (367905) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (368835) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (368835) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (368835) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (368845) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (368855) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (370875) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (371925) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (372855) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (372855) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (372855) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (372865) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (372865) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (374885) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (375835) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (376765) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (376765) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (376765) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (376775) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (376785) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (378805) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (379755) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (380885) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (380885) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (380885) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (380895) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (380895) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (382915) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (383965) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (384895) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (384895) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (384895) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (384905) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (384915) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (386925) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (387925) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (388805) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (388805) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (388805) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (388815) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (388825) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (390845) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (391785) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (392725) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (392725) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (392725) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (392735) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (392735) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (394755) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (395705) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (396015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (396635) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (396635) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (396635) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (396645) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (396655) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (398675) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (399625) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (400545) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (400545) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (400555) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (400555) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (400565) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (402585) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (403635) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (404565) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (404565) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (404565) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (404575) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (404585) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (406605) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (407555) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (408475) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (408475) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (408475) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (408485) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (408495) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (410515) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (411465) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (412345) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (412345) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (412345) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (412355) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (412365) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (414385) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (415335) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (416305) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (416305) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (416305) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (416315) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (416325) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (418345) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (419305) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (420225) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (420235) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (420235) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (420235) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (420245) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (422265) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (423215) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (424135) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (424135) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (424135) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (424145) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (424145) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (426015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (426165) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (427115) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (428055) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (428055) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (428055) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (428065) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (428065) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (430085) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (431035) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (431955) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (431965) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (431965) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (431965) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (431975) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (433995) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (434965) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (435875) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (435875) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (435875) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (435885) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (435895) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (437905) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (438855) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (439805) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (439815) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (439815) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (439815) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (439825) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (441845) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (442885) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (443805) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (443805) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (443805) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (443815) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (443815) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (445835) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (446785) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (447715) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (447715) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (447715) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (447725) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (447735) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (449755) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (450705) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (451625) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (451625) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (451635) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (451635) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (451645) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (453665) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (454615) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (455545) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (455545) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (455545) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (455555) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (455555) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (456015) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (457575) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (458525) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (459455) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (459455) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (459455) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (459465) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (459475) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (461495) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (3905) WifiManager: Got IP: 192.168.100.135[0m
+[0;32mI (3905) esp_netif_handlers: sta ip: 192.168.100.135, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (3905) main: WiFi connected ✓[0m
+[0;32mI (3905) main: Device ID: 30:ED:A0:BB:1A:64[0m
+[0;32mI (3905) SupabaseClient: Initialized. Project: https://xfcicrtmyvpgirwvnqfh.supabase.co[0m
+[0;32mI (3915) UartBridge: UART2 init OK — baud=115200 RX=18 TX=17[0m
+[0;32mI (3925) TelemetryManager: Initialized. Device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (3925) UartBridge: RX task running on UART2[0m
+[0;32mI (3935) UartBridge: RX task started[0m
+[0;32mI (4925) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (6015) SupabaseClient: UPSERT devices -> HTTP 400  body={"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'firmware_ver' column of 'devices' in the schema cache"}[0m
+[0;33mW (6025) TelemetryManager: Device register failed HTTP 400 (table may not exist yet)[0m
+[0;32mI (6025) TelemetryManager: Upload task running — interval 5000 ms[0m
+[0;32mI (6035) TelemetryManager: Poll task running — interval 2000 ms[0m
+[0;32mI (6045) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (6055) TelemetryManager: Tasks started[0m
+[0;32mI (6055) main: Sleep disabled — running in continuous mode[0m
+[0;32mI (6055) main: Running in continuous mode — tasks started[0m
+[0;32mI (7025) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (8125) TelemetryManager: Controls: first cycle, sending unconditionally[0m
+[0;32mI (8125) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (8125) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (8135) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (8135) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (8145) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (3785) WifiManager: Got IP: 192.168.100.135[0m
+[0;32mI (3785) esp_netif_handlers: sta ip: 192.168.100.135, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (3785) main: WiFi connected ✓[0m
+[0;32mI (3785) main: Device ID: 30:ED:A0:BB:1A:64[0m
+[0;32mI (3785) SupabaseClient: Initialized. Project: https://xfcicrtmyvpgirwvnqfh.supabase.co[0m
+[0;32mI (3795) UartBridge: UART2 init OK — baud=115200 RX=18 TX=17[0m
+[0;32mI (3805) TelemetryManager: Initialized. Device: 30:ED:A0:BB:1A:64[0m
+[0;32mI (3805) UartBridge: RX task running on UART2[0m
+[0;32mI (3815) UartBridge: RX task started[0m
+[0;32mI (4905) esp-x509-crt-bundle: Certificate validated[0m
+[0;33mW (5905) SupabaseClient: UPSERT devices -> HTTP 400  body={"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'firmware_ver' column of 'devices' in the schema cache"}[0m
+[0;33mW (5915) TelemetryManager: Device register failed HTTP 400 (table may not exist yet)[0m
+[0;32mI (5915) TelemetryManager: Upload task running — interval 5000 ms[0m
+[0;32mI (5925) TelemetryManager: Poll task running — interval 2000 ms[0m
+[0;32mI (5935) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (5945) TelemetryManager: Tasks started[0m
+[0;32mI (5945) main: Sleep disabled — running in continuous mode[0m
+[0;32mI (5945) main: Running in continuous mode — tasks started[0m
+[0;32mI (6905) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (7805) TelemetryManager: Controls: first cycle, sending unconditionally[0m
+[0;32mI (7815) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (7815) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (7815) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (7825) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (7835) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (9855) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (10825) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (11725) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (11725) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (11725) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (11735) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (11735) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (13755) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (14705) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (15745) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (15745) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (15745) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (15745) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (15755) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (17775) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (18725) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (19655) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (19655) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (19655) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (19665) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (19665) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (21685) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (22645) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (23565) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (23565) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (23575) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (23575) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (23585) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (25605) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (26565) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (27475) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (27475) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (27485) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (27485) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (27495) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (29515) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (30575) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (31495) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (31495) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (31495) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (31505) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (31515) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (33525) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (34535) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (35405) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (35405) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (35405) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (35415) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (35425) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (35955) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (37445) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (38555) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (39525) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (39525) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (39525) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (39535) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (39535) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (41555) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (42505) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (43435) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (43435) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (43435) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (43445) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (43455) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (45475) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (46425) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (47345) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (47355) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (47355) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (47355) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (47365) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:49:23.377+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (49385) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (50345) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (51265) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (51265) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (51265) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (51275) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (51275) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:34.226+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (53295) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (54245) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (55175) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (55175) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (55175) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (55185) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (55195) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:34.226+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (57215) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (58175) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (59095) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (59095) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (59095) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (59105) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (59105) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:34.226+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (61125) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (62075) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (63005) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (63005) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (63005) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (63015) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (63015) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:34.226+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (65035) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (65985) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (65985) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (66915) UartBridge: TX -> CMD:PUMP_OFF[0m
+[0;32mI (66915) TelemetryManager: → STM32: pump=OFF speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (66915) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (66925) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (66935) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":false,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:34.226+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (68955) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (69915) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (70835) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (70835) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [CHANGED][0m
+[0;32mI (70835) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (70845) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (70845) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (72865) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (73815) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (74745) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (74745) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (74745) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (74755) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (74765) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (76785) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (77735) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (78655) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (78665) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (78665) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (78665) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (78675) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (80695) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (81645) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (82575) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (82575) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (82575) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (82585) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (82595) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (84605) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (85555) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (86485) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (86485) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (86495) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (86495) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (86505) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (88525) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (89475) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (90405) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (90405) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (90405) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (90415) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (90415) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (92435) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (93385) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (94315) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (94315) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (94315) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (94325) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (94335) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (95985) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (96355) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (97415) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (98325) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (98325) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (98335) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (98335) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (98345) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (100365) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (101315) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (102345) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (102345) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (102345) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (102355) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (102365) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (104385) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (105335) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (106255) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (106255) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (106265) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (106265) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (106275) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (108295) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (109245) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (110175) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (110175) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (110175) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (110185) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (110185) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (112205) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (113155) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (114085) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (114085) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (114085) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (114095) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (114105) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (116125) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (117075) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (118095) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (118105) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (118105) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (118105) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (118115) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (120135) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (121095) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (122015) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (122015) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (122015) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (122025) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (122035) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (124045) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (125005) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (125925) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (125935) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (125935) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (125935) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (125945) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (125985) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (127965) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (128915) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (129845) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (129845) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (129845) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (129855) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (129855) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (131875) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (132825) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (133755) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (133755) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (133755) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (133765) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (133775) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (135795) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (136755) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (137665) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (137665) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (137675) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (137675) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (137685) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (139705) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (140655) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (141585) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (141585) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (141585) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (141595) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (141605) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (143615) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (144565) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (145495) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (145495) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (145495) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (145505) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (145515) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (147535) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (148485) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (149415) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (149415) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (149415) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (149425) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (149425) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (151445) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (152455) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (153325) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (153325) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (153325) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (153335) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (153345) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (155365) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (156315) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (156315) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (157235) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (157235) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (157245) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (157245) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (157255) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (159275) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (160235) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (161255) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (161255) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (161255) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (161265) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (161265) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (163285) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (164245) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (165165) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (165175) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (165175) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (165175) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (165185) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (167205) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (168165) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (169035) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (169035) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (169035) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (169045) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (169055) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (171065) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (172025) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (172895) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (172895) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (172895) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (172905) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (172905) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (174925) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (175885) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (176805) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (176805) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (176815) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (176815) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (176825) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (178845) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (179805) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (180675) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (180675) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (180675) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (180685) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (180695) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (182715) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (183675) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (184635) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (184635) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (184635) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (184645) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (184655) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (186315) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (186675) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (187625) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (188545) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (188545) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (188555) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (188555) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (188565) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (190585) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (191535) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (192465) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (192465) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (192465) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (192475) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (192475) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (194495) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (195445) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (196375) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (196375) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (196375) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (196385) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (196395) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (198415) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (199365) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (200285) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (200285) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (200295) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (200295) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (200305) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (202325) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (203275) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (204205) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (204205) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (204205) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (204215) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (204225) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (206245) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (207195) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (208115) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (208115) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (208125) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (208125) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (208135) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (210155) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (211115) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (212035) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (212035) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (212035) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (212045) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (212045) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (214065) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (215045) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (215945) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (215945) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (215945) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (215955) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (215965) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (216315) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (217985) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (218935) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (219855) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (219855) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (219865) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (219865) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (219875) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (221895) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (222845) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (223775) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (223775) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (223775) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (223785) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (223785) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (225805) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (226765) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (227685) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (227685) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (227685) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (227695) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (227705) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (229725) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (230675) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (231595) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (231605) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (231605) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (231605) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (231615) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (233635) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (234595) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (235515) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (235515) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (235515) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (235525) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (235535) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (237555) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (238615) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (239525) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (239525) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (239535) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (239535) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (239545) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (241565) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (242515) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (243395) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (243405) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (243405) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (243405) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (243415) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (245435) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (246385) main: ♥ Heartbeat — continuous mode[0m
+[0;32mI (246385) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (247255) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (247255) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (247255) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (247265) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (247275) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (249295) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (250245) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (251175) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (251175) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (251175) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (251185) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (251185) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (253205) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m
+[0;32mI (254155) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (255085) UartBridge: TX -> CMD:PUMP_ON,SPEED:0.0,PRES_SP:3.50[0m
+[0;32mI (255085) TelemetryManager: → STM32: pump=ON speed=0.0 Hz pres_sp=3.50 bar  [resend][0m
+[0;32mI (255085) TelemetryManager: force_wakeup flag detected → shortening next sleep[0m
+[0;32mI (255095) SleepManager: Force wakeup flag set — next cycle will be shorter[0m
+[0;32mI (255105) TelemetryManager: Controls poll HTTP=200 body=[{"pump_speed":0.0,"status":true,"target_pressure":3.50,"updated_at":"2026-05-22T20:55:51.224+00:00","ota_esp32_url":null,"ota_stm32_url":null,"force_wakeup":true}][0m
+[0;32mI (257125) TelemetryManager: Polling controls for device_id: [30:ED:A0:BB:1A:64][0m

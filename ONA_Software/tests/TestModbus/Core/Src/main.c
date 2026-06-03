@@ -132,19 +132,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-      sendData(TxData, 8);
+    /* USER CODE END WHILE */
 
-      // استقبل الـ Response مباشرة
-      HAL_StatusTypeDef status = HAL_UART_Receive(&huart1, RxData, 6, 1000);
-
-      if (status == HAL_OK)
-      {
-          input1 = (RxData[3] >> 0) & 0x01;
-          input2 = (RxData[3] >> 1) & 0x01;
-          input3 = (RxData[3] >> 2) & 0x01;
-      }
-
-      HAL_Delay(500);
+    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }

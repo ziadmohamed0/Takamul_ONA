@@ -1,0 +1,4 @@
+../Core/Inc/modbus_crc.h:63:14:uint8_t* ModbusMaster::getRxData()	1
+../Core/Src/freertos.cpp:103:6:void MX_FREERTOS_Init()	1
+../Core/Src/freertos.cpp:155:6:void StartControlTask(void*)	2
+../Core/Src/freertos.cpp:182:6:void StartTelemetryTask(void*)	6

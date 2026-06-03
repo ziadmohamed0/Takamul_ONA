@@ -124,6 +124,7 @@ void UartBridge::rxTask(void* arg) {
         int r = uart_read_bytes(self->m_port, &byte, 1, pdMS_TO_TICKS(100));
         if (r != 1) continue;
 
+        if (byte == '\0') continue;   
         if (byte == '\n' || byte == '\r') {
             if (line_pos > 0) {
                 line[line_pos] = '\0';

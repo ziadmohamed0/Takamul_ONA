@@ -85,3 +85,160 @@ uint16_t crc16(uint8_t *buffer, uint16_t buffer_length)
 
     return (crc_hi << 8 | crc_lo);
 }
+
+ModbusMaster::ModbusMaster(UART_HandleTypeDef* huart, GPIO_TypeDef* txEnPort, uint16_t txEnPin) {
+    _huart = huart;
+    _txEnPort = txEnPort;
+    _txEnPin = txEnPin;
+}
+
+void ModbusMaster::sendFrame(uint16_t length) {
+    HAL_GPIO_WritePin(_txEnPort, _txEnPin, GPIO_PIN_SET);
+    HAL_Delay(1);
+
+    HAL_UART_Transmit(_huart, txBuffer, length, 1000);
+
+    HAL_Delay(2);
+    HAL_GPIO_WritePin(_txEnPort, _txEnPin, GPIO_PIN_RESET);
+}
+
+bool ModbusMaster::readCoils(uint8_t slaveId, uint16_t startAddress, uint16_t quantity) {
+    txBuffer[0] = slaveId;
+    txBuffer[1] = FC_READ_COILS;
+    txBuffer[2] = (startAddress >> 8) & 0xFF;
+    txBuffer[3] = startAddress & 0xFF;
+    txBuffer[4] = (quantity >> 8) & 0xFF;
+    txBuffer[5] = quantity & 0xFF;
+
+    uint16_t crc = crc16(txBuffer, 6);
+    txBuffer[6] = crc & 0xFF;
+    txBuffer[7] = (crc >> 8) & 0xFF;
+
+    sendFrame(8);
+
+    uint8_t byteCount = (quantity + 7) / 8;
+    uint8_t expectedBytes = 3 + byteCount + 2;
+
+    return (HAL_UART_Receive(_huart, rxBuffer, expectedBytes, 1000) == HAL_OK);
+}
+
+bool ModbusMaster::readDiscreteInputs(uint8_t slaveId, uint16_t startAddress, uint16_t quantity) {
+    txBuffer[0] = slaveId;
+    txBuffer[1] = FC_READ_DISCRETE;
+    txBuffer[2] = (startAddress >> 8) & 0xFF;
+    txBuffer[3] = startAddress & 0xFF;
+    txBuffer[4] = (quantity >> 8) & 0xFF;
+    txBuffer[5] = quantity & 0xFF;
+
+    uint16_t crc = crc16(txBuffer, 6);
+    txBuffer[6] = crc & 0xFF;
+    txBuffer[7] = (crc >> 8) & 0xFF;
+
+    sendFrame(8);
+
+    uint8_t byteCount = (quantity + 7) / 8;
+    uint8_t expectedBytes = 3 + byteCount + 2;
+
+    return (HAL_UART_Receive(_huart, rxBuffer, expectedBytes, 1000) == HAL_OK);
+}
+
+bool ModbusMaster::readHoldingRegisters(uint8_t slaveId, uint16_t startAddress, uint16_t quantity) {
+    txBuffer[0] = slaveId;
+    txBuffer[1] = FC_READ_HOLDING;
+    txBuffer[2] = (startAddress >> 8) & 0xFF;
+    txBuffer[3] = startAddress & 0xFF;
+    txBuffer[4] = (quantity >> 8) & 0xFF;
+    txBuffer[5] = quantity & 0xFF;
+
+    uint16_t crc = crc16(txBuffer, 6);
+    txBuffer[6] = crc & 0xFF;
+    txBuffer[7] = (crc >> 8) & 0xFF;
+
+    sendFrame(8);
+
+    uint8_t expectedBytes = 3 + (quantity * 2) + 2;
+
+    return (HAL_UART_Receive(_huart, rxBuffer, expectedBytes, 1000) == HAL_OK);
+}
+
+bool ModbusMaster::readInputRegisters(uint8_t slaveId, uint16_t startAddress, uint16_t quantity) {
+    txBuffer[0] = slaveId;
+    txBuffer[1] = FC_READ_INPUT;
+    txBuffer[2] = (startAddress >> 8) & 0xFF;
+    txBuffer[3] = startAddress & 0xFF;
+    txBuffer[4] = (quantity >> 8) & 0xFF;
+    txBuffer[5] = quantity & 0xFF;
+
+    uint16_t crc = crc16(txBuffer, 6);
+    txBuffer[6] = crc & 0xFF;
+    txBuffer[7] = (crc >> 8) & 0xFF;
+
+    sendFrame(8);
+
+    uint8_t expectedBytes = 3 + (quantity * 2) + 2;
+
+    return (HAL_UART_Receive(_huart, rxBuffer, expectedBytes, 1000) == HAL_OK);
+}
+
+bool ModbusMaster::writeSingleCoil(uint8_t slaveId, uint16_t address, bool state) {
+    txBuffer[0] = slaveId;
+    txBuffer[1] = FC_WRITE_SINGLE_COILS;
+    txBuffer[2] = (address >> 8) & 0xFF;
+    txBuffer[3] = address & 0xFF;
+
+    txBuffer[4] = state ? 0xFF : 0x00;
+    txBuffer[5] = 0x00;
+
+    uint16_t crc = crc16(txBuffer, 6);
+    txBuffer[6] = crc & 0xFF;
+    txBuffer[7] = (crc >> 8) & 0xFF;
+
+    sendFrame(8);
+
+    return (HAL_UART_Receive(_huart, rxBuffer, 8, 1000) == HAL_OK);
+}
+
+bool ModbusMaster::writeSingleRegister(uint8_t slaveId, uint16_t address, uint16_t value) {
+    txBuffer[0] = slaveId;
+    txBuffer[1] = FC_WRITE_SINGLE_HOLDING;
+    txBuffer[2] = (address >> 8) & 0xFF;
+    txBuffer[3] = address & 0xFF;
+    txBuffer[4] = (value >> 8) & 0xFF;
+    txBuffer[5] = value & 0xFF;
+
+    uint16_t crc = crc16(txBuffer, 6);
+    txBuffer[6] = crc & 0xFF;
+    txBuffer[7] = (crc >> 8) & 0xFF;
+
+    sendFrame(8);
+
+    return (HAL_UART_Receive(_huart, rxBuffer, 8, 1000) == HAL_OK);
+}
+
+bool ModbusMaster::writeMultipleRegisters(uint8_t slaveId, uint16_t startAddress, uint16_t quantity, uint16_t *values) {
+    txBuffer[0] = slaveId;
+    txBuffer[1] = FC_WRITE_MULTI_HOLDING;
+    txBuffer[2] = (startAddress >> 8) & 0xFF;
+    txBuffer[3] = startAddress & 0xFF;
+    txBuffer[4] = (quantity >> 8) & 0xFF;
+    txBuffer[5] = quantity & 0xFF;
+
+    uint8_t byteCount = quantity * 2;
+    txBuffer[6] = byteCount;
+
+    uint16_t bufferIndex = 7;
+    for (uint16_t i = 0; i < quantity; i++) {
+        txBuffer[bufferIndex++] = (values[i] >> 8) & 0xFF;
+        txBuffer[bufferIndex++] = values[i] & 0xFF;
+    }
+
+    uint16_t totalLengthBeforeCRC = 7 + byteCount;
+    uint16_t crc = crc16(txBuffer, totalLengthBeforeCRC);
+
+    txBuffer[bufferIndex++] = crc & 0xFF;
+    txBuffer[bufferIndex++] = (crc >> 8) & 0xFF;
+
+    sendFrame(bufferIndex);
+
+    return (HAL_UART_Receive(_huart, rxBuffer, 8, 1000) == HAL_OK);
+}

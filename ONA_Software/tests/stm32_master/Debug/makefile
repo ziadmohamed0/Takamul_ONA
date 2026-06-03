@@ -84,8 +84,8 @@ all: main-build
 main-build: First.elf secondary-outputs
 
 # Tool invocations
-First.elf First.map: $(OBJS) $(USER_OBJS) /home/ziad/ziad_ws/modbus/codes/First/STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "First.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/home/ziad/ziad_ws/modbus/codes/First/STM32F103C8TX_FLASH.ld" -Wl,-Map="First.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+First.elf First.map: $(OBJS) $(USER_OBJS) /home/ziad/ziad_ws/Takamul_ONA/ONA_Software/tests/stm32_master/STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "First.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/home/ziad/ziad_ws/Takamul_ONA/ONA_Software/tests/stm32_master/STM32F103C8TX_FLASH.ld" -Wl,-Map="First.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

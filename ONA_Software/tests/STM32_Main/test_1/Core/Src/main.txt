@@ -1,0 +1,306 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.cpp
+  * @brief          : Takamul ONA Micro PLC - STM32 Control Node (Production Ready)
+  * : USART1 -> Modbus RTU Master (MAX485)
+  * : USART2 -> ESP32-S3 Continuous SCADA Bridge
+  *
+  * ── CHANGE LOG ───────────────────────────────────────────────────────────────
+  * v1.3 - Added Byte Swapping and Scaling for ModSim Raw Input Registers.
+  *        Ensures floating-point telemetry matches Dashboard layout accurately.
+  *
+  * v1.4 - PROTOCOL FIX: Replaced binary struct TX/RX with ASCII framing.
+  *        STM32 now sends:  "TDS:290.50,TEMP:22.43,FLOW:41.08,PRES:3.79,DIFF:0.40\n"
+  *        STM32 now parses: "CMD:PUMP_ON,SPEED:35.0,PRES_SP:3.50\n"
+  *                          "CMD:PUMP_OFF\n"
+  *        This aligns exactly with UartBridge.cpp on the ESP32-S3 side.
+  *        Binary 'T'-framing and Takamul_SensorFrame_t struct removed.
+  *        Modbus poll expanded from 5 → 6 registers (300006 = diff pressure).
+  *
+  * v1.5 - SCALING FIX: Removed __builtin_bswap16 — ModSim sends Big-Endian
+  *        which STM32 already reads correctly MSB-first. No swap needed.
+  *        RELIABILITY FIX: STM32 now always transmits to ESP32 every cycle,
+  *        even if Modbus read fails — uses last known good values (static).
+  *        This ensures ESP32 always has a valid frame to upload to Supabase.
+  *
+  * Scaling applied to raw Modbus registers (NO bswap):
+  *        speed    (raw / 10.0)  → Hz
+  *        pressure (raw / 100.0) → bar
+  *        flow     (raw / 100.0) → L/min
+  *        tds      (raw / 10.0)  → ppm
+  *        temp     (raw / 100.0) → °C
+  *        diff     (raw / 100.0) → bar
+  * ─────────────────────────────────────────────────────────────────────────────
+  */
+/* USER CODE END Header */
+
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "usart.h"
+#include "gpio.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+#include "modbus_crc.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+/* USER CODE END Includes */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+#define SLAVE_ID              5
+#define ESP_RX_BUFFER_SIZE    128
+#define TELEMETRY_INTERVAL_MS 1000
+/* USER CODE END PD */
+
+/* Private variables ---------------------------------------------------------*/
+/* USER CODE BEGIN PV */
+ModbusMaster modbus(&huart1, DE_GPIO_Port, DE_Pin);
+
+uint8_t       esp_rx_byte;
+uint8_t       esp_rx_buffer[ESP_RX_BUFFER_SIZE];
+uint8_t       esp_rx_index        = 0;
+volatile bool new_control_flag    = false;
+
+volatile bool  verified_pump_status = false;
+volatile float verified_pump_speed  = 0.0f;
+volatile float verified_target_pres = 3.5f;
+
+uint32_t last_telemetry_tick = 0;
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+/* USER CODE BEGIN PFP */
+void start_esp_bridge_rx(void);
+void flush_modbus_uart(void);
+void parse_esp_command(const char* line);
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+void start_esp_bridge_rx(void) {
+    __HAL_UART_CLEAR_FLAG(&huart2, UART_FLAG_ORE | UART_FLAG_NE | UART_FLAG_FE | UART_FLAG_PE);
+    HAL_UART_Receive_IT(&huart2, &esp_rx_byte, 1);
+}
+
+void flush_modbus_uart(void) {
+    __HAL_UART_CLEAR_FLAG(&huart1, UART_FLAG_ORE | UART_FLAG_NE | UART_FLAG_FE | UART_FLAG_PE);
+    __HAL_UART_FLUSH_DRREGISTER(&huart1);
+    volatile uint32_t tmpreg = huart1.Instance->SR;
+    tmpreg = huart1.Instance->DR;
+    (void)tmpreg;
+}
+
+void parse_esp_command(const char* line) {
+    if (strstr(line, "CMD:PUMP_ON") != NULL) {
+        verified_pump_status = true;
+    } else if (strstr(line, "CMD:PUMP_OFF") != NULL) {
+        verified_pump_status = false;
+        verified_pump_speed  = 0.0f;
+        return;
+    } else {
+        return;
+    }
+
+    const char* speed_ptr = strstr(line, "SPEED:");
+    if (speed_ptr != NULL) {
+        verified_pump_speed = strtof(speed_ptr + 6, NULL);
+    }
+
+    const char* pres_ptr = strstr(line, "PRES_SP:");
+    if (pres_ptr != NULL) {
+        verified_target_pres = strtof(pres_ptr + 8, NULL);
+    }
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == USART2) {
+
+        if (esp_rx_index == 0 && esp_rx_byte != 'C') {
+            HAL_UART_Receive_IT(&huart2, &esp_rx_byte, 1);
+            return;
+        }
+
+        if (esp_rx_byte == '\n' || esp_rx_byte == '\r') {
+            if (esp_rx_index > 0) {
+                esp_rx_buffer[esp_rx_index] = '\0';
+                new_control_flag = true;
+            }
+            esp_rx_index = 0;
+        } else {
+            if (esp_rx_index < (ESP_RX_BUFFER_SIZE - 1)) {
+                esp_rx_buffer[esp_rx_index++] = esp_rx_byte;
+            } else {
+                esp_rx_index = 0;
+            }
+        }
+
+        __HAL_UART_CLEAR_FLAG(&huart2, UART_FLAG_ORE | UART_FLAG_NE);
+        HAL_UART_Receive_IT(&huart2, &esp_rx_byte, 1);
+    }
+}
+
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == USART2) {
+        volatile uint32_t tmpreg = huart->Instance->SR;
+        tmpreg = huart->Instance->DR;
+        (void)tmpreg;
+        __HAL_UART_CLEAR_FLAG(huart, UART_FLAG_ORE | UART_FLAG_NE | UART_FLAG_FE | UART_FLAG_PE);
+        esp_rx_index = 0;
+        HAL_UART_Receive_IT(huart, &esp_rx_byte, 1);
+    }
+    if (huart->Instance == USART1) {
+        __HAL_UART_CLEAR_FLAG(huart, UART_FLAG_ORE | UART_FLAG_NE | UART_FLAG_FE | UART_FLAG_PE);
+    }
+}
+
+/* USER CODE END 0 */
+
+int main(void)
+{
+    HAL_Init();
+    SystemClock_Config();
+
+    MX_GPIO_Init();
+    MX_USART1_UART_Init();
+    MX_USART2_UART_Init();
+
+    /* USER CODE BEGIN 2 */
+    flush_modbus_uart();
+    HAL_Delay(500);
+
+    start_esp_bridge_rx();
+    last_telemetry_tick = HAL_GetTick();
+    /* USER CODE END 2 */
+
+    /* USER CODE BEGIN WHILE */
+    while (1)
+    {
+        uint32_t current_tick = HAL_GetTick();
+
+        // ══════════════════════════════════════════════════════════════════════
+        //  PART 1: Process Critical Cloud Controls (Priority Execution)
+        // ══════════════════════════════════════════════════════════════════════
+        if (new_control_flag) {
+            new_control_flag = false;
+
+            char cmd_line[ESP_RX_BUFFER_SIZE];
+            memcpy(cmd_line, (const char*)esp_rx_buffer, ESP_RX_BUFFER_SIZE);
+
+            parse_esp_command(cmd_line);
+
+            bool     current_status    = verified_pump_status;
+            uint16_t current_speed_reg = (uint16_t)(verified_pump_speed * 10.0f);
+
+            flush_modbus_uart();
+            modbus.writeSingleCoil(SLAVE_ID, 0, current_status);
+            HAL_Delay(5);
+            flush_modbus_uart();
+            modbus.writeSingleRegister(SLAVE_ID, 0, current_speed_reg);
+            flush_modbus_uart();
+        }
+
+        // ══════════════════════════════════════════════════════════════════════
+        //  PART 2: Non-blocking Periodic Telemetry Collection & ASCII TX
+        // ══════════════════════════════════════════════════════════════════════
+        if ((current_tick - last_telemetry_tick) >= TELEMETRY_INTERVAL_MS) {
+            last_telemetry_tick = current_tick;
+
+            // ── Static: last known good values ────────────────────────────────
+            // If Modbus read fails this cycle, ESP32 still gets a valid frame
+            // with the previous values — upload never stops.
+            static float last_tds      = 0.0f;
+            static float last_temp     = 0.0f;
+            static float last_flow     = 0.0f;
+            static float last_pressure = 0.0f;
+            static float last_diff     = 0.0f;
+
+            flush_modbus_uart();
+            HAL_Delay(10);
+
+            if (modbus.readInputRegisters(SLAVE_ID, 0, 6)) {
+                uint8_t* rxData = modbus.getRxData();
+
+                uint16_t raw_speed    = ((uint16_t)rxData[3]  << 8) | rxData[4];
+                uint16_t raw_pressure = ((uint16_t)rxData[5]  << 8) | rxData[6];
+                uint16_t raw_flow     = ((uint16_t)rxData[7]  << 8) | rxData[8];
+                uint16_t raw_tds      = ((uint16_t)rxData[9]  << 8) | rxData[10];
+                uint16_t raw_temp     = ((uint16_t)rxData[11] << 8) | rxData[12];
+                uint16_t raw_diff     = ((uint16_t)rxData[13] << 8) | rxData[14];
+
+                // No bswap — ModSim sends Big-Endian, read MSB-first = correct
+                last_tds      = (float)raw_tds      / 10.0f;
+                last_temp     = (float)raw_temp     / 100.0f;
+                last_flow     = (float)raw_flow     / 100.0f;
+                last_pressure = (float)raw_pressure / 100.0f;
+                last_diff     = (float)raw_diff     / 100.0f;
+
+            } else {
+                // Modbus failed — last_* unchanged, still transmit below
+                flush_modbus_uart();
+            }
+
+            // Always transmit to ESP32 every cycle — even if Modbus failed
+            char tx_frame[128];
+            int  tx_len = snprintf(tx_frame, sizeof(tx_frame),
+                "TDS:%.2f,TEMP:%.2f,FLOW:%.2f,PRES:%.2f,DIFF:%.2f\n",
+                last_tds, last_temp, last_flow, last_pressure, last_diff);
+
+            HAL_Delay(5);
+            HAL_UART_Transmit(&huart2,
+                              (uint8_t*)tx_frame,
+                              (uint16_t)tx_len,
+                              30);
+        }
+
+    }
+    /* USER CODE END 3 */
+}
+
+void SystemClock_Config(void)
+{
+    RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+    RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+    __HAL_RCC_PWR_CLK_ENABLE();
+    __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
+
+    RCC_OscInitStruct.OscillatorType      = RCC_OSCILLATORTYPE_HSI;
+    RCC_OscInitStruct.HSIState            = RCC_HSI_ON;
+    RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+    RCC_OscInitStruct.PLL.PLLState        = RCC_PLL_ON;
+    RCC_OscInitStruct.PLL.PLLSource       = RCC_PLLSOURCE_HSI;
+    RCC_OscInitStruct.PLL.PLLM            = 8;
+    RCC_OscInitStruct.PLL.PLLN            = 84;
+    RCC_OscInitStruct.PLL.PLLP            = RCC_PLLP_DIV2;
+    RCC_OscInitStruct.PLL.PLLQ            = 4;
+    if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
+        Error_Handler();
+    }
+
+    RCC_ClkInitStruct.ClockType      = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
+                                     | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+    RCC_ClkInitStruct.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK;
+    RCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1;
+    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK) {
+        Error_Handler();
+    }
+}
+
+void Error_Handler(void)
+{
+    __disable_irq();
+    while (1) {}
+}
+
+#ifdef USE_FULL_ASSERT
+void assert_failed(uint8_t *file, uint32_t line) {}
+#endif /* USE_FULL_ASSERT */

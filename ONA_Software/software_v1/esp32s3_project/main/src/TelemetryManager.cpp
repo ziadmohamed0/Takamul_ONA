@@ -1,13 +1,12 @@
 #include "inc/TelemetryManager.h"
 #include "inc/SupabaseClient.h"
 #include "inc/UartBridge.h"
-#include "inc/Otamanager.h"      // ← OTA integration
+#include "inc/Otamanager.h"
 #include "inc/Sleepmanager.h"
 #include "esp_log.h"
 #include "freertos/task.h"
 #include <cstdio>
 #include <cstring>
-
 
 // Tiny JSON builder — avoids pulling in a full JSON lib for simple payloads
 // Format: {"key":val,...} where val is either a number or a string
@@ -38,13 +37,12 @@ std::string extractJsonString(const char* body, const char* key) {
     if (!pos) return "";
 
     pos += strlen(key);
-    // skip : and whitespace
     while (*pos && (*pos == ':' || *pos == ' ')) pos++;
 
-    if (strncmp(pos, "null", 4) == 0) return "";   // SQL NULL → empty
+    if (strncmp(pos, "null", 4) == 0) return "";
 
-    if (*pos != '"') return "";                     // not a string value
-    pos++;                                          // skip opening quote
+    if (*pos != '"') return "";
+    pos++;
 
     const char* end = strchr(pos, '"');
     if (!end) return "";
@@ -161,7 +159,6 @@ void TelemetryManager::uploadTelemetry(const SensorFrame& frame) {
     ESP_LOGI(Tag, "Uploading batch | device: %s", m_device_id.c_str());
 
     for (const auto& row : rows) {
-        // Build JSON: {"device_id":"...","sensor_type":"...","value":0.0000,"unit":"..."}
         std::string json;
         json.reserve(128);
         json += '{';
@@ -177,50 +174,34 @@ void TelemetryManager::uploadTelemetry(const SensorFrame& frame) {
         } else {
             ESP_LOGW(Tag, "  ✗ %-14s  HTTP %d", row.sensor_type, status);
         }
-        vTaskDelay(pdMS_TO_TICKS(200)); // small gap to avoid burst
+        vTaskDelay(pdMS_TO_TICKS(50));
     }
 }
 
 // ─── pollControls ─────────────────────────────────────────────────────────────
 //
-// Fetches the latest controls row for this device from Supabase.
+// FIX v1.5 — Resend Throttle:
 //
-// Expected Supabase response shape:
-//   [{
-//     "pump_speed": 35.0,
-//     "status": true,
-//     "target_pressure": 3.5,
-//     "updated_at": "2025-01-01T00:00:00Z",
-//     "ota_esp32_url": "https://github.com/.../firmware.bin",   ← or null
-//     "ota_stm32_url": "https://github.com/.../firmware.bin"    ← or null
-//   }]
+// PROBLEM:
+//   pollControls() was calling sendControl() on every poll cycle (every 1s),
+//   even when nothing changed. With force_wakeup=true stuck in Supabase, the
+//   ESP32 was sending CMD:PUMP_ON to STM32 every single second non-stop.
+//   This flooded UART2, causing STM32's HAL_UART_RxCpltCallback to fire
+//   constantly and interfere with the telemetry TX window → sensor readings
+//   appeared frozen on the dashboard.
 //
-// FIX: The previous implementation used instance variables (m_last_pump_on,
-// m_last_speed, m_last_target_pres) to detect changes and only send to STM32
-// when something changed. These variables are reset to zero on every wakeup
-// from deep sleep (the device does a full reboot each cycle), so a command
-// that was already in Supabase before the device woke up would never look
-// "changed" — it would always compare against false/0.0, causing commands
-// sent while the device was sleeping to be silently dropped.
-//
-// The fix has two parts:
-//   1. Always send the current Supabase controls to STM32 every wakeup cycle,
-//      regardless of what the "previous" values were. This guarantees that
-//      whatever the website writes is always forwarded on the next wakeup.
-//   2. Use RTC memory (via SleepManager::RtcData) to store the last-sent
-//      values across deep sleep, so the optional change-detection in
-//      continuous (non-sleep) mode still works correctly.
+// FIX:
+//   - If controls CHANGED  → send to STM32 immediately (no delay).
+//   - If controls UNCHANGED → throttle resend to once per kResendInterval (10s).
+//   - The 9 intermediate poll cycles do nothing on UART2, leaving it free
+//     for STM32 to send telemetry frames uninterrupted.
 
 void TelemetryManager::pollControls() {
     auto& sb = SupabaseClient::getInstance();
 
-    // DEBUG: log exact device_id being used
     ESP_LOGI(Tag, "Polling controls for device_id: [%s]", m_device_id.c_str());
 
-    // Filter: fetch only our device row, latest first
-    // TEMP: removed device_id filter to diagnose empty response
-    std::string filter = "order=updated_at.desc&limit=1";
-    // std::string filter = "device_id=eq." + m_device_id + "&order=updated_at.desc&limit=1";
+    std::string filter = "device_id=eq." + m_device_id + "&order=updated_at.desc&limit=1";
 
     std::string body;
     int status = sb.select("controls",
@@ -229,11 +210,9 @@ void TelemetryManager::pollControls() {
                            body);
 
     if (status != 200 || body.empty() || body == "[]") {
-        ESP_LOGI(Tag, "Controls poll FAILED: HTTP=%d body=[%s]", status, body.c_str());        return;
+        ESP_LOGI(Tag, "Controls poll FAILED: HTTP=%d body=[%s]", status, body.c_str());
+        return;
     }
-
-    // ─── Minimal JSON parser ─────────────────────────────────────────────────
-    // Body: [{...}]  — we work directly on the C string to avoid heap churn.
 
     const char* p = body.c_str();
 
@@ -247,7 +226,6 @@ void TelemetryManager::pollControls() {
 
     const char* v;
 
-    // ── Pump / speed / pressure ───────────────────────────────────────────────
     bool  pump_on     = false;
     float speed_hz    = 0.0f;
     float target_pres = 3.5f;
@@ -264,18 +242,12 @@ void TelemetryManager::pollControls() {
     ESP_LOGD(Tag, "Controls: pump=%s speed=%.1f Hz pres_sp=%.2f bar",
              pump_on ? "ON" : "OFF", speed_hz, target_pres);
 
-    // ── FIX: Read last-sent values from RTC memory ────────────────────────────
-    // RTC memory persists across deep sleep, unlike instance variables which
-    // reset to zero on every boot. Using RTC memory means we can correctly
-    // detect what was last sent to STM32 even after sleeping.
+    // ── Read last-sent values from RTC memory ─────────────────────────────────
     auto& sleepMgr = SleepManager::getInstance();
     const RtcData* rtc = sleepMgr.getRtcData();
 
-    // Determine if values have actually changed compared to last sent values.
-    // controls_valid guards the first boot where RTC holds no previous values.
     bool changed;
     if (rtc == nullptr || !rtc->controls_valid) {
-        // First boot or RTC memory was reset — always send
         changed = true;
         ESP_LOGI(Tag, "Controls: first cycle, sending unconditionally");
     } else {
@@ -284,35 +256,39 @@ void TelemetryManager::pollControls() {
                || (target_pres != rtc->last_target_pres);
     }
 
-    // ── Always send to STM32 every wakeup cycle ───────────────────────────────
-    // Even if `changed` is false we still forward the command. This is safe
-    // because the STM32 is stateless after reset and needs to re-receive its
-    // operating parameters on every wakeup. The `changed` flag is only used
-    // for logging clarity.
+    // ── Resend throttle ───────────────────────────────────────────────────────
+    // Changed  → send immediately.
+    // Unchanged → send only once per kResendInterval (10s), skip the rest.
     {
-        ControlCmd cmd;
-        cmd.pump_on         = pump_on;
-        cmd.speed_hz        = speed_hz;
-        cmd.target_pressure = target_pres;
+        TickType_t now           = xTaskGetTickCount();
+        bool due_for_resend      = (now - m_last_resend_tick) >= kResendInterval;
 
-        UartBridge::getInstance().sendControl(cmd);
+        if (changed || due_for_resend) {
+            ControlCmd cmd;
+            cmd.pump_on         = pump_on;
+            cmd.speed_hz        = speed_hz;
+            cmd.target_pressure = target_pres;
 
-        if (changed) {
-            ESP_LOGI(Tag, "→ STM32: pump=%s speed=%.1f Hz pres_sp=%.2f bar  [CHANGED]",
-                     pump_on ? "ON" : "OFF", speed_hz, target_pres);
+            UartBridge::getInstance().sendControl(cmd);
+            m_last_resend_tick = now;
+
+            if (changed) {
+                ESP_LOGI(Tag, "→ STM32: pump=%s speed=%.1f Hz pres_sp=%.2f bar  [CHANGED]",
+                         pump_on ? "ON" : "OFF", speed_hz, target_pres);
+            } else {
+                ESP_LOGI(Tag, "→ STM32: pump=%s speed=%.1f Hz pres_sp=%.2f bar  [resend]",
+                         pump_on ? "ON" : "OFF", speed_hz, target_pres);
+            }
         } else {
-            ESP_LOGI(Tag, "→ STM32: pump=%s speed=%.1f Hz pres_sp=%.2f bar  [resend]",
-                     pump_on ? "ON" : "OFF", speed_hz, target_pres);
+            ESP_LOGD(Tag, "→ STM32: no change, throttled (next resend in %lu ms)",
+                     (unsigned long)((kResendInterval - (now - m_last_resend_tick)) * portTICK_PERIOD_MS));
         }
     }
 
     // ── Save current controls to RTC memory ───────────────────────────────────
-    // These will be read on the next wakeup cycle (after deep sleep) to
-    // correctly detect future changes from the website.
     sleepMgr.saveLastControls(pump_on, speed_hz, target_pres);
 
     // ── OTA URLs ──────────────────────────────────────────────────────────────
-    // extractJsonString handles both "value" and null gracefully (returns "").
     std::string esp32_ota_url = extractJsonString(p, "\"ota_esp32_url\"");
     std::string stm32_ota_url = extractJsonString(p, "\"ota_stm32_url\"");
 
@@ -329,8 +305,9 @@ void TelemetryManager::pollControls() {
         ESP_LOGI(Tag, "force_wakeup flag detected → shortening next sleep");
         sleepMgr.setForceWakeup(true);
     }
+
     ESP_LOGI(Tag, "Controls poll HTTP=%d body=%s", status, body.c_str());
-    // Delegate to OtaManager — internally throttled, safe to call every poll.
+
     OtaManager::getInstance().checkAndRun(esp32_ota_url, stm32_ota_url, m_device_id);
 }
 
@@ -339,8 +316,6 @@ void TelemetryManager::pollControls() {
 void TelemetryManager::registerDevice() {
     auto& sb = SupabaseClient::getInstance();
 
-    // UPSERT into devices table — safe to call every boot.
-    // devices table schema: device_id (text PK), last_seen (timestamptz), firmware_ver (text)
     std::string json;
     json.reserve(128);
     json += '{';
